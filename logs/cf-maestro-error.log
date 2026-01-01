@@ -1,0 +1,68 @@
+2025-12-30T01:47:59: 2025-12-29T21:47:59Z ERR  error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp [::1]:5000: connectex: No connection could be made because the target machine actively refused it." connIndex=0 event=1 ingressRule=0 originService=http://localhost:5000
+2025-12-30T01:47:59: 2025-12-29T21:47:59Z ERR Request failed error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp [::1]:5000: connectex: No connection could be made because the target machine actively refused it." connIndex=0 dest=https://api.zien-ai.app/client-portal?v=83 event=0 ip=198.41.192.57 type=http
+2025-12-30T01:49:10: 2025-12-29T21:49:10Z ERR  error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp [::1]:5000: connectex: No connection could be made because the target machine actively refused it." connIndex=0 event=1 ingressRule=0 originService=http://localhost:5000
+2025-12-30T01:49:10: 2025-12-29T21:49:10Z ERR Request failed error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp [::1]:5000: connectex: No connection could be made because the target machine actively refused it." connIndex=0 dest=https://api.zien-ai.app/client-portal?v=84 event=0 ip=198.41.192.57 type=http
+2025-12-30T01:50:03: 2025-12-29T21:50:03Z ERR  error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp [::1]:5000: connectex: No connection could be made because the target machine actively refused it." connIndex=0 event=1 ingressRule=0 originService=http://localhost:5000
+2025-12-30T01:50:03: 2025-12-29T21:50:03Z ERR Request failed error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp [::1]:5000: connectex: No connection could be made because the target machine actively refused it." connIndex=0 dest=https://api.zien-ai.app/client-portal?v=85 event=0 ip=198.41.192.57 type=http
+2025-12-30T01:53:27: 2025-12-29T21:53:27Z ERR  error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp [::1]:5000: connectex: No connection could be made because the target machine actively refused it." connIndex=0 event=1 ingressRule=0 originService=http://localhost:5000
+2025-12-30T01:53:27: 2025-12-29T21:53:27Z ERR Request failed error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp [::1]:5000: connectex: No connection could be made because the target machine actively refused it." connIndex=0 dest=https://api.zien-ai.app/client-portal?v=86 event=0 ip=198.41.192.57 type=http
+2025-12-30T01:54:30: 2025-12-29T21:54:30Z ERR  error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp [::1]:5000: connectex: No connection could be made because the target machine actively refused it." connIndex=0 event=1 ingressRule=0 originService=http://localhost:5000
+2025-12-30T01:54:30: 2025-12-29T21:54:30Z ERR Request failed error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp [::1]:5000: connectex: No connection could be made because the target machine actively refused it." connIndex=0 dest=https://api.zien-ai.app/client-portal?v=87 event=0 ip=198.41.192.57 type=http
+2025-12-30T01:55:43: 2025-12-29T21:55:43Z ERR  error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp [::1]:5000: connectex: No connection could be made because the target machine actively refused it." connIndex=0 event=1 ingressRule=0 originService=http://localhost:5000
+2025-12-30T01:55:43: 2025-12-29T21:55:43Z ERR Request failed error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp [::1]:5000: connectex: No connection could be made because the target machine actively refused it." connIndex=0 dest=https://api.zien-ai.app/client-portal?v=88 event=0 ip=198.41.192.57 type=http
+2025-12-30T01:56:40: 2025-12-29T21:56:40Z ERR  error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp [::1]:5000: connectex: No connection could be made because the target machine actively refused it." connIndex=0 event=1 ingressRule=0 originService=http://localhost:5000
+2025-12-30T01:56:40: 2025-12-29T21:56:40Z ERR Request failed error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp [::1]:5000: connectex: No connection could be made because the target machine actively refused it." connIndex=0 dest=https://api.zien-ai.app/client-portal?v=89 event=0 ip=198.41.192.57 type=http
+2025-12-30T04:28:55: 2025-12-30T00:28:55Z ERR failed to accept incoming stream requests error="failed to accept QUIC stream: timeout: no recent network activity" connIndex=1 event=0 ip=198.41.200.43
+2025-12-30T04:28:55: 2025-12-30T00:28:55Z ERR failed to accept incoming stream requests error="failed to accept QUIC stream: timeout: no recent network activity" connIndex=0 event=0 ip=198.41.192.57
+2025-12-30T04:28:55: 2025-12-30T00:28:55Z ERR failed to accept incoming stream requests error="failed to accept QUIC stream: timeout: no recent network activity" connIndex=3 event=0 ip=198.41.192.107
+2025-12-30T04:28:55: 2025-12-30T00:28:55Z ERR failed to run the datagram handler error="context canceled" connIndex=0 event=0 ip=198.41.192.57
+2025-12-30T04:28:55: 2025-12-30T00:28:55Z ERR failed to run the datagram handler error="context canceled" connIndex=1 event=0 ip=198.41.200.43
+2025-12-30T04:28:55: 2025-12-30T00:28:55Z ERR failed to run the datagram handler error="timeout: no recent network activity" connIndex=2 event=0 ip=198.41.200.113
+2025-12-30T04:28:55: 2025-12-30T00:28:55Z ERR failed to run the datagram handler error="context canceled" connIndex=3 event=0 ip=198.41.192.107
+2025-12-30T04:28:55: 2025-12-30T00:28:55Z ERR failed to serve tunnel connection error="accept stream listener encountered a failure while serving" connIndex=3 event=0 ip=198.41.192.107
+2025-12-30T04:28:55: 2025-12-30T00:28:55Z ERR failed to serve tunnel connection error="accept stream listener encountered a failure while serving" connIndex=0 event=0 ip=198.41.192.57
+2025-12-30T04:28:56: 2025-12-30T00:28:56Z ERR Serve tunnel error error="accept stream listener encountered a failure while serving" connIndex=3 event=0 ip=198.41.192.107
+2025-12-30T04:28:56: 2025-12-30T00:28:56Z ERR Serve tunnel error error="accept stream listener encountered a failure while serving" connIndex=0 event=0 ip=198.41.192.57
+2025-12-30T04:28:56: 2025-12-30T00:28:55Z ERR failed to serve tunnel connection error="accept stream listener encountered a failure while serving" connIndex=1 event=0 ip=198.41.200.43
+2025-12-30T04:28:56: 2025-12-30T00:28:56Z ERR Serve tunnel error error="accept stream listener encountered a failure while serving" connIndex=1 event=0 ip=198.41.200.43
+2025-12-30T04:28:56: 2025-12-30T00:28:56Z INF Retrying connection in up to 1s connIndex=3 event=0 ip=198.41.192.107
+2025-12-30T04:28:56: 2025-12-30T00:28:56Z INF Retrying connection in up to 1s connIndex=1 event=0 ip=198.41.200.43
+2025-12-30T04:28:56: 2025-12-30T00:28:56Z INF Retrying connection in up to 1s connIndex=0 event=0 ip=198.41.192.57
+2025-12-30T04:28:56: 2025-12-30T00:28:56Z ERR failed to accept incoming stream requests error="failed to accept QUIC stream: timeout: no recent network activity" connIndex=2 event=0 ip=198.41.200.113
+2025-12-30T04:28:56: 2025-12-30T00:28:56Z ERR failed to serve tunnel connection error="datagram manager encountered a failure while serving" connIndex=2 event=0 ip=198.41.200.113
+2025-12-30T04:28:56: 2025-12-30T00:28:56Z ERR Serve tunnel error error="datagram manager encountered a failure while serving" connIndex=2 event=0 ip=198.41.200.113
+2025-12-30T04:28:56: 2025-12-30T00:28:56Z INF Retrying connection in up to 1s connIndex=2 event=0 ip=198.41.200.113
+2025-12-30T04:28:56: 2025-12-30T00:28:56Z ERR Failed to refresh protocol error="lookup protocol-v2.argotunnel.com: dnsquery: No DNS servers configured for local system."
+2025-12-30T04:28:56: 2025-12-30T00:28:56Z ERR Connection terminated error="datagram manager encountered a failure while serving" connIndex=2
+2025-12-30T04:28:57: 2025-12-30T00:28:57Z ERR Connection terminated error="accept stream listener encountered a failure while serving" connIndex=1
+2025-12-30T04:28:57: 2025-12-30T00:28:57Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=0 event=0 ip=198.41.192.57
+2025-12-30T04:28:58: 2025-12-30T00:28:58Z ERR Connection terminated error="accept stream listener encountered a failure while serving" connIndex=3
+2025-12-30T04:29:00: 2025-12-30T00:29:00Z ERR Failed to refresh DNS local resolver error="lookup region1.v2.argotunnel.com: i/o timeout"
+2025-12-30T04:29:01: 2025-12-30T00:29:01Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=3 event=0 ip=198.41.192.107
+2025-12-30T04:29:01: 2025-12-30T00:29:01Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=2 event=0 ip=198.41.200.113
+2025-12-30T04:29:01: 2025-12-30T00:29:01Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=1 event=0 ip=198.41.200.43
+2025-12-30T04:29:02: 2025-12-30T00:29:02Z INF Registered tunnel connection connIndex=3 connection=1b0e91e3-cda5-474c-bab3-fa4844a8d25f event=0 ip=198.41.192.107 location=dxb02 protocol=quic
+2025-12-30T04:29:02: 2025-12-30T00:29:02Z INF Registered tunnel connection connIndex=0 connection=35671971-36c4-4ccd-a948-c30c5a2ac72e event=0 ip=198.41.192.57 location=dxb02 protocol=quic
+2025-12-30T04:29:02: 2025-12-30T00:29:02Z INF Registered tunnel connection connIndex=2 connection=d4e373ae-2d32-4bc4-a61f-26f7ccec9468 event=0 ip=198.41.200.113 location=sin11 protocol=quic
+2025-12-30T04:29:02: 2025-12-30T00:29:02Z INF Registered tunnel connection connIndex=1 connection=fe16e13d-d955-4e06-9ccf-63ff83d3ef5f event=0 ip=198.41.200.43 location=sin13 protocol=quic
+2026-01-02T03:02:47: 2026-01-01T23:02:47Z INF Starting tunnel tunnelID=8280d872-79cc-4b82-9de8-a86ab4bf9540
+2026-01-02T03:02:47: 2026-01-01T23:02:47Z INF Version 2025.11.1 (Checksum 413f9b24dc6e61a455564651524f167b8ce29ac4ccd40703dea7af93cd37ed39)
+2026-01-02T03:02:47: 2026-01-01T23:02:47Z INF GOOS: windows, GOVersion: go1.24.9, GoArch: amd64
+2026-01-02T03:02:47: 2026-01-01T23:02:47Z INF Settings: map[config:C:\abo-zien\apps\backend\config.yml cred-file:C:\Users\Admin\.cloudflared\8280d872-79cc-4b82-9de8-a86ab4bf9540.json credentials-file:C:\Users\Admin\.cloudflared\8280d872-79cc-4b82-9de8-a86ab4bf9540.json]
+2026-01-02T03:02:47: 2026-01-01T23:02:47Z INF cloudflared will not automatically update on Windows systems.
+2026-01-02T03:02:47: 2026-01-01T23:02:47Z INF Generated Connector ID: fcef2747-9f35-48e2-8bc8-637e61b661ed
+2026-01-02T03:02:47: 2026-01-01T23:02:47Z INF Initial protocol quic
+2026-01-02T03:02:47: 2026-01-01T23:02:47Z INF ICMP proxy will use 192.168.70.137 as source for IPv4
+2026-01-02T03:02:47: 2026-01-01T23:02:47Z INF ICMP proxy will use fd25:5a80:dda5::fb4 in zone Wi-Fi as source for IPv6
+2026-01-02T03:02:47: 2026-01-01T23:02:47Z INF cloudflared does not support loading the system root certificate pool on Windows. Please use --origin-ca-pool <PATH> to specify the path to the certificate pool
+2026-01-02T03:02:47: 2026-01-01T23:02:47Z INF ICMP proxy will use 192.168.70.137 as source for IPv4
+2026-01-02T03:02:47: 2026-01-01T23:02:47Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=0 event=0 ip=198.41.192.227
+2026-01-02T03:02:47: 2026-01-01T23:02:47Z INF ICMP proxy will use fd25:5a80:dda5::fb4 in zone Wi-Fi as source for IPv6
+2026-01-02T03:02:47: 2026-01-01T23:02:47Z INF Starting metrics server on 127.0.0.1:20244/metrics
+2026-01-02T03:02:47: 2026-01-01T23:02:47Z INF Registered tunnel connection connIndex=0 connection=2ff91a77-c775-4927-9054-a70258a4422c event=0 ip=198.41.192.227 location=dxb02 protocol=quic
+2026-01-02T03:02:47: 2026-01-01T23:02:47Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=1 event=0 ip=198.41.200.13
+2026-01-02T03:02:48: 2026-01-01T23:02:48Z INF Registered tunnel connection connIndex=1 connection=eb3d416c-4fcc-4a8c-ad1e-f4fa4856aa81 event=0 ip=198.41.200.13 location=sin02 protocol=quic
+2026-01-02T03:02:48: 2026-01-01T23:02:48Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=2 event=0 ip=198.41.200.233
+2026-01-02T03:02:49: 2026-01-01T23:02:49Z INF Registered tunnel connection connIndex=2 connection=2cde5f6f-8827-434b-9188-75ed8a9430ca event=0 ip=198.41.200.233 location=sin15 protocol=quic
+2026-01-02T03:02:49: 2026-01-01T23:02:49Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=3 event=0 ip=198.41.192.47
+2026-01-02T03:02:50: 2026-01-01T23:02:50Z INF Registered tunnel connection connIndex=3 connection=6144bf25-fa4d-44cb-96e0-2812da7db420 event=0 ip=198.41.192.47 location=dxb02 protocol=quic

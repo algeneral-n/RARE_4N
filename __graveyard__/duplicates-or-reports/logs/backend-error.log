@@ -1,0 +1,426 @@
+2025-12-27T03:07:01: [Sentry] SENTRY_DSN not set, skipping Sentry initialization
+2025-12-27T03:07:03: ⚠️ Could not load kill-switch route: The requested module './rateLimiter.js' does not provide an export named 'checkAIRateLimit'
+2025-12-27T03:07:03: ⚠️ Could not initialize Voice Consciousness: Cannot find module 'C:\abo-zien\apps\packages\core\RAREKernel.js' imported from C:\abo-zien\apps\backend\src\routes\voice-consciousness.js
+2025-12-27T03:07:03: ⚠️ Could not load Payment route: The requested module '../services/paymentService.js' does not provide an export named 'getPublishableKey'
+2025-12-27T03:07:04: ⚠️ Warning: Route [ai] skipped. (Module missing or error)
+2025-12-27T03:07:04: ⚠️ Warning: Route [auth] skipped. (Module missing or error)
+2025-12-27T03:07:04: ⚠️ Warning: Route [maps] skipped. (Module missing or error)
+2025-12-27T03:07:04: ⚠️ Warning: Route [weather] skipped. (Module missing or error)
+2025-12-27T03:07:04: ⚠️ Warning: Route [auto-builder] skipped. (Module missing or error)
+2025-12-27T03:07:04: ⚠️ Warning: Route [ocr] skipped. (Module missing or error)
+2025-12-27T03:07:05: ⚠️ Warning: Route [file-generator] skipped. (Module missing or error)
+2025-12-27T03:07:05: ⚠️ Warning: Route [voice] skipped. (Module missing or error)
+2025-12-27T03:07:05: ⚠️ Warning: Route [agent-tools] skipped. (Module missing or error)
+2025-12-27T03:07:05: ⚠️ Warning: Route [personality] skipped. (Module missing or error)
+2025-12-27T03:07:05: ⚠️ Auto Builder Socket.IO initialization failed: Identifier 'validate' has already been declared
+2025-12-27T04:05:56: [Sentry] SENTRY_DSN not set, skipping Sentry initialization
+2025-12-27T04:05:58: ⚠️ Could not load kill-switch route: The requested module './rateLimiter.js' does not provide an export named 'checkAIRateLimit'
+2025-12-27T04:05:58: ⚠️ Could not initialize Voice Consciousness: Cannot find module 'C:\abo-zien\apps\packages\core\RAREKernel.js' imported from C:\abo-zien\apps\backend\src\routes\voice-consciousness.js
+2025-12-27T04:05:58: ⚠️ Could not load Payment route: The requested module '../services/paymentService.js' does not provide an export named 'getPublishableKey'
+2025-12-27T04:05:58: ⚠️ Warning: Route [ai] skipped. (Module missing or error)
+2025-12-27T04:05:59: ⚠️ Warning: Route [auth] skipped. (Module missing or error)
+2025-12-27T04:05:59: ⚠️ Warning: Route [maps] skipped. (Module missing or error)
+2025-12-27T04:05:59: ⚠️ Warning: Route [weather] skipped. (Module missing or error)
+2025-12-27T04:05:59: ⚠️ Warning: Route [auto-builder] skipped. (Module missing or error)
+2025-12-27T04:05:59: ⚠️ Warning: Route [ocr] skipped. (Module missing or error)
+2025-12-27T04:05:59: ⚠️ Warning: Route [file-generator] skipped. (Module missing or error)
+2025-12-27T04:05:59: ⚠️ Warning: Route [voice] skipped. (Module missing or error)
+2025-12-27T04:06:00: ⚠️ Auto Builder Socket.IO initialization failed: The requested module '../services/projectGeneratorService.js' does not provide an export named 'default'
+2025-12-27T04:08:06: [Sentry] SENTRY_DSN not set, skipping Sentry initialization
+2025-12-27T04:08:08: ⚠️ Could not load kill-switch route: The requested module './rateLimiter.js' does not provide an export named 'checkAIRateLimit'
+2025-12-27T04:08:08: ⚠️ Could not initialize Voice Consciousness: Cannot find module 'C:\abo-zien\apps\packages\core\RAREKernel.js' imported from C:\abo-zien\apps\backend\src\routes\voice-consciousness.js
+2025-12-27T04:08:08: ⚠️ Could not load Payment route: The requested module '../services/paymentService.js' does not provide an export named 'getPublishableKey'
+2025-12-27T04:08:08: ⚠️ Warning: Route [ai] skipped. (Module missing or error)
+2025-12-27T04:08:08: ⚠️ Warning: Route [auth] skipped. (Module missing or error)
+2025-12-27T04:08:08: ⚠️ Warning: Route [maps] skipped. (Module missing or error)
+2025-12-27T04:08:09: ⚠️ Warning: Route [weather] skipped. (Module missing or error)
+2025-12-27T04:08:09: ⚠️ Warning: Route [auto-builder] skipped. (Module missing or error)
+2025-12-27T04:08:09: ⚠️ Warning: Route [ocr] skipped. (Module missing or error)
+2025-12-27T04:08:09: ⚠️ Warning: Route [file-generator] skipped. (Module missing or error)
+2025-12-27T04:08:09: ⚠️ Warning: Route [voice] skipped. (Module missing or error)
+2025-12-27T04:08:09: ⚠️ Auto Builder Socket.IO initialization failed: The requested module '../services/projectGeneratorService.js' does not provide an export named 'default'
+2025-12-27T05:00:51: [Sentry] SENTRY_DSN not set, skipping Sentry initialization
+2025-12-27T05:00:52: ⚠️ Could not load kill-switch route: The requested module './rateLimiter.js' does not provide an export named 'checkAIRateLimit'
+2025-12-27T05:00:52: ⚠️ Could not initialize Voice Consciousness: Cannot find module 'C:\abo-zien\apps\packages\core\RAREKernel.js' imported from C:\abo-zien\apps\backend\src\routes\voice-consciousness.js
+2025-12-27T05:00:52: ⚠️ Could not load Payment route: The requested module '../services/paymentService.js' does not provide an export named 'getPublishableKey'
+2025-12-27T05:00:53: ⚠️ Warning: Route [ai] skipped. (Module missing or error)
+2025-12-27T05:00:53: ⚠️ Warning: Route [auth] skipped. (Module missing or error)
+2025-12-27T05:00:53: ⚠️ Warning: Route [maps] skipped. (Module missing or error)
+2025-12-27T05:00:53: ⚠️ Warning: Route [weather] skipped. (Module missing or error)
+2025-12-27T05:00:53: ⚠️ Warning: Route [auto-builder] skipped. (Module missing or error)
+2025-12-27T05:00:53: ⚠️ Warning: Route [ocr] skipped. (Module missing or error)
+2025-12-27T05:00:54: ⚠️ Warning: Route [file-generator] skipped. (Module missing or error)
+2025-12-27T05:00:54: ⚠️ Warning: Route [voice] skipped. (Module missing or error)
+2025-12-27T05:00:54: ⚠️ Auto Builder Socket.IO initialization failed: The requested module '../services/projectGeneratorService.js' does not provide an export named 'default'
+2025-12-27T05:23:53: [Sentry] SENTRY_DSN not set, skipping Sentry initialization
+2025-12-27T05:23:56: ⚠️ Could not load kill-switch route: The requested module './rateLimiter.js' does not provide an export named 'checkAIRateLimit'
+2025-12-27T05:23:56: ⚠️ Could not initialize Voice Consciousness: Cannot find module 'C:\abo-zien\apps\packages\core\RAREKernel.js' imported from C:\abo-zien\apps\backend\src\routes\voice-consciousness.js
+2025-12-27T05:23:56: ⚠️ Could not load Payment route: The requested module '../services/paymentService.js' does not provide an export named 'getPublishableKey'
+2025-12-27T05:23:57: ⚠️ Warning: Route [ai] skipped. (Module missing or error)
+2025-12-27T05:23:57: ⚠️ Warning: Route [auth] skipped. (Module missing or error)
+2025-12-27T05:23:57: ⚠️ Warning: Route [maps] skipped. (Module missing or error)
+2025-12-27T05:23:57: ⚠️ Warning: Route [weather] skipped. (Module missing or error)
+2025-12-27T05:23:57: ⚠️ Warning: Route [auto-builder] skipped. (Module missing or error)
+2025-12-27T05:23:57: ⚠️ Warning: Route [ocr] skipped. (Module missing or error)
+2025-12-27T05:23:58: ⚠️ Warning: Route [file-generator] skipped. (Module missing or error)
+2025-12-27T05:23:58: ⚠️ Warning: Route [voice] skipped. (Module missing or error)
+2025-12-27T05:23:58: ⚠️ Auto Builder Socket.IO initialization failed: The requested module '../services/projectGeneratorService.js' does not provide an export named 'default'
+2025-12-27T05:26:07: [CORS] Blocked origin: https://api.zien-ai.app
+2025-12-27T05:26:07: [CORS] Blocked origin: https://api.zien-ai.app
+2025-12-27T05:33:55: [Sentry] SENTRY_DSN not set, skipping Sentry initialization
+2025-12-27T05:33:58: ⚠️ Could not load kill-switch route: The requested module './rateLimiter.js' does not provide an export named 'checkAIRateLimit'
+2025-12-27T05:33:58: ⚠️ Could not initialize Voice Consciousness: Cannot find module 'C:\abo-zien\apps\packages\core\RAREKernel.js' imported from C:\abo-zien\apps\backend\src\routes\voice-consciousness.js
+2025-12-27T05:33:58: ⚠️ Could not load Payment route: The requested module '../services/paymentService.js' does not provide an export named 'getPublishableKey'
+2025-12-27T05:33:59: ⚠️ Warning: Route [ai] skipped. (Module missing or error)
+2025-12-27T05:33:59: ⚠️ Warning: Route [auth] skipped. (Module missing or error)
+2025-12-27T05:33:59: ⚠️ Warning: Route [maps] skipped. (Module missing or error)
+2025-12-27T05:33:59: ⚠️ Warning: Route [weather] skipped. (Module missing or error)
+2025-12-27T05:33:59: ⚠️ Warning: Route [auto-builder] skipped. (Module missing or error)
+2025-12-27T05:33:59: ⚠️ Warning: Route [ocr] skipped. (Module missing or error)
+2025-12-27T05:34:00: ⚠️ Warning: Route [file-generator] skipped. (Module missing or error)
+2025-12-27T05:34:00: ⚠️ Warning: Route [voice] skipped. (Module missing or error)
+2025-12-27T05:34:00: ⚠️ Auto Builder Socket.IO initialization failed: The requested module '../services/projectGeneratorService.js' does not provide an export named 'default'
+2025-12-27T05:41:28: [Sentry] SENTRY_DSN not set, skipping Sentry initialization
+2025-12-27T05:41:29: ⚠️ Could not load kill-switch route: The requested module './rateLimiter.js' does not provide an export named 'checkAIRateLimit'
+2025-12-27T05:41:29: ⚠️ Could not initialize Voice Consciousness: Cannot find module 'C:\abo-zien\apps\packages\core\RAREKernel.js' imported from C:\abo-zien\apps\backend\src\routes\voice-consciousness.js
+2025-12-27T05:41:29: ⚠️ Could not load Payment route: The requested module '../services/paymentService.js' does not provide an export named 'getPublishableKey'
+2025-12-27T05:41:30: ⚠️ Warning: Route [ai] skipped. (Module missing or error)
+2025-12-27T05:41:30: ⚠️ Warning: Route [auth] skipped. (Module missing or error)
+2025-12-27T05:41:30: ⚠️ Warning: Route [maps] skipped. (Module missing or error)
+2025-12-27T05:41:30: ⚠️ Warning: Route [weather] skipped. (Module missing or error)
+2025-12-27T05:41:30: ⚠️ Warning: Route [auto-builder] skipped. (Module missing or error)
+2025-12-27T05:41:30: ⚠️ Warning: Route [ocr] skipped. (Module missing or error)
+2025-12-27T05:41:31: ⚠️ Warning: Route [file-generator] skipped. (Module missing or error)
+2025-12-27T05:41:31: ⚠️ Warning: Route [voice] skipped. (Module missing or error)
+2025-12-27T05:41:31: ⚠️ Auto Builder Socket.IO initialization failed: The requested module '../services/projectGeneratorService.js' does not provide an export named 'default'
+2025-12-27T05:43:46: [Sentry] SENTRY_DSN not set, skipping Sentry initialization
+2025-12-27T05:43:48: ⚠️ Could not load kill-switch route: The requested module './rateLimiter.js' does not provide an export named 'checkAIRateLimit'
+2025-12-27T05:43:48: ⚠️ Could not initialize Voice Consciousness: Cannot find module 'C:\abo-zien\apps\packages\core\RAREKernel.js' imported from C:\abo-zien\apps\backend\src\routes\voice-consciousness.js
+2025-12-27T05:43:48: ⚠️ Could not load Payment route: The requested module '../services/paymentService.js' does not provide an export named 'getPublishableKey'
+2025-12-27T05:43:49: ⚠️ Warning: Route [ai] skipped. (Module missing or error)
+2025-12-27T05:43:49: ⚠️ Warning: Route [auth] skipped. (Module missing or error)
+2025-12-27T05:43:49: ⚠️ Warning: Route [maps] skipped. (Module missing or error)
+2025-12-27T05:43:49: ⚠️ Warning: Route [weather] skipped. (Module missing or error)
+2025-12-27T05:43:49: ⚠️ Warning: Route [auto-builder] skipped. (Module missing or error)
+2025-12-27T05:43:49: ⚠️ Warning: Route [ocr] skipped. (Module missing or error)
+2025-12-27T05:43:49: ⚠️ Warning: Route [file-generator] skipped. (Module missing or error)
+2025-12-27T05:43:50: ⚠️ Warning: Route [voice] skipped. (Module missing or error)
+2025-12-27T05:43:50: ⚠️ Auto Builder Socket.IO initialization failed: The requested module '../services/projectGeneratorService.js' does not provide an export named 'default'
+2025-12-27T05:49:41: [CORS] Blocked origin: https://api.zien-ai.app
+2025-12-27T05:49:41: [CORS] Blocked origin: https://api.zien-ai.app
+2025-12-27T07:13:19: [Sentry] SENTRY_DSN not set, skipping Sentry initialization
+2025-12-27T07:13:21: ⚠️ Could not load kill-switch route: The requested module './rateLimiter.js' does not provide an export named 'checkAIRateLimit'
+2025-12-27T07:13:21: ⚠️ Could not initialize Voice Consciousness: Cannot find module 'C:\abo-zien\apps\packages\core\RAREKernel.js' imported from C:\abo-zien\apps\backend\src\routes\voice-consciousness.js
+2025-12-27T07:13:21: ⚠️ Could not load Payment route: The requested module '../services/paymentService.js' does not provide an export named 'getPublishableKey'
+2025-12-27T07:13:22: ⚠️ Warning: Route [ai] skipped. (Module missing or error)
+2025-12-27T07:13:22: ⚠️ Warning: Route [auth] skipped. (Module missing or error)
+2025-12-27T07:13:22: ⚠️ Warning: Route [maps] skipped. (Module missing or error)
+2025-12-27T07:13:22: ⚠️ Warning: Route [weather] skipped. (Module missing or error)
+2025-12-27T07:13:22: ⚠️ Warning: Route [auto-builder] skipped. (Module missing or error)
+2025-12-27T07:13:22: ⚠️ Warning: Route [ocr] skipped. (Module missing or error)
+2025-12-27T07:13:23: ⚠️ Warning: Route [file-generator] skipped. (Module missing or error)
+2025-12-27T07:13:23: ⚠️ Warning: Route [voice] skipped. (Module missing or error)
+2025-12-27T07:13:23: ⚠️ Auto Builder Socket.IO initialization failed: The requested module '../services/projectGeneratorService.js' does not provide an export named 'default'
+2025-12-27T07:27:06: [Sentry] SENTRY_DSN not set, skipping Sentry initialization
+2025-12-27T07:27:08: ⚠️ Could not load kill-switch route: The requested module './rateLimiter.js' does not provide an export named 'checkAIRateLimit'
+2025-12-27T07:27:08: ⚠️ Could not initialize Voice Consciousness: Cannot find module 'C:\abo-zien\apps\packages\core\RAREKernel.js' imported from C:\abo-zien\apps\backend\src\routes\voice-consciousness.js
+2025-12-27T07:27:08: ⚠️ Could not load Payment route: The requested module '../services/paymentService.js' does not provide an export named 'getPublishableKey'
+2025-12-27T07:27:09: ⚠️ Warning: Route [ai] skipped. (Module missing or error)
+2025-12-27T07:27:09: ⚠️ Warning: Route [auth] skipped. (Module missing or error)
+2025-12-27T07:27:09: ⚠️ Warning: Route [maps] skipped. (Module missing or error)
+2025-12-27T07:27:09: ⚠️ Warning: Route [weather] skipped. (Module missing or error)
+2025-12-27T07:27:09: ⚠️ Warning: Route [auto-builder] skipped. (Module missing or error)
+2025-12-27T07:27:09: ⚠️ Warning: Route [ocr] skipped. (Module missing or error)
+2025-12-27T07:27:10: ⚠️ Warning: Route [file-generator] skipped. (Module missing or error)
+2025-12-27T07:27:10: ⚠️ Warning: Route [voice] skipped. (Module missing or error)
+2025-12-27T07:27:10: ⚠️ Auto Builder Socket.IO initialization failed: The requested module '../services/projectGeneratorService.js' does not provide an export named 'default'
+2025-12-27T13:53:42: [Sentry] SENTRY_DSN not set, skipping Sentry initialization
+2025-12-27T13:53:44: ⚠️ Could not load kill-switch route: The requested module './rateLimiter.js' does not provide an export named 'checkAIRateLimit'
+2025-12-27T13:53:45: ⚠️ Could not initialize Voice Consciousness: Cannot find module 'C:\abo-zien\apps\packages\core\RAREKernel.js' imported from C:\abo-zien\apps\backend\src\routes\voice-consciousness.js
+2025-12-27T13:53:45: ⚠️ Could not load Payment route: The requested module '../services/paymentService.js' does not provide an export named 'getPublishableKey'
+2025-12-27T13:53:45: ⚠️ Warning: Route [ai] skipped. (Module missing or error)
+2025-12-27T13:53:45: ⚠️ Warning: Route [auth] skipped. (Module missing or error)
+2025-12-27T13:53:46: ⚠️ Warning: Route [maps] skipped. (Module missing or error)
+2025-12-27T13:53:46: ⚠️ Warning: Route [weather] skipped. (Module missing or error)
+2025-12-27T13:53:46: ⚠️ Warning: Route [auto-builder] skipped. (Module missing or error)
+2025-12-27T13:53:46: ⚠️ Warning: Route [ocr] skipped. (Module missing or error)
+2025-12-27T13:53:46: ⚠️ Warning: Route [file-generator] skipped. (Module missing or error)
+2025-12-27T13:53:46: ⚠️ Warning: Route [voice] skipped. (Module missing or error)
+2025-12-27T13:53:47: ⚠️ Auto Builder Socket.IO initialization failed: The requested module '../services/projectGeneratorService.js' does not provide an export named 'default'
+2025-12-27T13:58:06: [Sentry] SENTRY_DSN not set, skipping Sentry initialization
+2025-12-27T13:58:08: ⚠️ Could not load kill-switch route: The requested module './rateLimiter.js' does not provide an export named 'checkAIRateLimit'
+2025-12-27T13:58:08: ⚠️ Could not initialize Voice Consciousness: Cannot find module 'C:\abo-zien\apps\packages\core\RAREKernel.js' imported from C:\abo-zien\apps\backend\src\routes\voice-consciousness.js
+2025-12-27T13:58:08: ⚠️ Could not load Payment route: The requested module '../services/paymentService.js' does not provide an export named 'getPublishableKey'
+2025-12-27T13:58:08: ⚠️ Warning: Route [ai] skipped. (Module missing or error)
+2025-12-27T13:58:09: ⚠️ Warning: Route [auth] skipped. (Module missing or error)
+2025-12-27T13:58:09: ⚠️ Warning: Route [maps] skipped. (Module missing or error)
+2025-12-27T13:58:09: ⚠️ Warning: Route [weather] skipped. (Module missing or error)
+2025-12-27T13:58:09: ⚠️ Warning: Route [auto-builder] skipped. (Module missing or error)
+2025-12-27T13:58:09: ⚠️ Warning: Route [ocr] skipped. (Module missing or error)
+2025-12-27T13:58:09: ⚠️ Warning: Route [file-generator] skipped. (Module missing or error)
+2025-12-27T13:58:09: ⚠️ Warning: Route [voice] skipped. (Module missing or error)
+2025-12-27T13:58:10: ⚠️ Auto Builder Socket.IO initialization failed: The requested module '../services/projectGeneratorService.js' does not provide an export named 'default'
+2025-12-27T14:34:14: [CORS] Blocked origin: https://api.zien-ai.app
+2025-12-27T14:34:14: [CORS] Blocked origin: https://api.zien-ai.app
+2025-12-27T15:26:06: [Sentry] SENTRY_DSN not set, skipping Sentry initialization
+2025-12-27T15:26:08: ⚠️ Could not load kill-switch route: The requested module './rateLimiter.js' does not provide an export named 'checkAIRateLimit'
+2025-12-27T15:26:08: ⚠️ Could not initialize Voice Consciousness: Cannot find module 'C:\abo-zien\apps\packages\core\RAREKernel.js' imported from C:\abo-zien\apps\backend\src\routes\voice-consciousness.js
+2025-12-27T15:26:08: ⚠️ Could not load Payment route: The requested module '../services/paymentService.js' does not provide an export named 'getPublishableKey'
+2025-12-27T15:26:08: ⚠️ Warning: Route [ai] skipped. (Module missing or error)
+2025-12-27T15:26:09: ⚠️ Warning: Route [auth] skipped. (Module missing or error)
+2025-12-27T15:26:09: ⚠️ Warning: Route [maps] skipped. (Module missing or error)
+2025-12-27T15:26:09: ⚠️ Warning: Route [weather] skipped. (Module missing or error)
+2025-12-27T15:26:09: ⚠️ Warning: Route [auto-builder] skipped. (Module missing or error)
+2025-12-27T15:26:09: ⚠️ Warning: Route [ocr] skipped. (Module missing or error)
+2025-12-27T15:26:10: ⚠️ Warning: Route [file-generator] skipped. (Module missing or error)
+2025-12-27T15:26:10: ⚠️ Warning: Route [voice] skipped. (Module missing or error)
+2025-12-27T15:26:10: ⚠️ Auto Builder Socket.IO initialization failed: The requested module '../services/projectGeneratorService.js' does not provide an export named 'default'
+2025-12-27T15:30:12: [CORS] Blocked origin: https://api.zien-ai.app
+2025-12-27T15:30:12: [CORS] Blocked origin: https://api.zien-ai.app
+2025-12-27T15:44:01: [Sentry] SENTRY_DSN not set, skipping Sentry initialization
+2025-12-27T15:44:02: ⚠️ Could not load kill-switch route: The requested module './rateLimiter.js' does not provide an export named 'checkAIRateLimit'
+2025-12-27T15:44:02: ⚠️ Could not initialize Voice Consciousness: Cannot find module 'C:\abo-zien\apps\packages\core\RAREKernel.js' imported from C:\abo-zien\apps\backend\src\routes\voice-consciousness.js
+2025-12-27T15:44:02: ⚠️ Could not load Payment route: The requested module '../services/paymentService.js' does not provide an export named 'getPublishableKey'
+2025-12-27T15:44:02: ⚠️ Warning: Route [ai] skipped. (Module missing or error)
+2025-12-27T15:44:03: ⚠️ Warning: Route [auth] skipped. (Module missing or error)
+2025-12-27T15:44:03: ⚠️ Warning: Route [maps] skipped. (Module missing or error)
+2025-12-27T15:44:03: ⚠️ Warning: Route [weather] skipped. (Module missing or error)
+2025-12-27T15:44:03: ⚠️ Warning: Route [auto-builder] skipped. (Module missing or error)
+2025-12-27T15:44:03: ⚠️ Warning: Route [ocr] skipped. (Module missing or error)
+2025-12-27T15:44:04: ⚠️ Warning: Route [file-generator] skipped. (Module missing or error)
+2025-12-27T15:44:04: ⚠️ Warning: Route [voice] skipped. (Module missing or error)
+2025-12-27T15:44:04: ⚠️ Auto Builder Socket.IO initialization failed: The requested module '../services/projectGeneratorService.js' does not provide an export named 'default'
+2025-12-27T15:45:21: [Sentry] SENTRY_DSN not set, skipping Sentry initialization
+2025-12-27T15:45:23: ⚠️ Could not load kill-switch route: The requested module './rateLimiter.js' does not provide an export named 'checkAIRateLimit'
+2025-12-27T15:45:23: ⚠️ Could not initialize Voice Consciousness: Cannot find module 'C:\abo-zien\apps\packages\core\RAREKernel.js' imported from C:\abo-zien\apps\backend\src\routes\voice-consciousness.js
+2025-12-27T15:45:23: ⚠️ Could not load Payment route: The requested module '../services/paymentService.js' does not provide an export named 'getPublishableKey'
+2025-12-27T15:45:23: ⚠️ Warning: Route [ai] skipped. (Module missing or error)
+2025-12-27T15:45:24: ⚠️ Warning: Route [auth] skipped. (Module missing or error)
+2025-12-27T15:45:24: ⚠️ Warning: Route [maps] skipped. (Module missing or error)
+2025-12-27T15:45:24: ⚠️ Warning: Route [weather] skipped. (Module missing or error)
+2025-12-27T15:45:24: ⚠️ Warning: Route [auto-builder] skipped. (Module missing or error)
+2025-12-27T15:45:24: ⚠️ Warning: Route [ocr] skipped. (Module missing or error)
+2025-12-27T15:45:24: ⚠️ Warning: Route [file-generator] skipped. (Module missing or error)
+2025-12-27T15:45:24: ⚠️ Warning: Route [voice] skipped. (Module missing or error)
+2025-12-27T15:45:25: ⚠️ Auto Builder Socket.IO initialization failed: The requested module '../services/projectGeneratorService.js' does not provide an export named 'default'
+2025-12-27T18:01:06: [Sentry] SENTRY_DSN not set, skipping Sentry initialization
+2025-12-27T18:01:08: ⚠️ Could not load kill-switch route: The requested module './rateLimiter.js' does not provide an export named 'checkAIRateLimit'
+2025-12-27T18:01:08: ⚠️ Could not initialize Voice Consciousness: Cannot find module 'C:\abo-zien\apps\packages\core\RAREKernel.js' imported from C:\abo-zien\apps\backend\src\routes\voice-consciousness.js
+2025-12-27T18:01:08: ⚠️ Could not load Payment route: The requested module '../services/paymentService.js' does not provide an export named 'getPublishableKey'
+2025-12-27T18:01:09: ⚠️ Warning: Route [ai] skipped. (Module missing or error)
+2025-12-27T18:01:09: ⚠️ Warning: Route [auth] skipped. (Module missing or error)
+2025-12-27T18:01:09: ⚠️ Warning: Route [maps] skipped. (Module missing or error)
+2025-12-27T18:01:09: ⚠️ Warning: Route [weather] skipped. (Module missing or error)
+2025-12-27T18:01:09: ⚠️ Warning: Route [auto-builder] skipped. (Module missing or error)
+2025-12-27T18:01:10: ⚠️ Warning: Route [ocr] skipped. (Module missing or error)
+2025-12-27T18:01:10: ⚠️ Warning: Route [file-generator] skipped. (Module missing or error)
+2025-12-27T18:01:10: ⚠️ Warning: Route [voice] skipped. (Module missing or error)
+2025-12-27T18:01:10: ⚠️ Auto Builder Socket.IO initialization failed: The requested module '../services/projectGeneratorService.js' does not provide an export named 'default'
+2025-12-27T18:05:18: [Sentry] SENTRY_DSN not set, skipping Sentry initialization
+2025-12-27T18:05:20: ⚠️ Could not load kill-switch route: The requested module './rateLimiter.js' does not provide an export named 'checkAIRateLimit'
+2025-12-27T18:05:20: ⚠️ Could not initialize Voice Consciousness: Cannot find module 'C:\abo-zien\apps\packages\core\RAREKernel.js' imported from C:\abo-zien\apps\backend\src\routes\voice-consciousness.js
+2025-12-27T18:05:20: ⚠️ Could not load Payment route: The requested module '../services/paymentService.js' does not provide an export named 'getPublishableKey'
+2025-12-27T18:05:21: ⚠️ Warning: Route [ai] skipped. (Module missing or error)
+2025-12-27T18:05:21: ⚠️ Warning: Route [auth] skipped. (Module missing or error)
+2025-12-27T18:05:21: ⚠️ Warning: Route [maps] skipped. (Module missing or error)
+2025-12-27T18:05:21: ⚠️ Warning: Route [weather] skipped. (Module missing or error)
+2025-12-27T18:05:21: ⚠️ Warning: Route [auto-builder] skipped. (Module missing or error)
+2025-12-27T18:05:21: ⚠️ Warning: Route [ocr] skipped. (Module missing or error)
+2025-12-27T18:05:21: ⚠️ Warning: Route [file-generator] skipped. (Module missing or error)
+2025-12-27T18:05:21: ⚠️ Warning: Route [voice] skipped. (Module missing or error)
+2025-12-27T18:05:22: ⚠️ Auto Builder Socket.IO initialization failed: The requested module '../services/projectGeneratorService.js' does not provide an export named 'default'
+2025-12-27T18:12:01: [Sentry] SENTRY_DSN not set, skipping Sentry initialization
+2025-12-27T18:12:03: ⚠️ Could not load kill-switch route: The requested module './rateLimiter.js' does not provide an export named 'checkAIRateLimit'
+2025-12-27T18:12:03: ⚠️ Could not initialize Voice Consciousness: Cannot find module 'C:\abo-zien\apps\packages\core\RAREKernel.js' imported from C:\abo-zien\apps\backend\src\routes\voice-consciousness.js
+2025-12-27T18:12:03: ⚠️ Could not load Payment route: The requested module '../services/paymentService.js' does not provide an export named 'getPublishableKey'
+2025-12-27T18:12:03: ⚠️ Warning: Route [ai] skipped. (Module missing or error)
+2025-12-27T18:12:03: ⚠️ Warning: Route [auth] skipped. (Module missing or error)
+2025-12-27T18:12:03: ⚠️ Warning: Route [maps] skipped. (Module missing or error)
+2025-12-27T18:12:03: ⚠️ Warning: Route [weather] skipped. (Module missing or error)
+2025-12-27T18:12:04: ⚠️ Warning: Route [auto-builder] skipped. (Module missing or error)
+2025-12-27T18:12:04: ⚠️ Warning: Route [ocr] skipped. (Module missing or error)
+2025-12-27T18:12:04: ⚠️ Warning: Route [file-generator] skipped. (Module missing or error)
+2025-12-27T18:12:04: ⚠️ Warning: Route [voice] skipped. (Module missing or error)
+2025-12-27T18:12:04: ⚠️ Auto Builder Socket.IO initialization failed: The requested module '../services/projectGeneratorService.js' does not provide an export named 'default'
+2025-12-27T19:28:53: [Sentry] SENTRY_DSN not set, skipping Sentry initialization
+2025-12-27T19:28:56: ⚠️ Could not load kill-switch route: The requested module './rateLimiter.js' does not provide an export named 'checkAIRateLimit'
+2025-12-27T19:28:56: ⚠️ Could not initialize Voice Consciousness: Cannot find module 'C:\abo-zien\apps\packages\core\RAREKernel.js' imported from C:\abo-zien\apps\backend\src\routes\voice-consciousness.js
+2025-12-27T19:28:56: ⚠️ Could not load Payment route: The requested module '../services/paymentService.js' does not provide an export named 'getPublishableKey'
+2025-12-27T19:28:57: ⚠️ Warning: Route [ai] skipped. (Module missing or error)
+2025-12-27T19:28:57: ⚠️ Warning: Route [maps] skipped. (Module missing or error)
+2025-12-27T19:28:57: ⚠️ Warning: Route [weather] skipped. (Module missing or error)
+2025-12-27T19:28:57: ⚠️ Warning: Route [auto-builder] skipped. (Module missing or error)
+2025-12-27T19:28:57: ⚠️ Warning: Route [ocr] skipped. (Module missing or error)
+2025-12-27T19:28:58: ⚠️ Warning: Route [file-generator] skipped. (Module missing or error)
+2025-12-27T19:28:58: ⚠️ Warning: Route [voice] skipped. (Module missing or error)
+2025-12-27T19:28:58: ⚠️ Auto Builder Socket.IO initialization failed: The requested module '../services/projectGeneratorService.js' does not provide an export named 'default'
+2025-12-27T20:22:26: [Sentry] SENTRY_DSN not set, skipping Sentry initialization
+2025-12-27T20:22:28: ⚠️ Could not load kill-switch route: The requested module './rateLimiter.js' does not provide an export named 'checkAIRateLimit'
+2025-12-27T20:22:28: ⚠️ Could not initialize Voice Consciousness: Cannot find module 'C:\abo-zien\apps\packages\core\RAREKernel.js' imported from C:\abo-zien\apps\backend\src\routes\voice-consciousness.js
+2025-12-27T20:22:28: ⚠️ Could not load Payment route: The requested module '../services/paymentService.js' does not provide an export named 'getPublishableKey'
+2025-12-27T20:22:28: ⚠️ Warning: Route [ai] skipped. (Module missing or error)
+2025-12-27T20:22:28: ⚠️ Warning: Route [maps] skipped. (Module missing or error)
+2025-12-27T20:22:28: ⚠️ Warning: Route [weather] skipped. (Module missing or error)
+2025-12-27T20:22:28: ⚠️ Warning: Route [auto-builder] skipped. (Module missing or error)
+2025-12-27T20:22:29: ⚠️ Warning: Route [ocr] skipped. (Module missing or error)
+2025-12-27T20:22:29: ⚠️ Warning: Route [file-generator] skipped. (Module missing or error)
+2025-12-27T20:22:29: ⚠️ Warning: Route [voice] skipped. (Module missing or error)
+2025-12-27T20:22:29: ⚠️ Auto Builder Socket.IO initialization failed: The requested module '../services/projectGeneratorService.js' does not provide an export named 'default'
+2025-12-27T20:42:41: [Sentry] SENTRY_DSN not set, skipping Sentry initialization
+2025-12-27T20:42:43: ⚠️ Could not load kill-switch route: The requested module './rateLimiter.js' does not provide an export named 'checkAIRateLimit'
+2025-12-27T20:42:43: ⚠️ Could not initialize Voice Consciousness: Cannot find module 'C:\abo-zien\apps\packages\core\RAREKernel.js' imported from C:\abo-zien\apps\backend\src\routes\voice-consciousness.js
+2025-12-27T20:42:43: ⚠️ Could not load Payment route: The requested module '../services/paymentService.js' does not provide an export named 'getPublishableKey'
+2025-12-27T20:42:44: ⚠️ Warning: Route [ai] skipped. (Module missing or error)
+2025-12-27T20:42:44: ⚠️ Warning: Route [maps] skipped. (Module missing or error)
+2025-12-27T20:42:44: ⚠️ Warning: Route [weather] skipped. (Module missing or error)
+2025-12-27T20:42:44: ⚠️ Warning: Route [auto-builder] skipped. (Module missing or error)
+2025-12-27T20:42:44: ⚠️ Warning: Route [ocr] skipped. (Module missing or error)
+2025-12-27T20:42:44: ⚠️ Warning: Route [file-generator] skipped. (Module missing or error)
+2025-12-27T20:42:44: ⚠️ Warning: Route [voice] skipped. (Module missing or error)
+2025-12-27T20:42:44: ⚠️ Auto Builder Socket.IO initialization failed: The requested module '../services/projectGeneratorService.js' does not provide an export named 'default'
+2025-12-27T20:56:04: [Sentry] SENTRY_DSN not set, skipping Sentry initialization
+2025-12-27T20:56:06: ⚠️ Could not load kill-switch route: The requested module './rateLimiter.js' does not provide an export named 'checkAIRateLimit'
+2025-12-27T20:56:06: ⚠️ Could not initialize Voice Consciousness: Cannot find module 'C:\abo-zien\apps\packages\core\RAREKernel.js' imported from C:\abo-zien\apps\backend\src\routes\voice-consciousness.js
+2025-12-27T20:56:06: ⚠️ Could not load Payment route: The requested module '../services/paymentService.js' does not provide an export named 'getPublishableKey'
+2025-12-27T20:56:06: ⚠️ Warning: Route [ai] skipped. (Module missing or error)
+2025-12-27T20:56:06: ⚠️ Warning: Route [maps] skipped. (Module missing or error)
+2025-12-27T20:56:06: ⚠️ Warning: Route [weather] skipped. (Module missing or error)
+2025-12-27T20:56:06: ⚠️ Warning: Route [auto-builder] skipped. (Module missing or error)
+2025-12-27T20:56:07: ⚠️ Warning: Route [ocr] skipped. (Module missing or error)
+2025-12-27T20:56:07: ⚠️ Warning: Route [file-generator] skipped. (Module missing or error)
+2025-12-27T20:56:07: ⚠️ Warning: Route [voice] skipped. (Module missing or error)
+2025-12-27T20:56:07: ⚠️ Auto Builder Socket.IO initialization failed: The requested module '../services/projectGeneratorService.js' does not provide an export named 'default'
+2025-12-27T21:01:54: [Sentry] SENTRY_DSN not set, skipping Sentry initialization
+2025-12-27T21:01:56: ⚠️ Could not load kill-switch route: The requested module './rateLimiter.js' does not provide an export named 'checkAIRateLimit'
+2025-12-27T21:01:56: ⚠️ Could not initialize Voice Consciousness: Cannot find module 'C:\abo-zien\apps\packages\core\RAREKernel.js' imported from C:\abo-zien\apps\backend\src\routes\voice-consciousness.js
+2025-12-27T21:01:56: ⚠️ Could not load Payment route: The requested module '../services/paymentService.js' does not provide an export named 'getPublishableKey'
+2025-12-27T21:01:56: ⚠️ Warning: Route [ai] skipped. (Module missing or error)
+2025-12-27T21:01:56: ⚠️ Warning: Route [maps] skipped. (Module missing or error)
+2025-12-27T21:01:56: ⚠️ Warning: Route [weather] skipped. (Module missing or error)
+2025-12-27T21:01:56: ⚠️ Warning: Route [auto-builder] skipped. (Module missing or error)
+2025-12-27T21:01:56: ⚠️ Warning: Route [ocr] skipped. (Module missing or error)
+2025-12-27T21:01:56: ⚠️ Warning: Route [file-generator] skipped. (Module missing or error)
+2025-12-27T21:01:56: ⚠️ Warning: Route [voice] skipped. (Module missing or error)
+2025-12-27T21:01:56: ⚠️ Auto Builder Socket.IO initialization failed: The requested module '../services/projectGeneratorService.js' does not provide an export named 'default'
+2025-12-27T21:08:38: [Sentry] SENTRY_DSN not set, skipping Sentry initialization
+2025-12-27T21:08:41: ⚠️ Could not load kill-switch route: The requested module './rateLimiter.js' does not provide an export named 'checkAIRateLimit'
+2025-12-27T21:08:41: ⚠️ Could not initialize Voice Consciousness: Cannot find module 'C:\abo-zien\apps\packages\core\RAREKernel.js' imported from C:\abo-zien\apps\backend\src\routes\voice-consciousness.js
+2025-12-27T21:08:41: ⚠️ Could not load Payment route: The requested module '../services/paymentService.js' does not provide an export named 'getPublishableKey'
+2025-12-27T21:08:41: ⚠️ Warning: Route [ai] skipped. (Module missing or error)
+2025-12-27T21:08:41: ⚠️ Warning: Route [maps] skipped. (Module missing or error)
+2025-12-27T21:08:41: ⚠️ Warning: Route [weather] skipped. (Module missing or error)
+2025-12-27T21:08:42: ⚠️ Warning: Route [auto-builder] skipped. (Module missing or error)
+2025-12-27T21:08:42: ⚠️ Warning: Route [ocr] skipped. (Module missing or error)
+2025-12-27T21:08:42: ⚠️ Warning: Route [file-generator] skipped. (Module missing or error)
+2025-12-27T21:08:42: ⚠️ Warning: Route [voice] skipped. (Module missing or error)
+2025-12-27T21:08:42: ⚠️ Auto Builder Socket.IO initialization failed: The requested module '../services/projectGeneratorService.js' does not provide an export named 'default'
+2025-12-27T21:13:52: [Sentry] SENTRY_DSN not set, skipping Sentry initialization
+2025-12-27T21:13:54: ⚠️ Could not load kill-switch route: The requested module './rateLimiter.js' does not provide an export named 'checkAIRateLimit'
+2025-12-27T21:13:54: ⚠️ Could not initialize Voice Consciousness: Cannot find module 'C:\abo-zien\apps\packages\core\RAREKernel.js' imported from C:\abo-zien\apps\backend\src\routes\voice-consciousness.js
+2025-12-27T21:13:54: ⚠️ Could not load Payment route: The requested module '../services/paymentService.js' does not provide an export named 'getPublishableKey'
+2025-12-27T21:13:54: ⚠️ Warning: Route [ai] skipped. (Module missing or error)
+2025-12-27T21:13:54: ⚠️ Warning: Route [maps] skipped. (Module missing or error)
+2025-12-27T21:13:54: ⚠️ Warning: Route [weather] skipped. (Module missing or error)
+2025-12-27T21:13:54: ⚠️ Warning: Route [auto-builder] skipped. (Module missing or error)
+2025-12-27T21:13:54: ⚠️ Warning: Route [ocr] skipped. (Module missing or error)
+2025-12-27T21:13:54: ⚠️ Warning: Route [file-generator] skipped. (Module missing or error)
+2025-12-27T21:13:54: ⚠️ Warning: Route [voice] skipped. (Module missing or error)
+2025-12-27T21:13:54: ⚠️ Auto Builder Socket.IO initialization failed: The requested module '../services/projectGeneratorService.js' does not provide an export named 'default'
+2025-12-27T21:30:37: [Sentry] SENTRY_DSN not set, skipping Sentry initialization
+2025-12-27T21:30:39: ⚠️ Could not load kill-switch route: The requested module './rateLimiter.js' does not provide an export named 'checkAIRateLimit'
+2025-12-27T21:30:39: ⚠️ Could not initialize Voice Consciousness: Cannot find module 'C:\abo-zien\apps\packages\core\RAREKernel.js' imported from C:\abo-zien\apps\backend\src\routes\voice-consciousness.js
+2025-12-27T21:30:39: ⚠️ Could not load Payment route: The requested module '../services/paymentService.js' does not provide an export named 'getPublishableKey'
+2025-12-27T21:30:40: ⚠️ Warning: Route [ai] skipped. (Module missing or error)
+2025-12-27T21:30:40: ⚠️ Warning: Route [maps] skipped. (Module missing or error)
+2025-12-27T21:30:40: ⚠️ Warning: Route [weather] skipped. (Module missing or error)
+2025-12-27T21:30:40: ⚠️ Warning: Route [auto-builder] skipped. (Module missing or error)
+2025-12-27T21:30:40: ⚠️ Warning: Route [ocr] skipped. (Module missing or error)
+2025-12-27T21:30:40: ⚠️ Warning: Route [file-generator] skipped. (Module missing or error)
+2025-12-27T21:30:40: ⚠️ Warning: Route [voice] skipped. (Module missing or error)
+2025-12-27T21:30:40: ⚠️ Auto Builder Socket.IO initialization failed: The requested module '../services/projectGeneratorService.js' does not provide an export named 'default'
+2025-12-27T21:46:05: [Sentry] SENTRY_DSN not set, skipping Sentry initialization
+2025-12-27T21:46:07: ⚠️ Could not load kill-switch route: The requested module './rateLimiter.js' does not provide an export named 'checkAIRateLimit'
+2025-12-27T21:46:07: ⚠️ Could not initialize Voice Consciousness: Cannot find module 'C:\abo-zien\apps\packages\core\RAREKernel.js' imported from C:\abo-zien\apps\backend\src\routes\voice-consciousness.js
+2025-12-27T21:46:07: ⚠️ Could not load Payment route: The requested module '../services/paymentService.js' does not provide an export named 'getPublishableKey'
+2025-12-27T21:46:08: ⚠️ Warning: Route [ai] skipped. (Module missing or error)
+2025-12-27T21:46:08: ⚠️ Warning: Route [maps] skipped. (Module missing or error)
+2025-12-27T21:46:08: ⚠️ Warning: Route [weather] skipped. (Module missing or error)
+2025-12-27T21:46:08: ⚠️ Warning: Route [auto-builder] skipped. (Module missing or error)
+2025-12-27T21:46:08: ⚠️ Warning: Route [ocr] skipped. (Module missing or error)
+2025-12-27T21:46:08: ⚠️ Warning: Route [file-generator] skipped. (Module missing or error)
+2025-12-27T21:46:08: ⚠️ Warning: Route [voice] skipped. (Module missing or error)
+2025-12-27T21:46:08: ⚠️ Auto Builder Socket.IO initialization failed: The requested module '../services/projectGeneratorService.js' does not provide an export named 'default'
+2025-12-27T21:54:10: [Sentry] SENTRY_DSN not set, skipping Sentry initialization
+2025-12-27T21:54:12: ⚠️ Could not load kill-switch route: The requested module './rateLimiter.js' does not provide an export named 'checkAIRateLimit'
+2025-12-27T21:54:12: ⚠️ Could not initialize Voice Consciousness: Cannot find module 'C:\abo-zien\apps\packages\core\RAREKernel.js' imported from C:\abo-zien\apps\backend\src\routes\voice-consciousness.js
+2025-12-27T21:54:12: ⚠️ Could not load Payment route: The requested module '../services/paymentService.js' does not provide an export named 'getPublishableKey'
+2025-12-27T21:54:12: ⚠️ Warning: Route [ai] skipped. (Module missing or error)
+2025-12-27T21:54:12: ⚠️ Warning: Route [maps] skipped. (Module missing or error)
+2025-12-27T21:54:12: ⚠️ Warning: Route [weather] skipped. (Module missing or error)
+2025-12-27T21:54:12: ⚠️ Warning: Route [auto-builder] skipped. (Module missing or error)
+2025-12-27T21:54:12: ⚠️ Warning: Route [ocr] skipped. (Module missing or error)
+2025-12-27T21:54:12: ⚠️ Warning: Route [file-generator] skipped. (Module missing or error)
+2025-12-27T21:54:12: ⚠️ Warning: Route [voice] skipped. (Module missing or error)
+2025-12-27T21:54:12: ⚠️ Auto Builder Socket.IO initialization failed: The requested module '../services/projectGeneratorService.js' does not provide an export named 'default'
+2025-12-27T23:11:53: [Sentry] SENTRY_DSN not set, skipping Sentry initialization
+2025-12-27T23:11:56: ⚠️ Could not load kill-switch route: The requested module './rateLimiter.js' does not provide an export named 'checkAIRateLimit'
+2025-12-27T23:11:56: ⚠️ Could not initialize Voice Consciousness: Cannot find module 'C:\abo-zien\apps\packages\core\RAREKernel.js' imported from C:\abo-zien\apps\backend\src\routes\voice-consciousness.js
+2025-12-27T23:11:56: ⚠️ Could not load Payment route: The requested module '../services/paymentService.js' does not provide an export named 'getPublishableKey'
+2025-12-27T23:11:57: ⚠️ Warning: Route [ai] skipped. (Module missing or error)
+2025-12-27T23:11:57: ⚠️ Warning: Route [maps] skipped. (Module missing or error)
+2025-12-27T23:11:57: ⚠️ Warning: Route [weather] skipped. (Module missing or error)
+2025-12-27T23:11:57: ⚠️ Warning: Route [auto-builder] skipped. (Module missing or error)
+2025-12-27T23:11:57: ⚠️ Warning: Route [ocr] skipped. (Module missing or error)
+2025-12-27T23:11:58: ⚠️ Warning: Route [file-generator] skipped. (Module missing or error)
+2025-12-27T23:11:58: ⚠️ Warning: Route [voice] skipped. (Module missing or error)
+2025-12-27T23:11:58: ⚠️ Auto Builder Socket.IO initialization failed: The requested module '../services/projectGeneratorService.js' does not provide an export named 'default'
+2025-12-27T23:34:44: [Sentry] SENTRY_DSN not set, skipping Sentry initialization
+2025-12-27T23:34:47: ⚠️ Could not load kill-switch route: The requested module './rateLimiter.js' does not provide an export named 'checkAIRateLimit'
+2025-12-27T23:34:47: ⚠️ Could not initialize Voice Consciousness: Cannot find module 'C:\abo-zien\apps\packages\core\RAREKernel.js' imported from C:\abo-zien\apps\backend\src\routes\voice-consciousness.js
+2025-12-27T23:34:48: ⚠️ Could not load Payment route: The requested module '../services/paymentService.js' does not provide an export named 'getPublishableKey'
+2025-12-27T23:34:48: ⚠️ Warning: Route [ai] skipped. (Module missing or error)
+2025-12-27T23:34:48: ⚠️ Warning: Route [maps] skipped. (Module missing or error)
+2025-12-27T23:34:48: ⚠️ Warning: Route [weather] skipped. (Module missing or error)
+2025-12-27T23:34:48: ⚠️ Warning: Route [auto-builder] skipped. (Module missing or error)
+2025-12-27T23:34:49: ⚠️ Warning: Route [ocr] skipped. (Module missing or error)
+2025-12-27T23:34:50: ⚠️ Warning: Route [file-generator] skipped. (Module missing or error)
+2025-12-27T23:34:50: ⚠️ Warning: Route [voice] skipped. (Module missing or error)
+2025-12-27T23:34:50: ⚠️ Auto Builder Socket.IO initialization failed: The requested module '../services/projectGeneratorService.js' does not provide an export named 'default'
+2025-12-27T23:39:29: [Sentry] SENTRY_DSN not set, skipping Sentry initialization
+2025-12-27T23:39:32: ⚠️ Could not load kill-switch route: The requested module './rateLimiter.js' does not provide an export named 'checkAIRateLimit'
+2025-12-27T23:39:32: ⚠️ Could not initialize Voice Consciousness: Cannot find module 'C:\abo-zien\apps\packages\core\RAREKernel.js' imported from C:\abo-zien\apps\backend\src\routes\voice-consciousness.js
+2025-12-27T23:39:32: ⚠️ Could not load Payment route: The requested module '../services/paymentService.js' does not provide an export named 'getPublishableKey'
+2025-12-27T23:39:33: ⚠️ Warning: Route [ai] skipped. (Module missing or error)
+2025-12-27T23:39:33: ⚠️ Warning: Route [maps] skipped. (Module missing or error)
+2025-12-27T23:39:33: ⚠️ Warning: Route [weather] skipped. (Module missing or error)
+2025-12-27T23:39:33: ⚠️ Warning: Route [auto-builder] skipped. (Module missing or error)
+2025-12-27T23:39:33: ⚠️ Warning: Route [ocr] skipped. (Module missing or error)
+2025-12-27T23:39:33: ⚠️ Warning: Route [file-generator] skipped. (Module missing or error)
+2025-12-27T23:39:33: ⚠️ Warning: Route [voice] skipped. (Module missing or error)
+2025-12-27T23:39:34: ⚠️ Auto Builder Socket.IO initialization failed: The requested module '../services/projectGeneratorService.js' does not provide an export named 'default'
+2025-12-28T02:56:14: [Sentry] SENTRY_DSN not set, skipping Sentry initialization
+2025-12-28T02:56:16: ⚠️ Could not load kill-switch route: The requested module './rateLimiter.js' does not provide an export named 'checkAIRateLimit'
+2025-12-28T02:56:16: ⚠️ Could not initialize Voice Consciousness: Cannot find module 'C:\abo-zien\apps\packages\core\RAREKernel.js' imported from C:\abo-zien\apps\backend\src\routes\voice-consciousness.js
+2025-12-28T02:56:16: ⚠️ Could not load Payment route: The requested module '../services/paymentService.js' does not provide an export named 'getPublishableKey'
+2025-12-28T02:56:17: ⚠️ Warning: Route [ai] skipped. (Module missing or error)
+2025-12-28T02:56:17: ⚠️ Warning: Route [maps] skipped. (Module missing or error)
+2025-12-28T02:56:17: ⚠️ Warning: Route [weather] skipped. (Module missing or error)
+2025-12-28T02:56:17: ⚠️ Warning: Route [auto-builder] skipped. (Module missing or error)
+2025-12-28T02:56:17: ⚠️ Warning: Route [ocr] skipped. (Module missing or error)
+2025-12-28T02:56:18: ⚠️ Warning: Route [file-generator] skipped. (Module missing or error)
+2025-12-28T02:56:18: ⚠️ Warning: Route [voice] skipped. (Module missing or error)
+2025-12-28T02:56:18: ⚠️ Auto Builder Socket.IO initialization failed: The requested module '../services/projectGeneratorService.js' does not provide an export named 'default'
+2025-12-28T03:30:33: [Sentry] SENTRY_DSN not set, skipping Sentry initialization
+2025-12-28T03:30:57: ❌ MongoDB connection error: connect ETIMEDOUT 20.219.40.121:27017
+2025-12-28T03:30:57: ⚠️ Retrying MongoDB connection (1/3)...
+2025-12-28T03:31:03: ⚠️ Could not load kill-switch route: The requested module './rateLimiter.js' does not provide an export named 'checkAIRateLimit'
+2025-12-28T03:31:03: ⚠️ Could not initialize Voice Consciousness: Cannot find module 'C:\abo-zien\apps\packages\core\RAREKernel.js' imported from C:\abo-zien\apps\backend\src\routes\voice-consciousness.js
+2025-12-28T03:31:03: ⚠️ Could not load Payment route: The requested module '../services/paymentService.js' does not provide an export named 'getPublishableKey'
+2025-12-28T03:31:04: ⚠️ Warning: Route [ai] skipped. (Module missing or error)
+2025-12-28T03:31:04: ⚠️ Warning: Route [maps] skipped. (Module missing or error)
+2025-12-28T03:31:04: ⚠️ Warning: Route [weather] skipped. (Module missing or error)
+2025-12-28T03:31:04: ⚠️ Warning: Route [auto-builder] skipped. (Module missing or error)
+2025-12-28T03:31:04: ⚠️ Warning: Route [ocr] skipped. (Module missing or error)
+2025-12-28T03:31:05: ⚠️ Warning: Route [file-generator] skipped. (Module missing or error)
+2025-12-28T03:31:05: ⚠️ Warning: Route [voice] skipped. (Module missing or error)
+2025-12-28T03:31:05: ⚠️ Auto Builder Socket.IO initialization failed: The requested module '../services/projectGeneratorService.js' does not provide an export named 'default'

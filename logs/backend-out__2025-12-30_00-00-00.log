@@ -1,0 +1,2294 @@
+2025-12-29T00:37:20: ✅ Client Portal path: C:\abo-zien\apps\client-portal
+2025-12-29T00:37:20: ✅ Client Portal static files served from Backend under /client-portal/
+2025-12-29T00:37:20: Starting RARE Kernel Boot Sequence...
+2025-12-29T00:37:20: ✅ Cognitive Debugger initialized
+2025-12-29T00:37:20: ✅ Service Manager initialized
+2025-12-29T00:37:21: ✅ Cognitive Debugger & Service Manager initialized
+2025-12-29T00:37:21: ??? Database tables created
+2025-12-29T00:37:21: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T00:37:21: ✅ Local Database (SQLite) initialized
+2025-12-29T00:37:23: ✅ MongoDB connected successfully
+2025-12-29T00:37:23: ✅ MongoDB connected successfully
+2025-12-29T00:37:23: ✅ Supabase connected successfully
+2025-12-29T00:37:23: ✅ Supabase connected successfully
+2025-12-29T00:37:23: ✅ Route loaded: /api/user/projects
+2025-12-29T00:37:23: ✅ Route loaded: /api/user/settings
+2025-12-29T00:37:23: ✅ Route loaded: /api/payment
+2025-12-29T00:37:23: ✅ Route loaded: /api/payment
+2025-12-29T00:37:23: ✅ Route loaded: /api/kill-switch (EMERGENCY CONTROL)
+2025-12-29T00:37:23: ✅ Route loaded: /api/service-control (Service Management)
+2025-12-29T00:37:23: ✅ Route loaded: /api/twilio
+2025-12-29T00:37:23: ✅ Route loaded: /api/payments
+2025-12-29T00:37:23: ✅ Route loaded: /api/ai
+2025-12-29T00:37:23: ✅ Route loaded: /api/auth
+2025-12-29T00:37:23: ✅ Route loaded: /api/boot
+2025-12-29T00:37:23: ✅ Route loaded: /api/files
+2025-12-29T00:37:23: ✅ Route loaded: /api/maps
+2025-12-29T00:37:23: ✅ Route loaded: /api/weather
+2025-12-29T00:37:23: ✅ Route loaded: /api/cognitive
+2025-12-29T00:37:23: ✅ Route loaded: /api/libraries
+2025-12-29T00:37:24: ✅ Route loaded: /api/auto-builder
+2025-12-29T00:37:24: ✅ Route loaded: /api/codegen
+2025-12-29T00:37:24: ✅ Route loaded: /api/vision
+2025-12-29T00:37:24: ✅ Route loaded: /api/vault
+2025-12-29T00:37:24: ✅ Route loaded: /api/council
+2025-12-29T00:37:24: ✅ Route loaded: /api/sos
+2025-12-29T00:37:24: ✅ Route loaded: /api/security
+2025-12-29T00:37:24: ✅ Route loaded: /api/settings
+2025-12-29T00:37:24: ✅ Route loaded: /api/communication
+2025-12-29T00:37:24: ✅ Route loaded: /api/carplay
+2025-12-29T00:37:24: ✅ Route loaded: /api/voice-realtime
+2025-12-29T00:37:24: ✅ Route loaded: /api/gpt-stream
+2025-12-29T00:37:24: ✅ Route loaded: /api/control-room
+2025-12-29T00:37:24: ✅ Route loaded: /api/file-generator
+2025-12-29T00:37:24: ✅ Route loaded: /api/vision-ai
+2025-12-29T00:37:24: ✅ Route loaded: /api/agent
+2025-12-29T00:37:24: ✅ Route loaded: /api/voice
+2025-12-29T00:37:24: ✅ Route loaded: /api/agent-tools
+2025-12-29T00:37:24: ✅ Route loaded: /api/personality
+2025-12-29T00:37:24: ✅ Route loaded: /api/emotion
+2025-12-29T00:37:24: ✅ Route loaded: /api/loyalty
+2025-12-29T00:37:24: ✅ Route loaded: /api/guardian
+2025-12-29T00:37:24: ✅ Route loaded: /api/payment
+2025-12-29T00:37:24: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T00:37:24: ✅ Route loaded: /api/client-portal (with Socket.IO)
+2025-12-29T00:37:24: ✅ Voice Realtime WebSocket initialized
+2025-12-29T00:37:24: 💎 All RARE Kernel routes linked successfully
+2025-12-29T00:37:24: ✅ Auto Builder Socket.IO namespace initialized
+2025-12-29T00:37:24: ✅ Voice Realtime Socket.IO namespace initialized
+2025-12-29T00:37:24: ✅ GPT Streaming Socket.IO namespace initialized
+2025-12-29T00:37:24: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T00:37:24: 💎 All Socket.IO namespaces initialized successfully
+2025-12-29T00:37:24: 
+🚀 RARE Backend is LIVE on port: 5000
+2025-12-29T00:37:24: 🌍 Environment: production
+2025-12-29T00:37:24: 🔗 Local Health: http://localhost:5000/health
+2025-12-29T00:37:24: 💎 API Base: https://api.zien-ai.app/api
+
+2025-12-29T14:32:41: ✅ Client Portal path: C:\abo-zien\apps\client-portal
+2025-12-29T14:32:41: ✅ Client Portal static files served from Backend under /client-portal/
+2025-12-29T14:32:41: Starting RARE Kernel Boot Sequence...
+2025-12-29T14:32:41: ✅ Cognitive Debugger initialized
+2025-12-29T14:32:41: ✅ Service Manager initialized
+2025-12-29T14:32:41: ✅ Cognitive Debugger & Service Manager initialized
+2025-12-29T14:32:41: ??? Database tables created
+2025-12-29T14:32:41: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T14:32:41: ✅ Local Database (SQLite) initialized
+2025-12-29T14:32:43: ✅ MongoDB connected successfully
+2025-12-29T14:32:43: ✅ MongoDB connected successfully
+2025-12-29T14:32:43: ✅ Supabase connected successfully
+2025-12-29T14:32:43: ✅ Supabase connected successfully
+2025-12-29T14:32:43: ✅ Route loaded: /api/user/projects
+2025-12-29T14:32:43: ✅ Route loaded: /api/user/settings
+2025-12-29T14:32:43: ✅ Route loaded: /api/payment
+2025-12-29T14:32:43: ✅ Route loaded: /api/payment
+2025-12-29T14:32:43: ✅ Route loaded: /api/kill-switch (EMERGENCY CONTROL)
+2025-12-29T14:32:43: ✅ Route loaded: /api/service-control (Service Management)
+2025-12-29T14:32:43: ✅ Route loaded: /api/twilio
+2025-12-29T14:32:43: ✅ Route loaded: /api/payments
+2025-12-29T14:32:43: ✅ Route loaded: /api/ai
+2025-12-29T14:32:43: ✅ Route loaded: /api/auth
+2025-12-29T14:32:43: ✅ Route loaded: /api/boot
+2025-12-29T14:32:43: ✅ Route loaded: /api/files
+2025-12-29T14:32:43: ✅ Route loaded: /api/maps
+2025-12-29T14:32:43: ✅ Route loaded: /api/weather
+2025-12-29T14:32:43: ✅ Route loaded: /api/cognitive
+2025-12-29T14:32:43: ✅ Route loaded: /api/libraries
+2025-12-29T14:32:44: ✅ Route loaded: /api/auto-builder
+2025-12-29T14:32:44: ✅ Route loaded: /api/codegen
+2025-12-29T14:32:44: ✅ Route loaded: /api/vision
+2025-12-29T14:32:44: ✅ Route loaded: /api/vault
+2025-12-29T14:32:44: ✅ Route loaded: /api/council
+2025-12-29T14:32:44: ✅ Route loaded: /api/sos
+2025-12-29T14:32:44: ✅ Route loaded: /api/security
+2025-12-29T14:32:44: ✅ Route loaded: /api/settings
+2025-12-29T14:32:44: ✅ Route loaded: /api/communication
+2025-12-29T14:32:44: ✅ Route loaded: /api/carplay
+2025-12-29T14:32:44: ✅ Route loaded: /api/voice-realtime
+2025-12-29T14:32:44: ✅ Route loaded: /api/gpt-stream
+2025-12-29T14:32:44: ✅ Route loaded: /api/control-room
+2025-12-29T14:32:44: ✅ Route loaded: /api/file-generator
+2025-12-29T14:32:44: ✅ Route loaded: /api/vision-ai
+2025-12-29T14:32:44: ✅ Route loaded: /api/agent
+2025-12-29T14:32:44: ✅ Route loaded: /api/voice
+2025-12-29T14:32:44: ✅ Route loaded: /api/agent-tools
+2025-12-29T14:32:44: ✅ Route loaded: /api/personality
+2025-12-29T14:32:44: ✅ Route loaded: /api/emotion
+2025-12-29T14:32:44: ✅ Route loaded: /api/loyalty
+2025-12-29T14:32:44: ✅ Route loaded: /api/guardian
+2025-12-29T14:32:44: ✅ Route loaded: /api/payment
+2025-12-29T14:32:44: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T14:32:44: ✅ Route loaded: /api/client-portal (with Socket.IO)
+2025-12-29T14:32:44: ✅ Voice Realtime WebSocket initialized
+2025-12-29T14:32:44: 💎 All RARE Kernel routes linked successfully
+2025-12-29T14:32:44: ✅ Auto Builder Socket.IO namespace initialized
+2025-12-29T14:32:44: ✅ Voice Realtime Socket.IO namespace initialized
+2025-12-29T14:32:44: ✅ GPT Streaming Socket.IO namespace initialized
+2025-12-29T14:32:44: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T14:32:44: 💎 All Socket.IO namespaces initialized successfully
+2025-12-29T14:32:44: 
+🚀 RARE Backend is LIVE on port: 5000
+2025-12-29T14:32:44: 🌍 Environment: production
+2025-12-29T14:32:44: 🔗 Local Health: http://localhost:5000/health
+2025-12-29T14:32:44: 💎 API Base: https://api.zien-ai.app/api
+
+2025-12-29T14:37:01: ✅ Client Portal path: C:\abo-zien\apps\client-portal
+2025-12-29T14:37:01: ✅ Client Portal static files served from Backend under /client-portal/
+2025-12-29T14:37:01: Starting RARE Kernel Boot Sequence...
+2025-12-29T14:37:01: ✅ Cognitive Debugger initialized
+2025-12-29T14:37:01: ✅ Service Manager initialized
+2025-12-29T14:37:02: ✅ Cognitive Debugger & Service Manager initialized
+2025-12-29T14:37:02: ??? Database tables created
+2025-12-29T14:37:02: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T14:37:02: ✅ Local Database (SQLite) initialized
+2025-12-29T14:37:03: ✅ MongoDB connected successfully
+2025-12-29T14:37:03: ✅ MongoDB connected successfully
+2025-12-29T14:37:03: ✅ Supabase connected successfully
+2025-12-29T14:37:03: ✅ Supabase connected successfully
+2025-12-29T14:37:03: ✅ Route loaded: /api/user/projects
+2025-12-29T14:37:03: ✅ Route loaded: /api/user/settings
+2025-12-29T14:37:03: ✅ Route loaded: /api/payment
+2025-12-29T14:37:03: ✅ Route loaded: /api/payment
+2025-12-29T14:37:03: ✅ Route loaded: /api/kill-switch (EMERGENCY CONTROL)
+2025-12-29T14:37:03: ✅ Route loaded: /api/service-control (Service Management)
+2025-12-29T14:37:03: ✅ Route loaded: /api/twilio
+2025-12-29T14:37:03: ✅ Route loaded: /api/payments
+2025-12-29T14:37:04: ✅ Route loaded: /api/ai
+2025-12-29T14:37:04: ✅ Route loaded: /api/auth
+2025-12-29T14:37:04: ✅ Route loaded: /api/boot
+2025-12-29T14:37:04: ✅ Route loaded: /api/files
+2025-12-29T14:37:04: ✅ Route loaded: /api/maps
+2025-12-29T14:37:04: ✅ Route loaded: /api/weather
+2025-12-29T14:37:04: ✅ Route loaded: /api/cognitive
+2025-12-29T14:37:04: ✅ Route loaded: /api/libraries
+2025-12-29T14:37:04: ✅ Route loaded: /api/auto-builder
+2025-12-29T14:37:04: ✅ Route loaded: /api/codegen
+2025-12-29T14:37:05: ✅ Route loaded: /api/vision
+2025-12-29T14:37:05: ✅ Route loaded: /api/vault
+2025-12-29T14:37:05: ✅ Route loaded: /api/council
+2025-12-29T14:37:05: ✅ Route loaded: /api/sos
+2025-12-29T14:37:05: ✅ Route loaded: /api/security
+2025-12-29T14:37:05: ✅ Route loaded: /api/settings
+2025-12-29T14:37:05: ✅ Route loaded: /api/communication
+2025-12-29T14:37:05: ✅ Route loaded: /api/carplay
+2025-12-29T14:37:05: ✅ Route loaded: /api/voice-realtime
+2025-12-29T14:37:05: ✅ Route loaded: /api/gpt-stream
+2025-12-29T14:37:05: ✅ Route loaded: /api/control-room
+2025-12-29T14:37:05: ✅ Route loaded: /api/file-generator
+2025-12-29T14:37:05: ✅ Route loaded: /api/vision-ai
+2025-12-29T14:37:05: ✅ Route loaded: /api/agent
+2025-12-29T14:37:05: ✅ Route loaded: /api/voice
+2025-12-29T14:37:05: ✅ Route loaded: /api/agent-tools
+2025-12-29T14:37:05: ✅ Route loaded: /api/personality
+2025-12-29T14:37:05: ✅ Route loaded: /api/emotion
+2025-12-29T14:37:05: ✅ Route loaded: /api/loyalty
+2025-12-29T14:37:05: ✅ Route loaded: /api/guardian
+2025-12-29T14:37:05: ✅ Route loaded: /api/payment
+2025-12-29T14:37:05: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T14:37:05: ✅ Route loaded: /api/client-portal (with Socket.IO)
+2025-12-29T14:37:05: ✅ Voice Realtime WebSocket initialized
+2025-12-29T14:37:05: 💎 All RARE Kernel routes linked successfully
+2025-12-29T14:37:05: ✅ Auto Builder Socket.IO namespace initialized
+2025-12-29T14:37:05: ✅ Voice Realtime Socket.IO namespace initialized
+2025-12-29T14:37:05: ✅ GPT Streaming Socket.IO namespace initialized
+2025-12-29T14:37:05: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T14:37:05: 💎 All Socket.IO namespaces initialized successfully
+2025-12-29T14:37:05: 
+🚀 RARE Backend is LIVE on port: 5000
+2025-12-29T14:37:05: 🌍 Environment: production
+2025-12-29T14:37:05: 🔗 Local Health: http://localhost:5000/health
+2025-12-29T14:37:05: 💎 API Base: https://api.zien-ai.app/api
+
+2025-12-29T14:37:43: ✅ Client Portal path: C:\abo-zien\apps\client-portal
+2025-12-29T14:37:43: ✅ Client Portal static files served from Backend under /client-portal/
+2025-12-29T14:37:43: Starting RARE Kernel Boot Sequence...
+2025-12-29T14:37:43: ✅ Cognitive Debugger initialized
+2025-12-29T14:37:43: ✅ Service Manager initialized
+2025-12-29T14:37:43: ✅ Cognitive Debugger & Service Manager initialized
+2025-12-29T14:37:43: ??? Database tables created
+2025-12-29T14:37:43: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T14:37:43: ✅ Local Database (SQLite) initialized
+2025-12-29T14:37:45: ✅ MongoDB connected successfully
+2025-12-29T14:37:45: ✅ MongoDB connected successfully
+2025-12-29T14:37:45: ✅ Supabase connected successfully
+2025-12-29T14:37:45: ✅ Supabase connected successfully
+2025-12-29T14:37:45: ✅ Route loaded: /api/user/projects
+2025-12-29T14:37:45: ✅ Route loaded: /api/user/settings
+2025-12-29T14:37:45: ✅ Route loaded: /api/payment
+2025-12-29T14:37:45: ✅ Route loaded: /api/payment
+2025-12-29T14:37:45: ✅ Route loaded: /api/kill-switch (EMERGENCY CONTROL)
+2025-12-29T14:37:45: ✅ Route loaded: /api/service-control (Service Management)
+2025-12-29T14:37:45: ✅ Route loaded: /api/twilio
+2025-12-29T14:37:45: ✅ Route loaded: /api/payments
+2025-12-29T14:37:45: ✅ Route loaded: /api/ai
+2025-12-29T14:37:45: ✅ Route loaded: /api/auth
+2025-12-29T14:37:45: ✅ Route loaded: /api/boot
+2025-12-29T14:37:45: ✅ Route loaded: /api/files
+2025-12-29T14:37:45: ✅ Route loaded: /api/maps
+2025-12-29T14:37:45: ✅ Route loaded: /api/weather
+2025-12-29T14:37:45: ✅ Route loaded: /api/cognitive
+2025-12-29T14:37:45: ✅ Route loaded: /api/libraries
+2025-12-29T14:37:46: ✅ Route loaded: /api/auto-builder
+2025-12-29T14:37:46: ✅ Route loaded: /api/codegen
+2025-12-29T14:37:46: ✅ Route loaded: /api/vision
+2025-12-29T14:37:46: ✅ Route loaded: /api/vault
+2025-12-29T14:37:46: ✅ Route loaded: /api/council
+2025-12-29T14:37:46: ✅ Route loaded: /api/sos
+2025-12-29T14:37:46: ✅ Route loaded: /api/security
+2025-12-29T14:37:46: ✅ Route loaded: /api/settings
+2025-12-29T14:37:46: ✅ Route loaded: /api/communication
+2025-12-29T14:37:46: ✅ Route loaded: /api/carplay
+2025-12-29T14:37:46: ✅ Route loaded: /api/voice-realtime
+2025-12-29T14:37:46: ✅ Route loaded: /api/gpt-stream
+2025-12-29T14:37:46: ✅ Route loaded: /api/control-room
+2025-12-29T14:37:46: ✅ Route loaded: /api/file-generator
+2025-12-29T14:37:46: ✅ Route loaded: /api/vision-ai
+2025-12-29T14:37:46: ✅ Route loaded: /api/agent
+2025-12-29T14:37:46: ✅ Route loaded: /api/voice
+2025-12-29T14:37:46: ✅ Route loaded: /api/agent-tools
+2025-12-29T14:37:46: ✅ Route loaded: /api/personality
+2025-12-29T14:37:46: ✅ Route loaded: /api/emotion
+2025-12-29T14:37:46: ✅ Route loaded: /api/loyalty
+2025-12-29T14:37:46: ✅ Route loaded: /api/guardian
+2025-12-29T14:37:46: ✅ Route loaded: /api/payment
+2025-12-29T14:37:46: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T14:37:46: ✅ Route loaded: /api/client-portal (with Socket.IO)
+2025-12-29T14:37:46: ✅ Voice Realtime WebSocket initialized
+2025-12-29T14:37:46: 💎 All RARE Kernel routes linked successfully
+2025-12-29T14:37:46: ✅ Auto Builder Socket.IO namespace initialized
+2025-12-29T14:37:46: ✅ Voice Realtime Socket.IO namespace initialized
+2025-12-29T14:37:46: ✅ GPT Streaming Socket.IO namespace initialized
+2025-12-29T14:37:46: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T14:37:46: 💎 All Socket.IO namespaces initialized successfully
+2025-12-29T14:37:46: 
+🚀 RARE Backend is LIVE on port: 5000
+2025-12-29T14:37:46: 🌍 Environment: production
+2025-12-29T14:37:46: 🔗 Local Health: http://localhost:5000/health
+2025-12-29T14:37:46: 💎 API Base: https://api.zien-ai.app/api
+
+2025-12-29T14:38:39: ✅ Client Portal path: C:\abo-zien\apps\client-portal
+2025-12-29T14:38:39: ✅ Client Portal static files served from Backend under /client-portal/
+2025-12-29T14:38:39: Starting RARE Kernel Boot Sequence...
+2025-12-29T14:38:39: ✅ Cognitive Debugger initialized
+2025-12-29T14:38:39: ✅ Service Manager initialized
+2025-12-29T14:38:40: ✅ Cognitive Debugger & Service Manager initialized
+2025-12-29T14:38:40: ??? Database tables created
+2025-12-29T14:38:40: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T14:38:40: ✅ Local Database (SQLite) initialized
+2025-12-29T14:38:41: ✅ MongoDB connected successfully
+2025-12-29T14:38:41: ✅ MongoDB connected successfully
+2025-12-29T14:38:41: ✅ Supabase connected successfully
+2025-12-29T14:38:41: ✅ Supabase connected successfully
+2025-12-29T14:38:41: ✅ Route loaded: /api/user/projects
+2025-12-29T14:38:41: ✅ Route loaded: /api/user/settings
+2025-12-29T14:38:41: ✅ Route loaded: /api/payment
+2025-12-29T14:38:41: ✅ Route loaded: /api/payment
+2025-12-29T14:38:41: ✅ Route loaded: /api/kill-switch (EMERGENCY CONTROL)
+2025-12-29T14:38:41: ✅ Route loaded: /api/service-control (Service Management)
+2025-12-29T14:38:42: ✅ Route loaded: /api/twilio
+2025-12-29T14:38:42: ✅ Route loaded: /api/payments
+2025-12-29T14:38:42: ✅ Route loaded: /api/ai
+2025-12-29T14:38:42: ✅ Route loaded: /api/auth
+2025-12-29T14:38:42: ✅ Route loaded: /api/boot
+2025-12-29T14:38:42: ✅ Route loaded: /api/files
+2025-12-29T14:38:42: ✅ Route loaded: /api/maps
+2025-12-29T14:38:42: ✅ Route loaded: /api/weather
+2025-12-29T14:38:42: ✅ Route loaded: /api/cognitive
+2025-12-29T14:38:42: ✅ Route loaded: /api/libraries
+2025-12-29T14:38:42: ✅ Route loaded: /api/auto-builder
+2025-12-29T14:38:42: ✅ Route loaded: /api/codegen
+2025-12-29T14:38:42: ✅ Route loaded: /api/vision
+2025-12-29T14:38:42: ✅ Route loaded: /api/vault
+2025-12-29T14:38:42: ✅ Route loaded: /api/council
+2025-12-29T14:38:42: ✅ Route loaded: /api/sos
+2025-12-29T14:38:42: ✅ Route loaded: /api/security
+2025-12-29T14:38:42: ✅ Route loaded: /api/settings
+2025-12-29T14:38:42: ✅ Route loaded: /api/communication
+2025-12-29T14:38:42: ✅ Route loaded: /api/carplay
+2025-12-29T14:38:42: ✅ Route loaded: /api/voice-realtime
+2025-12-29T14:38:42: ✅ Route loaded: /api/gpt-stream
+2025-12-29T14:38:42: ✅ Route loaded: /api/control-room
+2025-12-29T14:38:42: ✅ Route loaded: /api/file-generator
+2025-12-29T14:38:42: ✅ Route loaded: /api/vision-ai
+2025-12-29T14:38:42: ✅ Route loaded: /api/agent
+2025-12-29T14:38:42: ✅ Route loaded: /api/voice
+2025-12-29T14:38:42: ✅ Route loaded: /api/agent-tools
+2025-12-29T14:38:42: ✅ Route loaded: /api/personality
+2025-12-29T14:38:42: ✅ Route loaded: /api/emotion
+2025-12-29T14:38:42: ✅ Route loaded: /api/loyalty
+2025-12-29T14:38:42: ✅ Route loaded: /api/guardian
+2025-12-29T14:38:42: ✅ Route loaded: /api/payment
+2025-12-29T14:38:42: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T14:38:42: ✅ Route loaded: /api/client-portal (with Socket.IO)
+2025-12-29T14:38:42: ✅ Voice Realtime WebSocket initialized
+2025-12-29T14:38:42: 💎 All RARE Kernel routes linked successfully
+2025-12-29T14:38:42: ✅ Auto Builder Socket.IO namespace initialized
+2025-12-29T14:38:42: ✅ Voice Realtime Socket.IO namespace initialized
+2025-12-29T14:38:42: ✅ GPT Streaming Socket.IO namespace initialized
+2025-12-29T14:38:42: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T14:38:42: 💎 All Socket.IO namespaces initialized successfully
+2025-12-29T14:38:42: 
+🚀 RARE Backend is LIVE on port: 5000
+2025-12-29T14:38:42: 🌍 Environment: production
+2025-12-29T14:38:42: 🔗 Local Health: http://localhost:5000/health
+2025-12-29T14:38:42: 💎 API Base: https://api.zien-ai.app/api
+
+2025-12-29T14:41:00: ✅ Client Portal path: C:\abo-zien\apps\client-portal
+2025-12-29T14:41:00: ✅ Client Portal static files served from Backend under /client-portal/
+2025-12-29T14:41:00: Starting RARE Kernel Boot Sequence...
+2025-12-29T14:41:00: ✅ Cognitive Debugger initialized
+2025-12-29T14:41:00: ✅ Service Manager initialized
+2025-12-29T14:41:01: ✅ Cognitive Debugger & Service Manager initialized
+2025-12-29T14:41:01: ??? Database tables created
+2025-12-29T14:41:01: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T14:41:01: ✅ Local Database (SQLite) initialized
+2025-12-29T14:41:02: ✅ MongoDB connected successfully
+2025-12-29T14:41:02: ✅ MongoDB connected successfully
+2025-12-29T14:41:02: ✅ Supabase connected successfully
+2025-12-29T14:41:02: ✅ Supabase connected successfully
+2025-12-29T14:41:02: ✅ Route loaded: /api/user/projects
+2025-12-29T14:41:02: ✅ Route loaded: /api/user/settings
+2025-12-29T14:41:02: ✅ Route loaded: /api/payment
+2025-12-29T14:41:02: ✅ Route loaded: /api/payment
+2025-12-29T14:41:02: ✅ Route loaded: /api/kill-switch (EMERGENCY CONTROL)
+2025-12-29T14:41:02: ✅ Route loaded: /api/service-control (Service Management)
+2025-12-29T14:41:02: ✅ Route loaded: /api/twilio
+2025-12-29T14:41:02: ✅ Route loaded: /api/payments
+2025-12-29T14:41:02: ✅ Route loaded: /api/ai
+2025-12-29T14:41:02: ✅ Route loaded: /api/auth
+2025-12-29T14:41:02: ✅ Route loaded: /api/boot
+2025-12-29T14:41:02: ✅ Route loaded: /api/files
+2025-12-29T14:41:02: ✅ Route loaded: /api/maps
+2025-12-29T14:41:02: ✅ Route loaded: /api/weather
+2025-12-29T14:41:02: ✅ Route loaded: /api/cognitive
+2025-12-29T14:41:02: ✅ Route loaded: /api/libraries
+2025-12-29T14:41:02: ✅ Route loaded: /api/auto-builder
+2025-12-29T14:41:02: ✅ Route loaded: /api/codegen
+2025-12-29T14:41:02: ✅ Route loaded: /api/vision
+2025-12-29T14:41:02: ✅ Route loaded: /api/vault
+2025-12-29T14:41:02: ✅ Route loaded: /api/council
+2025-12-29T14:41:02: ✅ Route loaded: /api/sos
+2025-12-29T14:41:02: ✅ Route loaded: /api/security
+2025-12-29T14:41:02: ✅ Route loaded: /api/settings
+2025-12-29T14:41:03: ✅ Route loaded: /api/communication
+2025-12-29T14:41:03: ✅ Route loaded: /api/carplay
+2025-12-29T14:41:03: ✅ Route loaded: /api/voice-realtime
+2025-12-29T14:41:03: ✅ Route loaded: /api/gpt-stream
+2025-12-29T14:41:03: ✅ Route loaded: /api/control-room
+2025-12-29T14:41:03: ✅ Route loaded: /api/file-generator
+2025-12-29T14:41:03: ✅ Route loaded: /api/vision-ai
+2025-12-29T14:41:03: ✅ Route loaded: /api/agent
+2025-12-29T14:41:03: ✅ Route loaded: /api/voice
+2025-12-29T14:41:03: ✅ Route loaded: /api/agent-tools
+2025-12-29T14:41:03: ✅ Route loaded: /api/personality
+2025-12-29T14:41:03: ✅ Route loaded: /api/emotion
+2025-12-29T14:41:03: ✅ Route loaded: /api/loyalty
+2025-12-29T14:41:03: ✅ Route loaded: /api/guardian
+2025-12-29T14:41:03: ✅ Route loaded: /api/payment
+2025-12-29T14:41:03: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T14:41:03: ✅ Route loaded: /api/client-portal (with Socket.IO)
+2025-12-29T14:41:03: ✅ Voice Realtime WebSocket initialized
+2025-12-29T14:41:03: 💎 All RARE Kernel routes linked successfully
+2025-12-29T14:41:03: ✅ Auto Builder Socket.IO namespace initialized
+2025-12-29T14:41:03: ✅ Voice Realtime Socket.IO namespace initialized
+2025-12-29T14:41:03: ✅ GPT Streaming Socket.IO namespace initialized
+2025-12-29T14:41:03: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T14:41:03: 💎 All Socket.IO namespaces initialized successfully
+2025-12-29T14:41:03: 
+🚀 RARE Backend is LIVE on port: 5000
+2025-12-29T14:41:03: 🌍 Environment: production
+2025-12-29T14:41:03: 🔗 Local Health: http://localhost:5000/health
+2025-12-29T14:41:03: 💎 API Base: https://api.zien-ai.app/api
+
+2025-12-29T14:41:32: ✅ Client Portal path: C:\abo-zien\apps\client-portal
+2025-12-29T14:41:32: ✅ Client Portal static files served from Backend under /client-portal/
+2025-12-29T14:41:32: Starting RARE Kernel Boot Sequence...
+2025-12-29T14:41:32: ✅ Cognitive Debugger initialized
+2025-12-29T14:41:32: ✅ Service Manager initialized
+2025-12-29T14:41:32: ✅ Cognitive Debugger & Service Manager initialized
+2025-12-29T14:41:32: ??? Database tables created
+2025-12-29T14:41:32: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T14:41:32: ✅ Local Database (SQLite) initialized
+2025-12-29T14:41:34: ✅ MongoDB connected successfully
+2025-12-29T14:41:34: ✅ MongoDB connected successfully
+2025-12-29T14:41:34: ✅ Supabase connected successfully
+2025-12-29T14:41:34: ✅ Supabase connected successfully
+2025-12-29T14:41:34: ✅ Route loaded: /api/user/projects
+2025-12-29T14:41:34: ✅ Route loaded: /api/user/settings
+2025-12-29T14:41:34: ✅ Route loaded: /api/payment
+2025-12-29T14:41:34: ✅ Route loaded: /api/payment
+2025-12-29T14:41:34: ✅ Route loaded: /api/kill-switch (EMERGENCY CONTROL)
+2025-12-29T14:41:34: ✅ Route loaded: /api/service-control (Service Management)
+2025-12-29T14:41:34: ✅ Route loaded: /api/twilio
+2025-12-29T14:41:34: ✅ Route loaded: /api/payments
+2025-12-29T14:41:34: ✅ Route loaded: /api/ai
+2025-12-29T14:41:34: ✅ Route loaded: /api/auth
+2025-12-29T14:41:34: ✅ Route loaded: /api/boot
+2025-12-29T14:41:34: ✅ Route loaded: /api/files
+2025-12-29T14:41:34: ✅ Route loaded: /api/maps
+2025-12-29T14:41:34: ✅ Route loaded: /api/weather
+2025-12-29T14:41:34: ✅ Route loaded: /api/cognitive
+2025-12-29T14:41:34: ✅ Route loaded: /api/libraries
+2025-12-29T14:41:34: ✅ Route loaded: /api/auto-builder
+2025-12-29T14:41:34: ✅ Route loaded: /api/codegen
+2025-12-29T14:41:34: ✅ Route loaded: /api/vision
+2025-12-29T14:41:34: ✅ Route loaded: /api/vault
+2025-12-29T14:41:34: ✅ Route loaded: /api/council
+2025-12-29T14:41:34: ✅ Route loaded: /api/sos
+2025-12-29T14:41:34: ✅ Route loaded: /api/security
+2025-12-29T14:41:34: ✅ Route loaded: /api/settings
+2025-12-29T14:41:34: ✅ Route loaded: /api/communication
+2025-12-29T14:41:34: ✅ Route loaded: /api/carplay
+2025-12-29T14:41:34: ✅ Route loaded: /api/voice-realtime
+2025-12-29T14:41:34: ✅ Route loaded: /api/gpt-stream
+2025-12-29T14:41:34: ✅ Route loaded: /api/control-room
+2025-12-29T14:41:34: ✅ Route loaded: /api/file-generator
+2025-12-29T14:41:34: ✅ Route loaded: /api/vision-ai
+2025-12-29T14:41:34: ✅ Route loaded: /api/agent
+2025-12-29T14:41:34: ✅ Route loaded: /api/voice
+2025-12-29T14:41:34: ✅ Route loaded: /api/agent-tools
+2025-12-29T14:41:34: ✅ Route loaded: /api/personality
+2025-12-29T14:41:34: ✅ Route loaded: /api/emotion
+2025-12-29T14:41:34: ✅ Route loaded: /api/loyalty
+2025-12-29T14:41:34: ✅ Route loaded: /api/guardian
+2025-12-29T14:41:34: ✅ Route loaded: /api/payment
+2025-12-29T14:41:34: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T14:41:34: ✅ Route loaded: /api/client-portal (with Socket.IO)
+2025-12-29T14:41:34: ✅ Voice Realtime WebSocket initialized
+2025-12-29T14:41:34: 💎 All RARE Kernel routes linked successfully
+2025-12-29T14:41:35: ✅ Auto Builder Socket.IO namespace initialized
+2025-12-29T14:41:35: ✅ Voice Realtime Socket.IO namespace initialized
+2025-12-29T14:41:35: ✅ GPT Streaming Socket.IO namespace initialized
+2025-12-29T14:41:35: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T14:41:35: 💎 All Socket.IO namespaces initialized successfully
+2025-12-29T14:41:35: 
+🚀 RARE Backend is LIVE on port: 5000
+2025-12-29T14:41:35: 🌍 Environment: production
+2025-12-29T14:41:35: 🔗 Local Health: http://localhost:5000/health
+2025-12-29T14:41:35: 💎 API Base: https://api.zien-ai.app/api
+
+2025-12-29T14:47:41: ✅ Client Portal path: C:\abo-zien\apps\client-portal
+2025-12-29T14:47:41: ✅ Client Portal static files served from Backend under /client-portal/
+2025-12-29T14:47:41: Starting RARE Kernel Boot Sequence...
+2025-12-29T14:47:41: ✅ Cognitive Debugger initialized
+2025-12-29T14:47:41: ✅ Service Manager initialized
+2025-12-29T14:47:41: ✅ Cognitive Debugger & Service Manager initialized
+2025-12-29T14:47:41: ??? Database tables created
+2025-12-29T14:47:41: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T14:47:41: ✅ Local Database (SQLite) initialized
+2025-12-29T14:47:42: ✅ MongoDB connected successfully
+2025-12-29T14:47:42: ✅ MongoDB connected successfully
+2025-12-29T14:47:42: ✅ Supabase connected successfully
+2025-12-29T14:47:42: ✅ Supabase connected successfully
+2025-12-29T14:47:42: ✅ Route loaded: /api/user/projects
+2025-12-29T14:47:42: ✅ Route loaded: /api/user/settings
+2025-12-29T14:47:42: ✅ Route loaded: /api/payment
+2025-12-29T14:47:42: ✅ Route loaded: /api/payment
+2025-12-29T14:47:42: ✅ Route loaded: /api/kill-switch (EMERGENCY CONTROL)
+2025-12-29T14:47:42: ✅ Route loaded: /api/service-control (Service Management)
+2025-12-29T14:47:42: ✅ Route loaded: /api/twilio
+2025-12-29T14:47:43: ✅ Route loaded: /api/payments
+2025-12-29T14:47:43: ✅ Route loaded: /api/ai
+2025-12-29T14:47:43: ✅ Route loaded: /api/auth
+2025-12-29T14:47:43: ✅ Route loaded: /api/boot
+2025-12-29T14:47:43: ✅ Route loaded: /api/files
+2025-12-29T14:47:43: ✅ Route loaded: /api/maps
+2025-12-29T14:47:43: ✅ Route loaded: /api/weather
+2025-12-29T14:47:43: ✅ Route loaded: /api/cognitive
+2025-12-29T14:47:43: ✅ Route loaded: /api/libraries
+2025-12-29T14:47:43: ✅ Route loaded: /api/auto-builder
+2025-12-29T14:47:43: ✅ Route loaded: /api/codegen
+2025-12-29T14:47:43: ✅ Route loaded: /api/vision
+2025-12-29T14:47:43: ✅ Route loaded: /api/vault
+2025-12-29T14:47:43: ✅ Route loaded: /api/council
+2025-12-29T14:47:43: ✅ Route loaded: /api/sos
+2025-12-29T14:47:43: ✅ Route loaded: /api/security
+2025-12-29T14:47:43: ✅ Route loaded: /api/settings
+2025-12-29T14:47:43: ✅ Route loaded: /api/communication
+2025-12-29T14:47:43: ✅ Route loaded: /api/carplay
+2025-12-29T14:47:43: ✅ Route loaded: /api/voice-realtime
+2025-12-29T14:47:43: ✅ Route loaded: /api/gpt-stream
+2025-12-29T14:47:43: ✅ Route loaded: /api/control-room
+2025-12-29T14:47:43: ✅ Route loaded: /api/file-generator
+2025-12-29T14:47:43: ✅ Route loaded: /api/vision-ai
+2025-12-29T14:47:43: ✅ Route loaded: /api/agent
+2025-12-29T14:47:43: ✅ Route loaded: /api/voice
+2025-12-29T14:47:43: ✅ Route loaded: /api/agent-tools
+2025-12-29T14:47:43: ✅ Route loaded: /api/personality
+2025-12-29T14:47:44: ✅ Route loaded: /api/emotion
+2025-12-29T14:47:44: ✅ Route loaded: /api/loyalty
+2025-12-29T14:47:44: ✅ Route loaded: /api/guardian
+2025-12-29T14:47:44: ✅ Route loaded: /api/payment
+2025-12-29T14:47:44: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T14:47:44: ✅ Route loaded: /api/client-portal (with Socket.IO)
+2025-12-29T14:47:44: ✅ Voice Realtime WebSocket initialized
+2025-12-29T14:47:44: 💎 All RARE Kernel routes linked successfully
+2025-12-29T14:47:44: ✅ Auto Builder Socket.IO namespace initialized
+2025-12-29T14:47:44: ✅ Voice Realtime Socket.IO namespace initialized
+2025-12-29T14:47:44: ✅ GPT Streaming Socket.IO namespace initialized
+2025-12-29T14:47:44: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T14:47:44: 💎 All Socket.IO namespaces initialized successfully
+2025-12-29T14:47:44: 
+🚀 RARE Backend is LIVE on port: 5000
+2025-12-29T14:47:44: 🌍 Environment: production
+2025-12-29T14:47:44: 🔗 Local Health: http://localhost:5000/health
+2025-12-29T14:47:44: 💎 API Base: https://api.zien-ai.app/api
+
+2025-12-29T14:55:06: ✅ Client Portal path: C:\abo-zien\apps\client-portal
+2025-12-29T14:55:06: ✅ Client Portal static files served from Backend under /client-portal/
+2025-12-29T14:55:06: Starting RARE Kernel Boot Sequence...
+2025-12-29T14:55:06: ✅ Cognitive Debugger initialized
+2025-12-29T14:55:06: ✅ Service Manager initialized
+2025-12-29T14:55:06: ✅ Cognitive Debugger & Service Manager initialized
+2025-12-29T14:55:06: ??? Database tables created
+2025-12-29T14:55:06: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T14:55:06: ✅ Local Database (SQLite) initialized
+2025-12-29T14:55:07: ✅ MongoDB connected successfully
+2025-12-29T14:55:07: ✅ MongoDB connected successfully
+2025-12-29T14:55:07: ✅ Supabase connected successfully
+2025-12-29T14:55:07: ✅ Supabase connected successfully
+2025-12-29T14:55:07: ✅ Route loaded: /api/user/projects
+2025-12-29T14:55:07: ✅ Route loaded: /api/user/settings
+2025-12-29T14:55:07: ✅ Route loaded: /api/payment
+2025-12-29T14:55:07: ✅ Route loaded: /api/payment
+2025-12-29T14:55:07: ✅ Route loaded: /api/kill-switch (EMERGENCY CONTROL)
+2025-12-29T14:55:07: ✅ Route loaded: /api/service-control (Service Management)
+2025-12-29T14:55:07: ✅ Route loaded: /api/twilio
+2025-12-29T14:55:07: ✅ Route loaded: /api/payments
+2025-12-29T14:55:08: ✅ Route loaded: /api/ai
+2025-12-29T14:55:08: ✅ Route loaded: /api/auth
+2025-12-29T14:55:08: ✅ Route loaded: /api/boot
+2025-12-29T14:55:08: ✅ Route loaded: /api/files
+2025-12-29T14:55:08: ✅ Route loaded: /api/maps
+2025-12-29T14:55:08: ✅ Route loaded: /api/weather
+2025-12-29T14:55:08: ✅ Route loaded: /api/cognitive
+2025-12-29T14:55:08: ✅ Route loaded: /api/libraries
+2025-12-29T14:55:08: ✅ Route loaded: /api/auto-builder
+2025-12-29T14:55:08: ✅ Route loaded: /api/codegen
+2025-12-29T14:55:08: ✅ Route loaded: /api/vision
+2025-12-29T14:55:08: ✅ Route loaded: /api/vault
+2025-12-29T14:55:08: ✅ Route loaded: /api/council
+2025-12-29T14:55:08: ✅ Route loaded: /api/sos
+2025-12-29T14:55:08: ✅ Route loaded: /api/security
+2025-12-29T14:55:08: ✅ Route loaded: /api/settings
+2025-12-29T14:55:08: ✅ Route loaded: /api/communication
+2025-12-29T14:55:08: ✅ Route loaded: /api/carplay
+2025-12-29T14:55:08: ✅ Route loaded: /api/voice-realtime
+2025-12-29T14:55:08: ✅ Route loaded: /api/gpt-stream
+2025-12-29T14:55:08: ✅ Route loaded: /api/control-room
+2025-12-29T14:55:08: ✅ Route loaded: /api/file-generator
+2025-12-29T14:55:08: ✅ Route loaded: /api/vision-ai
+2025-12-29T14:55:08: ✅ Route loaded: /api/agent
+2025-12-29T14:55:08: ✅ Route loaded: /api/voice
+2025-12-29T14:55:08: ✅ Route loaded: /api/agent-tools
+2025-12-29T14:55:08: ✅ Route loaded: /api/personality
+2025-12-29T14:55:08: ✅ Route loaded: /api/emotion
+2025-12-29T14:55:08: ✅ Route loaded: /api/loyalty
+2025-12-29T14:55:08: ✅ Route loaded: /api/guardian
+2025-12-29T14:55:08: ✅ Route loaded: /api/payment
+2025-12-29T14:55:08: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T14:55:08: ✅ Route loaded: /api/client-portal (with Socket.IO)
+2025-12-29T14:55:08: ✅ Voice Realtime WebSocket initialized
+2025-12-29T14:55:08: 💎 All RARE Kernel routes linked successfully
+2025-12-29T14:55:08: ✅ Auto Builder Socket.IO namespace initialized
+2025-12-29T14:55:08: ✅ Voice Realtime Socket.IO namespace initialized
+2025-12-29T14:55:08: ✅ GPT Streaming Socket.IO namespace initialized
+2025-12-29T14:55:08: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T14:55:08: 💎 All Socket.IO namespaces initialized successfully
+2025-12-29T14:55:08: 
+🚀 RARE Backend is LIVE on port: 5000
+2025-12-29T14:55:08: 🌍 Environment: production
+2025-12-29T14:55:08: 🔗 Local Health: http://localhost:5000/health
+2025-12-29T14:55:08: 💎 API Base: https://api.zien-ai.app/api
+
+2025-12-29T14:56:57: ✅ Client Portal path: C:\abo-zien\apps\client-portal
+2025-12-29T14:56:57: ✅ Client Portal static files served from Backend under /client-portal/
+2025-12-29T14:56:57: Starting RARE Kernel Boot Sequence...
+2025-12-29T14:56:57: ✅ Cognitive Debugger initialized
+2025-12-29T14:56:57: ✅ Service Manager initialized
+2025-12-29T14:56:57: ✅ Cognitive Debugger & Service Manager initialized
+2025-12-29T14:56:57: ??? Database tables created
+2025-12-29T14:56:57: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T14:56:57: ✅ Local Database (SQLite) initialized
+2025-12-29T14:56:58: ✅ MongoDB connected successfully
+2025-12-29T14:56:58: ✅ MongoDB connected successfully
+2025-12-29T14:56:58: ✅ Supabase connected successfully
+2025-12-29T14:56:58: ✅ Supabase connected successfully
+2025-12-29T14:56:58: ✅ Route loaded: /api/user/projects
+2025-12-29T14:56:58: ✅ Route loaded: /api/user/settings
+2025-12-29T14:56:58: ✅ Route loaded: /api/payment
+2025-12-29T14:56:58: ✅ Route loaded: /api/payment
+2025-12-29T14:56:58: ✅ Route loaded: /api/kill-switch (EMERGENCY CONTROL)
+2025-12-29T14:56:58: ✅ Route loaded: /api/service-control (Service Management)
+2025-12-29T14:56:58: ✅ Route loaded: /api/twilio
+2025-12-29T14:56:58: ✅ Route loaded: /api/payments
+2025-12-29T14:56:59: ✅ Route loaded: /api/ai
+2025-12-29T14:56:59: ✅ Route loaded: /api/auth
+2025-12-29T14:56:59: ✅ Route loaded: /api/boot
+2025-12-29T14:56:59: ✅ Route loaded: /api/files
+2025-12-29T14:56:59: ✅ Route loaded: /api/maps
+2025-12-29T14:56:59: ✅ Route loaded: /api/weather
+2025-12-29T14:56:59: ✅ Route loaded: /api/cognitive
+2025-12-29T14:56:59: ✅ Route loaded: /api/libraries
+2025-12-29T14:56:59: ✅ Route loaded: /api/auto-builder
+2025-12-29T14:56:59: ✅ Route loaded: /api/codegen
+2025-12-29T14:56:59: ✅ Route loaded: /api/vision
+2025-12-29T14:56:59: ✅ Route loaded: /api/vault
+2025-12-29T14:56:59: ✅ Route loaded: /api/council
+2025-12-29T14:56:59: ✅ Route loaded: /api/sos
+2025-12-29T14:56:59: ✅ Route loaded: /api/security
+2025-12-29T14:56:59: ✅ Route loaded: /api/settings
+2025-12-29T14:56:59: ✅ Route loaded: /api/communication
+2025-12-29T14:56:59: ✅ Route loaded: /api/carplay
+2025-12-29T14:56:59: ✅ Route loaded: /api/voice-realtime
+2025-12-29T14:56:59: ✅ Route loaded: /api/gpt-stream
+2025-12-29T14:56:59: ✅ Route loaded: /api/control-room
+2025-12-29T14:56:59: ✅ Route loaded: /api/file-generator
+2025-12-29T14:56:59: ✅ Route loaded: /api/vision-ai
+2025-12-29T14:56:59: ✅ Route loaded: /api/agent
+2025-12-29T14:56:59: ✅ Route loaded: /api/voice
+2025-12-29T14:56:59: ✅ Route loaded: /api/agent-tools
+2025-12-29T14:56:59: ✅ Route loaded: /api/personality
+2025-12-29T14:56:59: ✅ Route loaded: /api/emotion
+2025-12-29T14:56:59: ✅ Route loaded: /api/loyalty
+2025-12-29T14:56:59: ✅ Route loaded: /api/guardian
+2025-12-29T14:56:59: ✅ Route loaded: /api/payment
+2025-12-29T14:56:59: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T14:56:59: ✅ Route loaded: /api/client-portal (with Socket.IO)
+2025-12-29T14:56:59: ✅ Voice Realtime WebSocket initialized
+2025-12-29T14:56:59: 💎 All RARE Kernel routes linked successfully
+2025-12-29T14:56:59: ✅ Auto Builder Socket.IO namespace initialized
+2025-12-29T14:56:59: ✅ Voice Realtime Socket.IO namespace initialized
+2025-12-29T14:56:59: ✅ GPT Streaming Socket.IO namespace initialized
+2025-12-29T14:56:59: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T14:56:59: 💎 All Socket.IO namespaces initialized successfully
+2025-12-29T14:56:59: 
+🚀 RARE Backend is LIVE on port: 5000
+2025-12-29T14:56:59: 🌍 Environment: production
+2025-12-29T14:56:59: 🔗 Local Health: http://localhost:5000/health
+2025-12-29T14:56:59: 💎 API Base: https://api.zien-ai.app/api
+
+2025-12-29T15:00:07: ✅ Client Portal path: C:\abo-zien\apps\client-portal
+2025-12-29T15:00:07: ✅ Client Portal static files served from Backend under /client-portal/
+2025-12-29T15:00:07: Starting RARE Kernel Boot Sequence...
+2025-12-29T15:00:07: ✅ Cognitive Debugger initialized
+2025-12-29T15:00:07: ✅ Service Manager initialized
+2025-12-29T15:00:08: ✅ Cognitive Debugger & Service Manager initialized
+2025-12-29T15:00:08: ??? Database tables created
+2025-12-29T15:00:08: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T15:00:08: ✅ Local Database (SQLite) initialized
+2025-12-29T15:00:09: ✅ MongoDB connected successfully
+2025-12-29T15:00:09: ✅ MongoDB connected successfully
+2025-12-29T15:00:09: ✅ Supabase connected successfully
+2025-12-29T15:00:09: ✅ Supabase connected successfully
+2025-12-29T15:00:09: ✅ Route loaded: /api/user/projects
+2025-12-29T15:00:09: ✅ Route loaded: /api/user/settings
+2025-12-29T15:00:09: ✅ Route loaded: /api/payment
+2025-12-29T15:00:09: ✅ Route loaded: /api/payment
+2025-12-29T15:00:09: ✅ Route loaded: /api/kill-switch (EMERGENCY CONTROL)
+2025-12-29T15:00:09: ✅ Route loaded: /api/service-control (Service Management)
+2025-12-29T15:00:09: ✅ Route loaded: /api/twilio
+2025-12-29T15:00:09: ✅ Route loaded: /api/payments
+2025-12-29T15:00:09: ✅ Route loaded: /api/ai
+2025-12-29T15:00:09: ✅ Route loaded: /api/auth
+2025-12-29T15:00:09: ✅ Route loaded: /api/boot
+2025-12-29T15:00:09: ✅ Route loaded: /api/files
+2025-12-29T15:00:09: ✅ Route loaded: /api/maps
+2025-12-29T15:00:09: ✅ Route loaded: /api/weather
+2025-12-29T15:00:09: ✅ Route loaded: /api/cognitive
+2025-12-29T15:00:09: ✅ Route loaded: /api/libraries
+2025-12-29T15:00:09: ✅ Route loaded: /api/auto-builder
+2025-12-29T15:00:09: ✅ Route loaded: /api/codegen
+2025-12-29T15:00:09: ✅ Route loaded: /api/vision
+2025-12-29T15:00:09: ✅ Route loaded: /api/vault
+2025-12-29T15:00:09: ✅ Route loaded: /api/council
+2025-12-29T15:00:09: ✅ Route loaded: /api/sos
+2025-12-29T15:00:09: ✅ Route loaded: /api/security
+2025-12-29T15:00:09: ✅ Route loaded: /api/settings
+2025-12-29T15:00:09: ✅ Route loaded: /api/communication
+2025-12-29T15:00:09: ✅ Route loaded: /api/carplay
+2025-12-29T15:00:09: ✅ Route loaded: /api/voice-realtime
+2025-12-29T15:00:10: ✅ Route loaded: /api/gpt-stream
+2025-12-29T15:00:10: ✅ Route loaded: /api/control-room
+2025-12-29T15:00:10: ✅ Route loaded: /api/file-generator
+2025-12-29T15:00:10: ✅ Route loaded: /api/vision-ai
+2025-12-29T15:00:10: ✅ Route loaded: /api/agent
+2025-12-29T15:00:10: ✅ Route loaded: /api/voice
+2025-12-29T15:00:10: ✅ Route loaded: /api/agent-tools
+2025-12-29T15:00:10: ✅ Route loaded: /api/personality
+2025-12-29T15:00:10: ✅ Route loaded: /api/emotion
+2025-12-29T15:00:10: ✅ Route loaded: /api/loyalty
+2025-12-29T15:00:10: ✅ Route loaded: /api/guardian
+2025-12-29T15:00:10: ✅ Route loaded: /api/payment
+2025-12-29T15:00:10: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T15:00:10: ✅ Route loaded: /api/client-portal (with Socket.IO)
+2025-12-29T15:00:10: ✅ Voice Realtime WebSocket initialized
+2025-12-29T15:00:10: 💎 All RARE Kernel routes linked successfully
+2025-12-29T15:00:10: ✅ Auto Builder Socket.IO namespace initialized
+2025-12-29T15:00:10: ✅ Voice Realtime Socket.IO namespace initialized
+2025-12-29T15:00:10: ✅ GPT Streaming Socket.IO namespace initialized
+2025-12-29T15:00:10: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T15:00:10: 💎 All Socket.IO namespaces initialized successfully
+2025-12-29T15:00:10: 
+🚀 RARE Backend is LIVE on port: 5000
+2025-12-29T15:00:10: 🌍 Environment: production
+2025-12-29T15:00:10: 🔗 Local Health: http://localhost:5000/health
+2025-12-29T15:00:10: 💎 API Base: https://api.zien-ai.app/api
+
+2025-12-29T15:03:19: ✅ Client Portal path: C:\abo-zien\apps\client-portal
+2025-12-29T15:03:19: ✅ Client Portal static files served from Backend under /client-portal/
+2025-12-29T15:03:19: Starting RARE Kernel Boot Sequence...
+2025-12-29T15:03:19: ✅ Cognitive Debugger initialized
+2025-12-29T15:03:19: ✅ Service Manager initialized
+2025-12-29T15:03:20: ✅ Cognitive Debugger & Service Manager initialized
+2025-12-29T15:03:20: ??? Database tables created
+2025-12-29T15:03:20: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T15:03:20: ✅ Local Database (SQLite) initialized
+2025-12-29T15:03:21: ✅ MongoDB connected successfully
+2025-12-29T15:03:21: ✅ MongoDB connected successfully
+2025-12-29T15:03:21: ✅ Supabase connected successfully
+2025-12-29T15:03:21: ✅ Supabase connected successfully
+2025-12-29T15:03:21: ✅ Route loaded: /api/user/projects
+2025-12-29T15:03:21: ✅ Route loaded: /api/user/settings
+2025-12-29T15:03:21: ✅ Route loaded: /api/payment
+2025-12-29T15:03:21: ✅ Route loaded: /api/payment
+2025-12-29T15:03:21: ✅ Route loaded: /api/kill-switch (EMERGENCY CONTROL)
+2025-12-29T15:03:21: ✅ Route loaded: /api/service-control (Service Management)
+2025-12-29T15:03:21: ✅ Route loaded: /api/twilio
+2025-12-29T15:03:21: ✅ Route loaded: /api/payments
+2025-12-29T15:03:21: ✅ Route loaded: /api/ai
+2025-12-29T15:03:21: ✅ Route loaded: /api/auth
+2025-12-29T15:03:21: ✅ Route loaded: /api/boot
+2025-12-29T15:03:21: ✅ Route loaded: /api/files
+2025-12-29T15:03:21: ✅ Route loaded: /api/maps
+2025-12-29T15:03:21: ✅ Route loaded: /api/weather
+2025-12-29T15:03:21: ✅ Route loaded: /api/cognitive
+2025-12-29T15:03:21: ✅ Route loaded: /api/libraries
+2025-12-29T15:03:21: ✅ Route loaded: /api/auto-builder
+2025-12-29T15:03:21: ✅ Route loaded: /api/codegen
+2025-12-29T15:03:21: ✅ Route loaded: /api/vision
+2025-12-29T15:03:21: ✅ Route loaded: /api/vault
+2025-12-29T15:03:21: ✅ Route loaded: /api/council
+2025-12-29T15:03:21: ✅ Route loaded: /api/sos
+2025-12-29T15:03:21: ✅ Route loaded: /api/security
+2025-12-29T15:03:22: ✅ Route loaded: /api/settings
+2025-12-29T15:03:22: ✅ Route loaded: /api/communication
+2025-12-29T15:03:22: ✅ Route loaded: /api/carplay
+2025-12-29T15:03:22: ✅ Route loaded: /api/voice-realtime
+2025-12-29T15:03:22: ✅ Route loaded: /api/gpt-stream
+2025-12-29T15:03:22: ✅ Route loaded: /api/control-room
+2025-12-29T15:03:22: ✅ Route loaded: /api/file-generator
+2025-12-29T15:03:22: ✅ Route loaded: /api/vision-ai
+2025-12-29T15:03:22: ✅ Route loaded: /api/agent
+2025-12-29T15:03:22: ✅ Route loaded: /api/voice
+2025-12-29T15:03:22: ✅ Route loaded: /api/agent-tools
+2025-12-29T15:03:22: ✅ Route loaded: /api/personality
+2025-12-29T15:03:22: ✅ Route loaded: /api/emotion
+2025-12-29T15:03:22: ✅ Route loaded: /api/loyalty
+2025-12-29T15:03:22: ✅ Route loaded: /api/guardian
+2025-12-29T15:03:22: ✅ Route loaded: /api/payment
+2025-12-29T15:03:22: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T15:03:22: ✅ Route loaded: /api/client-portal (with Socket.IO)
+2025-12-29T15:03:22: ✅ Voice Realtime WebSocket initialized
+2025-12-29T15:03:22: 💎 All RARE Kernel routes linked successfully
+2025-12-29T15:03:22: ✅ Auto Builder Socket.IO namespace initialized
+2025-12-29T15:03:22: ✅ Voice Realtime Socket.IO namespace initialized
+2025-12-29T15:03:22: ✅ GPT Streaming Socket.IO namespace initialized
+2025-12-29T15:03:22: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T15:03:22: 💎 All Socket.IO namespaces initialized successfully
+2025-12-29T15:03:22: 
+🚀 RARE Backend is LIVE on port: 5000
+2025-12-29T15:03:22: 🌍 Environment: production
+2025-12-29T15:03:22: 🔗 Local Health: http://localhost:5000/health
+2025-12-29T15:03:22: 💎 API Base: https://api.zien-ai.app/api
+
+2025-12-29T15:07:35: ✅ Client Portal path: C:\abo-zien\apps\client-portal
+2025-12-29T15:07:35: ✅ Client Portal static files served from Backend under /client-portal/
+2025-12-29T15:07:35: Starting RARE Kernel Boot Sequence...
+2025-12-29T15:07:35: ✅ Cognitive Debugger initialized
+2025-12-29T15:07:35: ✅ Service Manager initialized
+2025-12-29T15:07:36: ✅ Cognitive Debugger & Service Manager initialized
+2025-12-29T15:07:36: ??? Database tables created
+2025-12-29T15:07:36: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T15:07:36: ✅ Local Database (SQLite) initialized
+2025-12-29T15:07:37: ✅ MongoDB connected successfully
+2025-12-29T15:07:37: ✅ MongoDB connected successfully
+2025-12-29T15:07:37: ✅ Supabase connected successfully
+2025-12-29T15:07:37: ✅ Supabase connected successfully
+2025-12-29T15:07:37: ✅ Route loaded: /api/user/projects
+2025-12-29T15:07:37: ✅ Route loaded: /api/user/settings
+2025-12-29T15:07:37: ✅ Route loaded: /api/payment
+2025-12-29T15:07:37: ✅ Route loaded: /api/payment
+2025-12-29T15:07:37: ✅ Route loaded: /api/kill-switch (EMERGENCY CONTROL)
+2025-12-29T15:07:37: ✅ Route loaded: /api/service-control (Service Management)
+2025-12-29T15:07:37: ✅ Route loaded: /api/twilio
+2025-12-29T15:07:37: ✅ Route loaded: /api/payments
+2025-12-29T15:07:37: ✅ Route loaded: /api/ai
+2025-12-29T15:07:37: ✅ Route loaded: /api/auth
+2025-12-29T15:07:37: ✅ Route loaded: /api/boot
+2025-12-29T15:07:37: ✅ Route loaded: /api/files
+2025-12-29T15:07:37: ✅ Route loaded: /api/maps
+2025-12-29T15:07:37: ✅ Route loaded: /api/weather
+2025-12-29T15:07:37: ✅ Route loaded: /api/cognitive
+2025-12-29T15:07:37: ✅ Route loaded: /api/libraries
+2025-12-29T15:07:37: ✅ Route loaded: /api/auto-builder
+2025-12-29T15:07:37: ✅ Route loaded: /api/codegen
+2025-12-29T15:07:37: ✅ Route loaded: /api/vision
+2025-12-29T15:07:37: ✅ Route loaded: /api/vault
+2025-12-29T15:07:37: ✅ Route loaded: /api/council
+2025-12-29T15:07:37: ✅ Route loaded: /api/sos
+2025-12-29T15:07:37: ✅ Route loaded: /api/security
+2025-12-29T15:07:37: ✅ Route loaded: /api/settings
+2025-12-29T15:07:37: ✅ Route loaded: /api/communication
+2025-12-29T15:07:37: ✅ Route loaded: /api/carplay
+2025-12-29T15:07:37: ✅ Route loaded: /api/voice-realtime
+2025-12-29T15:07:37: ✅ Route loaded: /api/gpt-stream
+2025-12-29T15:07:37: ✅ Route loaded: /api/control-room
+2025-12-29T15:07:37: ✅ Route loaded: /api/file-generator
+2025-12-29T15:07:37: ✅ Route loaded: /api/vision-ai
+2025-12-29T15:07:37: ✅ Route loaded: /api/agent
+2025-12-29T15:07:37: ✅ Route loaded: /api/voice
+2025-12-29T15:07:37: ✅ Route loaded: /api/agent-tools
+2025-12-29T15:07:37: ✅ Route loaded: /api/personality
+2025-12-29T15:07:37: ✅ Route loaded: /api/emotion
+2025-12-29T15:07:37: ✅ Route loaded: /api/loyalty
+2025-12-29T15:07:37: ✅ Route loaded: /api/guardian
+2025-12-29T15:07:37: ✅ Route loaded: /api/payment
+2025-12-29T15:07:37: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T15:07:37: ✅ Route loaded: /api/client-portal (with Socket.IO)
+2025-12-29T15:07:37: ✅ Voice Realtime WebSocket initialized
+2025-12-29T15:07:37: 💎 All RARE Kernel routes linked successfully
+2025-12-29T15:07:37: ✅ Auto Builder Socket.IO namespace initialized
+2025-12-29T15:07:37: ✅ Voice Realtime Socket.IO namespace initialized
+2025-12-29T15:07:37: ✅ GPT Streaming Socket.IO namespace initialized
+2025-12-29T15:07:37: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T15:07:37: 💎 All Socket.IO namespaces initialized successfully
+2025-12-29T15:07:37: 
+🚀 RARE Backend is LIVE on port: 5000
+2025-12-29T15:07:37: 🌍 Environment: production
+2025-12-29T15:07:37: 🔗 Local Health: http://localhost:5000/health
+2025-12-29T15:07:37: 💎 API Base: https://api.zien-ai.app/api
+
+2025-12-29T15:17:33: ✅ Client Portal path: C:\abo-zien\apps\client-portal
+2025-12-29T15:17:33: ✅ Client Portal static files served from Backend under /client-portal/
+2025-12-29T15:17:33: Starting RARE Kernel Boot Sequence...
+2025-12-29T15:17:33: ✅ Cognitive Debugger initialized
+2025-12-29T15:17:33: ✅ Service Manager initialized
+2025-12-29T15:17:34: ✅ Cognitive Debugger & Service Manager initialized
+2025-12-29T15:17:34: ??? Database tables created
+2025-12-29T15:17:34: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T15:17:34: ✅ Local Database (SQLite) initialized
+2025-12-29T15:17:35: ✅ MongoDB connected successfully
+2025-12-29T15:17:35: ✅ MongoDB connected successfully
+2025-12-29T15:17:35: ✅ Supabase connected successfully
+2025-12-29T15:17:35: ✅ Supabase connected successfully
+2025-12-29T15:17:35: ✅ Route loaded: /api/user/projects
+2025-12-29T15:17:35: ✅ Route loaded: /api/user/settings
+2025-12-29T15:17:35: ✅ Route loaded: /api/payment
+2025-12-29T15:17:35: ✅ Route loaded: /api/payment
+2025-12-29T15:17:35: ✅ Route loaded: /api/kill-switch (EMERGENCY CONTROL)
+2025-12-29T15:17:35: ✅ Route loaded: /api/service-control (Service Management)
+2025-12-29T15:17:35: ✅ Route loaded: /api/twilio
+2025-12-29T15:17:35: ✅ Route loaded: /api/payments
+2025-12-29T15:17:35: ✅ Route loaded: /api/ai
+2025-12-29T15:17:35: ✅ Route loaded: /api/auth
+2025-12-29T15:17:35: ✅ Route loaded: /api/boot
+2025-12-29T15:17:35: ✅ Route loaded: /api/files
+2025-12-29T15:17:35: ✅ Route loaded: /api/maps
+2025-12-29T15:17:35: ✅ Route loaded: /api/weather
+2025-12-29T15:17:35: ✅ Route loaded: /api/cognitive
+2025-12-29T15:17:35: ✅ Route loaded: /api/libraries
+2025-12-29T15:17:36: ✅ Route loaded: /api/auto-builder
+2025-12-29T15:17:36: ✅ Route loaded: /api/codegen
+2025-12-29T15:17:36: ✅ Route loaded: /api/vision
+2025-12-29T15:17:36: ✅ Route loaded: /api/vault
+2025-12-29T15:17:36: ✅ Route loaded: /api/council
+2025-12-29T15:17:36: ✅ Route loaded: /api/sos
+2025-12-29T15:17:36: ✅ Route loaded: /api/security
+2025-12-29T15:17:36: ✅ Route loaded: /api/settings
+2025-12-29T15:17:36: ✅ Route loaded: /api/communication
+2025-12-29T15:17:36: ✅ Route loaded: /api/carplay
+2025-12-29T15:17:36: ✅ Route loaded: /api/voice-realtime
+2025-12-29T15:17:36: ✅ Route loaded: /api/gpt-stream
+2025-12-29T15:17:36: ✅ Route loaded: /api/control-room
+2025-12-29T15:17:36: ✅ Route loaded: /api/file-generator
+2025-12-29T15:17:36: ✅ Route loaded: /api/vision-ai
+2025-12-29T15:17:36: ✅ Route loaded: /api/agent
+2025-12-29T15:17:36: ✅ Route loaded: /api/voice
+2025-12-29T15:17:36: ✅ Route loaded: /api/agent-tools
+2025-12-29T15:17:36: ✅ Route loaded: /api/personality
+2025-12-29T15:17:36: ✅ Route loaded: /api/emotion
+2025-12-29T15:17:36: ✅ Route loaded: /api/loyalty
+2025-12-29T15:17:36: ✅ Route loaded: /api/guardian
+2025-12-29T15:17:36: ✅ Route loaded: /api/payment
+2025-12-29T15:17:36: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T15:17:36: ✅ Route loaded: /api/client-portal (with Socket.IO)
+2025-12-29T15:17:36: ✅ Voice Realtime WebSocket initialized
+2025-12-29T15:17:36: 💎 All RARE Kernel routes linked successfully
+2025-12-29T15:17:36: ✅ Auto Builder Socket.IO namespace initialized
+2025-12-29T15:17:36: ✅ Voice Realtime Socket.IO namespace initialized
+2025-12-29T15:17:36: ✅ GPT Streaming Socket.IO namespace initialized
+2025-12-29T15:17:36: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T15:17:36: 💎 All Socket.IO namespaces initialized successfully
+2025-12-29T15:17:36: 
+🚀 RARE Backend is LIVE on port: 5000
+2025-12-29T15:17:36: 🌍 Environment: production
+2025-12-29T15:17:36: 🔗 Local Health: http://localhost:5000/health
+2025-12-29T15:17:36: 💎 API Base: https://api.zien-ai.app/api
+
+2025-12-29T15:19:10: ✅ Client Portal path: C:\abo-zien\apps\client-portal
+2025-12-29T15:19:10: ✅ Client Portal static files served from Backend under /client-portal/
+2025-12-29T15:19:10: Starting RARE Kernel Boot Sequence...
+2025-12-29T15:19:10: ✅ Cognitive Debugger initialized
+2025-12-29T15:19:10: ✅ Service Manager initialized
+2025-12-29T15:19:11: ✅ Cognitive Debugger & Service Manager initialized
+2025-12-29T15:19:11: ??? Database tables created
+2025-12-29T15:19:11: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T15:19:11: ✅ Local Database (SQLite) initialized
+2025-12-29T15:19:11: ✅ MongoDB connected successfully
+2025-12-29T15:19:11: ✅ MongoDB connected successfully
+2025-12-29T15:19:11: ✅ Supabase connected successfully
+2025-12-29T15:19:11: ✅ Supabase connected successfully
+2025-12-29T15:19:12: ✅ Route loaded: /api/user/projects
+2025-12-29T15:19:12: ✅ Route loaded: /api/user/settings
+2025-12-29T15:19:12: ✅ Route loaded: /api/payment
+2025-12-29T15:19:12: ✅ Route loaded: /api/payment
+2025-12-29T15:19:12: ✅ Route loaded: /api/kill-switch (EMERGENCY CONTROL)
+2025-12-29T15:19:12: ✅ Route loaded: /api/service-control (Service Management)
+2025-12-29T15:19:12: ✅ Route loaded: /api/twilio
+2025-12-29T15:19:12: ✅ Route loaded: /api/payments
+2025-12-29T15:19:12: ✅ Route loaded: /api/ai
+2025-12-29T15:19:12: ✅ Route loaded: /api/auth
+2025-12-29T15:19:12: ✅ Route loaded: /api/boot
+2025-12-29T15:19:12: ✅ Route loaded: /api/files
+2025-12-29T15:19:12: ✅ Route loaded: /api/maps
+2025-12-29T15:19:12: ✅ Route loaded: /api/weather
+2025-12-29T15:19:12: ✅ Route loaded: /api/cognitive
+2025-12-29T15:19:12: ✅ Route loaded: /api/libraries
+2025-12-29T15:19:12: ✅ Route loaded: /api/auto-builder
+2025-12-29T15:19:12: ✅ Route loaded: /api/codegen
+2025-12-29T15:19:12: ✅ Route loaded: /api/vision
+2025-12-29T15:19:12: ✅ Route loaded: /api/vault
+2025-12-29T15:19:12: ✅ Route loaded: /api/council
+2025-12-29T15:19:12: ✅ Route loaded: /api/sos
+2025-12-29T15:19:12: ✅ Route loaded: /api/security
+2025-12-29T15:19:12: ✅ Route loaded: /api/settings
+2025-12-29T15:19:12: ✅ Route loaded: /api/communication
+2025-12-29T15:19:12: ✅ Route loaded: /api/carplay
+2025-12-29T15:19:12: ✅ Route loaded: /api/voice-realtime
+2025-12-29T15:19:12: ✅ Route loaded: /api/gpt-stream
+2025-12-29T15:19:12: ✅ Route loaded: /api/control-room
+2025-12-29T15:19:12: ✅ Route loaded: /api/file-generator
+2025-12-29T15:19:12: ✅ Route loaded: /api/vision-ai
+2025-12-29T15:19:12: ✅ Route loaded: /api/agent
+2025-12-29T15:19:12: ✅ Route loaded: /api/voice
+2025-12-29T15:19:12: ✅ Route loaded: /api/agent-tools
+2025-12-29T15:19:12: ✅ Route loaded: /api/personality
+2025-12-29T15:19:12: ✅ Route loaded: /api/emotion
+2025-12-29T15:19:12: ✅ Route loaded: /api/loyalty
+2025-12-29T15:19:12: ✅ Route loaded: /api/guardian
+2025-12-29T15:19:12: ✅ Route loaded: /api/payment
+2025-12-29T15:19:13: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T15:19:13: ✅ Route loaded: /api/client-portal (with Socket.IO)
+2025-12-29T15:19:13: ✅ Voice Realtime WebSocket initialized
+2025-12-29T15:19:13: 💎 All RARE Kernel routes linked successfully
+2025-12-29T15:19:13: ✅ Auto Builder Socket.IO namespace initialized
+2025-12-29T15:19:13: ✅ Voice Realtime Socket.IO namespace initialized
+2025-12-29T15:19:13: ✅ GPT Streaming Socket.IO namespace initialized
+2025-12-29T15:19:13: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T15:19:13: 💎 All Socket.IO namespaces initialized successfully
+2025-12-29T15:19:13: 
+🚀 RARE Backend is LIVE on port: 5000
+2025-12-29T15:19:13: 🌍 Environment: production
+2025-12-29T15:19:13: 🔗 Local Health: http://localhost:5000/health
+2025-12-29T15:19:13: 💎 API Base: https://api.zien-ai.app/api
+
+2025-12-29T15:19:53: ✅ Client Portal path: C:\abo-zien\apps\client-portal
+2025-12-29T15:19:53: ✅ Client Portal static files served from Backend under /client-portal/
+2025-12-29T15:19:53: Starting RARE Kernel Boot Sequence...
+2025-12-29T15:19:53: ✅ Cognitive Debugger initialized
+2025-12-29T15:19:53: ✅ Service Manager initialized
+2025-12-29T15:19:53: ✅ Cognitive Debugger & Service Manager initialized
+2025-12-29T15:19:53: ??? Database tables created
+2025-12-29T15:19:53: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T15:19:53: ✅ Local Database (SQLite) initialized
+2025-12-29T15:19:55: ✅ MongoDB connected successfully
+2025-12-29T15:19:55: ✅ MongoDB connected successfully
+2025-12-29T15:19:55: ✅ Supabase connected successfully
+2025-12-29T15:19:55: ✅ Supabase connected successfully
+2025-12-29T15:19:55: ✅ Route loaded: /api/user/projects
+2025-12-29T15:19:55: ✅ Route loaded: /api/user/settings
+2025-12-29T15:19:55: ✅ Route loaded: /api/payment
+2025-12-29T15:19:55: ✅ Route loaded: /api/payment
+2025-12-29T15:19:55: ✅ Route loaded: /api/kill-switch (EMERGENCY CONTROL)
+2025-12-29T15:19:55: ✅ Route loaded: /api/service-control (Service Management)
+2025-12-29T15:19:55: ✅ Route loaded: /api/twilio
+2025-12-29T15:19:55: ✅ Route loaded: /api/payments
+2025-12-29T15:19:55: ✅ Route loaded: /api/ai
+2025-12-29T15:19:55: ✅ Route loaded: /api/auth
+2025-12-29T15:19:55: ✅ Route loaded: /api/boot
+2025-12-29T15:19:55: ✅ Route loaded: /api/files
+2025-12-29T15:19:55: ✅ Route loaded: /api/maps
+2025-12-29T15:19:55: ✅ Route loaded: /api/weather
+2025-12-29T15:19:55: ✅ Route loaded: /api/cognitive
+2025-12-29T15:19:55: ✅ Route loaded: /api/libraries
+2025-12-29T15:19:55: ✅ Route loaded: /api/auto-builder
+2025-12-29T15:19:55: ✅ Route loaded: /api/codegen
+2025-12-29T15:19:55: ✅ Route loaded: /api/vision
+2025-12-29T15:19:55: ✅ Route loaded: /api/vault
+2025-12-29T15:19:55: ✅ Route loaded: /api/council
+2025-12-29T15:19:55: ✅ Route loaded: /api/sos
+2025-12-29T15:19:55: ✅ Route loaded: /api/security
+2025-12-29T15:19:55: ✅ Route loaded: /api/settings
+2025-12-29T15:19:55: ✅ Route loaded: /api/communication
+2025-12-29T15:19:55: ✅ Route loaded: /api/carplay
+2025-12-29T15:19:55: ✅ Route loaded: /api/voice-realtime
+2025-12-29T15:19:55: ✅ Route loaded: /api/gpt-stream
+2025-12-29T15:19:55: ✅ Route loaded: /api/control-room
+2025-12-29T15:19:55: ✅ Route loaded: /api/file-generator
+2025-12-29T15:19:55: ✅ Route loaded: /api/vision-ai
+2025-12-29T15:19:56: ✅ Route loaded: /api/agent
+2025-12-29T15:19:56: ✅ Route loaded: /api/voice
+2025-12-29T15:19:56: ✅ Route loaded: /api/agent-tools
+2025-12-29T15:19:56: ✅ Route loaded: /api/personality
+2025-12-29T15:19:56: ✅ Route loaded: /api/emotion
+2025-12-29T15:19:56: ✅ Route loaded: /api/loyalty
+2025-12-29T15:19:56: ✅ Route loaded: /api/guardian
+2025-12-29T15:19:56: ✅ Route loaded: /api/payment
+2025-12-29T15:19:56: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T15:19:56: ✅ Route loaded: /api/client-portal (with Socket.IO)
+2025-12-29T15:19:56: ✅ Voice Realtime WebSocket initialized
+2025-12-29T15:19:56: 💎 All RARE Kernel routes linked successfully
+2025-12-29T15:19:56: ✅ Auto Builder Socket.IO namespace initialized
+2025-12-29T15:19:56: ✅ Voice Realtime Socket.IO namespace initialized
+2025-12-29T15:19:56: ✅ GPT Streaming Socket.IO namespace initialized
+2025-12-29T15:19:56: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T15:19:56: 💎 All Socket.IO namespaces initialized successfully
+2025-12-29T15:19:56: 
+🚀 RARE Backend is LIVE on port: 5000
+2025-12-29T15:19:56: 🌍 Environment: production
+2025-12-29T15:19:56: 🔗 Local Health: http://localhost:5000/health
+2025-12-29T15:19:56: 💎 API Base: https://api.zien-ai.app/api
+
+2025-12-29T15:20:31: ✅ Client Portal path: C:\abo-zien\apps\client-portal
+2025-12-29T15:20:31: ✅ Client Portal static files served from Backend under /client-portal/
+2025-12-29T15:20:31: Starting RARE Kernel Boot Sequence...
+2025-12-29T15:20:31: ✅ Cognitive Debugger initialized
+2025-12-29T15:20:31: ✅ Service Manager initialized
+2025-12-29T15:20:32: ✅ Cognitive Debugger & Service Manager initialized
+2025-12-29T15:20:32: ??? Database tables created
+2025-12-29T15:20:32: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T15:20:32: ✅ Local Database (SQLite) initialized
+2025-12-29T15:20:33: ✅ MongoDB connected successfully
+2025-12-29T15:20:33: ✅ MongoDB connected successfully
+2025-12-29T15:20:33: ✅ Supabase connected successfully
+2025-12-29T15:20:33: ✅ Supabase connected successfully
+2025-12-29T15:20:33: ✅ Route loaded: /api/user/projects
+2025-12-29T15:20:33: ✅ Route loaded: /api/user/settings
+2025-12-29T15:20:33: ✅ Route loaded: /api/payment
+2025-12-29T15:20:33: ✅ Route loaded: /api/payment
+2025-12-29T15:20:33: ✅ Route loaded: /api/kill-switch (EMERGENCY CONTROL)
+2025-12-29T15:20:33: ✅ Route loaded: /api/service-control (Service Management)
+2025-12-29T15:20:33: ✅ Route loaded: /api/twilio
+2025-12-29T15:20:33: ✅ Route loaded: /api/payments
+2025-12-29T15:20:34: ✅ Route loaded: /api/ai
+2025-12-29T15:20:34: ✅ Route loaded: /api/auth
+2025-12-29T15:20:34: ✅ Route loaded: /api/boot
+2025-12-29T15:20:34: ✅ Route loaded: /api/files
+2025-12-29T15:20:34: ✅ Route loaded: /api/maps
+2025-12-29T15:20:34: ✅ Route loaded: /api/weather
+2025-12-29T15:20:34: ✅ Route loaded: /api/cognitive
+2025-12-29T15:20:34: ✅ Route loaded: /api/libraries
+2025-12-29T15:20:34: ✅ Route loaded: /api/auto-builder
+2025-12-29T15:20:34: ✅ Route loaded: /api/codegen
+2025-12-29T15:20:34: ✅ Route loaded: /api/vision
+2025-12-29T15:20:34: ✅ Route loaded: /api/vault
+2025-12-29T15:20:34: ✅ Route loaded: /api/council
+2025-12-29T15:20:34: ✅ Route loaded: /api/sos
+2025-12-29T15:20:34: ✅ Route loaded: /api/security
+2025-12-29T15:20:34: ✅ Route loaded: /api/settings
+2025-12-29T15:20:34: ✅ Route loaded: /api/communication
+2025-12-29T15:20:34: ✅ Route loaded: /api/carplay
+2025-12-29T15:20:34: ✅ Route loaded: /api/voice-realtime
+2025-12-29T15:20:34: ✅ Route loaded: /api/gpt-stream
+2025-12-29T15:20:34: ✅ Route loaded: /api/control-room
+2025-12-29T15:20:34: ✅ Route loaded: /api/file-generator
+2025-12-29T15:20:34: ✅ Route loaded: /api/vision-ai
+2025-12-29T15:20:34: ✅ Route loaded: /api/agent
+2025-12-29T15:20:34: ✅ Route loaded: /api/voice
+2025-12-29T15:20:34: ✅ Route loaded: /api/agent-tools
+2025-12-29T15:20:34: ✅ Route loaded: /api/personality
+2025-12-29T15:20:34: ✅ Route loaded: /api/emotion
+2025-12-29T15:20:34: ✅ Route loaded: /api/loyalty
+2025-12-29T15:20:34: ✅ Route loaded: /api/guardian
+2025-12-29T15:20:34: ✅ Route loaded: /api/payment
+2025-12-29T15:20:34: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T15:20:34: ✅ Route loaded: /api/client-portal (with Socket.IO)
+2025-12-29T15:20:34: ✅ Voice Realtime WebSocket initialized
+2025-12-29T15:20:34: 💎 All RARE Kernel routes linked successfully
+2025-12-29T15:20:34: ✅ Auto Builder Socket.IO namespace initialized
+2025-12-29T15:20:34: ✅ Voice Realtime Socket.IO namespace initialized
+2025-12-29T15:20:34: ✅ GPT Streaming Socket.IO namespace initialized
+2025-12-29T15:20:34: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T15:20:34: 💎 All Socket.IO namespaces initialized successfully
+2025-12-29T15:20:34: 
+🚀 RARE Backend is LIVE on port: 5000
+2025-12-29T15:20:34: 🌍 Environment: production
+2025-12-29T15:20:34: 🔗 Local Health: http://localhost:5000/health
+2025-12-29T15:20:34: 💎 API Base: https://api.zien-ai.app/api
+
+2025-12-29T17:44:21: ✅ Client Portal path: C:\abo-zien\apps\client-portal
+2025-12-29T17:44:21: ✅ Client Portal static files served from Backend under /client-portal/
+2025-12-29T17:44:21: Starting RARE Kernel Boot Sequence...
+2025-12-29T17:44:21: ✅ Cognitive Debugger initialized
+2025-12-29T17:44:21: ✅ Service Manager initialized
+2025-12-29T17:44:21: ✅ Cognitive Debugger & Service Manager initialized
+2025-12-29T17:44:21: ??? Database tables created
+2025-12-29T17:44:21: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T17:44:21: ✅ Local Database (SQLite) initialized
+2025-12-29T17:44:22: ✅ MongoDB connected successfully
+2025-12-29T17:44:22: ✅ MongoDB connected successfully
+2025-12-29T17:44:22: ✅ Supabase connected successfully
+2025-12-29T17:44:22: ✅ Supabase connected successfully
+2025-12-29T17:44:23: ✅ Route loaded: /api/user/projects
+2025-12-29T17:44:23: ✅ Route loaded: /api/user/settings
+2025-12-29T17:44:23: ✅ Route loaded: /api/payment
+2025-12-29T17:44:23: ✅ Route loaded: /api/payment
+2025-12-29T17:44:23: ✅ Route loaded: /api/kill-switch (EMERGENCY CONTROL)
+2025-12-29T17:44:23: ✅ Route loaded: /api/service-control (Service Management)
+2025-12-29T17:44:23: ✅ Route loaded: /api/twilio
+2025-12-29T17:44:23: ✅ Route loaded: /api/payments
+2025-12-29T17:44:23: ✅ Route loaded: /api/ai
+2025-12-29T17:44:23: ✅ Route loaded: /api/auth
+2025-12-29T17:44:23: ✅ Route loaded: /api/boot
+2025-12-29T17:44:23: ✅ Route loaded: /api/files
+2025-12-29T17:44:23: ✅ Route loaded: /api/maps
+2025-12-29T17:44:23: ✅ Route loaded: /api/weather
+2025-12-29T17:44:23: ✅ Route loaded: /api/cognitive
+2025-12-29T17:44:23: ✅ Route loaded: /api/libraries
+2025-12-29T17:44:23: ✅ Route loaded: /api/auto-builder
+2025-12-29T17:44:23: ✅ Route loaded: /api/codegen
+2025-12-29T17:44:24: ✅ Route loaded: /api/vision
+2025-12-29T17:44:24: ✅ Route loaded: /api/vault
+2025-12-29T17:44:24: ✅ Route loaded: /api/council
+2025-12-29T17:44:24: ✅ Route loaded: /api/sos
+2025-12-29T17:44:24: ✅ Route loaded: /api/security
+2025-12-29T17:44:24: ✅ Route loaded: /api/settings
+2025-12-29T17:44:24: ✅ Route loaded: /api/communication
+2025-12-29T17:44:24: ✅ Route loaded: /api/carplay
+2025-12-29T17:44:24: ✅ Route loaded: /api/voice-realtime
+2025-12-29T17:44:24: ✅ Route loaded: /api/gpt-stream
+2025-12-29T17:44:24: ✅ Route loaded: /api/control-room
+2025-12-29T17:44:24: ✅ Route loaded: /api/file-generator
+2025-12-29T17:44:24: ✅ Route loaded: /api/vision-ai
+2025-12-29T17:44:24: ✅ Route loaded: /api/agent
+2025-12-29T17:44:24: ✅ Route loaded: /api/voice
+2025-12-29T17:44:24: ✅ Route loaded: /api/agent-tools
+2025-12-29T17:44:24: ✅ Route loaded: /api/personality
+2025-12-29T17:44:24: ✅ Route loaded: /api/emotion
+2025-12-29T17:44:24: ✅ Route loaded: /api/loyalty
+2025-12-29T17:44:24: ✅ Route loaded: /api/guardian
+2025-12-29T17:44:24: ✅ Route loaded: /api/payment
+2025-12-29T17:44:24: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T17:44:24: ✅ Route loaded: /api/client-portal (with Socket.IO)
+2025-12-29T17:44:24: ✅ Voice Realtime WebSocket initialized
+2025-12-29T17:44:24: 💎 All RARE Kernel routes linked successfully
+2025-12-29T17:44:24: ✅ Auto Builder Socket.IO namespace initialized
+2025-12-29T17:44:24: ✅ Voice Realtime Socket.IO namespace initialized
+2025-12-29T17:44:24: ✅ GPT Streaming Socket.IO namespace initialized
+2025-12-29T17:44:24: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T17:44:24: 💎 All Socket.IO namespaces initialized successfully
+2025-12-29T17:44:24: 
+🚀 RARE Backend is LIVE on port: 5000
+2025-12-29T17:44:24: 🌍 Environment: production
+2025-12-29T17:44:24: 🔗 Local Health: http://localhost:5000/health
+2025-12-29T17:44:24: 💎 API Base: https://api.zien-ai.app/api
+
+2025-12-29T17:47:06: ✅ Client Portal path: C:\abo-zien\apps\client-portal
+2025-12-29T17:47:06: ✅ Client Portal static files served from Backend under /client-portal/
+2025-12-29T17:47:06: Starting RARE Kernel Boot Sequence...
+2025-12-29T17:47:06: ✅ Cognitive Debugger initialized
+2025-12-29T17:47:06: ✅ Service Manager initialized
+2025-12-29T17:47:06: ✅ Cognitive Debugger & Service Manager initialized
+2025-12-29T17:47:06: ??? Database tables created
+2025-12-29T17:47:06: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T17:47:06: ✅ Local Database (SQLite) initialized
+2025-12-29T17:47:07: ✅ MongoDB connected successfully
+2025-12-29T17:47:07: ✅ MongoDB connected successfully
+2025-12-29T17:47:07: ✅ Supabase connected successfully
+2025-12-29T17:47:07: ✅ Supabase connected successfully
+2025-12-29T17:47:07: ✅ Route loaded: /api/user/projects
+2025-12-29T17:47:07: ✅ Route loaded: /api/user/settings
+2025-12-29T17:47:07: ✅ Route loaded: /api/payment
+2025-12-29T17:47:07: ✅ Route loaded: /api/payment
+2025-12-29T17:47:07: ✅ Route loaded: /api/kill-switch (EMERGENCY CONTROL)
+2025-12-29T17:47:07: ✅ Route loaded: /api/service-control (Service Management)
+2025-12-29T17:47:07: ✅ Route loaded: /api/twilio
+2025-12-29T17:47:07: ✅ Route loaded: /api/payments
+2025-12-29T17:47:07: ✅ Route loaded: /api/ai
+2025-12-29T17:47:07: ✅ Route loaded: /api/auth
+2025-12-29T17:47:07: ✅ Route loaded: /api/boot
+2025-12-29T17:47:08: ✅ Route loaded: /api/files
+2025-12-29T17:47:08: ✅ Route loaded: /api/maps
+2025-12-29T17:47:08: ✅ Route loaded: /api/weather
+2025-12-29T17:47:08: ✅ Route loaded: /api/cognitive
+2025-12-29T17:47:08: ✅ Route loaded: /api/libraries
+2025-12-29T17:47:08: ✅ Route loaded: /api/auto-builder
+2025-12-29T17:47:08: ✅ Route loaded: /api/codegen
+2025-12-29T17:47:08: ✅ Route loaded: /api/vision
+2025-12-29T17:47:08: ✅ Route loaded: /api/vault
+2025-12-29T17:47:08: ✅ Route loaded: /api/council
+2025-12-29T17:47:08: ✅ Route loaded: /api/sos
+2025-12-29T17:47:08: ✅ Route loaded: /api/security
+2025-12-29T17:47:08: ✅ Route loaded: /api/settings
+2025-12-29T17:47:08: ✅ Route loaded: /api/communication
+2025-12-29T17:47:08: ✅ Route loaded: /api/carplay
+2025-12-29T17:47:08: ✅ Route loaded: /api/voice-realtime
+2025-12-29T17:47:08: ✅ Route loaded: /api/gpt-stream
+2025-12-29T17:47:08: ✅ Route loaded: /api/control-room
+2025-12-29T17:47:08: ✅ Route loaded: /api/file-generator
+2025-12-29T17:47:08: ✅ Route loaded: /api/vision-ai
+2025-12-29T17:47:08: ✅ Route loaded: /api/agent
+2025-12-29T17:47:08: ✅ Route loaded: /api/voice
+2025-12-29T17:47:08: ✅ Route loaded: /api/agent-tools
+2025-12-29T17:47:08: ✅ Route loaded: /api/personality
+2025-12-29T17:47:08: ✅ Route loaded: /api/emotion
+2025-12-29T17:47:08: ✅ Route loaded: /api/loyalty
+2025-12-29T17:47:08: ✅ Route loaded: /api/guardian
+2025-12-29T17:47:08: ✅ Route loaded: /api/payment
+2025-12-29T17:47:08: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T17:47:08: ✅ Route loaded: /api/client-portal (with Socket.IO)
+2025-12-29T17:47:08: ✅ Voice Realtime WebSocket initialized
+2025-12-29T17:47:08: 💎 All RARE Kernel routes linked successfully
+2025-12-29T17:47:08: ✅ Auto Builder Socket.IO namespace initialized
+2025-12-29T17:47:08: ✅ Voice Realtime Socket.IO namespace initialized
+2025-12-29T17:47:08: ✅ GPT Streaming Socket.IO namespace initialized
+2025-12-29T17:47:08: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T17:47:08: 💎 All Socket.IO namespaces initialized successfully
+2025-12-29T17:47:08: 
+🚀 RARE Backend is LIVE on port: 5000
+2025-12-29T17:47:08: 🌍 Environment: production
+2025-12-29T17:47:08: 🔗 Local Health: http://localhost:5000/health
+2025-12-29T17:47:08: 💎 API Base: https://api.zien-ai.app/api
+
+2025-12-29T18:16:16: ✅ Client Portal path: C:\abo-zien\apps\client-portal
+2025-12-29T18:16:16: ✅ Client Portal static files served from Backend under /client-portal/
+2025-12-29T18:16:16: Starting RARE Kernel Boot Sequence...
+2025-12-29T18:16:16: ✅ Cognitive Debugger initialized
+2025-12-29T18:16:16: ✅ Service Manager initialized
+2025-12-29T18:16:17: ✅ Cognitive Debugger & Service Manager initialized
+2025-12-29T18:16:17: ??? Database tables created
+2025-12-29T18:16:17: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T18:16:17: ✅ Local Database (SQLite) initialized
+2025-12-29T18:16:18: ✅ MongoDB connected successfully
+2025-12-29T18:16:18: ✅ MongoDB connected successfully
+2025-12-29T18:16:18: ✅ Supabase connected successfully
+2025-12-29T18:16:18: ✅ Supabase connected successfully
+2025-12-29T18:16:18: ✅ Route loaded: /api/user/projects
+2025-12-29T18:16:18: ✅ Route loaded: /api/user/settings
+2025-12-29T18:16:18: ✅ Route loaded: /api/payment
+2025-12-29T18:16:18: ✅ Route loaded: /api/payment
+2025-12-29T18:16:18: ✅ Route loaded: /api/kill-switch (EMERGENCY CONTROL)
+2025-12-29T18:16:18: ✅ Route loaded: /api/service-control (Service Management)
+2025-12-29T18:16:18: ✅ Route loaded: /api/twilio
+2025-12-29T18:16:18: ✅ Route loaded: /api/payments
+2025-12-29T18:16:19: ✅ Route loaded: /api/ai
+2025-12-29T18:16:19: ✅ Route loaded: /api/auth
+2025-12-29T18:16:19: ✅ Route loaded: /api/boot
+2025-12-29T18:16:19: ✅ Route loaded: /api/files
+2025-12-29T18:16:19: ✅ Route loaded: /api/maps
+2025-12-29T18:16:19: ✅ Route loaded: /api/weather
+2025-12-29T18:16:19: ✅ Route loaded: /api/cognitive
+2025-12-29T18:16:19: ✅ Route loaded: /api/libraries
+2025-12-29T18:16:19: ✅ Route loaded: /api/auto-builder
+2025-12-29T18:16:19: ✅ Route loaded: /api/codegen
+2025-12-29T18:16:19: ✅ Route loaded: /api/vision
+2025-12-29T18:16:19: ✅ Route loaded: /api/vault
+2025-12-29T18:16:19: ✅ Route loaded: /api/council
+2025-12-29T18:16:19: ✅ Route loaded: /api/sos
+2025-12-29T18:16:19: ✅ Route loaded: /api/security
+2025-12-29T18:16:19: ✅ Route loaded: /api/settings
+2025-12-29T18:16:19: ✅ Route loaded: /api/communication
+2025-12-29T18:16:19: ✅ Route loaded: /api/carplay
+2025-12-29T18:16:19: ✅ Route loaded: /api/voice-realtime
+2025-12-29T18:16:19: ✅ Route loaded: /api/gpt-stream
+2025-12-29T18:16:19: ✅ Route loaded: /api/control-room
+2025-12-29T18:16:19: ✅ Route loaded: /api/file-generator
+2025-12-29T18:16:19: ✅ Route loaded: /api/vision-ai
+2025-12-29T18:16:19: ✅ Route loaded: /api/agent
+2025-12-29T18:16:19: ✅ Route loaded: /api/voice
+2025-12-29T18:16:19: ✅ Route loaded: /api/agent-tools
+2025-12-29T18:16:19: ✅ Route loaded: /api/personality
+2025-12-29T18:16:19: ✅ Route loaded: /api/emotion
+2025-12-29T18:16:20: ✅ Route loaded: /api/loyalty
+2025-12-29T18:16:20: ✅ Route loaded: /api/guardian
+2025-12-29T18:16:20: ✅ Route loaded: /api/payment
+2025-12-29T18:16:20: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T18:16:20: ✅ Route loaded: /api/client-portal (with Socket.IO)
+2025-12-29T18:16:20: ✅ Voice Realtime WebSocket initialized
+2025-12-29T18:16:20: 💎 All RARE Kernel routes linked successfully
+2025-12-29T18:16:20: ✅ Auto Builder Socket.IO namespace initialized
+2025-12-29T18:16:20: ✅ Voice Realtime Socket.IO namespace initialized
+2025-12-29T18:16:20: ✅ GPT Streaming Socket.IO namespace initialized
+2025-12-29T18:16:20: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T18:16:20: 💎 All Socket.IO namespaces initialized successfully
+2025-12-29T18:16:20: 
+🚀 RARE Backend is LIVE on port: 5000
+2025-12-29T18:16:20: 🌍 Environment: production
+2025-12-29T18:16:20: 🔗 Local Health: http://localhost:5000/health
+2025-12-29T18:16:20: 💎 API Base: https://api.zien-ai.app/api
+
+2025-12-29T18:23:48: ✅ Client Portal path: C:\abo-zien\apps\client-portal
+2025-12-29T18:23:48: ✅ Client Portal static files served from Backend under /client-portal/
+2025-12-29T18:23:48: Starting RARE Kernel Boot Sequence...
+2025-12-29T18:23:48: ✅ Cognitive Debugger initialized
+2025-12-29T18:23:48: ✅ Service Manager initialized
+2025-12-29T18:23:48: ✅ Cognitive Debugger & Service Manager initialized
+2025-12-29T18:23:48: ??? Database tables created
+2025-12-29T18:23:48: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T18:23:48: ✅ Local Database (SQLite) initialized
+2025-12-29T18:23:50: ✅ MongoDB connected successfully
+2025-12-29T18:23:50: ✅ MongoDB connected successfully
+2025-12-29T18:23:50: ✅ Supabase connected successfully
+2025-12-29T18:23:50: ✅ Supabase connected successfully
+2025-12-29T18:23:50: ✅ Route loaded: /api/user/projects
+2025-12-29T18:23:50: ✅ Route loaded: /api/user/settings
+2025-12-29T18:23:50: ✅ Route loaded: /api/payment
+2025-12-29T18:23:50: ✅ Route loaded: /api/payment
+2025-12-29T18:23:50: ✅ Route loaded: /api/kill-switch (EMERGENCY CONTROL)
+2025-12-29T18:23:50: ✅ Route loaded: /api/service-control (Service Management)
+2025-12-29T18:23:50: ✅ Route loaded: /api/twilio
+2025-12-29T18:23:50: ✅ Route loaded: /api/payments
+2025-12-29T18:23:51: ✅ Route loaded: /api/ai
+2025-12-29T18:23:51: ✅ Route loaded: /api/auth
+2025-12-29T18:23:51: ✅ Route loaded: /api/boot
+2025-12-29T18:23:51: ✅ Route loaded: /api/files
+2025-12-29T18:23:51: ✅ Route loaded: /api/maps
+2025-12-29T18:23:51: ✅ Route loaded: /api/weather
+2025-12-29T18:23:51: ✅ Route loaded: /api/cognitive
+2025-12-29T18:23:51: ✅ Route loaded: /api/libraries
+2025-12-29T18:23:51: ✅ Route loaded: /api/auto-builder
+2025-12-29T18:23:51: ✅ Route loaded: /api/codegen
+2025-12-29T18:23:51: ✅ Route loaded: /api/vision
+2025-12-29T18:23:51: ✅ Route loaded: /api/vault
+2025-12-29T18:23:51: ✅ Route loaded: /api/council
+2025-12-29T18:23:51: ✅ Route loaded: /api/sos
+2025-12-29T18:23:51: ✅ Route loaded: /api/security
+2025-12-29T18:23:51: ✅ Route loaded: /api/settings
+2025-12-29T18:23:51: ✅ Route loaded: /api/communication
+2025-12-29T18:23:51: ✅ Route loaded: /api/carplay
+2025-12-29T18:23:51: ✅ Route loaded: /api/voice-realtime
+2025-12-29T18:23:51: ✅ Route loaded: /api/gpt-stream
+2025-12-29T18:23:51: ✅ Route loaded: /api/control-room
+2025-12-29T18:23:51: ✅ Route loaded: /api/file-generator
+2025-12-29T18:23:51: ✅ Route loaded: /api/vision-ai
+2025-12-29T18:23:51: ✅ Route loaded: /api/agent
+2025-12-29T18:23:51: ✅ Route loaded: /api/voice
+2025-12-29T18:23:51: ✅ Route loaded: /api/agent-tools
+2025-12-29T18:23:51: ✅ Route loaded: /api/personality
+2025-12-29T18:23:51: ✅ Route loaded: /api/emotion
+2025-12-29T18:23:51: ✅ Route loaded: /api/loyalty
+2025-12-29T18:23:51: ✅ Route loaded: /api/guardian
+2025-12-29T18:23:51: ✅ Route loaded: /api/payment
+2025-12-29T18:23:51: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T18:23:51: ✅ Route loaded: /api/client-portal (with Socket.IO)
+2025-12-29T18:23:51: ✅ Voice Realtime WebSocket initialized
+2025-12-29T18:23:51: 💎 All RARE Kernel routes linked successfully
+2025-12-29T18:23:51: ✅ Auto Builder Socket.IO namespace initialized
+2025-12-29T18:23:51: ✅ Voice Realtime Socket.IO namespace initialized
+2025-12-29T18:23:51: ✅ GPT Streaming Socket.IO namespace initialized
+2025-12-29T18:23:51: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T18:23:51: 💎 All Socket.IO namespaces initialized successfully
+2025-12-29T18:23:51: 
+🚀 RARE Backend is LIVE on port: 5000
+2025-12-29T18:23:51: 🌍 Environment: production
+2025-12-29T18:23:51: 🔗 Local Health: http://localhost:5000/health
+2025-12-29T18:23:51: 💎 API Base: https://api.zien-ai.app/api
+
+2025-12-29T18:25:23: ✅ Client Portal path: C:\abo-zien\apps\client-portal
+2025-12-29T18:25:23: ✅ Client Portal static files served from Backend under /client-portal/
+2025-12-29T18:25:23: Starting RARE Kernel Boot Sequence...
+2025-12-29T18:25:23: ✅ Cognitive Debugger initialized
+2025-12-29T18:25:23: ✅ Service Manager initialized
+2025-12-29T18:25:24: ✅ Cognitive Debugger & Service Manager initialized
+2025-12-29T18:25:24: ??? Database tables created
+2025-12-29T18:25:24: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T18:25:24: ✅ Local Database (SQLite) initialized
+2025-12-29T18:25:25: ✅ MongoDB connected successfully
+2025-12-29T18:25:25: ✅ MongoDB connected successfully
+2025-12-29T18:25:25: ✅ Supabase connected successfully
+2025-12-29T18:25:25: ✅ Supabase connected successfully
+2025-12-29T18:25:25: ✅ Route loaded: /api/user/projects
+2025-12-29T18:25:25: ✅ Route loaded: /api/user/settings
+2025-12-29T18:25:25: ✅ Route loaded: /api/payment
+2025-12-29T18:25:25: ✅ Route loaded: /api/payment
+2025-12-29T18:25:25: ✅ Route loaded: /api/kill-switch (EMERGENCY CONTROL)
+2025-12-29T18:25:25: ✅ Route loaded: /api/service-control (Service Management)
+2025-12-29T18:25:25: ✅ Route loaded: /api/twilio
+2025-12-29T18:25:25: ✅ Route loaded: /api/payments
+2025-12-29T18:25:25: ✅ Route loaded: /api/ai
+2025-12-29T18:25:25: ✅ Route loaded: /api/auth
+2025-12-29T18:25:25: ✅ Route loaded: /api/boot
+2025-12-29T18:25:25: ✅ Route loaded: /api/files
+2025-12-29T18:25:25: ✅ Route loaded: /api/maps
+2025-12-29T18:25:25: ✅ Route loaded: /api/weather
+2025-12-29T18:25:25: ✅ Route loaded: /api/cognitive
+2025-12-29T18:25:25: ✅ Route loaded: /api/libraries
+2025-12-29T18:25:25: ✅ Route loaded: /api/auto-builder
+2025-12-29T18:25:25: ✅ Route loaded: /api/codegen
+2025-12-29T18:25:25: ✅ Route loaded: /api/vision
+2025-12-29T18:25:25: ✅ Route loaded: /api/vault
+2025-12-29T18:25:25: ✅ Route loaded: /api/council
+2025-12-29T18:25:25: ✅ Route loaded: /api/sos
+2025-12-29T18:25:25: ✅ Route loaded: /api/security
+2025-12-29T18:25:25: ✅ Route loaded: /api/settings
+2025-12-29T18:25:25: ✅ Route loaded: /api/communication
+2025-12-29T18:25:25: ✅ Route loaded: /api/carplay
+2025-12-29T18:25:25: ✅ Route loaded: /api/voice-realtime
+2025-12-29T18:25:25: ✅ Route loaded: /api/gpt-stream
+2025-12-29T18:25:25: ✅ Route loaded: /api/control-room
+2025-12-29T18:25:25: ✅ Route loaded: /api/file-generator
+2025-12-29T18:25:25: ✅ Route loaded: /api/vision-ai
+2025-12-29T18:25:25: ✅ Route loaded: /api/agent
+2025-12-29T18:25:25: ✅ Route loaded: /api/voice
+2025-12-29T18:25:25: ✅ Route loaded: /api/agent-tools
+2025-12-29T18:25:25: ✅ Route loaded: /api/personality
+2025-12-29T18:25:26: ✅ Route loaded: /api/emotion
+2025-12-29T18:25:26: ✅ Route loaded: /api/loyalty
+2025-12-29T18:25:26: ✅ Route loaded: /api/guardian
+2025-12-29T18:25:26: ✅ Route loaded: /api/payment
+2025-12-29T18:25:26: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T18:25:26: ✅ Route loaded: /api/client-portal (with Socket.IO)
+2025-12-29T18:25:26: ✅ Voice Realtime WebSocket initialized
+2025-12-29T18:25:26: 💎 All RARE Kernel routes linked successfully
+2025-12-29T18:25:26: ✅ Auto Builder Socket.IO namespace initialized
+2025-12-29T18:25:26: ✅ Voice Realtime Socket.IO namespace initialized
+2025-12-29T18:25:26: ✅ GPT Streaming Socket.IO namespace initialized
+2025-12-29T18:25:26: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T18:25:26: 💎 All Socket.IO namespaces initialized successfully
+2025-12-29T18:25:26: 
+🚀 RARE Backend is LIVE on port: 5000
+2025-12-29T18:25:26: 🌍 Environment: production
+2025-12-29T18:25:26: 🔗 Local Health: http://localhost:5000/health
+2025-12-29T18:25:26: 💎 API Base: https://api.zien-ai.app/api
+
+2025-12-29T18:29:19: ✅ Client Portal path: C:\abo-zien\apps\client-portal
+2025-12-29T18:29:19: ✅ Client Portal static files served from Backend under /client-portal/
+2025-12-29T18:29:19: Starting RARE Kernel Boot Sequence...
+2025-12-29T18:29:19: ✅ Cognitive Debugger initialized
+2025-12-29T18:29:19: ✅ Service Manager initialized
+2025-12-29T18:29:20: ✅ Cognitive Debugger & Service Manager initialized
+2025-12-29T18:29:20: ??? Database tables created
+2025-12-29T18:29:20: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T18:29:20: ✅ Local Database (SQLite) initialized
+2025-12-29T18:29:22: ✅ MongoDB connected successfully
+2025-12-29T18:29:22: ✅ MongoDB connected successfully
+2025-12-29T18:29:22: ✅ Supabase connected successfully
+2025-12-29T18:29:22: ✅ Supabase connected successfully
+2025-12-29T18:29:22: ✅ Route loaded: /api/user/projects
+2025-12-29T18:29:22: ✅ Route loaded: /api/user/settings
+2025-12-29T18:29:22: ✅ Route loaded: /api/payment
+2025-12-29T18:29:22: ✅ Route loaded: /api/payment
+2025-12-29T18:29:22: ✅ Route loaded: /api/kill-switch (EMERGENCY CONTROL)
+2025-12-29T18:29:22: ✅ Route loaded: /api/service-control (Service Management)
+2025-12-29T18:29:22: ✅ Route loaded: /api/twilio
+2025-12-29T18:29:22: ✅ Route loaded: /api/payments
+2025-12-29T18:29:23: ✅ Route loaded: /api/ai
+2025-12-29T18:29:23: ✅ Route loaded: /api/auth
+2025-12-29T18:29:23: ✅ Route loaded: /api/boot
+2025-12-29T18:29:23: ✅ Route loaded: /api/files
+2025-12-29T18:29:23: ✅ Route loaded: /api/maps
+2025-12-29T18:29:23: ✅ Route loaded: /api/weather
+2025-12-29T18:29:23: ✅ Route loaded: /api/cognitive
+2025-12-29T18:29:23: ✅ Route loaded: /api/libraries
+2025-12-29T18:29:23: ✅ Route loaded: /api/auto-builder
+2025-12-29T18:29:23: ✅ Route loaded: /api/codegen
+2025-12-29T18:29:23: ✅ Route loaded: /api/vision
+2025-12-29T18:29:23: ✅ Route loaded: /api/vault
+2025-12-29T18:29:23: ✅ Route loaded: /api/council
+2025-12-29T18:29:23: ✅ Route loaded: /api/sos
+2025-12-29T18:29:23: ✅ Route loaded: /api/security
+2025-12-29T18:29:23: ✅ Route loaded: /api/settings
+2025-12-29T18:29:23: ✅ Route loaded: /api/communication
+2025-12-29T18:29:23: ✅ Route loaded: /api/carplay
+2025-12-29T18:29:23: ✅ Route loaded: /api/voice-realtime
+2025-12-29T18:29:23: ✅ Route loaded: /api/gpt-stream
+2025-12-29T18:29:23: ✅ Route loaded: /api/control-room
+2025-12-29T18:29:23: ✅ Route loaded: /api/file-generator
+2025-12-29T18:29:23: ✅ Route loaded: /api/vision-ai
+2025-12-29T18:29:23: ✅ Route loaded: /api/agent
+2025-12-29T18:29:23: ✅ Route loaded: /api/voice
+2025-12-29T18:29:23: ✅ Route loaded: /api/agent-tools
+2025-12-29T18:29:23: ✅ Route loaded: /api/personality
+2025-12-29T18:29:23: ✅ Route loaded: /api/emotion
+2025-12-29T18:29:23: ✅ Route loaded: /api/loyalty
+2025-12-29T18:29:23: ✅ Route loaded: /api/guardian
+2025-12-29T18:29:23: ✅ Route loaded: /api/payment
+2025-12-29T18:29:23: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T18:29:23: ✅ Route loaded: /api/client-portal (with Socket.IO)
+2025-12-29T18:29:23: ✅ Voice Realtime WebSocket initialized
+2025-12-29T18:29:23: 💎 All RARE Kernel routes linked successfully
+2025-12-29T18:29:23: ✅ Auto Builder Socket.IO namespace initialized
+2025-12-29T18:29:23: ✅ Voice Realtime Socket.IO namespace initialized
+2025-12-29T18:29:23: ✅ GPT Streaming Socket.IO namespace initialized
+2025-12-29T18:29:23: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T18:29:23: 💎 All Socket.IO namespaces initialized successfully
+2025-12-29T18:29:23: 
+🚀 RARE Backend is LIVE on port: 5000
+2025-12-29T18:29:23: 🌍 Environment: production
+2025-12-29T18:29:23: 🔗 Local Health: http://localhost:5000/health
+2025-12-29T18:29:23: 💎 API Base: https://api.zien-ai.app/api
+
+2025-12-29T18:30:02: ✅ Client Portal path: C:\abo-zien\apps\client-portal
+2025-12-29T18:30:02: ✅ Client Portal static files served from Backend under /client-portal/
+2025-12-29T18:30:02: Starting RARE Kernel Boot Sequence...
+2025-12-29T18:30:02: ✅ Cognitive Debugger initialized
+2025-12-29T18:30:02: ✅ Service Manager initialized
+2025-12-29T18:30:03: ✅ Cognitive Debugger & Service Manager initialized
+2025-12-29T18:30:03: ??? Database tables created
+2025-12-29T18:30:03: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T18:30:03: ✅ Local Database (SQLite) initialized
+2025-12-29T18:30:04: ✅ MongoDB connected successfully
+2025-12-29T18:30:04: ✅ MongoDB connected successfully
+2025-12-29T18:30:04: ✅ Supabase connected successfully
+2025-12-29T18:30:04: ✅ Supabase connected successfully
+2025-12-29T18:30:04: ✅ Route loaded: /api/user/projects
+2025-12-29T18:30:04: ✅ Route loaded: /api/user/settings
+2025-12-29T18:30:04: ✅ Route loaded: /api/payment
+2025-12-29T18:30:04: ✅ Route loaded: /api/payment
+2025-12-29T18:30:04: ✅ Route loaded: /api/kill-switch (EMERGENCY CONTROL)
+2025-12-29T18:30:04: ✅ Route loaded: /api/service-control (Service Management)
+2025-12-29T18:30:04: ✅ Route loaded: /api/twilio
+2025-12-29T18:30:04: ✅ Route loaded: /api/payments
+2025-12-29T18:30:04: ✅ Route loaded: /api/ai
+2025-12-29T18:30:04: ✅ Route loaded: /api/auth
+2025-12-29T18:30:04: ✅ Route loaded: /api/boot
+2025-12-29T18:30:04: ✅ Route loaded: /api/files
+2025-12-29T18:30:04: ✅ Route loaded: /api/maps
+2025-12-29T18:30:04: ✅ Route loaded: /api/weather
+2025-12-29T18:30:04: ✅ Route loaded: /api/cognitive
+2025-12-29T18:30:04: ✅ Route loaded: /api/libraries
+2025-12-29T18:30:05: ✅ Route loaded: /api/auto-builder
+2025-12-29T18:30:05: ✅ Route loaded: /api/codegen
+2025-12-29T18:30:05: ✅ Route loaded: /api/vision
+2025-12-29T18:30:05: ✅ Route loaded: /api/vault
+2025-12-29T18:30:05: ✅ Route loaded: /api/council
+2025-12-29T18:30:05: ✅ Route loaded: /api/sos
+2025-12-29T18:30:05: ✅ Route loaded: /api/security
+2025-12-29T18:30:05: ✅ Route loaded: /api/settings
+2025-12-29T18:30:05: ✅ Route loaded: /api/communication
+2025-12-29T18:30:05: ✅ Route loaded: /api/carplay
+2025-12-29T18:30:05: ✅ Route loaded: /api/voice-realtime
+2025-12-29T18:30:05: ✅ Route loaded: /api/gpt-stream
+2025-12-29T18:30:05: ✅ Route loaded: /api/control-room
+2025-12-29T18:30:05: ✅ Route loaded: /api/file-generator
+2025-12-29T18:30:05: ✅ Route loaded: /api/vision-ai
+2025-12-29T18:30:05: ✅ Route loaded: /api/agent
+2025-12-29T18:30:05: ✅ Route loaded: /api/voice
+2025-12-29T18:30:05: ✅ Route loaded: /api/agent-tools
+2025-12-29T18:30:05: ✅ Route loaded: /api/personality
+2025-12-29T18:30:05: ✅ Route loaded: /api/emotion
+2025-12-29T18:30:05: ✅ Route loaded: /api/loyalty
+2025-12-29T18:30:05: ✅ Route loaded: /api/guardian
+2025-12-29T18:30:05: ✅ Route loaded: /api/payment
+2025-12-29T18:30:05: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T18:30:05: ✅ Route loaded: /api/client-portal (with Socket.IO)
+2025-12-29T18:30:05: ✅ Voice Realtime WebSocket initialized
+2025-12-29T18:30:05: 💎 All RARE Kernel routes linked successfully
+2025-12-29T18:30:05: ✅ Auto Builder Socket.IO namespace initialized
+2025-12-29T18:30:05: ✅ Voice Realtime Socket.IO namespace initialized
+2025-12-29T18:30:05: ✅ GPT Streaming Socket.IO namespace initialized
+2025-12-29T18:30:05: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T18:30:05: 💎 All Socket.IO namespaces initialized successfully
+2025-12-29T18:30:05: 
+🚀 RARE Backend is LIVE on port: 5000
+2025-12-29T18:30:05: 🌍 Environment: production
+2025-12-29T18:30:05: 🔗 Local Health: http://localhost:5000/health
+2025-12-29T18:30:05: 💎 API Base: https://api.zien-ai.app/api
+
+2025-12-29T18:30:42: ✅ Client Portal path: C:\abo-zien\apps\client-portal
+2025-12-29T18:30:42: ✅ Client Portal static files served from Backend under /client-portal/
+2025-12-29T18:30:42: Starting RARE Kernel Boot Sequence...
+2025-12-29T18:30:42: ✅ Cognitive Debugger initialized
+2025-12-29T18:30:42: ✅ Service Manager initialized
+2025-12-29T18:30:42: ✅ Cognitive Debugger & Service Manager initialized
+2025-12-29T18:30:42: ??? Database tables created
+2025-12-29T18:30:42: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T18:30:42: ✅ Local Database (SQLite) initialized
+2025-12-29T18:30:43: ✅ MongoDB connected successfully
+2025-12-29T18:30:43: ✅ MongoDB connected successfully
+2025-12-29T18:30:43: ✅ Supabase connected successfully
+2025-12-29T18:30:43: ✅ Supabase connected successfully
+2025-12-29T18:30:43: ✅ Route loaded: /api/user/projects
+2025-12-29T18:30:43: ✅ Route loaded: /api/user/settings
+2025-12-29T18:30:43: ✅ Route loaded: /api/payment
+2025-12-29T18:30:43: ✅ Route loaded: /api/payment
+2025-12-29T18:30:43: ✅ Route loaded: /api/kill-switch (EMERGENCY CONTROL)
+2025-12-29T18:30:43: ✅ Route loaded: /api/service-control (Service Management)
+2025-12-29T18:30:43: ✅ Route loaded: /api/twilio
+2025-12-29T18:30:43: ✅ Route loaded: /api/payments
+2025-12-29T18:30:44: ✅ Route loaded: /api/ai
+2025-12-29T18:30:44: ✅ Route loaded: /api/auth
+2025-12-29T18:30:44: ✅ Route loaded: /api/boot
+2025-12-29T18:30:44: ✅ Route loaded: /api/files
+2025-12-29T18:30:44: ✅ Route loaded: /api/maps
+2025-12-29T18:30:44: ✅ Route loaded: /api/weather
+2025-12-29T18:30:44: ✅ Route loaded: /api/cognitive
+2025-12-29T18:30:44: ✅ Route loaded: /api/libraries
+2025-12-29T18:30:44: ✅ Route loaded: /api/auto-builder
+2025-12-29T18:30:44: ✅ Route loaded: /api/codegen
+2025-12-29T18:30:44: ✅ Route loaded: /api/vision
+2025-12-29T18:30:44: ✅ Route loaded: /api/vault
+2025-12-29T18:30:44: ✅ Route loaded: /api/council
+2025-12-29T18:30:44: ✅ Route loaded: /api/sos
+2025-12-29T18:30:44: ✅ Route loaded: /api/security
+2025-12-29T18:30:44: ✅ Route loaded: /api/settings
+2025-12-29T18:30:44: ✅ Route loaded: /api/communication
+2025-12-29T18:30:44: ✅ Route loaded: /api/carplay
+2025-12-29T18:30:44: ✅ Route loaded: /api/voice-realtime
+2025-12-29T18:30:44: ✅ Route loaded: /api/gpt-stream
+2025-12-29T18:30:44: ✅ Route loaded: /api/control-room
+2025-12-29T18:30:44: ✅ Route loaded: /api/file-generator
+2025-12-29T18:30:44: ✅ Route loaded: /api/vision-ai
+2025-12-29T18:30:44: ✅ Route loaded: /api/agent
+2025-12-29T18:30:44: ✅ Route loaded: /api/voice
+2025-12-29T18:30:44: ✅ Route loaded: /api/agent-tools
+2025-12-29T18:30:44: ✅ Route loaded: /api/personality
+2025-12-29T18:30:44: ✅ Route loaded: /api/emotion
+2025-12-29T18:30:44: ✅ Route loaded: /api/loyalty
+2025-12-29T18:30:44: ✅ Route loaded: /api/guardian
+2025-12-29T18:30:44: ✅ Route loaded: /api/payment
+2025-12-29T18:30:44: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T18:30:44: ✅ Route loaded: /api/client-portal (with Socket.IO)
+2025-12-29T18:30:44: ✅ Voice Realtime WebSocket initialized
+2025-12-29T18:30:44: 💎 All RARE Kernel routes linked successfully
+2025-12-29T18:30:44: ✅ Auto Builder Socket.IO namespace initialized
+2025-12-29T18:30:44: ✅ Voice Realtime Socket.IO namespace initialized
+2025-12-29T18:30:44: ✅ GPT Streaming Socket.IO namespace initialized
+2025-12-29T18:30:44: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T18:30:44: 💎 All Socket.IO namespaces initialized successfully
+2025-12-29T18:30:44: 
+🚀 RARE Backend is LIVE on port: 5000
+2025-12-29T18:30:44: 🌍 Environment: production
+2025-12-29T18:30:44: 🔗 Local Health: http://localhost:5000/health
+2025-12-29T18:30:44: 💎 API Base: https://api.zien-ai.app/api
+
+2025-12-29T18:34:49: ✅ Client Portal path: C:\abo-zien\apps\client-portal
+2025-12-29T18:34:49: ✅ Client Portal static files served from Backend under /client-portal/
+2025-12-29T18:34:49: Starting RARE Kernel Boot Sequence...
+2025-12-29T18:34:49: ✅ Cognitive Debugger initialized
+2025-12-29T18:34:49: ✅ Service Manager initialized
+2025-12-29T18:34:50: ✅ Cognitive Debugger & Service Manager initialized
+2025-12-29T18:34:50: ??? Database tables created
+2025-12-29T18:34:50: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T18:34:50: ✅ Local Database (SQLite) initialized
+2025-12-29T18:34:52: ✅ MongoDB connected successfully
+2025-12-29T18:34:52: ✅ MongoDB connected successfully
+2025-12-29T18:34:52: ✅ Supabase connected successfully
+2025-12-29T18:34:52: ✅ Supabase connected successfully
+2025-12-29T18:34:52: ✅ Route loaded: /api/user/projects
+2025-12-29T18:34:52: ✅ Route loaded: /api/user/settings
+2025-12-29T18:34:52: ✅ Route loaded: /api/payment
+2025-12-29T18:34:52: ✅ Route loaded: /api/payment
+2025-12-29T18:34:52: ✅ Route loaded: /api/kill-switch (EMERGENCY CONTROL)
+2025-12-29T18:34:52: ✅ Route loaded: /api/service-control (Service Management)
+2025-12-29T18:34:52: ✅ Route loaded: /api/twilio
+2025-12-29T18:34:52: ✅ Route loaded: /api/payments
+2025-12-29T18:34:52: ✅ Route loaded: /api/ai
+2025-12-29T18:34:52: ✅ Route loaded: /api/auth
+2025-12-29T18:34:52: ✅ Route loaded: /api/boot
+2025-12-29T18:34:52: ✅ Route loaded: /api/files
+2025-12-29T18:34:52: ✅ Route loaded: /api/maps
+2025-12-29T18:34:52: ✅ Route loaded: /api/weather
+2025-12-29T18:34:52: ✅ Route loaded: /api/cognitive
+2025-12-29T18:34:52: ✅ Route loaded: /api/libraries
+2025-12-29T18:34:53: ✅ Route loaded: /api/auto-builder
+2025-12-29T18:34:53: ✅ Route loaded: /api/codegen
+2025-12-29T18:34:53: ✅ Route loaded: /api/vision
+2025-12-29T18:34:53: ✅ Route loaded: /api/vault
+2025-12-29T18:34:53: ✅ Route loaded: /api/council
+2025-12-29T18:34:53: ✅ Route loaded: /api/sos
+2025-12-29T18:34:53: ✅ Route loaded: /api/security
+2025-12-29T18:34:53: ✅ Route loaded: /api/settings
+2025-12-29T18:34:53: ✅ Route loaded: /api/communication
+2025-12-29T18:34:53: ✅ Route loaded: /api/carplay
+2025-12-29T18:34:53: ✅ Route loaded: /api/voice-realtime
+2025-12-29T18:34:53: ✅ Route loaded: /api/gpt-stream
+2025-12-29T18:34:53: ✅ Route loaded: /api/control-room
+2025-12-29T18:34:53: ✅ Route loaded: /api/file-generator
+2025-12-29T18:34:53: ✅ Route loaded: /api/vision-ai
+2025-12-29T18:34:53: ✅ Route loaded: /api/agent
+2025-12-29T18:34:53: ✅ Route loaded: /api/voice
+2025-12-29T18:34:53: ✅ Route loaded: /api/agent-tools
+2025-12-29T18:34:53: ✅ Route loaded: /api/personality
+2025-12-29T18:34:53: ✅ Route loaded: /api/emotion
+2025-12-29T18:34:53: ✅ Route loaded: /api/loyalty
+2025-12-29T18:34:53: ✅ Route loaded: /api/guardian
+2025-12-29T18:34:53: ✅ Route loaded: /api/payment
+2025-12-29T18:34:53: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T18:34:53: ✅ Route loaded: /api/client-portal (with Socket.IO)
+2025-12-29T18:34:53: ✅ Voice Realtime WebSocket initialized
+2025-12-29T18:34:53: 💎 All RARE Kernel routes linked successfully
+2025-12-29T18:34:53: ✅ Auto Builder Socket.IO namespace initialized
+2025-12-29T18:34:53: ✅ Voice Realtime Socket.IO namespace initialized
+2025-12-29T18:34:53: ✅ GPT Streaming Socket.IO namespace initialized
+2025-12-29T18:34:53: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T18:34:53: 💎 All Socket.IO namespaces initialized successfully
+2025-12-29T18:34:53: 
+🚀 RARE Backend is LIVE on port: 5000
+2025-12-29T18:34:53: 🌍 Environment: production
+2025-12-29T18:34:53: 🔗 Local Health: http://localhost:5000/health
+2025-12-29T18:34:53: 💎 API Base: https://api.zien-ai.app/api
+
+2025-12-29T18:35:33: ✅ Client Portal path: C:\abo-zien\apps\client-portal
+2025-12-29T18:35:33: ✅ Client Portal static files served from Backend under /client-portal/
+2025-12-29T18:35:33: Starting RARE Kernel Boot Sequence...
+2025-12-29T18:35:33: ✅ Cognitive Debugger initialized
+2025-12-29T18:35:33: ✅ Service Manager initialized
+2025-12-29T18:35:34: ✅ Cognitive Debugger & Service Manager initialized
+2025-12-29T18:35:34: ??? Database tables created
+2025-12-29T18:35:34: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T18:35:34: ✅ Local Database (SQLite) initialized
+2025-12-29T18:35:36: ✅ MongoDB connected successfully
+2025-12-29T18:35:36: ✅ MongoDB connected successfully
+2025-12-29T18:35:36: ✅ Supabase connected successfully
+2025-12-29T18:35:36: ✅ Supabase connected successfully
+2025-12-29T18:35:37: ✅ Route loaded: /api/user/projects
+2025-12-29T18:35:37: ✅ Route loaded: /api/user/settings
+2025-12-29T18:35:37: ✅ Route loaded: /api/payment
+2025-12-29T18:35:37: ✅ Route loaded: /api/payment
+2025-12-29T18:35:37: ✅ Route loaded: /api/kill-switch (EMERGENCY CONTROL)
+2025-12-29T18:35:37: ✅ Route loaded: /api/service-control (Service Management)
+2025-12-29T18:35:37: ✅ Route loaded: /api/twilio
+2025-12-29T18:35:37: ✅ Route loaded: /api/payments
+2025-12-29T18:35:37: ✅ Route loaded: /api/ai
+2025-12-29T18:35:37: ✅ Route loaded: /api/auth
+2025-12-29T18:35:37: ✅ Route loaded: /api/boot
+2025-12-29T18:35:37: ✅ Route loaded: /api/files
+2025-12-29T18:35:37: ✅ Route loaded: /api/maps
+2025-12-29T18:35:37: ✅ Route loaded: /api/weather
+2025-12-29T18:35:37: ✅ Route loaded: /api/cognitive
+2025-12-29T18:35:37: ✅ Route loaded: /api/libraries
+2025-12-29T18:35:37: ✅ Route loaded: /api/auto-builder
+2025-12-29T18:35:37: ✅ Route loaded: /api/codegen
+2025-12-29T18:35:37: ✅ Route loaded: /api/vision
+2025-12-29T18:35:37: ✅ Route loaded: /api/vault
+2025-12-29T18:35:37: ✅ Route loaded: /api/council
+2025-12-29T18:35:37: ✅ Route loaded: /api/sos
+2025-12-29T18:35:37: ✅ Route loaded: /api/security
+2025-12-29T18:35:37: ✅ Route loaded: /api/settings
+2025-12-29T18:35:37: ✅ Route loaded: /api/communication
+2025-12-29T18:35:37: ✅ Route loaded: /api/carplay
+2025-12-29T18:35:38: ✅ Route loaded: /api/voice-realtime
+2025-12-29T18:35:38: ✅ Route loaded: /api/gpt-stream
+2025-12-29T18:35:38: ✅ Route loaded: /api/control-room
+2025-12-29T18:35:38: ✅ Route loaded: /api/file-generator
+2025-12-29T18:35:38: ✅ Route loaded: /api/vision-ai
+2025-12-29T18:35:38: ✅ Route loaded: /api/agent
+2025-12-29T18:35:38: ✅ Route loaded: /api/voice
+2025-12-29T18:35:38: ✅ Route loaded: /api/agent-tools
+2025-12-29T18:35:38: ✅ Route loaded: /api/personality
+2025-12-29T18:35:38: ✅ Route loaded: /api/emotion
+2025-12-29T18:35:38: ✅ Route loaded: /api/loyalty
+2025-12-29T18:35:38: ✅ Route loaded: /api/guardian
+2025-12-29T18:35:38: ✅ Route loaded: /api/payment
+2025-12-29T18:35:38: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T18:35:38: ✅ Route loaded: /api/client-portal (with Socket.IO)
+2025-12-29T18:35:38: ✅ Voice Realtime WebSocket initialized
+2025-12-29T18:35:38: 💎 All RARE Kernel routes linked successfully
+2025-12-29T18:35:38: ✅ Auto Builder Socket.IO namespace initialized
+2025-12-29T18:35:38: ✅ Voice Realtime Socket.IO namespace initialized
+2025-12-29T18:35:38: ✅ GPT Streaming Socket.IO namespace initialized
+2025-12-29T18:35:38: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T18:35:38: 💎 All Socket.IO namespaces initialized successfully
+2025-12-29T18:35:38: 
+🚀 RARE Backend is LIVE on port: 5000
+2025-12-29T18:35:38: 🌍 Environment: production
+2025-12-29T18:35:38: 🔗 Local Health: http://localhost:5000/health
+2025-12-29T18:35:38: 💎 API Base: https://api.zien-ai.app/api
+
+2025-12-29T18:38:00: ✅ Client Portal path: C:\abo-zien\apps\client-portal
+2025-12-29T18:38:00: ✅ Client Portal static files served from Backend under /client-portal/
+2025-12-29T18:38:00: Starting RARE Kernel Boot Sequence...
+2025-12-29T18:38:00: ✅ Cognitive Debugger initialized
+2025-12-29T18:38:00: ✅ Service Manager initialized
+2025-12-29T18:38:01: ✅ Cognitive Debugger & Service Manager initialized
+2025-12-29T18:38:01: ??? Database tables created
+2025-12-29T18:38:01: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T18:38:01: ✅ Local Database (SQLite) initialized
+2025-12-29T18:38:02: ✅ MongoDB connected successfully
+2025-12-29T18:38:02: ✅ MongoDB connected successfully
+2025-12-29T18:38:02: ✅ Supabase connected successfully
+2025-12-29T18:38:02: ✅ Supabase connected successfully
+2025-12-29T18:38:02: ✅ Route loaded: /api/user/projects
+2025-12-29T18:38:02: ✅ Route loaded: /api/user/settings
+2025-12-29T18:38:02: ✅ Route loaded: /api/payment
+2025-12-29T18:38:02: ✅ Route loaded: /api/payment
+2025-12-29T18:38:02: ✅ Route loaded: /api/kill-switch (EMERGENCY CONTROL)
+2025-12-29T18:38:02: ✅ Route loaded: /api/service-control (Service Management)
+2025-12-29T18:38:02: ✅ Route loaded: /api/twilio
+2025-12-29T18:38:02: ✅ Route loaded: /api/payments
+2025-12-29T18:38:02: ✅ Route loaded: /api/ai
+2025-12-29T18:38:02: ✅ Route loaded: /api/auth
+2025-12-29T18:38:02: ✅ Route loaded: /api/boot
+2025-12-29T18:38:02: ✅ Route loaded: /api/files
+2025-12-29T18:38:02: ✅ Route loaded: /api/maps
+2025-12-29T18:38:02: ✅ Route loaded: /api/weather
+2025-12-29T18:38:02: ✅ Route loaded: /api/cognitive
+2025-12-29T18:38:02: ✅ Route loaded: /api/libraries
+2025-12-29T18:38:03: ✅ Route loaded: /api/auto-builder
+2025-12-29T18:38:03: ✅ Route loaded: /api/codegen
+2025-12-29T18:38:03: ✅ Route loaded: /api/vision
+2025-12-29T18:38:03: ✅ Route loaded: /api/vault
+2025-12-29T18:38:03: ✅ Route loaded: /api/council
+2025-12-29T18:38:03: ✅ Route loaded: /api/sos
+2025-12-29T18:38:03: ✅ Route loaded: /api/security
+2025-12-29T18:38:03: ✅ Route loaded: /api/settings
+2025-12-29T18:38:03: ✅ Route loaded: /api/communication
+2025-12-29T18:38:03: ✅ Route loaded: /api/carplay
+2025-12-29T18:38:03: ✅ Route loaded: /api/voice-realtime
+2025-12-29T18:38:03: ✅ Route loaded: /api/gpt-stream
+2025-12-29T18:38:03: ✅ Route loaded: /api/control-room
+2025-12-29T18:38:03: ✅ Route loaded: /api/file-generator
+2025-12-29T18:38:03: ✅ Route loaded: /api/vision-ai
+2025-12-29T18:38:03: ✅ Route loaded: /api/agent
+2025-12-29T18:38:03: ✅ Route loaded: /api/voice
+2025-12-29T18:38:03: ✅ Route loaded: /api/agent-tools
+2025-12-29T18:38:03: ✅ Route loaded: /api/personality
+2025-12-29T18:38:03: ✅ Route loaded: /api/emotion
+2025-12-29T18:38:03: ✅ Route loaded: /api/loyalty
+2025-12-29T18:38:03: ✅ Route loaded: /api/guardian
+2025-12-29T18:38:03: ✅ Route loaded: /api/payment
+2025-12-29T18:38:03: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T18:38:03: ✅ Route loaded: /api/client-portal (with Socket.IO)
+2025-12-29T18:38:03: ✅ Voice Realtime WebSocket initialized
+2025-12-29T18:38:03: 💎 All RARE Kernel routes linked successfully
+2025-12-29T18:38:03: ✅ Auto Builder Socket.IO namespace initialized
+2025-12-29T18:38:03: ✅ Voice Realtime Socket.IO namespace initialized
+2025-12-29T18:38:03: ✅ GPT Streaming Socket.IO namespace initialized
+2025-12-29T18:38:03: ✅ Client Portal Socket.IO namespace initialized
+2025-12-29T18:38:03: 💎 All Socket.IO namespaces initialized successfully
+2025-12-29T18:38:03: 
+🚀 RARE Backend is LIVE on port: 5000
+2025-12-29T18:38:03: 🌍 Environment: production
+2025-12-29T18:38:03: 🔗 Local Health: http://localhost:5000/health
+2025-12-29T18:38:03: 💎 API Base: https://api.zien-ai.app/api
+
+2025-12-29T18:39:37: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T18:39:37: ??? Database tables created
+2025-12-29T18:39:37: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T18:39:37: Local Database (SQLite) initialized
+2025-12-29T18:39:40: ✅ MongoDB connected successfully
+2025-12-29T18:39:40: MongoDB initialized
+2025-12-29T18:39:40: ✅ Supabase connected successfully
+2025-12-29T18:39:40: Supabase initialized
+2025-12-29T18:39:41: All RARE Kernel routes linked
+2025-12-29T18:39:41: Backend running on port: 5000
+2025-12-29T18:39:41: Environment: production
+2025-12-29T18:41:21: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T18:41:21: ??? Database tables created
+2025-12-29T18:41:21: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T18:41:21: Local Database (SQLite) initialized
+2025-12-29T18:41:24: ✅ MongoDB connected successfully
+2025-12-29T18:41:24: MongoDB initialized
+2025-12-29T18:41:24: ✅ Supabase connected successfully
+2025-12-29T18:41:24: Supabase initialized
+2025-12-29T18:41:25: All RARE Kernel routes linked
+2025-12-29T18:41:25: Backend running on port: 5000
+2025-12-29T18:41:25: Environment: production
+2025-12-29T18:43:11: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T18:43:11: ??? Database tables created
+2025-12-29T18:43:11: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T18:43:11: Local Database (SQLite) initialized
+2025-12-29T18:43:14: ✅ MongoDB connected successfully
+2025-12-29T18:43:14: MongoDB initialized
+2025-12-29T18:43:14: ✅ Supabase connected successfully
+2025-12-29T18:43:14: Supabase initialized
+2025-12-29T18:43:15: All RARE Kernel routes linked
+2025-12-29T18:43:15: Backend running on port: 5000
+2025-12-29T18:43:15: Environment: production
+2025-12-29T19:35:19: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T19:35:19: ??? Database tables created
+2025-12-29T19:35:19: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T19:35:19: Local Database (SQLite) initialized
+2025-12-29T19:35:21: ✅ MongoDB connected successfully
+2025-12-29T19:35:21: MongoDB initialized
+2025-12-29T19:35:21: ✅ Supabase connected successfully
+2025-12-29T19:35:21: Supabase initialized
+2025-12-29T19:35:22: All RARE Kernel routes linked
+2025-12-29T19:35:22: Backend running on port: 5000
+2025-12-29T19:35:22: Environment: production
+2025-12-29T19:37:24: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T19:37:24: ??? Database tables created
+2025-12-29T19:37:24: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T19:37:24: Local Database (SQLite) initialized
+2025-12-29T19:37:26: ✅ MongoDB connected successfully
+2025-12-29T19:37:26: MongoDB initialized
+2025-12-29T19:37:26: ✅ Supabase connected successfully
+2025-12-29T19:37:26: Supabase initialized
+2025-12-29T19:37:27: All RARE Kernel routes linked
+2025-12-29T19:37:27: Backend running on port: 5000
+2025-12-29T19:37:27: Environment: production
+2025-12-29T19:41:44: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T19:41:44: ??? Database tables created
+2025-12-29T19:41:44: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T19:41:44: Local Database (SQLite) initialized
+2025-12-29T19:41:46: ✅ MongoDB connected successfully
+2025-12-29T19:41:46: MongoDB initialized
+2025-12-29T19:41:46: ✅ Supabase connected successfully
+2025-12-29T19:41:46: Supabase initialized
+2025-12-29T19:41:47: All RARE Kernel routes linked
+2025-12-29T19:41:47: Backend running on port: 5000
+2025-12-29T19:41:47: Environment: production
+2025-12-29T19:57:11: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T19:57:11: ??? Database tables created
+2025-12-29T19:57:11: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T19:57:11: Local Database (SQLite) initialized
+2025-12-29T19:57:14: ✅ MongoDB connected successfully
+2025-12-29T19:57:14: MongoDB initialized
+2025-12-29T19:57:14: ✅ Supabase connected successfully
+2025-12-29T19:57:14: Supabase initialized
+2025-12-29T19:57:14: All RARE Kernel routes linked
+2025-12-29T19:57:14: Backend running on port: 5000
+2025-12-29T19:57:14: Environment: production
+2025-12-29T20:04:24: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T20:04:24: ??? Database tables created
+2025-12-29T20:04:24: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T20:04:24: Local Database (SQLite) initialized
+2025-12-29T20:04:25: ✅ MongoDB connected successfully
+2025-12-29T20:04:25: MongoDB initialized
+2025-12-29T20:04:25: ✅ Supabase connected successfully
+2025-12-29T20:04:25: Supabase initialized
+2025-12-29T20:04:25: All RARE Kernel routes linked
+2025-12-29T20:04:25: Backend running on port: 5000
+2025-12-29T20:04:25: Environment: production
+2025-12-29T20:05:59: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T20:05:59: ??? Database tables created
+2025-12-29T20:05:59: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T20:05:59: Local Database (SQLite) initialized
+2025-12-29T20:06:00: ✅ MongoDB connected successfully
+2025-12-29T20:06:00: MongoDB initialized
+2025-12-29T20:06:00: ✅ Supabase connected successfully
+2025-12-29T20:06:00: Supabase initialized
+2025-12-29T20:06:01: All RARE Kernel routes linked
+2025-12-29T20:06:01: Backend running on port: 5000
+2025-12-29T20:06:01: Environment: production
+2025-12-29T20:07:45: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T20:07:45: ??? Database tables created
+2025-12-29T20:07:45: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T20:07:45: Local Database (SQLite) initialized
+2025-12-29T20:07:47: ✅ MongoDB connected successfully
+2025-12-29T20:07:47: MongoDB initialized
+2025-12-29T20:07:47: ✅ Supabase connected successfully
+2025-12-29T20:07:47: Supabase initialized
+2025-12-29T20:07:47: All RARE Kernel routes linked
+2025-12-29T20:07:47: Backend running on port: 5000
+2025-12-29T20:07:47: Environment: production
+2025-12-29T20:10:56: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T20:10:56: ??? Database tables created
+2025-12-29T20:10:56: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T20:10:56: Local Database (SQLite) initialized
+2025-12-29T20:10:57: ✅ MongoDB connected successfully
+2025-12-29T20:10:57: MongoDB initialized
+2025-12-29T20:10:57: ✅ Supabase connected successfully
+2025-12-29T20:10:57: Supabase initialized
+2025-12-29T20:10:58: All RARE Kernel routes linked
+2025-12-29T20:10:58: Backend running on port: 5000
+2025-12-29T20:10:58: Environment: production
+2025-12-29T20:13:15: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T20:13:15: ??? Database tables created
+2025-12-29T20:13:15: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T20:13:15: Local Database (SQLite) initialized
+2025-12-29T20:13:16: ✅ MongoDB connected successfully
+2025-12-29T20:13:16: MongoDB initialized
+2025-12-29T20:13:16: ✅ Supabase connected successfully
+2025-12-29T20:13:16: Supabase initialized
+2025-12-29T20:13:17: All RARE Kernel routes linked
+2025-12-29T20:13:17: Backend running on port: 5000
+2025-12-29T20:13:17: Environment: production
+2025-12-29T20:17:03: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T20:17:03: ??? Database tables created
+2025-12-29T20:17:03: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T20:17:03: Local Database (SQLite) initialized
+2025-12-29T20:17:05: ✅ MongoDB connected successfully
+2025-12-29T20:17:05: MongoDB initialized
+2025-12-29T20:17:05: ✅ Supabase connected successfully
+2025-12-29T20:17:05: Supabase initialized
+2025-12-29T20:17:06: All RARE Kernel routes linked
+2025-12-29T20:17:06: Backend running on port: 5000
+2025-12-29T20:17:06: Environment: production
+2025-12-29T20:19:53: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T20:19:53: ??? Database tables created
+2025-12-29T20:19:53: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T20:19:53: Local Database (SQLite) initialized
+2025-12-29T20:19:55: ✅ MongoDB connected successfully
+2025-12-29T20:19:55: MongoDB initialized
+2025-12-29T20:19:55: ✅ Supabase connected successfully
+2025-12-29T20:19:55: Supabase initialized
+2025-12-29T20:19:56: All RARE Kernel routes linked
+2025-12-29T20:19:56: Backend running on port: 5000
+2025-12-29T20:19:56: Environment: production
+2025-12-29T20:28:21: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T20:28:21: ??? Database tables created
+2025-12-29T20:28:21: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T20:28:21: Local Database (SQLite) initialized
+2025-12-29T20:28:23: ✅ MongoDB connected successfully
+2025-12-29T20:28:23: MongoDB initialized
+2025-12-29T20:28:23: ✅ Supabase connected successfully
+2025-12-29T20:28:23: Supabase initialized
+2025-12-29T20:28:24: All RARE Kernel routes linked
+2025-12-29T20:28:24: Backend running on port: 5000
+2025-12-29T20:28:24: Environment: production
+2025-12-29T20:30:37: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T20:30:37: ??? Database tables created
+2025-12-29T20:30:37: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T20:30:37: Local Database (SQLite) initialized
+2025-12-29T20:30:39: ✅ MongoDB connected successfully
+2025-12-29T20:30:39: MongoDB initialized
+2025-12-29T20:30:39: ✅ Supabase connected successfully
+2025-12-29T20:30:39: Supabase initialized
+2025-12-29T20:30:39: All RARE Kernel routes linked
+2025-12-29T20:30:39: Backend running on port: 5000
+2025-12-29T20:30:39: Environment: production
+2025-12-29T20:37:51: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T20:37:51: ??? Database tables created
+2025-12-29T20:37:51: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T20:37:51: Local Database (SQLite) initialized
+2025-12-29T20:37:52: ✅ MongoDB connected successfully
+2025-12-29T20:37:52: MongoDB initialized
+2025-12-29T20:37:52: ✅ Supabase connected successfully
+2025-12-29T20:37:52: Supabase initialized
+2025-12-29T20:37:53: All RARE Kernel routes linked
+2025-12-29T20:37:53: Backend running on port: 5000
+2025-12-29T20:37:53: Environment: production
+2025-12-29T20:41:23: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T20:41:23: ??? Database tables created
+2025-12-29T20:41:23: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T20:41:23: Local Database (SQLite) initialized
+2025-12-29T20:41:24: ✅ MongoDB connected successfully
+2025-12-29T20:41:24: MongoDB initialized
+2025-12-29T20:41:24: ✅ Supabase connected successfully
+2025-12-29T20:41:24: Supabase initialized
+2025-12-29T20:41:25: All RARE Kernel routes linked
+2025-12-29T20:41:25: Backend running on port: 5000
+2025-12-29T20:41:25: Environment: production
+2025-12-29T20:46:31: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T20:46:31: ??? Database tables created
+2025-12-29T20:46:31: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T20:46:31: Local Database (SQLite) initialized
+2025-12-29T20:46:32: ✅ MongoDB connected successfully
+2025-12-29T20:46:32: MongoDB initialized
+2025-12-29T20:46:32: ✅ Supabase connected successfully
+2025-12-29T20:46:32: Supabase initialized
+2025-12-29T20:46:33: All RARE Kernel routes linked
+2025-12-29T20:46:33: Backend running on port: 5000
+2025-12-29T20:46:33: Environment: production
+2025-12-29T20:59:23: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T20:59:23: ??? Database tables created
+2025-12-29T20:59:23: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T20:59:23: Local Database (SQLite) initialized
+2025-12-29T20:59:26: ✅ MongoDB connected successfully
+2025-12-29T20:59:26: MongoDB initialized
+2025-12-29T20:59:26: ✅ Supabase connected successfully
+2025-12-29T20:59:26: Supabase initialized
+2025-12-29T20:59:27: All RARE Kernel routes linked
+2025-12-29T20:59:27: Backend running on port: 5000
+2025-12-29T20:59:27: Environment: production
+2025-12-29T21:04:37: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T21:04:37: ??? Database tables created
+2025-12-29T21:04:37: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T21:04:37: Local Database (SQLite) initialized
+2025-12-29T21:04:40: ✅ MongoDB connected successfully
+2025-12-29T21:04:40: MongoDB initialized
+2025-12-29T21:04:40: ✅ Supabase connected successfully
+2025-12-29T21:04:40: Supabase initialized
+2025-12-29T21:04:41: All RARE Kernel routes linked
+2025-12-29T21:04:41: Backend running on port: 5000
+2025-12-29T21:04:41: Environment: production
+2025-12-29T21:09:22: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T21:09:22: ??? Database tables created
+2025-12-29T21:09:22: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T21:09:22: Local Database (SQLite) initialized
+2025-12-29T21:09:23: ✅ MongoDB connected successfully
+2025-12-29T21:09:23: MongoDB initialized
+2025-12-29T21:09:23: ✅ Supabase connected successfully
+2025-12-29T21:09:23: Supabase initialized
+2025-12-29T21:09:24: All RARE Kernel routes linked
+2025-12-29T21:09:24: Backend running on port: 5000
+2025-12-29T21:09:24: Environment: production
+2025-12-29T21:25:26: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T21:25:26: ??? Database tables created
+2025-12-29T21:25:26: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T21:25:26: Local Database (SQLite) initialized
+2025-12-29T21:25:27: ✅ MongoDB connected successfully
+2025-12-29T21:25:27: MongoDB initialized
+2025-12-29T21:25:27: ✅ Supabase connected successfully
+2025-12-29T21:25:27: Supabase initialized
+2025-12-29T21:25:28: All RARE Kernel routes linked
+2025-12-29T21:25:28: Backend running on port: 5000
+2025-12-29T21:25:28: Environment: production
+2025-12-29T21:30:05: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T21:30:05: ??? Database tables created
+2025-12-29T21:30:05: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T21:30:05: Local Database (SQLite) initialized
+2025-12-29T21:30:06: ✅ MongoDB connected successfully
+2025-12-29T21:30:06: MongoDB initialized
+2025-12-29T21:30:06: ✅ Supabase connected successfully
+2025-12-29T21:30:06: Supabase initialized
+2025-12-29T21:30:06: All RARE Kernel routes linked
+2025-12-29T21:30:06: Backend running on port: 5000
+2025-12-29T21:30:06: Environment: production
+2025-12-29T21:39:11: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T21:39:11: ??? Database tables created
+2025-12-29T21:39:11: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T21:39:11: Local Database (SQLite) initialized
+2025-12-29T21:39:13: ✅ MongoDB connected successfully
+2025-12-29T21:39:13: MongoDB initialized
+2025-12-29T21:39:13: ✅ Supabase connected successfully
+2025-12-29T21:39:13: Supabase initialized
+2025-12-29T21:39:14: All RARE Kernel routes linked
+2025-12-29T21:39:14: Backend running on port: 5000
+2025-12-29T21:39:14: Environment: production
+2025-12-29T21:44:01: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T21:44:01: ??? Database tables created
+2025-12-29T21:44:01: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T21:44:01: Local Database (SQLite) initialized
+2025-12-29T21:44:01: ✅ MongoDB connected successfully
+2025-12-29T21:44:01: MongoDB initialized
+2025-12-29T21:44:01: ✅ Supabase connected successfully
+2025-12-29T21:44:01: Supabase initialized
+2025-12-29T21:44:02: All RARE Kernel routes linked
+2025-12-29T21:44:02: Backend running on port: 5000
+2025-12-29T21:44:02: Environment: production
+2025-12-29T21:50:46: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T21:50:46: ??? Database tables created
+2025-12-29T21:50:46: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T21:50:46: Local Database (SQLite) initialized
+2025-12-29T21:50:47: ✅ MongoDB connected successfully
+2025-12-29T21:50:47: MongoDB initialized
+2025-12-29T21:50:47: ✅ Supabase connected successfully
+2025-12-29T21:50:47: Supabase initialized
+2025-12-29T21:50:47: All RARE Kernel routes linked
+2025-12-29T21:50:47: Backend running on port: 5000
+2025-12-29T21:50:47: Environment: production
+2025-12-29T21:56:44: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T21:56:44: ??? Database tables created
+2025-12-29T21:56:44: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T21:56:44: Local Database (SQLite) initialized
+2025-12-29T21:56:45: ✅ MongoDB connected successfully
+2025-12-29T21:56:45: MongoDB initialized
+2025-12-29T21:56:45: ✅ Supabase connected successfully
+2025-12-29T21:56:45: Supabase initialized
+2025-12-29T21:56:45: All RARE Kernel routes linked
+2025-12-29T21:56:45: Backend running on port: 5000
+2025-12-29T21:56:45: Environment: production
+2025-12-29T21:58:52: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T21:58:52: ??? Database tables created
+2025-12-29T21:58:52: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T21:58:52: Local Database (SQLite) initialized
+2025-12-29T21:58:53: ✅ MongoDB connected successfully
+2025-12-29T21:58:53: MongoDB initialized
+2025-12-29T21:58:53: ✅ Supabase connected successfully
+2025-12-29T21:58:53: Supabase initialized
+2025-12-29T21:58:54: All RARE Kernel routes linked
+2025-12-29T21:58:54: Backend running on port: 5000
+2025-12-29T21:58:54: Environment: production
+2025-12-29T22:01:33: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T22:01:33: ??? Database tables created
+2025-12-29T22:01:33: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T22:01:33: Local Database (SQLite) initialized
+2025-12-29T22:01:34: ✅ MongoDB connected successfully
+2025-12-29T22:01:34: MongoDB initialized
+2025-12-29T22:01:34: ✅ Supabase connected successfully
+2025-12-29T22:01:34: Supabase initialized
+2025-12-29T22:01:35: All RARE Kernel routes linked
+2025-12-29T22:01:35: Backend running on port: 5000
+2025-12-29T22:01:35: Environment: production
+2025-12-29T22:05:25: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T22:05:25: ??? Database tables created
+2025-12-29T22:05:25: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T22:05:25: Local Database (SQLite) initialized
+2025-12-29T22:05:27: ✅ MongoDB connected successfully
+2025-12-29T22:05:27: MongoDB initialized
+2025-12-29T22:05:27: ✅ Supabase connected successfully
+2025-12-29T22:05:27: Supabase initialized
+2025-12-29T22:05:28: All RARE Kernel routes linked
+2025-12-29T22:05:28: Backend running on port: 5000
+2025-12-29T22:05:28: Environment: production
+2025-12-29T22:07:50: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T22:07:50: ??? Database tables created
+2025-12-29T22:07:50: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T22:07:50: Local Database (SQLite) initialized
+2025-12-29T22:07:51: ✅ MongoDB connected successfully
+2025-12-29T22:07:51: MongoDB initialized
+2025-12-29T22:07:51: ✅ Supabase connected successfully
+2025-12-29T22:07:51: Supabase initialized
+2025-12-29T22:07:52: All RARE Kernel routes linked
+2025-12-29T22:07:52: Backend running on port: 5000
+2025-12-29T22:07:52: Environment: production
+2025-12-29T22:12:32: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T22:12:32: ??? Database tables created
+2025-12-29T22:12:32: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T22:12:32: Local Database (SQLite) initialized
+2025-12-29T22:12:33: ✅ MongoDB connected successfully
+2025-12-29T22:12:33: MongoDB initialized
+2025-12-29T22:12:33: ✅ Supabase connected successfully
+2025-12-29T22:12:33: Supabase initialized
+2025-12-29T22:12:34: All RARE Kernel routes linked
+2025-12-29T22:12:34: Backend running on port: 5000
+2025-12-29T22:12:34: Environment: production
+2025-12-29T22:26:11: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T22:26:11: ??? Database tables created
+2025-12-29T22:26:11: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T22:26:11: Local Database (SQLite) initialized
+2025-12-29T22:26:12: ✅ MongoDB connected successfully
+2025-12-29T22:26:12: MongoDB initialized
+2025-12-29T22:26:12: ✅ Supabase connected successfully
+2025-12-29T22:26:12: Supabase initialized
+2025-12-29T22:26:15: All RARE Kernel routes linked
+2025-12-29T22:26:15: Backend running on port: 5000
+2025-12-29T22:26:15: Environment: production
+2025-12-29T23:31:27: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T23:31:27: ??? Database tables created
+2025-12-29T23:31:27: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T23:31:27: Local Database (SQLite) initialized
+2025-12-29T23:31:29: ✅ MongoDB connected successfully
+2025-12-29T23:31:29: MongoDB initialized
+2025-12-29T23:31:29: ✅ Supabase connected successfully
+2025-12-29T23:31:29: Supabase initialized
+2025-12-29T23:31:30: All RARE Kernel routes linked
+2025-12-29T23:31:30: Backend running on port: 5000
+2025-12-29T23:31:30: Environment: production
+2025-12-29T23:34:52: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T23:34:52: ??? Database tables created
+2025-12-29T23:34:52: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T23:34:52: Local Database (SQLite) initialized
+2025-12-29T23:34:55: ✅ MongoDB connected successfully
+2025-12-29T23:34:55: MongoDB initialized
+2025-12-29T23:34:55: ✅ Supabase connected successfully
+2025-12-29T23:34:55: Supabase initialized
+2025-12-29T23:34:55: All RARE Kernel routes linked
+2025-12-29T23:34:55: Backend running on port: 5000
+2025-12-29T23:34:55: Environment: production
+2025-12-29T23:50:54: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T23:50:54: ??? Database tables created
+2025-12-29T23:50:54: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T23:50:54: Local Database (SQLite) initialized
+2025-12-29T23:50:55: ✅ MongoDB connected successfully
+2025-12-29T23:50:55: MongoDB initialized
+2025-12-29T23:50:55: ✅ Supabase connected successfully
+2025-12-29T23:50:55: Supabase initialized
+2025-12-29T23:50:56: All RARE Kernel routes linked
+2025-12-29T23:50:56: Backend running on port: 5000
+2025-12-29T23:50:56: Environment: production
+2025-12-29T23:57:23: Serving static files from: C:\abo-zien\apps\client-portal
+2025-12-29T23:57:23: ??? Database tables created
+2025-12-29T23:57:23: ??? Local database initialized: C:\abo-zien\apps\backend\data\abo-zien.db
+2025-12-29T23:57:23: Local Database (SQLite) initialized
+2025-12-29T23:57:30: ✅ MongoDB connected successfully
+2025-12-29T23:57:30: MongoDB initialized
+2025-12-29T23:57:30: ✅ Supabase connected successfully
+2025-12-29T23:57:30: Supabase initialized
+2025-12-29T23:57:31: All RARE Kernel routes linked
+2025-12-29T23:57:31: Backend running on port: 5000
+2025-12-29T23:57:31: Environment: production
