@@ -1,0 +1,32 @@
+{
+  "agent_id": "agent_0701kc4axybpf6fvak70xwfzpyka",
+  "tools": [
+    {
+      "id": "create_payment_session",
+      "name": "Create Payment Session",
+      "description": "توليد رابط دفع Stripe",
+      "type": "function",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "amount": { "type": "number" },
+          "client_id": { "type": "string" }
+        },
+        "required": ["amount", "client_id"]
+      }
+    },
+    {
+      "id": "submit_build_request",
+      "name": "Submit Build Request",
+      "description": "إرسال طلب بناء للأوتو بيلدر",
+      "type": "function",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "client_id": { "type": "string" },
+          "project_type": { "type": "string" }
+        }
+      }
+    }
+  ]
+}

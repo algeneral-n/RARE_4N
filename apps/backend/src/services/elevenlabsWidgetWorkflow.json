@@ -1,0 +1,141 @@
+{
+  "name": "RARE 4N Widget Workflow",
+  "version": "1.0.0",
+  "description": "Workflow for ElevenLabs Agent - Integrated with RARE 4N Libraries",
+  "agent_id": "agent_0701kc4axybpf6fvak70xwfzpyka",
+  "system_agent_id": "9401kb2n0gf5e2wtp4sfs8chdmk1",
+  "workflow": {
+    "initial_state": "welcome",
+    "states": {
+      "welcome": {
+        "name": "Welcome",
+        "description": "Initial greeting",
+        "actions": [
+          {
+            "type": "greet",
+            "message": "مرحباً بك! أنا رير، مساعدك الذكي. يمكنني مساعدتك في بناء مشروعك التقني من ترسانة رير 2050."
+          }
+        ],
+        "transitions": [
+          { "condition": "user_asks_about_apps", "next_state": "show_apps" },
+          { "condition": "user_asks_about_systems", "next_state": "show_systems" },
+          { "condition": "user_has_request", "next_state": "understand_request" }
+        ]
+      },
+      "understand_request": {
+        "name": "Understand Request",
+        "actions": [
+          { "type": "listen", "voice_recognition": true, "dialect_detection": true }
+        ],
+        "transitions": [
+          { "condition": "request_type_app", "next_state": "show_apps" },
+          { "condition": "request_unclear", "next_state": "understand_request" }
+        ]
+      },
+      "show_apps": {
+        "name": "Show Apps",
+        "actions": [
+          { "type": "show_library", "library_type": "templates" }
+        ],
+        "transitions": [
+          { "condition": "user_selects_app", "next_state": "collect_info" }
+        ]
+      },
+      "collect_info": {
+        "name": "Collect Info",
+        "actions": [
+          {
+            "type": "collect",
+            "fields": [
+              { "name": "app_name", "required": true },
+              { "name": "email", "required": true, "validation": "email" },
+              { "name": "phone", "required": true }
+            ]
+          }
+        ],
+        "transitions": [
+          { "condition": "all_info_collected", "next_state": "submit_request" }
+        ]
+      },
+      "submit_request": {
+        "name": "Submit Request",
+        "actions": [
+          { "type": "call_tool", "tool_name": "submit_request" }
+        ],
+        "transitions": [
+          { "condition": "request_submitted", "next_state": "completed" }
+        ]
+      },
+      "completed": {
+        "name": "Completed",
+        "actions": [
+          { "type": "thank", "message": "تم استلام طلبك بنجاح! نادر سيتواصل معك قريباً." }
+        ]
+      }
+    }
+  },
+  "tools": [
+    {
+      "name": "preview_library",
+      "description": "معاينة المكتبات (Templates, Systems, Themes) للعميل",
+      "parameters": { 
+        "type": "string (templates|systems|themes)",
+        "category": "string (optional)",
+        "limit": "number (optional, default: 10)"
+      },
+      "endpoint": "/api/agent-tools/preview-library"
+    },
+    {
+      "name": "search_library",
+      "description": "البحث في المكتبات",
+      "parameters": { 
+        "query": "string",
+        "type": "string (all|templates|systems|themes, optional)"
+      },
+      "endpoint": "/api/agent-tools/search-library"
+    },
+    {
+      "name": "submit_to_builder",
+      "description": "إرسال الطلب للبيلدر بعد تسجيله",
+      "parameters": { 
+        "client_id": "string",
+        "request_data": {
+          "type": "string (template|system|theme)",
+          "selectedItem": "object",
+          "clientName": "string",
+          "clientEmail": "string",
+          "clientPhone": "string (optional)",
+          "description": "string (optional)"
+        }
+      },
+      "endpoint": "/api/agent-tools/submit-to-builder"
+    },
+    {
+      "name": "create_payment",
+      "description": "إنشاء عملية دفع للعميل",
+      "parameters": { 
+        "requestId": "string",
+        "amount": "number",
+        "currency": "string (default: AED)",
+        "clientId": "string",
+        "clientEmail": "string"
+      },
+      "endpoint": "/api/agent-tools/create-payment"
+    },
+    {
+      "name": "create_checkout_session",
+      "description": "إنشاء جلسة دفع Stripe",
+      "parameters": { 
+        "amount": "number", 
+        "currency": "string (default: AED)" 
+      }
+    },
+    {
+      "name": "call_owner_emergency",
+      "description": "استدعاء المالك في حالات الطوارئ",
+      "parameters": { 
+        "reason": "string" 
+      }
+    }
+  ]
+}
