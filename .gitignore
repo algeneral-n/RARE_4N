@@ -1,0 +1,210 @@
+# ============================================
+# RARE 4N - Git Ignore File
+# حماية جميع الملفات الحساسة والبيانات
+# ============================================
+
+# ============================================
+# Environment Variables & Secrets
+# ============================================
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+.env.test
+*.env
+!.env.example
+!.env.template
+!.env.sample
+
+# ============================================
+# Node Modules
+# ============================================
+node_modules/
+**/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# ============================================
+# Build & Distribution
+# ============================================
+dist/
+build/
+out/
+.next/
+.nuxt/
+.output/
+.vercel/
+.netlify/
+*.tsbuildinfo
+*.build/
+
+# ============================================
+# Logs
+# ============================================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.log.*
+combined.log
+error.log
+backend.log
+backend-error.log
+backend-out.log
+cf-maestro.log
+cf-maestro-error.log
+cf-maestro-out.log
+portal.log
+portal-error.log
+portal-out.log
+
+# ============================================
+# Database Files
+# ============================================
+*.db
+*.sqlite
+*.sqlite3
+*.db-shm
+*.db-wal
+data/
+**/data/
+apps/backend/data/
+apps/backend/data/**/*
+!apps/backend/data/.gitkeep
+
+# ============================================
+# Vault & Sensitive Files
+# ============================================
+vault/
+**/vault/
+**/vault/**/*
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cert
+*.private
+*.secret
+*.credentials
+credentials.json
+service-account.json
+google-services.json
+GoogleService-Info.plist
+
+# ============================================
+# Temporary Files
+# ============================================
+temp/
+tmp/
+**/temp/
+**/tmp/
+*.tmp
+*.temp
+.cache/
+.parcel-cache/
+.eslintcache
+.stylelintcache
+
+# ============================================
+# OS Files
+# ============================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# ============================================
+# Cloudflare Tunnel
+# ============================================
+cloudflared.exe
+cloudflared
+tunnel-credentials.json
+tunnel-config.json
+*.tunnel.json
+
+# ============================================
+# Expo & React Native
+# ============================================
+.expo/
+.expo-shared/
+.expo/
+web-build/
+*.jks
+*.p8
+*.p12
+*.mobileprovision
+*.ipa
+*.apk
+*.aab
+
+# ============================================
+# Testing
+# ============================================
+coverage/
+.nyc_output/
+*.lcov
+.jest/
+*.test.js.snap
+
+# ============================================
+# PM2
+# ============================================
+.pm2/
+ecosystem.config.js
+pm2.config.js
+
+# ============================================
+# Backup & Graveyard
+# ============================================
+__graveyard__/
+backup/
+backups/
+*.backup
+*.bak
+*.old
+
+# ============================================
+# Generated Files
+# ============================================
+generated/
+**/generated/
+server/generated/
+apps/backend/src/server/generated/
+
+# ============================================
+# API Keys & Tokens (Extra Safety)
+# ============================================
+*api*key*
+*token*
+*secret*
+*password*
+*credential*
+*private*
+
+# ============================================
+# Package Manager Locks (Optional - uncomment if needed)
+# ============================================
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+

@@ -5,7 +5,10 @@
 
 import { MongoClient, ServerApiVersion } from 'mongodb';
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://algeneralns_db_user:XWeCOl0X8fd9IVjc@cluster0.u5c1uim.mongodb.net/?appName=Cluster0';
+const MONGODB_URI = process.env.MONGODB_URI;
+if (!MONGODB_URI) {
+  throw new Error('MONGODB_URI is required. Please set it in your .env file.');
+}
 
 let client = null;
 let db = null;

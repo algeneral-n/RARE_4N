@@ -12,10 +12,10 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const WEATHERKIT_KEY_ID = process.env.APPLE_WEATHER_KEY_ID || 'L3KM677Z7Y';
-const WEATHERKIT_TEAM_ID = process.env.APPLE_TEAM_ID || 'BN4DXG557F';
-const WEATHERKIT_KEY_PATH = process.env.APPLE_WEATHER_KEY_PATH || process.env.APPLE_WEATHER_KEY;
-const WEATHERKIT_SERVICE_ID = process.env.APPLE_WEATHER_SERVICE_ID || 'com.rare4n.app.weatherkit';
+const WEATHERKIT_KEY_ID = process.env.APPLE_WEATHERKIT_KEY_ID || process.env.APPLE_WEATHER_KEY_ID;
+const WEATHERKIT_TEAM_ID = process.env.APPLE_WEATHERKIT_TEAM_ID || process.env.APPLE_TEAM_ID;
+const WEATHERKIT_KEY_PATH = process.env.APPLE_WEATHERKIT_KEY_PATH || process.env.APPLE_WEATHER_KEY_PATH || process.env.APPLE_WEATHER_KEY;
+const WEATHERKIT_SERVICE_ID = process.env.APPLE_WEATHERKIT_SERVICE_ID || process.env.APPLE_WEATHER_SERVICE_ID;
 
 /**
  * Load WeatherKit P8 Key
