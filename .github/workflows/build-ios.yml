@@ -43,12 +43,33 @@ jobs:
           eas-version: latest
           token: ${{ secrets.EXPO_TOKEN }}
 
+      - name: Check if mobile app exists
+        id: check_mobile
+        run: |
+          if [ -d "apps/mobile" ]; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+            echo "path=apps/mobile" >> $GITHUB_OUTPUT
+          elif [ -d "mobile" ]; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+            echo "path=mobile" >> $GITHUB_OUTPUT
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+            echo "path=" >> $GITHUB_OUTPUT
+          fi
+
       - name: Install dependencies
-        working-directory: ./apps/mobile
-        run: npm ci
+        if: steps.check_mobile.outputs.exists == 'true'
+        working-directory: ./${{ steps.check_mobile.outputs.path }}
+        run: |
+          if [ -f "package.json" ]; then
+            npm ci || npm install
+          else
+            echo "No package.json found, skipping dependencies"
+          fi
 
       - name: Build iOS
-        working-directory: ./apps/mobile
+        if: steps.check_mobile.outputs.exists == 'true'
+        working-directory: ./${{ steps.check_mobile.outputs.path }}
         run: |
           eas build --platform ios \
             --profile ${{ github.event.inputs.profile || 'production' }} \
@@ -62,8 +83,14 @@ jobs:
           APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
           APPLE_SERVICE_ID: ${{ secrets.APPLE_SERVICE_ID }}
 
+      - name: Skip build - mobile app not found
+        if: steps.check_mobile.outputs.exists == 'false'
+        run: |
+          echo "⚠️ Mobile app directory not found. Skipping iOS build."
+          exit 0
+
       - name: Notify build completion
-        if: always()
+        if: always() && steps.check_mobile.outputs.exists == 'true'
         run: |
           curl -X POST "${{ secrets.API_URL }}/api/auto-builder/build-complete" \
             -H "Content-Type: application/json" \

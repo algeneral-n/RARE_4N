@@ -26,27 +26,55 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
+      - name: Check if client-portal exists
+        id: check_portal
+        run: |
+          if [ -d "apps/client-portal" ]; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+            echo "path=apps/client-portal" >> $GITHUB_OUTPUT
+          elif [ -d "client-portal" ]; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+            echo "path=client-portal" >> $GITHUB_OUTPUT
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+            echo "path=" >> $GITHUB_OUTPUT
+          fi
+
       - name: Install dependencies
-        working-directory: ./apps/client-portal
-        run: npm ci || npm install
+        if: steps.check_portal.outputs.exists == 'true'
+        working-directory: ./${{ steps.check_portal.outputs.path }}
+        run: |
+          if [ -f "package.json" ]; then
+            npm ci || npm install || echo "Dependencies installation skipped"
+          else
+            echo "No package.json found - static site, no dependencies needed"
+          fi
 
       - name: Build (if needed)
-        working-directory: ./apps/client-portal
+        if: steps.check_portal.outputs.exists == 'true'
+        working-directory: ./${{ steps.check_portal.outputs.path }}
         run: |
           if [ -f "package.json" ] && grep -q '"build"' package.json; then
             npm run build
           else
-            echo "No build step required"
+            echo "No build step required - deploying static files"
           fi
 
       - name: Deploy to Cloudflare Pages
+        if: steps.check_portal.outputs.exists == 'true'
         uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: ${{ secrets.CLOUDFLARE_PAGES_PROJECT_NAME || 'rare4n-client-portal' }}
-          directory: ./apps/client-portal
+          directory: ./${{ steps.check_portal.outputs.path }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Skip deployment - client-portal not found
+        if: steps.check_portal.outputs.exists == 'false'
+        run: |
+          echo "⚠️ Client Portal directory not found. Skipping deployment."
+          exit 0
 
       - name: Notify deployment completion
         if: always()
