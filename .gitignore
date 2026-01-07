@@ -203,6 +203,22 @@ apps/backend/src/server/generated/
 *private*
 
 # ============================================
+# Files with Real Secrets (Security)
+# ============================================
+SECRETS_SETUP.md
+BUILD_SECRETS_QUICK_SETUP.md
+GITHUB_EXPO_SECRETS_COMPLETE.md
+GITHUB_SECRETS_ADD_INSTRUCTIONS.md
+BASE44_KEYS_QUICK.md
+KEYS_FOR_DEPLOYMENT.md
+ADD_SECRETS_NOW.md
+ADD_SECRETS_AUTOMATICALLY.md
+*SECRET*.md
+*KEY*.md
+*TOKEN*.md
+*PASSWORD*.md
+
+# ============================================
 # Package Manager Locks (Optional - uncomment if needed)
 # ============================================
 # package-lock.json
