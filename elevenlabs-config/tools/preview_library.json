@@ -1,0 +1,637 @@
+{
+  "name": "preview_library",
+  "display_name": "Preview Library",
+  "description": "معاينة المكتبات (Templates, Systems, Themes) للعميل. Supports Arabic and English. Allows previewing available app templates, systems, and themes with filtering by category.",
+  "type": "function",
+  "category": "library",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/agent-tools/preview-library",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "type": {
+        "type": "string",
+        "enum": ["templates", "systems", "themes"],
+        "description": "نوع المكتبة - Library type (templates: قوالب التطبيقات, systems: الأنظمة, themes: الثيمات)",
+        "required": true
+      },
+      "category": {
+        "type": "string",
+        "description": "الفئة - Category filter (optional, e.g., 'e-commerce', 'crm', 'social')",
+        "required": false
+      },
+      "limit": {
+        "type": "number",
+        "default": 10,
+        "minimum": 1,
+        "maximum": 50,
+        "description": "عدد العناصر المراد عرضها - Number of items to return",
+        "required": false
+      }
+    },
+    "required": ["type"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "type": {
+        "type": "string"
+      },
+      "category": {
+        "type": "string"
+      },
+      "count": {
+        "type": "number"
+      },
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "nameEn": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "category": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "type": "templates",
+        "limit": 5
+      },
+      "output": {
+        "success": true,
+        "type": "templates",
+        "count": 5,
+        "items": [
+          {
+            "id": "template_001",
+            "name": "تطبيق تجارة إلكترونية",
+            "nameEn": "E-commerce App",
+            "description": "تطبيق متكامل للتجارة الإلكترونية",
+            "category": "e-commerce"
+          }
+        ]
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في معاينة المكتبة. يرجى المحاولة مرة أخرى."
+  }
+}
+
+  "name": "preview_library",
+  "display_name": "Preview Library",
+  "description": "معاينة المكتبات (Templates, Systems, Themes) للعميل. Supports Arabic and English. Allows previewing available app templates, systems, and themes with filtering by category.",
+  "type": "function",
+  "category": "library",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/agent-tools/preview-library",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "type": {
+        "type": "string",
+        "enum": ["templates", "systems", "themes"],
+        "description": "نوع المكتبة - Library type (templates: قوالب التطبيقات, systems: الأنظمة, themes: الثيمات)",
+        "required": true
+      },
+      "category": {
+        "type": "string",
+        "description": "الفئة - Category filter (optional, e.g., 'e-commerce', 'crm', 'social')",
+        "required": false
+      },
+      "limit": {
+        "type": "number",
+        "default": 10,
+        "minimum": 1,
+        "maximum": 50,
+        "description": "عدد العناصر المراد عرضها - Number of items to return",
+        "required": false
+      }
+    },
+    "required": ["type"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "type": {
+        "type": "string"
+      },
+      "category": {
+        "type": "string"
+      },
+      "count": {
+        "type": "number"
+      },
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "nameEn": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "category": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "type": "templates",
+        "limit": 5
+      },
+      "output": {
+        "success": true,
+        "type": "templates",
+        "count": 5,
+        "items": [
+          {
+            "id": "template_001",
+            "name": "تطبيق تجارة إلكترونية",
+            "nameEn": "E-commerce App",
+            "description": "تطبيق متكامل للتجارة الإلكترونية",
+            "category": "e-commerce"
+          }
+        ]
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في معاينة المكتبة. يرجى المحاولة مرة أخرى."
+  }
+}
+
+  "name": "preview_library",
+  "display_name": "Preview Library",
+  "description": "معاينة المكتبات (Templates, Systems, Themes) للعميل. Supports Arabic and English. Allows previewing available app templates, systems, and themes with filtering by category.",
+  "type": "function",
+  "category": "library",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/agent-tools/preview-library",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "type": {
+        "type": "string",
+        "enum": ["templates", "systems", "themes"],
+        "description": "نوع المكتبة - Library type (templates: قوالب التطبيقات, systems: الأنظمة, themes: الثيمات)",
+        "required": true
+      },
+      "category": {
+        "type": "string",
+        "description": "الفئة - Category filter (optional, e.g., 'e-commerce', 'crm', 'social')",
+        "required": false
+      },
+      "limit": {
+        "type": "number",
+        "default": 10,
+        "minimum": 1,
+        "maximum": 50,
+        "description": "عدد العناصر المراد عرضها - Number of items to return",
+        "required": false
+      }
+    },
+    "required": ["type"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "type": {
+        "type": "string"
+      },
+      "category": {
+        "type": "string"
+      },
+      "count": {
+        "type": "number"
+      },
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "nameEn": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "category": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "type": "templates",
+        "limit": 5
+      },
+      "output": {
+        "success": true,
+        "type": "templates",
+        "count": 5,
+        "items": [
+          {
+            "id": "template_001",
+            "name": "تطبيق تجارة إلكترونية",
+            "nameEn": "E-commerce App",
+            "description": "تطبيق متكامل للتجارة الإلكترونية",
+            "category": "e-commerce"
+          }
+        ]
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في معاينة المكتبة. يرجى المحاولة مرة أخرى."
+  }
+}
+
+  "name": "preview_library",
+  "display_name": "Preview Library",
+  "description": "معاينة المكتبات (Templates, Systems, Themes) للعميل. Supports Arabic and English. Allows previewing available app templates, systems, and themes with filtering by category.",
+  "type": "function",
+  "category": "library",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/agent-tools/preview-library",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "type": {
+        "type": "string",
+        "enum": ["templates", "systems", "themes"],
+        "description": "نوع المكتبة - Library type (templates: قوالب التطبيقات, systems: الأنظمة, themes: الثيمات)",
+        "required": true
+      },
+      "category": {
+        "type": "string",
+        "description": "الفئة - Category filter (optional, e.g., 'e-commerce', 'crm', 'social')",
+        "required": false
+      },
+      "limit": {
+        "type": "number",
+        "default": 10,
+        "minimum": 1,
+        "maximum": 50,
+        "description": "عدد العناصر المراد عرضها - Number of items to return",
+        "required": false
+      }
+    },
+    "required": ["type"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "type": {
+        "type": "string"
+      },
+      "category": {
+        "type": "string"
+      },
+      "count": {
+        "type": "number"
+      },
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "nameEn": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "category": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "type": "templates",
+        "limit": 5
+      },
+      "output": {
+        "success": true,
+        "type": "templates",
+        "count": 5,
+        "items": [
+          {
+            "id": "template_001",
+            "name": "تطبيق تجارة إلكترونية",
+            "nameEn": "E-commerce App",
+            "description": "تطبيق متكامل للتجارة الإلكترونية",
+            "category": "e-commerce"
+          }
+        ]
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في معاينة المكتبة. يرجى المحاولة مرة أخرى."
+  }
+}
+
+  "name": "preview_library",
+  "display_name": "Preview Library",
+  "description": "معاينة المكتبات (Templates, Systems, Themes) للعميل. Supports Arabic and English. Allows previewing available app templates, systems, and themes with filtering by category.",
+  "type": "function",
+  "category": "library",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/agent-tools/preview-library",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "type": {
+        "type": "string",
+        "enum": ["templates", "systems", "themes"],
+        "description": "نوع المكتبة - Library type (templates: قوالب التطبيقات, systems: الأنظمة, themes: الثيمات)",
+        "required": true
+      },
+      "category": {
+        "type": "string",
+        "description": "الفئة - Category filter (optional, e.g., 'e-commerce', 'crm', 'social')",
+        "required": false
+      },
+      "limit": {
+        "type": "number",
+        "default": 10,
+        "minimum": 1,
+        "maximum": 50,
+        "description": "عدد العناصر المراد عرضها - Number of items to return",
+        "required": false
+      }
+    },
+    "required": ["type"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "type": {
+        "type": "string"
+      },
+      "category": {
+        "type": "string"
+      },
+      "count": {
+        "type": "number"
+      },
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "nameEn": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "category": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "type": "templates",
+        "limit": 5
+      },
+      "output": {
+        "success": true,
+        "type": "templates",
+        "count": 5,
+        "items": [
+          {
+            "id": "template_001",
+            "name": "تطبيق تجارة إلكترونية",
+            "nameEn": "E-commerce App",
+            "description": "تطبيق متكامل للتجارة الإلكترونية",
+            "category": "e-commerce"
+          }
+        ]
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في معاينة المكتبة. يرجى المحاولة مرة أخرى."
+  }
+}
+
+  "name": "preview_library",
+  "display_name": "Preview Library",
+  "description": "معاينة المكتبات (Templates, Systems, Themes) للعميل. Supports Arabic and English. Allows previewing available app templates, systems, and themes with filtering by category.",
+  "type": "function",
+  "category": "library",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/agent-tools/preview-library",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "type": {
+        "type": "string",
+        "enum": ["templates", "systems", "themes"],
+        "description": "نوع المكتبة - Library type (templates: قوالب التطبيقات, systems: الأنظمة, themes: الثيمات)",
+        "required": true
+      },
+      "category": {
+        "type": "string",
+        "description": "الفئة - Category filter (optional, e.g., 'e-commerce', 'crm', 'social')",
+        "required": false
+      },
+      "limit": {
+        "type": "number",
+        "default": 10,
+        "minimum": 1,
+        "maximum": 50,
+        "description": "عدد العناصر المراد عرضها - Number of items to return",
+        "required": false
+      }
+    },
+    "required": ["type"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "type": {
+        "type": "string"
+      },
+      "category": {
+        "type": "string"
+      },
+      "count": {
+        "type": "number"
+      },
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "nameEn": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "category": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "type": "templates",
+        "limit": 5
+      },
+      "output": {
+        "success": true,
+        "type": "templates",
+        "count": 5,
+        "items": [
+          {
+            "id": "template_001",
+            "name": "تطبيق تجارة إلكترونية",
+            "nameEn": "E-commerce App",
+            "description": "تطبيق متكامل للتجارة الإلكترونية",
+            "category": "e-commerce"
+          }
+        ]
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في معاينة المكتبة. يرجى المحاولة مرة أخرى."
+  }
+}
+

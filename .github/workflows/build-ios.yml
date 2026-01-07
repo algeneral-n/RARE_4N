@@ -1,0 +1,78 @@
+name: Build iOS App
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - 'apps/mobile/**'
+      - 'mobile/**'
+  pull_request:
+    branches: [main, master]
+    paths:
+      - 'apps/mobile/**'
+      - 'mobile/**'
+  workflow_dispatch:
+    inputs:
+      profile:
+        description: 'Build profile'
+        required: true
+        default: 'production'
+        type: choice
+        options:
+          - development
+          - preview
+          - production
+
+jobs:
+  build-ios:
+    name: Build iOS
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Setup Expo
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: Install dependencies
+        working-directory: ./apps/mobile
+        run: npm ci
+
+      - name: Build iOS
+        working-directory: ./apps/mobile
+        run: |
+          eas build --platform ios \
+            --profile ${{ github.event.inputs.profile || 'production' }} \
+            --non-interactive \
+            --no-wait
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+          ASC_API_KEY_ID: ${{ secrets.ASC_API_KEY_ID }}
+          ASC_API_KEY_ISSUER_ID: ${{ secrets.ASC_API_KEY_ISSUER_ID }}
+          ASC_API_KEY_P8: ${{ secrets.ASC_API_KEY_P8 }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          APPLE_SERVICE_ID: ${{ secrets.APPLE_SERVICE_ID }}
+
+      - name: Notify build completion
+        if: always()
+        run: |
+          curl -X POST "${{ secrets.API_URL }}/api/auto-builder/build-complete" \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Bearer ${{ secrets.API_TOKEN }}" \
+            -d '{
+              "platform": "ios",
+              "profile": "${{ github.event.inputs.profile || 'production' }}",
+              "status": "${{ job.status }}",
+              "workflow": "${{ github.workflow }}",
+              "run_id": "${{ github.run_id }}"
+            }' || true
+

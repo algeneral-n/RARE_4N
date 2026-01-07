@@ -6,6 +6,7 @@
 import axios from 'axios';
 
 const ELEVENLABS_API_KEY = process.env.ELEVENLABS_API_KEY;
+const ELEVENLABS_INTEGRATION_ID = process.env.ELEVENLABS_INTEGRATION_ID || 'POISff1Do4B1q3oBd7EB';
 const ELEVENLABS_CONVAI_AGENT_ID = process.env.ELEVENLABS_CONVAI_AGENT_ID || 'agent_0701kc4axybpf6fvak70xwfzpyka';
 const ELEVENLABS_SYSTEM_AGENT_ID = process.env.ELEVENLABS_SYSTEM_AGENT_ID || '9401kb2n0gf5e2wtp4sfs8chdmk1';
 const ELEVENLABS_API_URL = 'https://api.elevenlabs.io/v1';
@@ -44,6 +45,8 @@ export async function getAgentConfig(agentId = ELEVENLABS_CONVAI_AGENT_ID) {
 
 /**
  * Create conversation session with agent
+ * ✅ دعم جميع اللغات واللهجات
+ * ✅ حفظ شخصية المستخدم
  */
 export async function createConversation(agentId = ELEVENLABS_CONVAI_AGENT_ID, context = {}) {
   if (!ELEVENLABS_API_KEY) {
@@ -51,16 +54,52 @@ export async function createConversation(agentId = ELEVENLABS_CONVAI_AGENT_ID, c
   }
 
   try {
+    // Get user profile if userId is provided
+    let userProfile = null;
+    if (context.userId) {
+      const { getDatabase } = await import('../database/localDB.js');
+      const db = getDatabase();
+      if (db) {
+        const stmt = db.prepare('SELECT * FROM user_profiles WHERE user_id = ?');
+        userProfile = stmt.get(context.userId);
+      }
+    }
+
+    // ✅ التحقق من Voice ID للمالك (Nader)
+    const OWNER_VOICE_ID = '6ZVgc4q9LWAloWbuwjuu';
+    const isOwner = context.voice_id === OWNER_VOICE_ID || context.owner === true;
+
+    // Build context with user profile
+    const conversationContext = {
+      clientName: context.clientName || userProfile?.name || (isOwner ? 'Nader' : 'عميل'),
+      projectType: context.projectType || 'تطبيق',
+      language: context.language || userProfile?.language || 'ar',
+      dialect: context.dialect || userProfile?.dialect || null,
+      phone: context.phone || userProfile?.phone || (isOwner ? '+971529211077' : null),
+      email: context.email || userProfile?.email || (isOwner ? 'gm@zien-ai.app' : null),
+      personality: userProfile?.personality_traits ? JSON.parse(userProfile.personality_traits) : null,
+      preferences: userProfile?.preferences ? JSON.parse(userProfile.preferences) : null,
+      // Webhook URL for events
+      webhook_url: `${process.env.API_DOMAIN || 'https://api.zien-ai.app'}/api/elevenlabs/webhook`,
+      // ✅ Owner context
+      owner: isOwner,
+      ownerName: isOwner ? 'Nader' : null,
+      ownerVoiceId: isOwner ? OWNER_VOICE_ID : null,
+      commandExecution: isOwner, // تفعيل تنفيذ الأوامر للمالك
+      librariesAccess: true, // الوصول للمكتبات
+      // Knowledge Base URLs
+      libraries_api: `${process.env.API_DOMAIN || 'https://api.zien-ai.app'}/api/libraries`,
+      templates_api: `${process.env.API_DOMAIN || 'https://api.zien-ai.app'}/api/libraries/templates`,
+      systems_api: `${process.env.API_DOMAIN || 'https://api.zien-ai.app'}/api/libraries/systems`,
+      themes_api: `${process.env.API_DOMAIN || 'https://api.zien-ai.app'}/api/libraries/themes`,
+      ...context
+    };
+
     const response = await axios.post(
       `${ELEVENLABS_API_URL}/convai/conversations`,
       {
         agent_id: agentId,
-        context: {
-          clientName: context.clientName || 'عميل',
-          projectType: context.projectType || 'تطبيق',
-          language: 'ar',
-          ...context
-        }
+        context: conversationContext
       },
       { headers }
     );
@@ -280,6 +319,86 @@ export async function getAgentStatus() {
     configured: !!ELEVENLABS_API_KEY,
     convaiAgentId: ELEVENLABS_CONVAI_AGENT_ID,
     systemAgentId: ELEVENLABS_SYSTEM_AGENT_ID,
+    ready: !!ELEVENLABS_API_KEY && !!ELEVENLABS_CONVAI_AGENT_ID
+  };
+}
+
+export default {
+  getAgentConfig,
+  createConversation,
+  sendMessage,
+  textToSpeech,
+  getVoices,
+  greetClient,
+  announceUpdate,
+  handleInquiry,
+  getAgentStatus
+};
+
+    ready: !!ELEVENLABS_API_KEY && !!ELEVENLABS_CONVAI_AGENT_ID
+  };
+}
+
+export default {
+  getAgentConfig,
+  createConversation,
+  sendMessage,
+  textToSpeech,
+  getVoices,
+  greetClient,
+  announceUpdate,
+  handleInquiry,
+  getAgentStatus
+};
+
+    ready: !!ELEVENLABS_API_KEY && !!ELEVENLABS_CONVAI_AGENT_ID
+  };
+}
+
+export default {
+  getAgentConfig,
+  createConversation,
+  sendMessage,
+  textToSpeech,
+  getVoices,
+  greetClient,
+  announceUpdate,
+  handleInquiry,
+  getAgentStatus
+};
+
+    ready: !!ELEVENLABS_API_KEY && !!ELEVENLABS_CONVAI_AGENT_ID
+  };
+}
+
+export default {
+  getAgentConfig,
+  createConversation,
+  sendMessage,
+  textToSpeech,
+  getVoices,
+  greetClient,
+  announceUpdate,
+  handleInquiry,
+  getAgentStatus
+};
+
+    ready: !!ELEVENLABS_API_KEY && !!ELEVENLABS_CONVAI_AGENT_ID
+  };
+}
+
+export default {
+  getAgentConfig,
+  createConversation,
+  sendMessage,
+  textToSpeech,
+  getVoices,
+  greetClient,
+  announceUpdate,
+  handleInquiry,
+  getAgentStatus
+};
+
     ready: !!ELEVENLABS_API_KEY && !!ELEVENLABS_CONVAI_AGENT_ID
   };
 }

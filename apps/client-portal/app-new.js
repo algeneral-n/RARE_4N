@@ -14,6 +14,7 @@ import { PaymentsPage } from './pages/PaymentsPage.js?v=5';
 import RARECharacter from './components/RARECharacter.js?v=5';
 import ThemeManager from './themes/themes.js?v=5';
 import LanguageManager from './i18n/languages.js?v=5';
+import translationService from './services/TranslationService.js?v=5';
 import SmartPortalAgent from './services/SmartPortalAgent.js?v=5';
 import { PortalAgent } from './services/PortalAgent.js?v=5';
 import './matrix-background.js?v=31';

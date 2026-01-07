@@ -7,7 +7,8 @@ import { MongoClient, ServerApiVersion } from 'mongodb';
 
 const MONGODB_URI = process.env.MONGODB_URI;
 if (!MONGODB_URI) {
-  throw new Error('MONGODB_URI is required. Please set it in your .env file.');
+  console.warn('⚠️ MONGODB_URI is not set. MongoDB features will be disabled.');
+  // Don't throw error - make MongoDB optional for MCP endpoint to work
 }
 
 let client = null;
@@ -20,6 +21,12 @@ const RETRY_DELAY = 5000; // 5 seconds
  * Initialize MongoDB connection with retry logic and connection pooling
  */
 export async function initMongoDB() {
+  // ✅ Check if MONGODB_URI is set before attempting connection
+  if (!MONGODB_URI) {
+    console.warn('⚠️ MongoDB connection skipped: MONGODB_URI not configured');
+    return null;
+  }
+
   try {
     if (client && db) {
       // Health check existing connection
@@ -64,7 +71,8 @@ export async function initMongoDB() {
       return await initMongoDB(); // Recursive retry
     }
     
-    throw error; // Re-throw after max retries
+    console.error('❌ MongoDB connection failed after max retries');
+    return null; // Return null instead of throwing to make it optional
   }
 }
 
@@ -72,6 +80,11 @@ export async function initMongoDB() {
  * Get MongoDB database instance with health check
  */
 export async function getMongoDB() {
+  // ✅ Check if MONGODB_URI is set
+  if (!MONGODB_URI) {
+    return null;
+  }
+
   if (!db || !client) {
     return await initMongoDB();
   }

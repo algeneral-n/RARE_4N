@@ -1,0 +1,559 @@
+{
+  "name": "send_twilio_message",
+  "display_name": "Send Twilio Message",
+  "description": "إرسال رسالة عبر Twilio WhatsApp أو SMS. Supports all languages and dialects. Send messages to clients via WhatsApp or SMS using Twilio.",
+  "type": "function",
+  "category": "communication",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/twilio/send",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "phone": {
+        "type": "string",
+        "pattern": "^\\+[1-9]\\d{1,14}$",
+        "description": "رقم الهاتف - Phone number with country code (format: +971XXXXXXXXX)",
+        "required": true,
+        "examples": ["+971501234567", "+14155551234"]
+      },
+      "message": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 1600,
+        "description": "نص الرسالة - Message text (supports Arabic, English, and all languages)",
+        "required": true
+      },
+      "type": {
+        "type": "string",
+        "enum": ["whatsapp", "sms"],
+        "default": "whatsapp",
+        "description": "نوع الرسالة - Message type (whatsapp: واتساب, sms: رسالة نصية)",
+        "required": false
+      }
+    },
+    "required": ["phone", "message"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "messageSid": {
+        "type": "string",
+        "description": "Twilio message SID"
+      },
+      "status": {
+        "type": "string",
+        "enum": ["queued", "sent", "delivered", "failed"]
+      },
+      "message": {
+        "type": "string"
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "phone": "+971501234567",
+        "message": "مرحباً! تم استلام طلبك بنجاح. سيتواصل معك فريقنا قريباً.",
+        "type": "whatsapp"
+      },
+      "output": {
+        "success": true,
+        "messageSid": "SM1234567890abcdef",
+        "status": "queued",
+        "message": "تم إرسال الرسالة بنجاح"
+      }
+    },
+    {
+      "input": {
+        "phone": "+14155551234",
+        "message": "Hello! Your request has been received. Our team will contact you soon.",
+        "type": "sms"
+      },
+      "output": {
+        "success": true,
+        "messageSid": "SM0987654321fedcba",
+        "status": "sent",
+        "message": "Message sent successfully"
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في إرسال الرسالة. يرجى المحاولة مرة أخرى."
+  }
+}
+
+  "name": "send_twilio_message",
+  "display_name": "Send Twilio Message",
+  "description": "إرسال رسالة عبر Twilio WhatsApp أو SMS. Supports all languages and dialects. Send messages to clients via WhatsApp or SMS using Twilio.",
+  "type": "function",
+  "category": "communication",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/twilio/send",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "phone": {
+        "type": "string",
+        "pattern": "^\\+[1-9]\\d{1,14}$",
+        "description": "رقم الهاتف - Phone number with country code (format: +971XXXXXXXXX)",
+        "required": true,
+        "examples": ["+971501234567", "+14155551234"]
+      },
+      "message": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 1600,
+        "description": "نص الرسالة - Message text (supports Arabic, English, and all languages)",
+        "required": true
+      },
+      "type": {
+        "type": "string",
+        "enum": ["whatsapp", "sms"],
+        "default": "whatsapp",
+        "description": "نوع الرسالة - Message type (whatsapp: واتساب, sms: رسالة نصية)",
+        "required": false
+      }
+    },
+    "required": ["phone", "message"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "messageSid": {
+        "type": "string",
+        "description": "Twilio message SID"
+      },
+      "status": {
+        "type": "string",
+        "enum": ["queued", "sent", "delivered", "failed"]
+      },
+      "message": {
+        "type": "string"
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "phone": "+971501234567",
+        "message": "مرحباً! تم استلام طلبك بنجاح. سيتواصل معك فريقنا قريباً.",
+        "type": "whatsapp"
+      },
+      "output": {
+        "success": true,
+        "messageSid": "SM1234567890abcdef",
+        "status": "queued",
+        "message": "تم إرسال الرسالة بنجاح"
+      }
+    },
+    {
+      "input": {
+        "phone": "+14155551234",
+        "message": "Hello! Your request has been received. Our team will contact you soon.",
+        "type": "sms"
+      },
+      "output": {
+        "success": true,
+        "messageSid": "SM0987654321fedcba",
+        "status": "sent",
+        "message": "Message sent successfully"
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في إرسال الرسالة. يرجى المحاولة مرة أخرى."
+  }
+}
+
+  "name": "send_twilio_message",
+  "display_name": "Send Twilio Message",
+  "description": "إرسال رسالة عبر Twilio WhatsApp أو SMS. Supports all languages and dialects. Send messages to clients via WhatsApp or SMS using Twilio.",
+  "type": "function",
+  "category": "communication",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/twilio/send",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "phone": {
+        "type": "string",
+        "pattern": "^\\+[1-9]\\d{1,14}$",
+        "description": "رقم الهاتف - Phone number with country code (format: +971XXXXXXXXX)",
+        "required": true,
+        "examples": ["+971501234567", "+14155551234"]
+      },
+      "message": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 1600,
+        "description": "نص الرسالة - Message text (supports Arabic, English, and all languages)",
+        "required": true
+      },
+      "type": {
+        "type": "string",
+        "enum": ["whatsapp", "sms"],
+        "default": "whatsapp",
+        "description": "نوع الرسالة - Message type (whatsapp: واتساب, sms: رسالة نصية)",
+        "required": false
+      }
+    },
+    "required": ["phone", "message"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "messageSid": {
+        "type": "string",
+        "description": "Twilio message SID"
+      },
+      "status": {
+        "type": "string",
+        "enum": ["queued", "sent", "delivered", "failed"]
+      },
+      "message": {
+        "type": "string"
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "phone": "+971501234567",
+        "message": "مرحباً! تم استلام طلبك بنجاح. سيتواصل معك فريقنا قريباً.",
+        "type": "whatsapp"
+      },
+      "output": {
+        "success": true,
+        "messageSid": "SM1234567890abcdef",
+        "status": "queued",
+        "message": "تم إرسال الرسالة بنجاح"
+      }
+    },
+    {
+      "input": {
+        "phone": "+14155551234",
+        "message": "Hello! Your request has been received. Our team will contact you soon.",
+        "type": "sms"
+      },
+      "output": {
+        "success": true,
+        "messageSid": "SM0987654321fedcba",
+        "status": "sent",
+        "message": "Message sent successfully"
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في إرسال الرسالة. يرجى المحاولة مرة أخرى."
+  }
+}
+
+  "name": "send_twilio_message",
+  "display_name": "Send Twilio Message",
+  "description": "إرسال رسالة عبر Twilio WhatsApp أو SMS. Supports all languages and dialects. Send messages to clients via WhatsApp or SMS using Twilio.",
+  "type": "function",
+  "category": "communication",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/twilio/send",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "phone": {
+        "type": "string",
+        "pattern": "^\\+[1-9]\\d{1,14}$",
+        "description": "رقم الهاتف - Phone number with country code (format: +971XXXXXXXXX)",
+        "required": true,
+        "examples": ["+971501234567", "+14155551234"]
+      },
+      "message": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 1600,
+        "description": "نص الرسالة - Message text (supports Arabic, English, and all languages)",
+        "required": true
+      },
+      "type": {
+        "type": "string",
+        "enum": ["whatsapp", "sms"],
+        "default": "whatsapp",
+        "description": "نوع الرسالة - Message type (whatsapp: واتساب, sms: رسالة نصية)",
+        "required": false
+      }
+    },
+    "required": ["phone", "message"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "messageSid": {
+        "type": "string",
+        "description": "Twilio message SID"
+      },
+      "status": {
+        "type": "string",
+        "enum": ["queued", "sent", "delivered", "failed"]
+      },
+      "message": {
+        "type": "string"
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "phone": "+971501234567",
+        "message": "مرحباً! تم استلام طلبك بنجاح. سيتواصل معك فريقنا قريباً.",
+        "type": "whatsapp"
+      },
+      "output": {
+        "success": true,
+        "messageSid": "SM1234567890abcdef",
+        "status": "queued",
+        "message": "تم إرسال الرسالة بنجاح"
+      }
+    },
+    {
+      "input": {
+        "phone": "+14155551234",
+        "message": "Hello! Your request has been received. Our team will contact you soon.",
+        "type": "sms"
+      },
+      "output": {
+        "success": true,
+        "messageSid": "SM0987654321fedcba",
+        "status": "sent",
+        "message": "Message sent successfully"
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في إرسال الرسالة. يرجى المحاولة مرة أخرى."
+  }
+}
+
+  "name": "send_twilio_message",
+  "display_name": "Send Twilio Message",
+  "description": "إرسال رسالة عبر Twilio WhatsApp أو SMS. Supports all languages and dialects. Send messages to clients via WhatsApp or SMS using Twilio.",
+  "type": "function",
+  "category": "communication",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/twilio/send",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "phone": {
+        "type": "string",
+        "pattern": "^\\+[1-9]\\d{1,14}$",
+        "description": "رقم الهاتف - Phone number with country code (format: +971XXXXXXXXX)",
+        "required": true,
+        "examples": ["+971501234567", "+14155551234"]
+      },
+      "message": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 1600,
+        "description": "نص الرسالة - Message text (supports Arabic, English, and all languages)",
+        "required": true
+      },
+      "type": {
+        "type": "string",
+        "enum": ["whatsapp", "sms"],
+        "default": "whatsapp",
+        "description": "نوع الرسالة - Message type (whatsapp: واتساب, sms: رسالة نصية)",
+        "required": false
+      }
+    },
+    "required": ["phone", "message"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "messageSid": {
+        "type": "string",
+        "description": "Twilio message SID"
+      },
+      "status": {
+        "type": "string",
+        "enum": ["queued", "sent", "delivered", "failed"]
+      },
+      "message": {
+        "type": "string"
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "phone": "+971501234567",
+        "message": "مرحباً! تم استلام طلبك بنجاح. سيتواصل معك فريقنا قريباً.",
+        "type": "whatsapp"
+      },
+      "output": {
+        "success": true,
+        "messageSid": "SM1234567890abcdef",
+        "status": "queued",
+        "message": "تم إرسال الرسالة بنجاح"
+      }
+    },
+    {
+      "input": {
+        "phone": "+14155551234",
+        "message": "Hello! Your request has been received. Our team will contact you soon.",
+        "type": "sms"
+      },
+      "output": {
+        "success": true,
+        "messageSid": "SM0987654321fedcba",
+        "status": "sent",
+        "message": "Message sent successfully"
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في إرسال الرسالة. يرجى المحاولة مرة أخرى."
+  }
+}
+
+  "name": "send_twilio_message",
+  "display_name": "Send Twilio Message",
+  "description": "إرسال رسالة عبر Twilio WhatsApp أو SMS. Supports all languages and dialects. Send messages to clients via WhatsApp or SMS using Twilio.",
+  "type": "function",
+  "category": "communication",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/twilio/send",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "phone": {
+        "type": "string",
+        "pattern": "^\\+[1-9]\\d{1,14}$",
+        "description": "رقم الهاتف - Phone number with country code (format: +971XXXXXXXXX)",
+        "required": true,
+        "examples": ["+971501234567", "+14155551234"]
+      },
+      "message": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 1600,
+        "description": "نص الرسالة - Message text (supports Arabic, English, and all languages)",
+        "required": true
+      },
+      "type": {
+        "type": "string",
+        "enum": ["whatsapp", "sms"],
+        "default": "whatsapp",
+        "description": "نوع الرسالة - Message type (whatsapp: واتساب, sms: رسالة نصية)",
+        "required": false
+      }
+    },
+    "required": ["phone", "message"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "messageSid": {
+        "type": "string",
+        "description": "Twilio message SID"
+      },
+      "status": {
+        "type": "string",
+        "enum": ["queued", "sent", "delivered", "failed"]
+      },
+      "message": {
+        "type": "string"
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "phone": "+971501234567",
+        "message": "مرحباً! تم استلام طلبك بنجاح. سيتواصل معك فريقنا قريباً.",
+        "type": "whatsapp"
+      },
+      "output": {
+        "success": true,
+        "messageSid": "SM1234567890abcdef",
+        "status": "queued",
+        "message": "تم إرسال الرسالة بنجاح"
+      }
+    },
+    {
+      "input": {
+        "phone": "+14155551234",
+        "message": "Hello! Your request has been received. Our team will contact you soon.",
+        "type": "sms"
+      },
+      "output": {
+        "success": true,
+        "messageSid": "SM0987654321fedcba",
+        "status": "sent",
+        "message": "Message sent successfully"
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في إرسال الرسالة. يرجى المحاولة مرة أخرى."
+  }
+}
+

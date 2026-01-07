@@ -21,6 +21,13 @@ const SUPABASE_RETRY_DELAY = 5000;
  * Initialize Supabase client with retry logic
  */
 export function initSupabase() {
+  // ✅ Check if credentials are set before attempting connection
+  if (!SUPABASE_URL || !SUPABASE_KEY) {
+    console.warn('⚠️ Supabase connection skipped: SUPABASE_URL or SUPABASE_ANON_KEY not configured');
+    supabaseRetries = 0; // Reset retries
+    return null;
+  }
+
   try {
     if (supabase) {
       return supabase;
@@ -50,15 +57,24 @@ export function initSupabase() {
     console.error('❌ Supabase connection error:', error.message);
     supabaseRetries++;
     
-    if (supabaseRetries < SUPABASE_MAX_RETRIES) {
-      console.warn(`⚠️ Retrying Supabase connection (${supabaseRetries}/${SUPABASE_MAX_RETRIES})...`);
-      setTimeout(() => {
-        return initSupabase();
-      }, SUPABASE_RETRY_DELAY);
+    // ✅ Don't retry if credentials are missing
+    if (!SUPABASE_URL || !SUPABASE_KEY) {
+      console.warn('⚠️ Supabase connection skipped: credentials not configured');
+      supabaseRetries = 0; // Reset retries
       return null;
     }
     
-    throw error;
+    // ✅ Stop retrying after max attempts
+    if (supabaseRetries >= SUPABASE_MAX_RETRIES) {
+      console.error('❌ Supabase connection failed after max retries');
+      supabaseRetries = 0; // Reset for next manual attempt
+      return null;
+    }
+    
+    // ✅ Only retry if we haven't exceeded max retries
+    console.warn(`⚠️ Retrying Supabase connection (${supabaseRetries}/${SUPABASE_MAX_RETRIES})...`);
+    // Don't use setTimeout - just return null and let caller handle retry if needed
+    return null;
   }
 }
 
@@ -66,6 +82,11 @@ export function initSupabase() {
  * Get Supabase client with health check
  */
 export async function getSupabase() {
+  // ✅ Check if credentials are set
+  if (!SUPABASE_URL || !SUPABASE_KEY) {
+    return null;
+  }
+
   if (!supabase) {
     return initSupabase();
   }

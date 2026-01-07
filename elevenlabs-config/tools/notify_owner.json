@@ -1,0 +1,703 @@
+{
+  "name": "notify_owner",
+  "display_name": "Notify Owner",
+  "description": "إرسال إشعار للمالك (Nader/Eamon) عبر Twilio. Use for important events, owner commands, or when the agent needs assistance. Sends WhatsApp message to owner.",
+  "type": "function",
+  "category": "notification",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/agent-tools/notify-owner",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "reason": {
+        "type": "string",
+        "minLength": 5,
+        "description": "سبب الإشعار - Reason for notification (e.g., 'Client requested urgent support', 'Payment issue', 'Builder error')",
+        "required": true
+      },
+      "priority": {
+        "type": "string",
+        "enum": ["low", "normal", "high", "emergency"],
+        "default": "normal",
+        "description": "أولوية الإشعار - Notification priority (low: منخفضة, normal: عادية, high: عالية, emergency: طوارئ)",
+        "required": false
+      },
+      "conversationId": {
+        "type": "string",
+        "description": "معرف المحادثة - Conversation ID (optional, for context)",
+        "required": false
+      },
+      "additionalInfo": {
+        "type": "object",
+        "description": "معلومات إضافية - Additional information (optional)",
+        "required": false
+      }
+    },
+    "required": ["reason"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "nader": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "messageSid": {
+            "type": "string"
+          }
+        }
+      },
+      "eamon": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "messageSid": {
+            "type": "string"
+          }
+        },
+        "description": "Only if Eamon's phone is configured"
+      },
+      "message": {
+        "type": "string"
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "reason": "Client requested urgent support for payment issue",
+        "priority": "high",
+        "conversationId": "conv_1234567890"
+      },
+      "output": {
+        "success": true,
+        "nader": {
+          "success": true,
+          "messageSid": "SM1234567890abcdef"
+        },
+        "message": "Owner notified successfully"
+      }
+    },
+    {
+      "input": {
+        "reason": "Builder encountered an error during build process",
+        "priority": "emergency",
+        "additionalInfo": {
+          "buildId": "build_123",
+          "error": "Build failed at step 3"
+        }
+      },
+      "output": {
+        "success": true,
+        "nader": {
+          "success": true,
+          "messageSid": "SM0987654321fedcba"
+        },
+        "message": "Owner notified successfully"
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في إرسال الإشعار. سيتم حفظ الأمر للتحقق لاحقاً."
+  }
+}
+
+  "name": "notify_owner",
+  "display_name": "Notify Owner",
+  "description": "إرسال إشعار للمالك (Nader/Eamon) عبر Twilio. Use for important events, owner commands, or when the agent needs assistance. Sends WhatsApp message to owner.",
+  "type": "function",
+  "category": "notification",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/agent-tools/notify-owner",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "reason": {
+        "type": "string",
+        "minLength": 5,
+        "description": "سبب الإشعار - Reason for notification (e.g., 'Client requested urgent support', 'Payment issue', 'Builder error')",
+        "required": true
+      },
+      "priority": {
+        "type": "string",
+        "enum": ["low", "normal", "high", "emergency"],
+        "default": "normal",
+        "description": "أولوية الإشعار - Notification priority (low: منخفضة, normal: عادية, high: عالية, emergency: طوارئ)",
+        "required": false
+      },
+      "conversationId": {
+        "type": "string",
+        "description": "معرف المحادثة - Conversation ID (optional, for context)",
+        "required": false
+      },
+      "additionalInfo": {
+        "type": "object",
+        "description": "معلومات إضافية - Additional information (optional)",
+        "required": false
+      }
+    },
+    "required": ["reason"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "nader": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "messageSid": {
+            "type": "string"
+          }
+        }
+      },
+      "eamon": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "messageSid": {
+            "type": "string"
+          }
+        },
+        "description": "Only if Eamon's phone is configured"
+      },
+      "message": {
+        "type": "string"
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "reason": "Client requested urgent support for payment issue",
+        "priority": "high",
+        "conversationId": "conv_1234567890"
+      },
+      "output": {
+        "success": true,
+        "nader": {
+          "success": true,
+          "messageSid": "SM1234567890abcdef"
+        },
+        "message": "Owner notified successfully"
+      }
+    },
+    {
+      "input": {
+        "reason": "Builder encountered an error during build process",
+        "priority": "emergency",
+        "additionalInfo": {
+          "buildId": "build_123",
+          "error": "Build failed at step 3"
+        }
+      },
+      "output": {
+        "success": true,
+        "nader": {
+          "success": true,
+          "messageSid": "SM0987654321fedcba"
+        },
+        "message": "Owner notified successfully"
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في إرسال الإشعار. سيتم حفظ الأمر للتحقق لاحقاً."
+  }
+}
+
+  "name": "notify_owner",
+  "display_name": "Notify Owner",
+  "description": "إرسال إشعار للمالك (Nader/Eamon) عبر Twilio. Use for important events, owner commands, or when the agent needs assistance. Sends WhatsApp message to owner.",
+  "type": "function",
+  "category": "notification",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/agent-tools/notify-owner",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "reason": {
+        "type": "string",
+        "minLength": 5,
+        "description": "سبب الإشعار - Reason for notification (e.g., 'Client requested urgent support', 'Payment issue', 'Builder error')",
+        "required": true
+      },
+      "priority": {
+        "type": "string",
+        "enum": ["low", "normal", "high", "emergency"],
+        "default": "normal",
+        "description": "أولوية الإشعار - Notification priority (low: منخفضة, normal: عادية, high: عالية, emergency: طوارئ)",
+        "required": false
+      },
+      "conversationId": {
+        "type": "string",
+        "description": "معرف المحادثة - Conversation ID (optional, for context)",
+        "required": false
+      },
+      "additionalInfo": {
+        "type": "object",
+        "description": "معلومات إضافية - Additional information (optional)",
+        "required": false
+      }
+    },
+    "required": ["reason"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "nader": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "messageSid": {
+            "type": "string"
+          }
+        }
+      },
+      "eamon": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "messageSid": {
+            "type": "string"
+          }
+        },
+        "description": "Only if Eamon's phone is configured"
+      },
+      "message": {
+        "type": "string"
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "reason": "Client requested urgent support for payment issue",
+        "priority": "high",
+        "conversationId": "conv_1234567890"
+      },
+      "output": {
+        "success": true,
+        "nader": {
+          "success": true,
+          "messageSid": "SM1234567890abcdef"
+        },
+        "message": "Owner notified successfully"
+      }
+    },
+    {
+      "input": {
+        "reason": "Builder encountered an error during build process",
+        "priority": "emergency",
+        "additionalInfo": {
+          "buildId": "build_123",
+          "error": "Build failed at step 3"
+        }
+      },
+      "output": {
+        "success": true,
+        "nader": {
+          "success": true,
+          "messageSid": "SM0987654321fedcba"
+        },
+        "message": "Owner notified successfully"
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في إرسال الإشعار. سيتم حفظ الأمر للتحقق لاحقاً."
+  }
+}
+
+  "name": "notify_owner",
+  "display_name": "Notify Owner",
+  "description": "إرسال إشعار للمالك (Nader/Eamon) عبر Twilio. Use for important events, owner commands, or when the agent needs assistance. Sends WhatsApp message to owner.",
+  "type": "function",
+  "category": "notification",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/agent-tools/notify-owner",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "reason": {
+        "type": "string",
+        "minLength": 5,
+        "description": "سبب الإشعار - Reason for notification (e.g., 'Client requested urgent support', 'Payment issue', 'Builder error')",
+        "required": true
+      },
+      "priority": {
+        "type": "string",
+        "enum": ["low", "normal", "high", "emergency"],
+        "default": "normal",
+        "description": "أولوية الإشعار - Notification priority (low: منخفضة, normal: عادية, high: عالية, emergency: طوارئ)",
+        "required": false
+      },
+      "conversationId": {
+        "type": "string",
+        "description": "معرف المحادثة - Conversation ID (optional, for context)",
+        "required": false
+      },
+      "additionalInfo": {
+        "type": "object",
+        "description": "معلومات إضافية - Additional information (optional)",
+        "required": false
+      }
+    },
+    "required": ["reason"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "nader": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "messageSid": {
+            "type": "string"
+          }
+        }
+      },
+      "eamon": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "messageSid": {
+            "type": "string"
+          }
+        },
+        "description": "Only if Eamon's phone is configured"
+      },
+      "message": {
+        "type": "string"
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "reason": "Client requested urgent support for payment issue",
+        "priority": "high",
+        "conversationId": "conv_1234567890"
+      },
+      "output": {
+        "success": true,
+        "nader": {
+          "success": true,
+          "messageSid": "SM1234567890abcdef"
+        },
+        "message": "Owner notified successfully"
+      }
+    },
+    {
+      "input": {
+        "reason": "Builder encountered an error during build process",
+        "priority": "emergency",
+        "additionalInfo": {
+          "buildId": "build_123",
+          "error": "Build failed at step 3"
+        }
+      },
+      "output": {
+        "success": true,
+        "nader": {
+          "success": true,
+          "messageSid": "SM0987654321fedcba"
+        },
+        "message": "Owner notified successfully"
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في إرسال الإشعار. سيتم حفظ الأمر للتحقق لاحقاً."
+  }
+}
+
+  "name": "notify_owner",
+  "display_name": "Notify Owner",
+  "description": "إرسال إشعار للمالك (Nader/Eamon) عبر Twilio. Use for important events, owner commands, or when the agent needs assistance. Sends WhatsApp message to owner.",
+  "type": "function",
+  "category": "notification",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/agent-tools/notify-owner",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "reason": {
+        "type": "string",
+        "minLength": 5,
+        "description": "سبب الإشعار - Reason for notification (e.g., 'Client requested urgent support', 'Payment issue', 'Builder error')",
+        "required": true
+      },
+      "priority": {
+        "type": "string",
+        "enum": ["low", "normal", "high", "emergency"],
+        "default": "normal",
+        "description": "أولوية الإشعار - Notification priority (low: منخفضة, normal: عادية, high: عالية, emergency: طوارئ)",
+        "required": false
+      },
+      "conversationId": {
+        "type": "string",
+        "description": "معرف المحادثة - Conversation ID (optional, for context)",
+        "required": false
+      },
+      "additionalInfo": {
+        "type": "object",
+        "description": "معلومات إضافية - Additional information (optional)",
+        "required": false
+      }
+    },
+    "required": ["reason"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "nader": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "messageSid": {
+            "type": "string"
+          }
+        }
+      },
+      "eamon": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "messageSid": {
+            "type": "string"
+          }
+        },
+        "description": "Only if Eamon's phone is configured"
+      },
+      "message": {
+        "type": "string"
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "reason": "Client requested urgent support for payment issue",
+        "priority": "high",
+        "conversationId": "conv_1234567890"
+      },
+      "output": {
+        "success": true,
+        "nader": {
+          "success": true,
+          "messageSid": "SM1234567890abcdef"
+        },
+        "message": "Owner notified successfully"
+      }
+    },
+    {
+      "input": {
+        "reason": "Builder encountered an error during build process",
+        "priority": "emergency",
+        "additionalInfo": {
+          "buildId": "build_123",
+          "error": "Build failed at step 3"
+        }
+      },
+      "output": {
+        "success": true,
+        "nader": {
+          "success": true,
+          "messageSid": "SM0987654321fedcba"
+        },
+        "message": "Owner notified successfully"
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في إرسال الإشعار. سيتم حفظ الأمر للتحقق لاحقاً."
+  }
+}
+
+  "name": "notify_owner",
+  "display_name": "Notify Owner",
+  "description": "إرسال إشعار للمالك (Nader/Eamon) عبر Twilio. Use for important events, owner commands, or when the agent needs assistance. Sends WhatsApp message to owner.",
+  "type": "function",
+  "category": "notification",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/agent-tools/notify-owner",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "reason": {
+        "type": "string",
+        "minLength": 5,
+        "description": "سبب الإشعار - Reason for notification (e.g., 'Client requested urgent support', 'Payment issue', 'Builder error')",
+        "required": true
+      },
+      "priority": {
+        "type": "string",
+        "enum": ["low", "normal", "high", "emergency"],
+        "default": "normal",
+        "description": "أولوية الإشعار - Notification priority (low: منخفضة, normal: عادية, high: عالية, emergency: طوارئ)",
+        "required": false
+      },
+      "conversationId": {
+        "type": "string",
+        "description": "معرف المحادثة - Conversation ID (optional, for context)",
+        "required": false
+      },
+      "additionalInfo": {
+        "type": "object",
+        "description": "معلومات إضافية - Additional information (optional)",
+        "required": false
+      }
+    },
+    "required": ["reason"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "nader": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "messageSid": {
+            "type": "string"
+          }
+        }
+      },
+      "eamon": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "messageSid": {
+            "type": "string"
+          }
+        },
+        "description": "Only if Eamon's phone is configured"
+      },
+      "message": {
+        "type": "string"
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "reason": "Client requested urgent support for payment issue",
+        "priority": "high",
+        "conversationId": "conv_1234567890"
+      },
+      "output": {
+        "success": true,
+        "nader": {
+          "success": true,
+          "messageSid": "SM1234567890abcdef"
+        },
+        "message": "Owner notified successfully"
+      }
+    },
+    {
+      "input": {
+        "reason": "Builder encountered an error during build process",
+        "priority": "emergency",
+        "additionalInfo": {
+          "buildId": "build_123",
+          "error": "Build failed at step 3"
+        }
+      },
+      "output": {
+        "success": true,
+        "nader": {
+          "success": true,
+          "messageSid": "SM0987654321fedcba"
+        },
+        "message": "Owner notified successfully"
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في إرسال الإشعار. سيتم حفظ الأمر للتحقق لاحقاً."
+  }
+}
+

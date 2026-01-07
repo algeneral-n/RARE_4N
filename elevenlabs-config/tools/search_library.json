@@ -1,0 +1,775 @@
+{
+  "name": "search_library",
+  "display_name": "Search Library",
+  "description": "البحث في المكتبات (Templates, Systems, Themes). Supports all languages and dialects. Search across all libraries using Arabic or English keywords.",
+  "type": "function",
+  "category": "library",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/agent-tools/search-library",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "query": {
+        "type": "string",
+        "minLength": 2,
+        "description": "كلمة البحث - Search query (minimum 2 characters, supports Arabic and English)",
+        "required": true
+      },
+      "type": {
+        "type": "string",
+        "enum": ["all", "templates", "systems", "themes"],
+        "default": "all",
+        "description": "نوع المكتبة للبحث - Library type to search (all: جميع المكتبات, templates: القوالب فقط, systems: الأنظمة فقط, themes: الثيمات فقط)",
+        "required": false
+      }
+    },
+    "required": ["query"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "query": {
+        "type": "string"
+      },
+      "results": {
+        "type": "object",
+        "properties": {
+          "templates": {
+            "type": "object",
+            "properties": {
+              "count": {
+                "type": "number"
+              },
+              "items": {
+                "type": "array"
+              }
+            }
+          },
+          "systems": {
+            "type": "object",
+            "properties": {
+              "count": {
+                "type": "number"
+              },
+              "items": {
+                "type": "array"
+              }
+            }
+          },
+          "themes": {
+            "type": "object",
+            "properties": {
+              "count": {
+                "type": "number"
+              },
+              "items": {
+                "type": "array"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "query": "تجارة إلكترونية",
+        "type": "all"
+      },
+      "output": {
+        "success": true,
+        "query": "تجارة إلكترونية",
+        "results": {
+          "templates": {
+            "count": 3,
+            "items": []
+          },
+          "systems": {
+            "count": 1,
+            "items": []
+          },
+          "themes": {
+            "count": 0,
+            "items": []
+          }
+        }
+      }
+    },
+    {
+      "input": {
+        "query": "e-commerce",
+        "type": "templates"
+      },
+      "output": {
+        "success": true,
+        "query": "e-commerce",
+        "results": {
+          "templates": {
+            "count": 5,
+            "items": []
+          }
+        }
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في البحث. يرجى المحاولة مرة أخرى."
+  }
+}
+
+  "name": "search_library",
+  "display_name": "Search Library",
+  "description": "البحث في المكتبات (Templates, Systems, Themes). Supports all languages and dialects. Search across all libraries using Arabic or English keywords.",
+  "type": "function",
+  "category": "library",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/agent-tools/search-library",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "query": {
+        "type": "string",
+        "minLength": 2,
+        "description": "كلمة البحث - Search query (minimum 2 characters, supports Arabic and English)",
+        "required": true
+      },
+      "type": {
+        "type": "string",
+        "enum": ["all", "templates", "systems", "themes"],
+        "default": "all",
+        "description": "نوع المكتبة للبحث - Library type to search (all: جميع المكتبات, templates: القوالب فقط, systems: الأنظمة فقط, themes: الثيمات فقط)",
+        "required": false
+      }
+    },
+    "required": ["query"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "query": {
+        "type": "string"
+      },
+      "results": {
+        "type": "object",
+        "properties": {
+          "templates": {
+            "type": "object",
+            "properties": {
+              "count": {
+                "type": "number"
+              },
+              "items": {
+                "type": "array"
+              }
+            }
+          },
+          "systems": {
+            "type": "object",
+            "properties": {
+              "count": {
+                "type": "number"
+              },
+              "items": {
+                "type": "array"
+              }
+            }
+          },
+          "themes": {
+            "type": "object",
+            "properties": {
+              "count": {
+                "type": "number"
+              },
+              "items": {
+                "type": "array"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "query": "تجارة إلكترونية",
+        "type": "all"
+      },
+      "output": {
+        "success": true,
+        "query": "تجارة إلكترونية",
+        "results": {
+          "templates": {
+            "count": 3,
+            "items": []
+          },
+          "systems": {
+            "count": 1,
+            "items": []
+          },
+          "themes": {
+            "count": 0,
+            "items": []
+          }
+        }
+      }
+    },
+    {
+      "input": {
+        "query": "e-commerce",
+        "type": "templates"
+      },
+      "output": {
+        "success": true,
+        "query": "e-commerce",
+        "results": {
+          "templates": {
+            "count": 5,
+            "items": []
+          }
+        }
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في البحث. يرجى المحاولة مرة أخرى."
+  }
+}
+
+  "name": "search_library",
+  "display_name": "Search Library",
+  "description": "البحث في المكتبات (Templates, Systems, Themes). Supports all languages and dialects. Search across all libraries using Arabic or English keywords.",
+  "type": "function",
+  "category": "library",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/agent-tools/search-library",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "query": {
+        "type": "string",
+        "minLength": 2,
+        "description": "كلمة البحث - Search query (minimum 2 characters, supports Arabic and English)",
+        "required": true
+      },
+      "type": {
+        "type": "string",
+        "enum": ["all", "templates", "systems", "themes"],
+        "default": "all",
+        "description": "نوع المكتبة للبحث - Library type to search (all: جميع المكتبات, templates: القوالب فقط, systems: الأنظمة فقط, themes: الثيمات فقط)",
+        "required": false
+      }
+    },
+    "required": ["query"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "query": {
+        "type": "string"
+      },
+      "results": {
+        "type": "object",
+        "properties": {
+          "templates": {
+            "type": "object",
+            "properties": {
+              "count": {
+                "type": "number"
+              },
+              "items": {
+                "type": "array"
+              }
+            }
+          },
+          "systems": {
+            "type": "object",
+            "properties": {
+              "count": {
+                "type": "number"
+              },
+              "items": {
+                "type": "array"
+              }
+            }
+          },
+          "themes": {
+            "type": "object",
+            "properties": {
+              "count": {
+                "type": "number"
+              },
+              "items": {
+                "type": "array"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "query": "تجارة إلكترونية",
+        "type": "all"
+      },
+      "output": {
+        "success": true,
+        "query": "تجارة إلكترونية",
+        "results": {
+          "templates": {
+            "count": 3,
+            "items": []
+          },
+          "systems": {
+            "count": 1,
+            "items": []
+          },
+          "themes": {
+            "count": 0,
+            "items": []
+          }
+        }
+      }
+    },
+    {
+      "input": {
+        "query": "e-commerce",
+        "type": "templates"
+      },
+      "output": {
+        "success": true,
+        "query": "e-commerce",
+        "results": {
+          "templates": {
+            "count": 5,
+            "items": []
+          }
+        }
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في البحث. يرجى المحاولة مرة أخرى."
+  }
+}
+
+  "name": "search_library",
+  "display_name": "Search Library",
+  "description": "البحث في المكتبات (Templates, Systems, Themes). Supports all languages and dialects. Search across all libraries using Arabic or English keywords.",
+  "type": "function",
+  "category": "library",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/agent-tools/search-library",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "query": {
+        "type": "string",
+        "minLength": 2,
+        "description": "كلمة البحث - Search query (minimum 2 characters, supports Arabic and English)",
+        "required": true
+      },
+      "type": {
+        "type": "string",
+        "enum": ["all", "templates", "systems", "themes"],
+        "default": "all",
+        "description": "نوع المكتبة للبحث - Library type to search (all: جميع المكتبات, templates: القوالب فقط, systems: الأنظمة فقط, themes: الثيمات فقط)",
+        "required": false
+      }
+    },
+    "required": ["query"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "query": {
+        "type": "string"
+      },
+      "results": {
+        "type": "object",
+        "properties": {
+          "templates": {
+            "type": "object",
+            "properties": {
+              "count": {
+                "type": "number"
+              },
+              "items": {
+                "type": "array"
+              }
+            }
+          },
+          "systems": {
+            "type": "object",
+            "properties": {
+              "count": {
+                "type": "number"
+              },
+              "items": {
+                "type": "array"
+              }
+            }
+          },
+          "themes": {
+            "type": "object",
+            "properties": {
+              "count": {
+                "type": "number"
+              },
+              "items": {
+                "type": "array"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "query": "تجارة إلكترونية",
+        "type": "all"
+      },
+      "output": {
+        "success": true,
+        "query": "تجارة إلكترونية",
+        "results": {
+          "templates": {
+            "count": 3,
+            "items": []
+          },
+          "systems": {
+            "count": 1,
+            "items": []
+          },
+          "themes": {
+            "count": 0,
+            "items": []
+          }
+        }
+      }
+    },
+    {
+      "input": {
+        "query": "e-commerce",
+        "type": "templates"
+      },
+      "output": {
+        "success": true,
+        "query": "e-commerce",
+        "results": {
+          "templates": {
+            "count": 5,
+            "items": []
+          }
+        }
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في البحث. يرجى المحاولة مرة أخرى."
+  }
+}
+
+  "name": "search_library",
+  "display_name": "Search Library",
+  "description": "البحث في المكتبات (Templates, Systems, Themes). Supports all languages and dialects. Search across all libraries using Arabic or English keywords.",
+  "type": "function",
+  "category": "library",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/agent-tools/search-library",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "query": {
+        "type": "string",
+        "minLength": 2,
+        "description": "كلمة البحث - Search query (minimum 2 characters, supports Arabic and English)",
+        "required": true
+      },
+      "type": {
+        "type": "string",
+        "enum": ["all", "templates", "systems", "themes"],
+        "default": "all",
+        "description": "نوع المكتبة للبحث - Library type to search (all: جميع المكتبات, templates: القوالب فقط, systems: الأنظمة فقط, themes: الثيمات فقط)",
+        "required": false
+      }
+    },
+    "required": ["query"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "query": {
+        "type": "string"
+      },
+      "results": {
+        "type": "object",
+        "properties": {
+          "templates": {
+            "type": "object",
+            "properties": {
+              "count": {
+                "type": "number"
+              },
+              "items": {
+                "type": "array"
+              }
+            }
+          },
+          "systems": {
+            "type": "object",
+            "properties": {
+              "count": {
+                "type": "number"
+              },
+              "items": {
+                "type": "array"
+              }
+            }
+          },
+          "themes": {
+            "type": "object",
+            "properties": {
+              "count": {
+                "type": "number"
+              },
+              "items": {
+                "type": "array"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "query": "تجارة إلكترونية",
+        "type": "all"
+      },
+      "output": {
+        "success": true,
+        "query": "تجارة إلكترونية",
+        "results": {
+          "templates": {
+            "count": 3,
+            "items": []
+          },
+          "systems": {
+            "count": 1,
+            "items": []
+          },
+          "themes": {
+            "count": 0,
+            "items": []
+          }
+        }
+      }
+    },
+    {
+      "input": {
+        "query": "e-commerce",
+        "type": "templates"
+      },
+      "output": {
+        "success": true,
+        "query": "e-commerce",
+        "results": {
+          "templates": {
+            "count": 5,
+            "items": []
+          }
+        }
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في البحث. يرجى المحاولة مرة أخرى."
+  }
+}
+
+  "name": "search_library",
+  "display_name": "Search Library",
+  "description": "البحث في المكتبات (Templates, Systems, Themes). Supports all languages and dialects. Search across all libraries using Arabic or English keywords.",
+  "type": "function",
+  "category": "library",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/agent-tools/search-library",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "query": {
+        "type": "string",
+        "minLength": 2,
+        "description": "كلمة البحث - Search query (minimum 2 characters, supports Arabic and English)",
+        "required": true
+      },
+      "type": {
+        "type": "string",
+        "enum": ["all", "templates", "systems", "themes"],
+        "default": "all",
+        "description": "نوع المكتبة للبحث - Library type to search (all: جميع المكتبات, templates: القوالب فقط, systems: الأنظمة فقط, themes: الثيمات فقط)",
+        "required": false
+      }
+    },
+    "required": ["query"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "query": {
+        "type": "string"
+      },
+      "results": {
+        "type": "object",
+        "properties": {
+          "templates": {
+            "type": "object",
+            "properties": {
+              "count": {
+                "type": "number"
+              },
+              "items": {
+                "type": "array"
+              }
+            }
+          },
+          "systems": {
+            "type": "object",
+            "properties": {
+              "count": {
+                "type": "number"
+              },
+              "items": {
+                "type": "array"
+              }
+            }
+          },
+          "themes": {
+            "type": "object",
+            "properties": {
+              "count": {
+                "type": "number"
+              },
+              "items": {
+                "type": "array"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "query": "تجارة إلكترونية",
+        "type": "all"
+      },
+      "output": {
+        "success": true,
+        "query": "تجارة إلكترونية",
+        "results": {
+          "templates": {
+            "count": 3,
+            "items": []
+          },
+          "systems": {
+            "count": 1,
+            "items": []
+          },
+          "themes": {
+            "count": 0,
+            "items": []
+          }
+        }
+      }
+    },
+    {
+      "input": {
+        "query": "e-commerce",
+        "type": "templates"
+      },
+      "output": {
+        "success": true,
+        "query": "e-commerce",
+        "results": {
+          "templates": {
+            "count": 5,
+            "items": []
+          }
+        }
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في البحث. يرجى المحاولة مرة أخرى."
+  }
+}
+

@@ -1,0 +1,493 @@
+{
+  "name": "supabase",
+  "display_name": "Supabase MCP",
+  "description": "MCP Server for Supabase - Provides access to Supabase database, real-time subscriptions, and edge functions",
+  "type": "mcp",
+  "version": "1.0.0",
+  "server_url": "mcp://supabase",
+  "authentication": {
+    "type": "api_key",
+    "header": "Authorization",
+    "value": "Bearer {{supabase_key}}"
+  },
+  "capabilities": {
+    "tools": true,
+    "resources": true,
+    "prompts": false,
+    "sampling": false
+  },
+  "configuration": {
+    "supabase_url": "https://fgvrilruqzajstprioqj.supabase.co",
+    "supabase_key": "sb_publishable_BLkrtQ9q20tyaqCF5kWrvQ_YFElVTXy",
+    "schema": "public"
+  },
+  "tools": [
+    {
+      "name": "query_database",
+      "description": "Execute SQL query on Supabase database",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "SQL query to execute"
+          },
+          "schema": {
+            "type": "string",
+            "default": "public"
+          }
+        },
+        "required": ["query"]
+      }
+    },
+    {
+      "name": "get_table_schema",
+      "description": "Get schema of a table",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "table_name": {
+            "type": "string"
+          },
+          "schema": {
+            "type": "string",
+            "default": "public"
+          }
+        },
+        "required": ["table_name"]
+      }
+    },
+    {
+      "name": "list_tables",
+      "description": "List all tables in database",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "schema": {
+            "type": "string",
+            "default": "public"
+          }
+        }
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uri": "supabase://tables",
+      "name": "Supabase Tables",
+      "description": "List of all tables in Supabase",
+      "mimeType": "application/json"
+    }
+  ]
+}
+
+  "name": "supabase",
+  "display_name": "Supabase MCP",
+  "description": "MCP Server for Supabase - Provides access to Supabase database, real-time subscriptions, and edge functions",
+  "type": "mcp",
+  "version": "1.0.0",
+  "server_url": "mcp://supabase",
+  "authentication": {
+    "type": "api_key",
+    "header": "Authorization",
+    "value": "Bearer {{supabase_key}}"
+  },
+  "capabilities": {
+    "tools": true,
+    "resources": true,
+    "prompts": false,
+    "sampling": false
+  },
+  "configuration": {
+    "supabase_url": "https://fgvrilruqzajstprioqj.supabase.co",
+    "supabase_key": "sb_publishable_BLkrtQ9q20tyaqCF5kWrvQ_YFElVTXy",
+    "schema": "public"
+  },
+  "tools": [
+    {
+      "name": "query_database",
+      "description": "Execute SQL query on Supabase database",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "SQL query to execute"
+          },
+          "schema": {
+            "type": "string",
+            "default": "public"
+          }
+        },
+        "required": ["query"]
+      }
+    },
+    {
+      "name": "get_table_schema",
+      "description": "Get schema of a table",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "table_name": {
+            "type": "string"
+          },
+          "schema": {
+            "type": "string",
+            "default": "public"
+          }
+        },
+        "required": ["table_name"]
+      }
+    },
+    {
+      "name": "list_tables",
+      "description": "List all tables in database",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "schema": {
+            "type": "string",
+            "default": "public"
+          }
+        }
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uri": "supabase://tables",
+      "name": "Supabase Tables",
+      "description": "List of all tables in Supabase",
+      "mimeType": "application/json"
+    }
+  ]
+}
+
+  "name": "supabase",
+  "display_name": "Supabase MCP",
+  "description": "MCP Server for Supabase - Provides access to Supabase database, real-time subscriptions, and edge functions",
+  "type": "mcp",
+  "version": "1.0.0",
+  "server_url": "mcp://supabase",
+  "authentication": {
+    "type": "api_key",
+    "header": "Authorization",
+    "value": "Bearer {{supabase_key}}"
+  },
+  "capabilities": {
+    "tools": true,
+    "resources": true,
+    "prompts": false,
+    "sampling": false
+  },
+  "configuration": {
+    "supabase_url": "https://fgvrilruqzajstprioqj.supabase.co",
+    "supabase_key": "sb_publishable_BLkrtQ9q20tyaqCF5kWrvQ_YFElVTXy",
+    "schema": "public"
+  },
+  "tools": [
+    {
+      "name": "query_database",
+      "description": "Execute SQL query on Supabase database",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "SQL query to execute"
+          },
+          "schema": {
+            "type": "string",
+            "default": "public"
+          }
+        },
+        "required": ["query"]
+      }
+    },
+    {
+      "name": "get_table_schema",
+      "description": "Get schema of a table",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "table_name": {
+            "type": "string"
+          },
+          "schema": {
+            "type": "string",
+            "default": "public"
+          }
+        },
+        "required": ["table_name"]
+      }
+    },
+    {
+      "name": "list_tables",
+      "description": "List all tables in database",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "schema": {
+            "type": "string",
+            "default": "public"
+          }
+        }
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uri": "supabase://tables",
+      "name": "Supabase Tables",
+      "description": "List of all tables in Supabase",
+      "mimeType": "application/json"
+    }
+  ]
+}
+
+  "name": "supabase",
+  "display_name": "Supabase MCP",
+  "description": "MCP Server for Supabase - Provides access to Supabase database, real-time subscriptions, and edge functions",
+  "type": "mcp",
+  "version": "1.0.0",
+  "server_url": "mcp://supabase",
+  "authentication": {
+    "type": "api_key",
+    "header": "Authorization",
+    "value": "Bearer {{supabase_key}}"
+  },
+  "capabilities": {
+    "tools": true,
+    "resources": true,
+    "prompts": false,
+    "sampling": false
+  },
+  "configuration": {
+    "supabase_url": "https://fgvrilruqzajstprioqj.supabase.co",
+    "supabase_key": "sb_publishable_BLkrtQ9q20tyaqCF5kWrvQ_YFElVTXy",
+    "schema": "public"
+  },
+  "tools": [
+    {
+      "name": "query_database",
+      "description": "Execute SQL query on Supabase database",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "SQL query to execute"
+          },
+          "schema": {
+            "type": "string",
+            "default": "public"
+          }
+        },
+        "required": ["query"]
+      }
+    },
+    {
+      "name": "get_table_schema",
+      "description": "Get schema of a table",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "table_name": {
+            "type": "string"
+          },
+          "schema": {
+            "type": "string",
+            "default": "public"
+          }
+        },
+        "required": ["table_name"]
+      }
+    },
+    {
+      "name": "list_tables",
+      "description": "List all tables in database",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "schema": {
+            "type": "string",
+            "default": "public"
+          }
+        }
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uri": "supabase://tables",
+      "name": "Supabase Tables",
+      "description": "List of all tables in Supabase",
+      "mimeType": "application/json"
+    }
+  ]
+}
+
+  "name": "supabase",
+  "display_name": "Supabase MCP",
+  "description": "MCP Server for Supabase - Provides access to Supabase database, real-time subscriptions, and edge functions",
+  "type": "mcp",
+  "version": "1.0.0",
+  "server_url": "mcp://supabase",
+  "authentication": {
+    "type": "api_key",
+    "header": "Authorization",
+    "value": "Bearer {{supabase_key}}"
+  },
+  "capabilities": {
+    "tools": true,
+    "resources": true,
+    "prompts": false,
+    "sampling": false
+  },
+  "configuration": {
+    "supabase_url": "https://fgvrilruqzajstprioqj.supabase.co",
+    "supabase_key": "sb_publishable_BLkrtQ9q20tyaqCF5kWrvQ_YFElVTXy",
+    "schema": "public"
+  },
+  "tools": [
+    {
+      "name": "query_database",
+      "description": "Execute SQL query on Supabase database",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "SQL query to execute"
+          },
+          "schema": {
+            "type": "string",
+            "default": "public"
+          }
+        },
+        "required": ["query"]
+      }
+    },
+    {
+      "name": "get_table_schema",
+      "description": "Get schema of a table",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "table_name": {
+            "type": "string"
+          },
+          "schema": {
+            "type": "string",
+            "default": "public"
+          }
+        },
+        "required": ["table_name"]
+      }
+    },
+    {
+      "name": "list_tables",
+      "description": "List all tables in database",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "schema": {
+            "type": "string",
+            "default": "public"
+          }
+        }
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uri": "supabase://tables",
+      "name": "Supabase Tables",
+      "description": "List of all tables in Supabase",
+      "mimeType": "application/json"
+    }
+  ]
+}
+
+  "name": "supabase",
+  "display_name": "Supabase MCP",
+  "description": "MCP Server for Supabase - Provides access to Supabase database, real-time subscriptions, and edge functions",
+  "type": "mcp",
+  "version": "1.0.0",
+  "server_url": "mcp://supabase",
+  "authentication": {
+    "type": "api_key",
+    "header": "Authorization",
+    "value": "Bearer {{supabase_key}}"
+  },
+  "capabilities": {
+    "tools": true,
+    "resources": true,
+    "prompts": false,
+    "sampling": false
+  },
+  "configuration": {
+    "supabase_url": "https://fgvrilruqzajstprioqj.supabase.co",
+    "supabase_key": "sb_publishable_BLkrtQ9q20tyaqCF5kWrvQ_YFElVTXy",
+    "schema": "public"
+  },
+  "tools": [
+    {
+      "name": "query_database",
+      "description": "Execute SQL query on Supabase database",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "SQL query to execute"
+          },
+          "schema": {
+            "type": "string",
+            "default": "public"
+          }
+        },
+        "required": ["query"]
+      }
+    },
+    {
+      "name": "get_table_schema",
+      "description": "Get schema of a table",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "table_name": {
+            "type": "string"
+          },
+          "schema": {
+            "type": "string",
+            "default": "public"
+          }
+        },
+        "required": ["table_name"]
+      }
+    },
+    {
+      "name": "list_tables",
+      "description": "List all tables in database",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "schema": {
+            "type": "string",
+            "default": "public"
+          }
+        }
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uri": "supabase://tables",
+      "name": "Supabase Tables",
+      "description": "List of all tables in Supabase",
+      "mimeType": "application/json"
+    }
+  ]
+}
+

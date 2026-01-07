@@ -1,0 +1,153 @@
+# 🔐 حالة GitHub Secrets - RARE 4N
+
+## ⚠️ الحالة الحالية
+
+**❌ لم يتم إضافة GitHub Secrets بعد**
+
+---
+
+## 📋 ما تم إنجازه
+
+✅ **تم إنشاء:**
+- ملفات Workflows (`.github/workflows/*.yml`)
+- ملفات Templates (`.github/workflows/templates/*.yml`)
+- ملفات التوثيق
+- Script لإضافة Secrets (`add-github-secrets.ps1`)
+
+❌ **لم يتم:**
+- إضافة Secrets فعلياً في GitHub
+- تثبيت GitHub CLI
+- تسجيل الدخول إلى GitHub CLI
+
+---
+
+## 🛠️ طرق إضافة Secrets
+
+### الطريقة 1: GitHub UI (الأسهل والأسرع) ⭐
+
+1. **اذهب إلى:**
+   ```
+   https://github.com/[username]/[repo]/settings/secrets/actions
+   ```
+   استبدل `[username]` و `[repo]` بالقيم الفعلية
+
+2. **اضغط "New repository secret"**
+
+3. **أضف كل Secret:**
+   - **Name:** اسم الـ Secret
+   - **Secret:** القيمة من `GITHUB_EXPO_SECRETS_COMPLETE.md`
+
+4. **كرر لكل Secret**
+
+---
+
+### الطريقة 2: GitHub CLI (أسرع للعديد من Secrets)
+
+#### 1. تثبيت GitHub CLI:
+```powershell
+# Windows
+winget install --id GitHub.cli
+# أو
+choco install gh
+```
+
+#### 2. تسجيل الدخول:
+```bash
+gh auth login
+```
+
+#### 3. إضافة Secrets:
+```bash
+# Expo
+gh secret set EXPO_TOKEN --body "s2qpGH-Hg-8MQNLFT-2nYxH0dhuTHaGBs-p4_sbn"
+
+# Apple
+gh secret set ASC_API_KEY_ID --body "6AR5VSRINSC3"
+gh secret set ASC_API_KEY_ISSUER_ID --body "BN4DXG557F"
+gh secret set ASC_API_KEY_P8 --body "-----BEGIN PRIVATE KEY-----\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgvo+3ieNujr8usWIx\n5173ukKtHO8svfese75jWplP+JihRANCAARY+gjvpXDrtXWTGtJhfGeXPSELfrH2\nn6aZcfLkaBWOCtH3ZzfWuBB2a5f9gKnqzVJ/h/bC0z3gSjzjhqHI6jp6\n-----END PRIVATE KEY-----"
+gh secret set APPLE_TEAM_ID --body "BN4DXG557F"
+
+# Cloudflare
+gh secret set CLOUDFLARE_ACCOUNT_ID --body "ccc1ed9ab170eaf1e72e9a10e46ef320"
+gh secret set CLOUDFLARE_PAGES_PROJECT_NAME --body "rare4n-client-portal"
+
+# API
+gh secret set API_URL --body "https://api.zien-ai.app"
+```
+
+---
+
+### الطريقة 3: استخدام Script (تلقائي)
+
+**ملاحظة:** يحتاج GitHub CLI مثبت ومسجل دخول
+
+```powershell
+# تشغيل Script
+.\add-github-secrets.ps1
+```
+
+---
+
+## 📋 قائمة Secrets المطلوبة
+
+### ✅ للـ Workflows الموجودة:
+
+#### build-ios.yml:
+- ✅ `EXPO_TOKEN`
+- ✅ `ASC_API_KEY_ID`
+- ✅ `ASC_API_KEY_ISSUER_ID`
+- ✅ `ASC_API_KEY_P8`
+- ✅ `APPLE_TEAM_ID`
+- ✅ `APPLE_SERVICE_ID`
+- ⚠️ `API_URL` (اختياري)
+- ⚠️ `API_TOKEN` (اختياري)
+
+#### build-android.yml:
+- ✅ `EXPO_TOKEN`
+- ⚠️ `GOOGLE_PLAY_SERVICE_ACCOUNT_JSON` (يحتاج قيمة)
+- ⚠️ `GOOGLE_SERVICE_ACCOUNT_KEY` (يحتاج قيمة)
+- ⚠️ `API_URL` (اختياري)
+- ⚠️ `API_TOKEN` (اختياري)
+
+#### deploy-web.yml:
+- ⚠️ `CLOUDFLARE_API_TOKEN` (يحتاج قيمة)
+- ✅ `CLOUDFLARE_ACCOUNT_ID`
+- ✅ `CLOUDFLARE_PAGES_PROJECT_NAME`
+- ✅ `GITHUB_TOKEN` (تلقائي)
+
+---
+
+## 🔍 التحقق من الإضافة
+
+### عبر GitHub UI:
+1. اذهب إلى: `https://github.com/[username]/[repo]/settings/secrets/actions`
+2. يجب أن ترى قائمة بجميع الـ Secrets المضافة
+
+### عبر GitHub CLI:
+```bash
+gh secret list
+```
+
+---
+
+## ⚠️ ملاحظات مهمة
+
+1. **Secrets محمية:** لا يمكن رؤية قيمها بعد الإضافة
+2. **يجب إضافة جميع Secrets المطلوبة** قبل تشغيل Workflows
+3. **بعض Secrets تحتاج قيماً من ملف `GITHUB_EXPO_SECRETS_COMPLETE.md`**
+4. **GitHub CLI غير مثبت حالياً** - يجب تثبيته أولاً
+
+---
+
+## 🎯 الخطوات التالية
+
+1. ✅ **اختر طريقة الإضافة** (UI أو CLI)
+2. ✅ **أضف جميع Secrets المطلوبة**
+3. ✅ **تحقق من الإضافة** (`gh secret list` أو GitHub UI)
+4. ✅ **اختبر Workflow** (workflow_dispatch)
+
+---
+
+**التاريخ:** 2026-01-06  
+**الحالة:** ⚠️ يحتاج إضافة يدوية
+

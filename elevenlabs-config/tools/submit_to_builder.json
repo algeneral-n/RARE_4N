@@ -1,0 +1,805 @@
+{
+  "name": "submit_to_builder",
+  "display_name": "Submit to Builder",
+  "description": "إرسال الطلب للبيلدر بعد تسجيله. Creates build request and sends to Auto Builder. This tool registers a client request and queues it for automatic building.",
+  "type": "function",
+  "category": "builder",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/agent-tools/submit-to-builder",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "client_id": {
+        "type": "string",
+        "description": "معرف العميل - Client unique identifier",
+        "required": true
+      },
+      "request_data": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["template", "system", "theme"],
+            "description": "نوع الطلب - Request type (template: قالب تطبيق, system: نظام, theme: ثيم)",
+            "required": true
+          },
+          "selectedItem": {
+            "type": "object",
+            "description": "العنصر المختار من المكتبة - Selected item from library (must include id, name, nameEn, category)",
+            "required": true,
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "nameEn": {
+                "type": "string"
+              },
+              "category": {
+                "type": "string"
+              }
+            }
+          },
+          "clientName": {
+            "type": "string",
+            "minLength": 2,
+            "description": "اسم العميل - Client name",
+            "required": true
+          },
+          "clientEmail": {
+            "type": "string",
+            "format": "email",
+            "description": "بريد العميل - Client email address",
+            "required": true
+          },
+          "clientPhone": {
+            "type": "string",
+            "description": "هاتف العميل - Client phone number (optional, format: +971XXXXXXXXX)",
+            "required": false
+          },
+          "description": {
+            "type": "string",
+            "description": "وصف المشروع - Project description (optional)",
+            "required": false
+          }
+        },
+        "required": ["type", "selectedItem", "clientName", "clientEmail"]
+      }
+    },
+    "required": ["client_id", "request_data"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "requestId": {
+        "type": "string"
+      },
+      "request": {
+        "type": "object"
+      },
+      "estimatedPrice": {
+        "type": "number"
+      },
+      "currency": {
+        "type": "string",
+        "default": "AED"
+      },
+      "message": {
+        "type": "string"
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "client_id": "client_123",
+        "request_data": {
+          "type": "template",
+          "selectedItem": {
+            "id": "template_001",
+            "name": "تطبيق تجارة إلكترونية",
+            "nameEn": "E-commerce App",
+            "category": "e-commerce"
+          },
+          "clientName": "محمد أحمد",
+          "clientEmail": "mohamed@example.com",
+          "clientPhone": "+971501234567",
+          "description": "أريد تطبيق تجارة إلكترونية متكامل"
+        }
+      },
+      "output": {
+        "success": true,
+        "requestId": "req_1234567890",
+        "estimatedPrice": 1000,
+        "currency": "AED",
+        "message": "تم تسجيل طلبك بنجاح. جاري إنشاء عملية الدفع..."
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في إرسال الطلب. يرجى المحاولة مرة أخرى أو التواصل مع الدعم."
+  }
+}
+
+  "name": "submit_to_builder",
+  "display_name": "Submit to Builder",
+  "description": "إرسال الطلب للبيلدر بعد تسجيله. Creates build request and sends to Auto Builder. This tool registers a client request and queues it for automatic building.",
+  "type": "function",
+  "category": "builder",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/agent-tools/submit-to-builder",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "client_id": {
+        "type": "string",
+        "description": "معرف العميل - Client unique identifier",
+        "required": true
+      },
+      "request_data": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["template", "system", "theme"],
+            "description": "نوع الطلب - Request type (template: قالب تطبيق, system: نظام, theme: ثيم)",
+            "required": true
+          },
+          "selectedItem": {
+            "type": "object",
+            "description": "العنصر المختار من المكتبة - Selected item from library (must include id, name, nameEn, category)",
+            "required": true,
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "nameEn": {
+                "type": "string"
+              },
+              "category": {
+                "type": "string"
+              }
+            }
+          },
+          "clientName": {
+            "type": "string",
+            "minLength": 2,
+            "description": "اسم العميل - Client name",
+            "required": true
+          },
+          "clientEmail": {
+            "type": "string",
+            "format": "email",
+            "description": "بريد العميل - Client email address",
+            "required": true
+          },
+          "clientPhone": {
+            "type": "string",
+            "description": "هاتف العميل - Client phone number (optional, format: +971XXXXXXXXX)",
+            "required": false
+          },
+          "description": {
+            "type": "string",
+            "description": "وصف المشروع - Project description (optional)",
+            "required": false
+          }
+        },
+        "required": ["type", "selectedItem", "clientName", "clientEmail"]
+      }
+    },
+    "required": ["client_id", "request_data"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "requestId": {
+        "type": "string"
+      },
+      "request": {
+        "type": "object"
+      },
+      "estimatedPrice": {
+        "type": "number"
+      },
+      "currency": {
+        "type": "string",
+        "default": "AED"
+      },
+      "message": {
+        "type": "string"
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "client_id": "client_123",
+        "request_data": {
+          "type": "template",
+          "selectedItem": {
+            "id": "template_001",
+            "name": "تطبيق تجارة إلكترونية",
+            "nameEn": "E-commerce App",
+            "category": "e-commerce"
+          },
+          "clientName": "محمد أحمد",
+          "clientEmail": "mohamed@example.com",
+          "clientPhone": "+971501234567",
+          "description": "أريد تطبيق تجارة إلكترونية متكامل"
+        }
+      },
+      "output": {
+        "success": true,
+        "requestId": "req_1234567890",
+        "estimatedPrice": 1000,
+        "currency": "AED",
+        "message": "تم تسجيل طلبك بنجاح. جاري إنشاء عملية الدفع..."
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في إرسال الطلب. يرجى المحاولة مرة أخرى أو التواصل مع الدعم."
+  }
+}
+
+  "name": "submit_to_builder",
+  "display_name": "Submit to Builder",
+  "description": "إرسال الطلب للبيلدر بعد تسجيله. Creates build request and sends to Auto Builder. This tool registers a client request and queues it for automatic building.",
+  "type": "function",
+  "category": "builder",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/agent-tools/submit-to-builder",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "client_id": {
+        "type": "string",
+        "description": "معرف العميل - Client unique identifier",
+        "required": true
+      },
+      "request_data": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["template", "system", "theme"],
+            "description": "نوع الطلب - Request type (template: قالب تطبيق, system: نظام, theme: ثيم)",
+            "required": true
+          },
+          "selectedItem": {
+            "type": "object",
+            "description": "العنصر المختار من المكتبة - Selected item from library (must include id, name, nameEn, category)",
+            "required": true,
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "nameEn": {
+                "type": "string"
+              },
+              "category": {
+                "type": "string"
+              }
+            }
+          },
+          "clientName": {
+            "type": "string",
+            "minLength": 2,
+            "description": "اسم العميل - Client name",
+            "required": true
+          },
+          "clientEmail": {
+            "type": "string",
+            "format": "email",
+            "description": "بريد العميل - Client email address",
+            "required": true
+          },
+          "clientPhone": {
+            "type": "string",
+            "description": "هاتف العميل - Client phone number (optional, format: +971XXXXXXXXX)",
+            "required": false
+          },
+          "description": {
+            "type": "string",
+            "description": "وصف المشروع - Project description (optional)",
+            "required": false
+          }
+        },
+        "required": ["type", "selectedItem", "clientName", "clientEmail"]
+      }
+    },
+    "required": ["client_id", "request_data"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "requestId": {
+        "type": "string"
+      },
+      "request": {
+        "type": "object"
+      },
+      "estimatedPrice": {
+        "type": "number"
+      },
+      "currency": {
+        "type": "string",
+        "default": "AED"
+      },
+      "message": {
+        "type": "string"
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "client_id": "client_123",
+        "request_data": {
+          "type": "template",
+          "selectedItem": {
+            "id": "template_001",
+            "name": "تطبيق تجارة إلكترونية",
+            "nameEn": "E-commerce App",
+            "category": "e-commerce"
+          },
+          "clientName": "محمد أحمد",
+          "clientEmail": "mohamed@example.com",
+          "clientPhone": "+971501234567",
+          "description": "أريد تطبيق تجارة إلكترونية متكامل"
+        }
+      },
+      "output": {
+        "success": true,
+        "requestId": "req_1234567890",
+        "estimatedPrice": 1000,
+        "currency": "AED",
+        "message": "تم تسجيل طلبك بنجاح. جاري إنشاء عملية الدفع..."
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في إرسال الطلب. يرجى المحاولة مرة أخرى أو التواصل مع الدعم."
+  }
+}
+
+  "name": "submit_to_builder",
+  "display_name": "Submit to Builder",
+  "description": "إرسال الطلب للبيلدر بعد تسجيله. Creates build request and sends to Auto Builder. This tool registers a client request and queues it for automatic building.",
+  "type": "function",
+  "category": "builder",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/agent-tools/submit-to-builder",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "client_id": {
+        "type": "string",
+        "description": "معرف العميل - Client unique identifier",
+        "required": true
+      },
+      "request_data": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["template", "system", "theme"],
+            "description": "نوع الطلب - Request type (template: قالب تطبيق, system: نظام, theme: ثيم)",
+            "required": true
+          },
+          "selectedItem": {
+            "type": "object",
+            "description": "العنصر المختار من المكتبة - Selected item from library (must include id, name, nameEn, category)",
+            "required": true,
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "nameEn": {
+                "type": "string"
+              },
+              "category": {
+                "type": "string"
+              }
+            }
+          },
+          "clientName": {
+            "type": "string",
+            "minLength": 2,
+            "description": "اسم العميل - Client name",
+            "required": true
+          },
+          "clientEmail": {
+            "type": "string",
+            "format": "email",
+            "description": "بريد العميل - Client email address",
+            "required": true
+          },
+          "clientPhone": {
+            "type": "string",
+            "description": "هاتف العميل - Client phone number (optional, format: +971XXXXXXXXX)",
+            "required": false
+          },
+          "description": {
+            "type": "string",
+            "description": "وصف المشروع - Project description (optional)",
+            "required": false
+          }
+        },
+        "required": ["type", "selectedItem", "clientName", "clientEmail"]
+      }
+    },
+    "required": ["client_id", "request_data"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "requestId": {
+        "type": "string"
+      },
+      "request": {
+        "type": "object"
+      },
+      "estimatedPrice": {
+        "type": "number"
+      },
+      "currency": {
+        "type": "string",
+        "default": "AED"
+      },
+      "message": {
+        "type": "string"
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "client_id": "client_123",
+        "request_data": {
+          "type": "template",
+          "selectedItem": {
+            "id": "template_001",
+            "name": "تطبيق تجارة إلكترونية",
+            "nameEn": "E-commerce App",
+            "category": "e-commerce"
+          },
+          "clientName": "محمد أحمد",
+          "clientEmail": "mohamed@example.com",
+          "clientPhone": "+971501234567",
+          "description": "أريد تطبيق تجارة إلكترونية متكامل"
+        }
+      },
+      "output": {
+        "success": true,
+        "requestId": "req_1234567890",
+        "estimatedPrice": 1000,
+        "currency": "AED",
+        "message": "تم تسجيل طلبك بنجاح. جاري إنشاء عملية الدفع..."
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في إرسال الطلب. يرجى المحاولة مرة أخرى أو التواصل مع الدعم."
+  }
+}
+
+  "name": "submit_to_builder",
+  "display_name": "Submit to Builder",
+  "description": "إرسال الطلب للبيلدر بعد تسجيله. Creates build request and sends to Auto Builder. This tool registers a client request and queues it for automatic building.",
+  "type": "function",
+  "category": "builder",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/agent-tools/submit-to-builder",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "client_id": {
+        "type": "string",
+        "description": "معرف العميل - Client unique identifier",
+        "required": true
+      },
+      "request_data": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["template", "system", "theme"],
+            "description": "نوع الطلب - Request type (template: قالب تطبيق, system: نظام, theme: ثيم)",
+            "required": true
+          },
+          "selectedItem": {
+            "type": "object",
+            "description": "العنصر المختار من المكتبة - Selected item from library (must include id, name, nameEn, category)",
+            "required": true,
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "nameEn": {
+                "type": "string"
+              },
+              "category": {
+                "type": "string"
+              }
+            }
+          },
+          "clientName": {
+            "type": "string",
+            "minLength": 2,
+            "description": "اسم العميل - Client name",
+            "required": true
+          },
+          "clientEmail": {
+            "type": "string",
+            "format": "email",
+            "description": "بريد العميل - Client email address",
+            "required": true
+          },
+          "clientPhone": {
+            "type": "string",
+            "description": "هاتف العميل - Client phone number (optional, format: +971XXXXXXXXX)",
+            "required": false
+          },
+          "description": {
+            "type": "string",
+            "description": "وصف المشروع - Project description (optional)",
+            "required": false
+          }
+        },
+        "required": ["type", "selectedItem", "clientName", "clientEmail"]
+      }
+    },
+    "required": ["client_id", "request_data"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "requestId": {
+        "type": "string"
+      },
+      "request": {
+        "type": "object"
+      },
+      "estimatedPrice": {
+        "type": "number"
+      },
+      "currency": {
+        "type": "string",
+        "default": "AED"
+      },
+      "message": {
+        "type": "string"
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "client_id": "client_123",
+        "request_data": {
+          "type": "template",
+          "selectedItem": {
+            "id": "template_001",
+            "name": "تطبيق تجارة إلكترونية",
+            "nameEn": "E-commerce App",
+            "category": "e-commerce"
+          },
+          "clientName": "محمد أحمد",
+          "clientEmail": "mohamed@example.com",
+          "clientPhone": "+971501234567",
+          "description": "أريد تطبيق تجارة إلكترونية متكامل"
+        }
+      },
+      "output": {
+        "success": true,
+        "requestId": "req_1234567890",
+        "estimatedPrice": 1000,
+        "currency": "AED",
+        "message": "تم تسجيل طلبك بنجاح. جاري إنشاء عملية الدفع..."
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في إرسال الطلب. يرجى المحاولة مرة أخرى أو التواصل مع الدعم."
+  }
+}
+
+  "name": "submit_to_builder",
+  "display_name": "Submit to Builder",
+  "description": "إرسال الطلب للبيلدر بعد تسجيله. Creates build request and sends to Auto Builder. This tool registers a client request and queues it for automatic building.",
+  "type": "function",
+  "category": "builder",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/agent-tools/submit-to-builder",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "client_id": {
+        "type": "string",
+        "description": "معرف العميل - Client unique identifier",
+        "required": true
+      },
+      "request_data": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["template", "system", "theme"],
+            "description": "نوع الطلب - Request type (template: قالب تطبيق, system: نظام, theme: ثيم)",
+            "required": true
+          },
+          "selectedItem": {
+            "type": "object",
+            "description": "العنصر المختار من المكتبة - Selected item from library (must include id, name, nameEn, category)",
+            "required": true,
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "nameEn": {
+                "type": "string"
+              },
+              "category": {
+                "type": "string"
+              }
+            }
+          },
+          "clientName": {
+            "type": "string",
+            "minLength": 2,
+            "description": "اسم العميل - Client name",
+            "required": true
+          },
+          "clientEmail": {
+            "type": "string",
+            "format": "email",
+            "description": "بريد العميل - Client email address",
+            "required": true
+          },
+          "clientPhone": {
+            "type": "string",
+            "description": "هاتف العميل - Client phone number (optional, format: +971XXXXXXXXX)",
+            "required": false
+          },
+          "description": {
+            "type": "string",
+            "description": "وصف المشروع - Project description (optional)",
+            "required": false
+          }
+        },
+        "required": ["type", "selectedItem", "clientName", "clientEmail"]
+      }
+    },
+    "required": ["client_id", "request_data"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "requestId": {
+        "type": "string"
+      },
+      "request": {
+        "type": "object"
+      },
+      "estimatedPrice": {
+        "type": "number"
+      },
+      "currency": {
+        "type": "string",
+        "default": "AED"
+      },
+      "message": {
+        "type": "string"
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "client_id": "client_123",
+        "request_data": {
+          "type": "template",
+          "selectedItem": {
+            "id": "template_001",
+            "name": "تطبيق تجارة إلكترونية",
+            "nameEn": "E-commerce App",
+            "category": "e-commerce"
+          },
+          "clientName": "محمد أحمد",
+          "clientEmail": "mohamed@example.com",
+          "clientPhone": "+971501234567",
+          "description": "أريد تطبيق تجارة إلكترونية متكامل"
+        }
+      },
+      "output": {
+        "success": true,
+        "requestId": "req_1234567890",
+        "estimatedPrice": 1000,
+        "currency": "AED",
+        "message": "تم تسجيل طلبك بنجاح. جاري إنشاء عملية الدفع..."
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في إرسال الطلب. يرجى المحاولة مرة أخرى أو التواصل مع الدعم."
+  }
+}
+

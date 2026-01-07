@@ -51,6 +51,8 @@ const httpServer = createServer(app);
 const allowedOrigins = [
   'https://api.zien-ai.app', // Portal is on same domain as API
   'https://portal.zien-ai.app',
+  'https://elevenlabs.io', // ElevenLabs MCP Server
+  'https://*.elevenlabs.io', // ElevenLabs subdomains
   process.env.CLIENT_PORTAL_URL || 'https://portal.zien-ai.app',
   'http://localhost:5000', // Backend itself
   'exp://localhost:8081', // Expo Dev Client
@@ -62,13 +64,39 @@ const PORT = process.env.BACKEND_PORT || process.env.PORT || 5000;
 const NODE_ENV = process.env.NODE_ENV || 'production';
 
 const corsOptions = {
-  origin:
-    NODE_ENV === 'production'
-      ? allowedOrigins
-      : true, // Allow all origins in development
+  origin: (origin, callback) => {
+    // Allow requests with no origin (like mobile apps, Postman, curl)
+    if (!origin) return callback(null, true);
+    
+    // In production, check against allowed origins
+    if (NODE_ENV === 'production') {
+      // Allow ElevenLabs domains
+      if (origin.includes('elevenlabs.io')) {
+        return callback(null, true);
+      }
+      // Check against allowed origins list
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+      // Allow wildcard matches
+      const isAllowed = allowedOrigins.some(allowed => {
+        if (allowed.includes('*')) {
+          const pattern = allowed.replace(/\*/g, '.*');
+          return new RegExp(`^${pattern}$`).test(origin);
+        }
+        return false;
+      });
+      if (isAllowed) return callback(null, true);
+      
+      return callback(new Error('Not allowed by CORS'));
+    }
+    // In development, allow all origins
+    return callback(null, true);
+  },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Cache-Control', 'Last-Event-ID'],
+  exposedHeaders: ['Content-Type', 'Cache-Control'],
 };
 
 const io = new Server(httpServer, {
@@ -231,23 +259,33 @@ async function startServer() {
         fetch('http://127.0.0.1:7244/ingest/4c242350-3788-46f7-ada6-4565774061b0',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'server.js:startServer',message:'Initializing MongoDB',data:{step:'mongodb_init'},timestamp:Date.now(),sessionId:'server-startup',runId:'run1',hypothesisId:'MONGO_INIT_START'})}).catch(()=>{});
         // #endregion
       const mongoDB = await initMongoDB();
-      global.mongoDB = mongoDB;
+      if (mongoDB) {
+        global.mongoDB = mongoDB;
         // #region agent log
         fetch('http://127.0.0.1:7244/ingest/4c242350-3788-46f7-ada6-4565774061b0',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'server.js:startServer',message:'MongoDB initialized successfully',data:{step:'mongodb_init',status:'success'},timestamp:Date.now(),sessionId:'server-startup',runId:'run1',hypothesisId:'MONGO_INIT_SUCCESS'})}).catch(()=>{});
         // #endregion
-      console.log('✅ MongoDB connected successfully');
+        console.log('✅ MongoDB connected successfully');
+      } else {
+        console.warn('⚠️ MongoDB connection skipped (not configured)');
+      }
     } catch (e) {
         // #region agent log
         fetch('http://127.0.0.1:7244/ingest/4c242350-3788-46f7-ada6-4565774061b0',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'server.js:startServer',message:'MongoDB init failed',data:{error:e.message},timestamp:Date.now(),sessionId:'server-startup',runId:'run1',hypothesisId:'MONGO_INIT_ERROR'})}).catch(()=>{});
         // #endregion
-        console.warn('⚠️ MongoDB connection failed');
+        console.warn('⚠️ MongoDB connection failed:', e.message);
     }
 
     try {
       const supabase = initSupabase();
-      global.supabase = supabase;
-      console.log('✅ Supabase connected successfully');
-    } catch (e) { console.warn('⚠️ Supabase connection failed'); }
+      if (supabase) {
+        global.supabase = supabase;
+        console.log('✅ Supabase connected successfully');
+      } else {
+        console.warn('⚠️ Supabase connection skipped (not configured)');
+      }
+    } catch (e) { 
+      console.warn('⚠️ Supabase connection failed:', e.message); 
+    }
 
     // 2. تسجيل المسارات (العصب والذكاء الاصطناعي)
     // #region agent log
@@ -444,6 +482,8 @@ async function startServer() {
 
 async function registerRoutes() {
   const routes = [
+    'mcp', // MCP Server - Model Context Protocol for ElevenLabs Agent
+    'elevenlabs-webhook', // ElevenLabs Agent Webhook - must be before 'elevenlabs'
     'ai', 'auth', 'boot'
   ];
 
@@ -464,6 +504,18 @@ async function registerRoutes() {
       // #endregion
       console.warn(`⚠️ Warning: Route [${route}] skipped. (Module missing or error)`);
     }
+  }
+
+  // Translation API route
+  try {
+    const translationModule = await import('./routes/translation.js');
+    const translationRouter = translationModule.default;
+    if (translationRouter) {
+      app.use('/api/translation', translationRouter);
+      console.log('✅ Route loaded: /api/translation');
+    }
+  } catch (e) {
+    console.warn('⚠️ Warning: Translation route skipped. (Module missing or error)');
   }
 
   try {

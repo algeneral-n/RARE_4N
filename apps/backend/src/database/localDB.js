@@ -247,6 +247,82 @@ function createTables() {
     )
   `);
 
+  // Conversations table (for ElevenLabs Agent)
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS conversations (
+      id TEXT PRIMARY KEY,
+      agent_id TEXT,
+      user_id TEXT,
+      context TEXT,
+      status TEXT DEFAULT 'active',
+      summary TEXT,
+      started_at INTEGER DEFAULT (strftime('%s', 'now')),
+      ended_at INTEGER,
+      FOREIGN KEY (user_id) REFERENCES users(id)
+    )
+  `);
+
+  // Conversation messages table
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS conversation_messages (
+      id TEXT PRIMARY KEY,
+      conversation_id TEXT,
+      role TEXT,
+      text TEXT,
+      audio_url TEXT,
+      language TEXT DEFAULT 'ar',
+      dialect TEXT,
+      sentiment TEXT,
+      intent TEXT,
+      created_at INTEGER DEFAULT (strftime('%s', 'now')),
+      FOREIGN KEY (conversation_id) REFERENCES conversations(id)
+    )
+  `);
+
+  // User commands table
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS user_commands (
+      id TEXT PRIMARY KEY,
+      conversation_id TEXT,
+      command TEXT,
+      context TEXT,
+      status TEXT DEFAULT 'saved',
+      executed_at INTEGER,
+      created_at INTEGER DEFAULT (strftime('%s', 'now')),
+      FOREIGN KEY (conversation_id) REFERENCES conversations(id)
+    )
+  `);
+
+  // Agent tool calls table
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS agent_tool_calls (
+      id TEXT PRIMARY KEY,
+      conversation_id TEXT,
+      tool_name TEXT,
+      parameters TEXT,
+      result TEXT,
+      created_at INTEGER DEFAULT (strftime('%s', 'now')),
+      FOREIGN KEY (conversation_id) REFERENCES conversations(id)
+    )
+  `);
+
+  // User profiles table (for personality awareness)
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS user_profiles (
+      user_id TEXT PRIMARY KEY,
+      name TEXT,
+      phone TEXT,
+      email TEXT,
+      language TEXT DEFAULT 'ar',
+      dialect TEXT,
+      personality_traits TEXT,
+      preferences TEXT,
+      commands_history TEXT,
+      updated_at INTEGER DEFAULT (strftime('%s', 'now')),
+      FOREIGN KEY (user_id) REFERENCES users(id)
+    )
+  `);
+
   // Create index for faster queries
   db.exec(`
     CREATE INDEX IF NOT EXISTS idx_ai_usage_user_date 

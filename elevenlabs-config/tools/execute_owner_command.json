@@ -1,0 +1,895 @@
+{
+  "name": "execute_owner_command",
+  "display_name": "Execute Owner Command",
+  "description": "تنفيذ أمر من المالك (Nader/Eamon). Executes commands like payment creation, build requests, sending messages, etc. Only works when called by owner (Voice ID: 6ZVgc4q9LWAloWbuwjuu).",
+  "type": "function",
+  "category": "command",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/agent-tools/execute-owner-command",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "command": {
+        "type": "string",
+        "minLength": 3,
+        "description": "الأمر المراد تنفيذه - Command to execute (e.g., 'أنشئ عملية دفع بقيمة 1000 درهم', 'أرسل رسالة للعميل محمد', 'أنشئ طلب بناء')",
+        "required": true
+      },
+      "context": {
+        "type": "object",
+        "description": "سياق الأمر - Command context (optional, may include: amount, currency, clientId, phone, etc.)",
+        "required": false,
+        "properties": {
+          "amount": {
+            "type": "number"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "clientId": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          },
+          "dialect": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "required": ["command"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "command": {
+        "type": "string"
+      },
+      "result": {
+        "type": "object",
+        "description": "Result of command execution (varies by command type)"
+      },
+      "message": {
+        "type": "string"
+      },
+      "error": {
+        "type": "string",
+        "description": "Error message if execution failed"
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "command": "أنشئ عملية دفع بقيمة 1000 درهم",
+        "context": {
+          "amount": 1000,
+          "currency": "AED",
+          "clientId": "client_123",
+          "requestId": "req_1234567890"
+        }
+      },
+      "output": {
+        "success": true,
+        "command": "أنشئ عملية دفع بقيمة 1000 درهم",
+        "result": {
+          "paymentUrl": "https://checkout.stripe.com/pay/cs_test_...",
+          "sessionId": "cs_test_1234567890"
+        },
+        "message": "تم تنفيذ الأمر بنجاح"
+      }
+    },
+    {
+      "input": {
+        "command": "أرسل رسالة للعميل محمد",
+        "context": {
+          "phone": "+971501234567",
+          "message": "مرحباً محمد! تم استلام طلبك بنجاح."
+        }
+      },
+      "output": {
+        "success": true,
+        "command": "أرسل رسالة للعميل محمد",
+        "result": {
+          "messageSid": "SM1234567890abcdef",
+          "status": "queued"
+        },
+        "message": "تم إرسال الرسالة بنجاح"
+      }
+    },
+    {
+      "input": {
+        "command": "أنشئ طلب بناء لتطبيق تجارة إلكترونية",
+        "context": {
+          "type": "template",
+          "clientId": "client_123",
+          "clientName": "محمد أحمد",
+          "clientEmail": "mohamed@example.com"
+        }
+      },
+      "output": {
+        "success": true,
+        "command": "أنشئ طلب بناء لتطبيق تجارة إلكترونية",
+        "result": {
+          "requestId": "req_1234567890",
+          "estimatedPrice": 1000
+        },
+        "message": "تم إنشاء طلب البناء بنجاح"
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في تنفيذ الأمر. يرجى المحاولة مرة أخرى أو التواصل مع الدعم."
+  },
+  "security": {
+    "requires_owner_verification": true,
+    "owner_voice_id": "6ZVgc4q9LWAloWbuwjuu",
+    "description": "This tool only works when called by the owner (Nader) using the specified Voice ID"
+  }
+}
+
+  "name": "execute_owner_command",
+  "display_name": "Execute Owner Command",
+  "description": "تنفيذ أمر من المالك (Nader/Eamon). Executes commands like payment creation, build requests, sending messages, etc. Only works when called by owner (Voice ID: 6ZVgc4q9LWAloWbuwjuu).",
+  "type": "function",
+  "category": "command",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/agent-tools/execute-owner-command",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "command": {
+        "type": "string",
+        "minLength": 3,
+        "description": "الأمر المراد تنفيذه - Command to execute (e.g., 'أنشئ عملية دفع بقيمة 1000 درهم', 'أرسل رسالة للعميل محمد', 'أنشئ طلب بناء')",
+        "required": true
+      },
+      "context": {
+        "type": "object",
+        "description": "سياق الأمر - Command context (optional, may include: amount, currency, clientId, phone, etc.)",
+        "required": false,
+        "properties": {
+          "amount": {
+            "type": "number"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "clientId": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          },
+          "dialect": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "required": ["command"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "command": {
+        "type": "string"
+      },
+      "result": {
+        "type": "object",
+        "description": "Result of command execution (varies by command type)"
+      },
+      "message": {
+        "type": "string"
+      },
+      "error": {
+        "type": "string",
+        "description": "Error message if execution failed"
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "command": "أنشئ عملية دفع بقيمة 1000 درهم",
+        "context": {
+          "amount": 1000,
+          "currency": "AED",
+          "clientId": "client_123",
+          "requestId": "req_1234567890"
+        }
+      },
+      "output": {
+        "success": true,
+        "command": "أنشئ عملية دفع بقيمة 1000 درهم",
+        "result": {
+          "paymentUrl": "https://checkout.stripe.com/pay/cs_test_...",
+          "sessionId": "cs_test_1234567890"
+        },
+        "message": "تم تنفيذ الأمر بنجاح"
+      }
+    },
+    {
+      "input": {
+        "command": "أرسل رسالة للعميل محمد",
+        "context": {
+          "phone": "+971501234567",
+          "message": "مرحباً محمد! تم استلام طلبك بنجاح."
+        }
+      },
+      "output": {
+        "success": true,
+        "command": "أرسل رسالة للعميل محمد",
+        "result": {
+          "messageSid": "SM1234567890abcdef",
+          "status": "queued"
+        },
+        "message": "تم إرسال الرسالة بنجاح"
+      }
+    },
+    {
+      "input": {
+        "command": "أنشئ طلب بناء لتطبيق تجارة إلكترونية",
+        "context": {
+          "type": "template",
+          "clientId": "client_123",
+          "clientName": "محمد أحمد",
+          "clientEmail": "mohamed@example.com"
+        }
+      },
+      "output": {
+        "success": true,
+        "command": "أنشئ طلب بناء لتطبيق تجارة إلكترونية",
+        "result": {
+          "requestId": "req_1234567890",
+          "estimatedPrice": 1000
+        },
+        "message": "تم إنشاء طلب البناء بنجاح"
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في تنفيذ الأمر. يرجى المحاولة مرة أخرى أو التواصل مع الدعم."
+  },
+  "security": {
+    "requires_owner_verification": true,
+    "owner_voice_id": "6ZVgc4q9LWAloWbuwjuu",
+    "description": "This tool only works when called by the owner (Nader) using the specified Voice ID"
+  }
+}
+
+  "name": "execute_owner_command",
+  "display_name": "Execute Owner Command",
+  "description": "تنفيذ أمر من المالك (Nader/Eamon). Executes commands like payment creation, build requests, sending messages, etc. Only works when called by owner (Voice ID: 6ZVgc4q9LWAloWbuwjuu).",
+  "type": "function",
+  "category": "command",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/agent-tools/execute-owner-command",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "command": {
+        "type": "string",
+        "minLength": 3,
+        "description": "الأمر المراد تنفيذه - Command to execute (e.g., 'أنشئ عملية دفع بقيمة 1000 درهم', 'أرسل رسالة للعميل محمد', 'أنشئ طلب بناء')",
+        "required": true
+      },
+      "context": {
+        "type": "object",
+        "description": "سياق الأمر - Command context (optional, may include: amount, currency, clientId, phone, etc.)",
+        "required": false,
+        "properties": {
+          "amount": {
+            "type": "number"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "clientId": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          },
+          "dialect": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "required": ["command"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "command": {
+        "type": "string"
+      },
+      "result": {
+        "type": "object",
+        "description": "Result of command execution (varies by command type)"
+      },
+      "message": {
+        "type": "string"
+      },
+      "error": {
+        "type": "string",
+        "description": "Error message if execution failed"
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "command": "أنشئ عملية دفع بقيمة 1000 درهم",
+        "context": {
+          "amount": 1000,
+          "currency": "AED",
+          "clientId": "client_123",
+          "requestId": "req_1234567890"
+        }
+      },
+      "output": {
+        "success": true,
+        "command": "أنشئ عملية دفع بقيمة 1000 درهم",
+        "result": {
+          "paymentUrl": "https://checkout.stripe.com/pay/cs_test_...",
+          "sessionId": "cs_test_1234567890"
+        },
+        "message": "تم تنفيذ الأمر بنجاح"
+      }
+    },
+    {
+      "input": {
+        "command": "أرسل رسالة للعميل محمد",
+        "context": {
+          "phone": "+971501234567",
+          "message": "مرحباً محمد! تم استلام طلبك بنجاح."
+        }
+      },
+      "output": {
+        "success": true,
+        "command": "أرسل رسالة للعميل محمد",
+        "result": {
+          "messageSid": "SM1234567890abcdef",
+          "status": "queued"
+        },
+        "message": "تم إرسال الرسالة بنجاح"
+      }
+    },
+    {
+      "input": {
+        "command": "أنشئ طلب بناء لتطبيق تجارة إلكترونية",
+        "context": {
+          "type": "template",
+          "clientId": "client_123",
+          "clientName": "محمد أحمد",
+          "clientEmail": "mohamed@example.com"
+        }
+      },
+      "output": {
+        "success": true,
+        "command": "أنشئ طلب بناء لتطبيق تجارة إلكترونية",
+        "result": {
+          "requestId": "req_1234567890",
+          "estimatedPrice": 1000
+        },
+        "message": "تم إنشاء طلب البناء بنجاح"
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في تنفيذ الأمر. يرجى المحاولة مرة أخرى أو التواصل مع الدعم."
+  },
+  "security": {
+    "requires_owner_verification": true,
+    "owner_voice_id": "6ZVgc4q9LWAloWbuwjuu",
+    "description": "This tool only works when called by the owner (Nader) using the specified Voice ID"
+  }
+}
+
+  "name": "execute_owner_command",
+  "display_name": "Execute Owner Command",
+  "description": "تنفيذ أمر من المالك (Nader/Eamon). Executes commands like payment creation, build requests, sending messages, etc. Only works when called by owner (Voice ID: 6ZVgc4q9LWAloWbuwjuu).",
+  "type": "function",
+  "category": "command",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/agent-tools/execute-owner-command",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "command": {
+        "type": "string",
+        "minLength": 3,
+        "description": "الأمر المراد تنفيذه - Command to execute (e.g., 'أنشئ عملية دفع بقيمة 1000 درهم', 'أرسل رسالة للعميل محمد', 'أنشئ طلب بناء')",
+        "required": true
+      },
+      "context": {
+        "type": "object",
+        "description": "سياق الأمر - Command context (optional, may include: amount, currency, clientId, phone, etc.)",
+        "required": false,
+        "properties": {
+          "amount": {
+            "type": "number"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "clientId": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          },
+          "dialect": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "required": ["command"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "command": {
+        "type": "string"
+      },
+      "result": {
+        "type": "object",
+        "description": "Result of command execution (varies by command type)"
+      },
+      "message": {
+        "type": "string"
+      },
+      "error": {
+        "type": "string",
+        "description": "Error message if execution failed"
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "command": "أنشئ عملية دفع بقيمة 1000 درهم",
+        "context": {
+          "amount": 1000,
+          "currency": "AED",
+          "clientId": "client_123",
+          "requestId": "req_1234567890"
+        }
+      },
+      "output": {
+        "success": true,
+        "command": "أنشئ عملية دفع بقيمة 1000 درهم",
+        "result": {
+          "paymentUrl": "https://checkout.stripe.com/pay/cs_test_...",
+          "sessionId": "cs_test_1234567890"
+        },
+        "message": "تم تنفيذ الأمر بنجاح"
+      }
+    },
+    {
+      "input": {
+        "command": "أرسل رسالة للعميل محمد",
+        "context": {
+          "phone": "+971501234567",
+          "message": "مرحباً محمد! تم استلام طلبك بنجاح."
+        }
+      },
+      "output": {
+        "success": true,
+        "command": "أرسل رسالة للعميل محمد",
+        "result": {
+          "messageSid": "SM1234567890abcdef",
+          "status": "queued"
+        },
+        "message": "تم إرسال الرسالة بنجاح"
+      }
+    },
+    {
+      "input": {
+        "command": "أنشئ طلب بناء لتطبيق تجارة إلكترونية",
+        "context": {
+          "type": "template",
+          "clientId": "client_123",
+          "clientName": "محمد أحمد",
+          "clientEmail": "mohamed@example.com"
+        }
+      },
+      "output": {
+        "success": true,
+        "command": "أنشئ طلب بناء لتطبيق تجارة إلكترونية",
+        "result": {
+          "requestId": "req_1234567890",
+          "estimatedPrice": 1000
+        },
+        "message": "تم إنشاء طلب البناء بنجاح"
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في تنفيذ الأمر. يرجى المحاولة مرة أخرى أو التواصل مع الدعم."
+  },
+  "security": {
+    "requires_owner_verification": true,
+    "owner_voice_id": "6ZVgc4q9LWAloWbuwjuu",
+    "description": "This tool only works when called by the owner (Nader) using the specified Voice ID"
+  }
+}
+
+  "name": "execute_owner_command",
+  "display_name": "Execute Owner Command",
+  "description": "تنفيذ أمر من المالك (Nader/Eamon). Executes commands like payment creation, build requests, sending messages, etc. Only works when called by owner (Voice ID: 6ZVgc4q9LWAloWbuwjuu).",
+  "type": "function",
+  "category": "command",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/agent-tools/execute-owner-command",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "command": {
+        "type": "string",
+        "minLength": 3,
+        "description": "الأمر المراد تنفيذه - Command to execute (e.g., 'أنشئ عملية دفع بقيمة 1000 درهم', 'أرسل رسالة للعميل محمد', 'أنشئ طلب بناء')",
+        "required": true
+      },
+      "context": {
+        "type": "object",
+        "description": "سياق الأمر - Command context (optional, may include: amount, currency, clientId, phone, etc.)",
+        "required": false,
+        "properties": {
+          "amount": {
+            "type": "number"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "clientId": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          },
+          "dialect": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "required": ["command"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "command": {
+        "type": "string"
+      },
+      "result": {
+        "type": "object",
+        "description": "Result of command execution (varies by command type)"
+      },
+      "message": {
+        "type": "string"
+      },
+      "error": {
+        "type": "string",
+        "description": "Error message if execution failed"
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "command": "أنشئ عملية دفع بقيمة 1000 درهم",
+        "context": {
+          "amount": 1000,
+          "currency": "AED",
+          "clientId": "client_123",
+          "requestId": "req_1234567890"
+        }
+      },
+      "output": {
+        "success": true,
+        "command": "أنشئ عملية دفع بقيمة 1000 درهم",
+        "result": {
+          "paymentUrl": "https://checkout.stripe.com/pay/cs_test_...",
+          "sessionId": "cs_test_1234567890"
+        },
+        "message": "تم تنفيذ الأمر بنجاح"
+      }
+    },
+    {
+      "input": {
+        "command": "أرسل رسالة للعميل محمد",
+        "context": {
+          "phone": "+971501234567",
+          "message": "مرحباً محمد! تم استلام طلبك بنجاح."
+        }
+      },
+      "output": {
+        "success": true,
+        "command": "أرسل رسالة للعميل محمد",
+        "result": {
+          "messageSid": "SM1234567890abcdef",
+          "status": "queued"
+        },
+        "message": "تم إرسال الرسالة بنجاح"
+      }
+    },
+    {
+      "input": {
+        "command": "أنشئ طلب بناء لتطبيق تجارة إلكترونية",
+        "context": {
+          "type": "template",
+          "clientId": "client_123",
+          "clientName": "محمد أحمد",
+          "clientEmail": "mohamed@example.com"
+        }
+      },
+      "output": {
+        "success": true,
+        "command": "أنشئ طلب بناء لتطبيق تجارة إلكترونية",
+        "result": {
+          "requestId": "req_1234567890",
+          "estimatedPrice": 1000
+        },
+        "message": "تم إنشاء طلب البناء بنجاح"
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في تنفيذ الأمر. يرجى المحاولة مرة أخرى أو التواصل مع الدعم."
+  },
+  "security": {
+    "requires_owner_verification": true,
+    "owner_voice_id": "6ZVgc4q9LWAloWbuwjuu",
+    "description": "This tool only works when called by the owner (Nader) using the specified Voice ID"
+  }
+}
+
+  "name": "execute_owner_command",
+  "display_name": "Execute Owner Command",
+  "description": "تنفيذ أمر من المالك (Nader/Eamon). Executes commands like payment creation, build requests, sending messages, etc. Only works when called by owner (Voice ID: 6ZVgc4q9LWAloWbuwjuu).",
+  "type": "function",
+  "category": "command",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/agent-tools/execute-owner-command",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "command": {
+        "type": "string",
+        "minLength": 3,
+        "description": "الأمر المراد تنفيذه - Command to execute (e.g., 'أنشئ عملية دفع بقيمة 1000 درهم', 'أرسل رسالة للعميل محمد', 'أنشئ طلب بناء')",
+        "required": true
+      },
+      "context": {
+        "type": "object",
+        "description": "سياق الأمر - Command context (optional, may include: amount, currency, clientId, phone, etc.)",
+        "required": false,
+        "properties": {
+          "amount": {
+            "type": "number"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "clientId": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          },
+          "dialect": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "required": ["command"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "command": {
+        "type": "string"
+      },
+      "result": {
+        "type": "object",
+        "description": "Result of command execution (varies by command type)"
+      },
+      "message": {
+        "type": "string"
+      },
+      "error": {
+        "type": "string",
+        "description": "Error message if execution failed"
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "command": "أنشئ عملية دفع بقيمة 1000 درهم",
+        "context": {
+          "amount": 1000,
+          "currency": "AED",
+          "clientId": "client_123",
+          "requestId": "req_1234567890"
+        }
+      },
+      "output": {
+        "success": true,
+        "command": "أنشئ عملية دفع بقيمة 1000 درهم",
+        "result": {
+          "paymentUrl": "https://checkout.stripe.com/pay/cs_test_...",
+          "sessionId": "cs_test_1234567890"
+        },
+        "message": "تم تنفيذ الأمر بنجاح"
+      }
+    },
+    {
+      "input": {
+        "command": "أرسل رسالة للعميل محمد",
+        "context": {
+          "phone": "+971501234567",
+          "message": "مرحباً محمد! تم استلام طلبك بنجاح."
+        }
+      },
+      "output": {
+        "success": true,
+        "command": "أرسل رسالة للعميل محمد",
+        "result": {
+          "messageSid": "SM1234567890abcdef",
+          "status": "queued"
+        },
+        "message": "تم إرسال الرسالة بنجاح"
+      }
+    },
+    {
+      "input": {
+        "command": "أنشئ طلب بناء لتطبيق تجارة إلكترونية",
+        "context": {
+          "type": "template",
+          "clientId": "client_123",
+          "clientName": "محمد أحمد",
+          "clientEmail": "mohamed@example.com"
+        }
+      },
+      "output": {
+        "success": true,
+        "command": "أنشئ طلب بناء لتطبيق تجارة إلكترونية",
+        "result": {
+          "requestId": "req_1234567890",
+          "estimatedPrice": 1000
+        },
+        "message": "تم إنشاء طلب البناء بنجاح"
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في تنفيذ الأمر. يرجى المحاولة مرة أخرى أو التواصل مع الدعم."
+  },
+  "security": {
+    "requires_owner_verification": true,
+    "owner_voice_id": "6ZVgc4q9LWAloWbuwjuu",
+    "description": "This tool only works when called by the owner (Nader) using the specified Voice ID"
+  }
+}
+

@@ -1,0 +1,1333 @@
+{
+  "webhook_url": "https://api.zien-ai.app/api/elevenlabs/webhook",
+  "api_url": "https://api.zien-ai.app",
+  "api_domain": "api.zien-ai.app",
+  "supported_languages": [
+    "ar",
+    "en",
+    "fr",
+    "es",
+    "de",
+    "it",
+    "pt",
+    "ru",
+    "zh",
+    "ja",
+    "ko",
+    "hi",
+    "tr",
+    "pl",
+    "nl"
+  ],
+  "supported_dialects": {
+    "ar": [
+      "eg",
+      "sa",
+      "ae",
+      "jo",
+      "lb",
+      "ma",
+      "tn",
+      "dz",
+      "iq",
+      "sy",
+      "ye",
+      "om",
+      "kw",
+      "qa",
+      "bh"
+    ],
+    "en": [
+      "us",
+      "uk",
+      "au",
+      "ca",
+      "nz",
+      "ie",
+      "za"
+    ],
+    "es": [
+      "es",
+      "mx",
+      "ar",
+      "co",
+      "cl",
+      "pe",
+      "ve"
+    ],
+    "fr": [
+      "fr",
+      "ca",
+      "be",
+      "ch"
+    ]
+  },
+  "owner": {
+    "voice_id": "6ZVgc4q9LWAloWbuwjuu",
+    "name": "Nader",
+    "phone": "+971529211077",
+    "email": "gm@zien-ai.app",
+    "role": "owner",
+    "permissions": [
+      "execute_commands",
+      "access_libraries",
+      "create_payments",
+      "send_messages",
+      "notify_owner",
+      "manage_builds"
+    ]
+  },
+  "services": {
+    "twilio": {
+      "enabled": true,
+      "supports_whatsapp": true,
+      "supports_sms": true,
+      "supports_voice": true
+    },
+    "payment": {
+      "enabled": true,
+      "methods": [
+        "stripe",
+        "apple_pay",
+        "bank_transfer"
+      ],
+      "default_currency": "AED",
+      "supported_currencies": [
+        "AED",
+        "USD",
+        "EUR",
+        "GBP",
+        "SAR"
+      ]
+    },
+    "builder": {
+      "enabled": true,
+      "auto_build": true,
+      "supports_templates": true,
+      "supports_systems": true,
+      "supports_themes": true
+    }
+  },
+  "libraries": {
+    "templates_api": "https://api.zien-ai.app/api/libraries/templates",
+    "systems_api": "https://api.zien-ai.app/api/libraries/systems",
+    "themes_api": "https://api.zien-ai.app/api/libraries/themes",
+    "search_api": "https://api.zien-ai.app/api/libraries/search",
+    "structure": {
+      "templates": {
+        "fields": [
+          "id",
+          "name",
+          "nameEn",
+          "category",
+          "description",
+          "features",
+          "price"
+        ],
+        "categories": [
+          "e-commerce",
+          "social",
+          "business",
+          "education",
+          "healthcare",
+          "entertainment",
+          "finance",
+          "real-estate",
+          "food",
+          "travel"
+        ]
+      },
+      "systems": {
+        "fields": [
+          "id",
+          "name",
+          "nameEn",
+          "category",
+          "description",
+          "features",
+          "price"
+        ],
+        "categories": [
+          "crm",
+          "erp",
+          "inventory",
+          "accounting",
+          "hr",
+          "project-management",
+          "analytics",
+          "security"
+        ]
+      },
+      "themes": {
+        "fields": [
+          "id",
+          "name",
+          "nameEn",
+          "primary",
+          "secondary",
+          "description"
+        ]
+      }
+    }
+  },
+  "tools": {
+    "preview_library": {
+      "endpoint": "https://api.zien-ai.app/api/agent-tools/preview-library",
+      "description": "Preview available libraries (templates, systems, themes)"
+    },
+    "search_library": {
+      "endpoint": "https://api.zien-ai.app/api/agent-tools/search-library",
+      "description": "Search across all libraries"
+    },
+    "submit_to_builder": {
+      "endpoint": "https://api.zien-ai.app/api/agent-tools/submit-to-builder",
+      "description": "Submit build request to Auto Builder"
+    },
+    "create_payment": {
+      "endpoint": "https://api.zien-ai.app/api/agent-tools/create-payment",
+      "description": "Create payment session for client"
+    },
+    "send_twilio_message": {
+      "endpoint": "https://api.zien-ai.app/api/twilio/send",
+      "description": "Send message via Twilio (WhatsApp/SMS)"
+    },
+    "notify_owner": {
+      "endpoint": "https://api.zien-ai.app/api/agent-tools/notify-owner",
+      "description": "Notify owner (Nader) via Twilio"
+    },
+    "execute_owner_command": {
+      "endpoint": "https://api.zien-ai.app/api/agent-tools/execute-owner-command",
+      "description": "Execute command from owner (Nader)"
+    }
+  },
+  "features": {
+    "command_saving_enabled": true,
+    "personality_awareness": true,
+    "owner_commands_enabled": true,
+    "libraries_access": true,
+    "multilingual_support": true,
+    "dialect_detection": true,
+    "voice_recognition": true,
+    "error_handling": true,
+    "fallback_responses": true
+  },
+  "behavior": {
+    "owner_priority": "high",
+    "command_execution": "immediate_for_owner",
+    "language_detection": "automatic",
+    "dialect_awareness": true,
+    "context_preservation": true,
+    "error_recovery": true
+  }
+}
+
+  "webhook_url": "https://api.zien-ai.app/api/elevenlabs/webhook",
+  "api_url": "https://api.zien-ai.app",
+  "api_domain": "api.zien-ai.app",
+  "supported_languages": [
+    "ar",
+    "en",
+    "fr",
+    "es",
+    "de",
+    "it",
+    "pt",
+    "ru",
+    "zh",
+    "ja",
+    "ko",
+    "hi",
+    "tr",
+    "pl",
+    "nl"
+  ],
+  "supported_dialects": {
+    "ar": [
+      "eg",
+      "sa",
+      "ae",
+      "jo",
+      "lb",
+      "ma",
+      "tn",
+      "dz",
+      "iq",
+      "sy",
+      "ye",
+      "om",
+      "kw",
+      "qa",
+      "bh"
+    ],
+    "en": [
+      "us",
+      "uk",
+      "au",
+      "ca",
+      "nz",
+      "ie",
+      "za"
+    ],
+    "es": [
+      "es",
+      "mx",
+      "ar",
+      "co",
+      "cl",
+      "pe",
+      "ve"
+    ],
+    "fr": [
+      "fr",
+      "ca",
+      "be",
+      "ch"
+    ]
+  },
+  "owner": {
+    "voice_id": "6ZVgc4q9LWAloWbuwjuu",
+    "name": "Nader",
+    "phone": "+971529211077",
+    "email": "gm@zien-ai.app",
+    "role": "owner",
+    "permissions": [
+      "execute_commands",
+      "access_libraries",
+      "create_payments",
+      "send_messages",
+      "notify_owner",
+      "manage_builds"
+    ]
+  },
+  "services": {
+    "twilio": {
+      "enabled": true,
+      "supports_whatsapp": true,
+      "supports_sms": true,
+      "supports_voice": true
+    },
+    "payment": {
+      "enabled": true,
+      "methods": [
+        "stripe",
+        "apple_pay",
+        "bank_transfer"
+      ],
+      "default_currency": "AED",
+      "supported_currencies": [
+        "AED",
+        "USD",
+        "EUR",
+        "GBP",
+        "SAR"
+      ]
+    },
+    "builder": {
+      "enabled": true,
+      "auto_build": true,
+      "supports_templates": true,
+      "supports_systems": true,
+      "supports_themes": true
+    }
+  },
+  "libraries": {
+    "templates_api": "https://api.zien-ai.app/api/libraries/templates",
+    "systems_api": "https://api.zien-ai.app/api/libraries/systems",
+    "themes_api": "https://api.zien-ai.app/api/libraries/themes",
+    "search_api": "https://api.zien-ai.app/api/libraries/search",
+    "structure": {
+      "templates": {
+        "fields": [
+          "id",
+          "name",
+          "nameEn",
+          "category",
+          "description",
+          "features",
+          "price"
+        ],
+        "categories": [
+          "e-commerce",
+          "social",
+          "business",
+          "education",
+          "healthcare",
+          "entertainment",
+          "finance",
+          "real-estate",
+          "food",
+          "travel"
+        ]
+      },
+      "systems": {
+        "fields": [
+          "id",
+          "name",
+          "nameEn",
+          "category",
+          "description",
+          "features",
+          "price"
+        ],
+        "categories": [
+          "crm",
+          "erp",
+          "inventory",
+          "accounting",
+          "hr",
+          "project-management",
+          "analytics",
+          "security"
+        ]
+      },
+      "themes": {
+        "fields": [
+          "id",
+          "name",
+          "nameEn",
+          "primary",
+          "secondary",
+          "description"
+        ]
+      }
+    }
+  },
+  "tools": {
+    "preview_library": {
+      "endpoint": "https://api.zien-ai.app/api/agent-tools/preview-library",
+      "description": "Preview available libraries (templates, systems, themes)"
+    },
+    "search_library": {
+      "endpoint": "https://api.zien-ai.app/api/agent-tools/search-library",
+      "description": "Search across all libraries"
+    },
+    "submit_to_builder": {
+      "endpoint": "https://api.zien-ai.app/api/agent-tools/submit-to-builder",
+      "description": "Submit build request to Auto Builder"
+    },
+    "create_payment": {
+      "endpoint": "https://api.zien-ai.app/api/agent-tools/create-payment",
+      "description": "Create payment session for client"
+    },
+    "send_twilio_message": {
+      "endpoint": "https://api.zien-ai.app/api/twilio/send",
+      "description": "Send message via Twilio (WhatsApp/SMS)"
+    },
+    "notify_owner": {
+      "endpoint": "https://api.zien-ai.app/api/agent-tools/notify-owner",
+      "description": "Notify owner (Nader) via Twilio"
+    },
+    "execute_owner_command": {
+      "endpoint": "https://api.zien-ai.app/api/agent-tools/execute-owner-command",
+      "description": "Execute command from owner (Nader)"
+    }
+  },
+  "features": {
+    "command_saving_enabled": true,
+    "personality_awareness": true,
+    "owner_commands_enabled": true,
+    "libraries_access": true,
+    "multilingual_support": true,
+    "dialect_detection": true,
+    "voice_recognition": true,
+    "error_handling": true,
+    "fallback_responses": true
+  },
+  "behavior": {
+    "owner_priority": "high",
+    "command_execution": "immediate_for_owner",
+    "language_detection": "automatic",
+    "dialect_awareness": true,
+    "context_preservation": true,
+    "error_recovery": true
+  }
+}
+
+  "webhook_url": "https://api.zien-ai.app/api/elevenlabs/webhook",
+  "api_url": "https://api.zien-ai.app",
+  "api_domain": "api.zien-ai.app",
+  "supported_languages": [
+    "ar",
+    "en",
+    "fr",
+    "es",
+    "de",
+    "it",
+    "pt",
+    "ru",
+    "zh",
+    "ja",
+    "ko",
+    "hi",
+    "tr",
+    "pl",
+    "nl"
+  ],
+  "supported_dialects": {
+    "ar": [
+      "eg",
+      "sa",
+      "ae",
+      "jo",
+      "lb",
+      "ma",
+      "tn",
+      "dz",
+      "iq",
+      "sy",
+      "ye",
+      "om",
+      "kw",
+      "qa",
+      "bh"
+    ],
+    "en": [
+      "us",
+      "uk",
+      "au",
+      "ca",
+      "nz",
+      "ie",
+      "za"
+    ],
+    "es": [
+      "es",
+      "mx",
+      "ar",
+      "co",
+      "cl",
+      "pe",
+      "ve"
+    ],
+    "fr": [
+      "fr",
+      "ca",
+      "be",
+      "ch"
+    ]
+  },
+  "owner": {
+    "voice_id": "6ZVgc4q9LWAloWbuwjuu",
+    "name": "Nader",
+    "phone": "+971529211077",
+    "email": "gm@zien-ai.app",
+    "role": "owner",
+    "permissions": [
+      "execute_commands",
+      "access_libraries",
+      "create_payments",
+      "send_messages",
+      "notify_owner",
+      "manage_builds"
+    ]
+  },
+  "services": {
+    "twilio": {
+      "enabled": true,
+      "supports_whatsapp": true,
+      "supports_sms": true,
+      "supports_voice": true
+    },
+    "payment": {
+      "enabled": true,
+      "methods": [
+        "stripe",
+        "apple_pay",
+        "bank_transfer"
+      ],
+      "default_currency": "AED",
+      "supported_currencies": [
+        "AED",
+        "USD",
+        "EUR",
+        "GBP",
+        "SAR"
+      ]
+    },
+    "builder": {
+      "enabled": true,
+      "auto_build": true,
+      "supports_templates": true,
+      "supports_systems": true,
+      "supports_themes": true
+    }
+  },
+  "libraries": {
+    "templates_api": "https://api.zien-ai.app/api/libraries/templates",
+    "systems_api": "https://api.zien-ai.app/api/libraries/systems",
+    "themes_api": "https://api.zien-ai.app/api/libraries/themes",
+    "search_api": "https://api.zien-ai.app/api/libraries/search",
+    "structure": {
+      "templates": {
+        "fields": [
+          "id",
+          "name",
+          "nameEn",
+          "category",
+          "description",
+          "features",
+          "price"
+        ],
+        "categories": [
+          "e-commerce",
+          "social",
+          "business",
+          "education",
+          "healthcare",
+          "entertainment",
+          "finance",
+          "real-estate",
+          "food",
+          "travel"
+        ]
+      },
+      "systems": {
+        "fields": [
+          "id",
+          "name",
+          "nameEn",
+          "category",
+          "description",
+          "features",
+          "price"
+        ],
+        "categories": [
+          "crm",
+          "erp",
+          "inventory",
+          "accounting",
+          "hr",
+          "project-management",
+          "analytics",
+          "security"
+        ]
+      },
+      "themes": {
+        "fields": [
+          "id",
+          "name",
+          "nameEn",
+          "primary",
+          "secondary",
+          "description"
+        ]
+      }
+    }
+  },
+  "tools": {
+    "preview_library": {
+      "endpoint": "https://api.zien-ai.app/api/agent-tools/preview-library",
+      "description": "Preview available libraries (templates, systems, themes)"
+    },
+    "search_library": {
+      "endpoint": "https://api.zien-ai.app/api/agent-tools/search-library",
+      "description": "Search across all libraries"
+    },
+    "submit_to_builder": {
+      "endpoint": "https://api.zien-ai.app/api/agent-tools/submit-to-builder",
+      "description": "Submit build request to Auto Builder"
+    },
+    "create_payment": {
+      "endpoint": "https://api.zien-ai.app/api/agent-tools/create-payment",
+      "description": "Create payment session for client"
+    },
+    "send_twilio_message": {
+      "endpoint": "https://api.zien-ai.app/api/twilio/send",
+      "description": "Send message via Twilio (WhatsApp/SMS)"
+    },
+    "notify_owner": {
+      "endpoint": "https://api.zien-ai.app/api/agent-tools/notify-owner",
+      "description": "Notify owner (Nader) via Twilio"
+    },
+    "execute_owner_command": {
+      "endpoint": "https://api.zien-ai.app/api/agent-tools/execute-owner-command",
+      "description": "Execute command from owner (Nader)"
+    }
+  },
+  "features": {
+    "command_saving_enabled": true,
+    "personality_awareness": true,
+    "owner_commands_enabled": true,
+    "libraries_access": true,
+    "multilingual_support": true,
+    "dialect_detection": true,
+    "voice_recognition": true,
+    "error_handling": true,
+    "fallback_responses": true
+  },
+  "behavior": {
+    "owner_priority": "high",
+    "command_execution": "immediate_for_owner",
+    "language_detection": "automatic",
+    "dialect_awareness": true,
+    "context_preservation": true,
+    "error_recovery": true
+  }
+}
+
+  "webhook_url": "https://api.zien-ai.app/api/elevenlabs/webhook",
+  "api_url": "https://api.zien-ai.app",
+  "api_domain": "api.zien-ai.app",
+  "supported_languages": [
+    "ar",
+    "en",
+    "fr",
+    "es",
+    "de",
+    "it",
+    "pt",
+    "ru",
+    "zh",
+    "ja",
+    "ko",
+    "hi",
+    "tr",
+    "pl",
+    "nl"
+  ],
+  "supported_dialects": {
+    "ar": [
+      "eg",
+      "sa",
+      "ae",
+      "jo",
+      "lb",
+      "ma",
+      "tn",
+      "dz",
+      "iq",
+      "sy",
+      "ye",
+      "om",
+      "kw",
+      "qa",
+      "bh"
+    ],
+    "en": [
+      "us",
+      "uk",
+      "au",
+      "ca",
+      "nz",
+      "ie",
+      "za"
+    ],
+    "es": [
+      "es",
+      "mx",
+      "ar",
+      "co",
+      "cl",
+      "pe",
+      "ve"
+    ],
+    "fr": [
+      "fr",
+      "ca",
+      "be",
+      "ch"
+    ]
+  },
+  "owner": {
+    "voice_id": "6ZVgc4q9LWAloWbuwjuu",
+    "name": "Nader",
+    "phone": "+971529211077",
+    "email": "gm@zien-ai.app",
+    "role": "owner",
+    "permissions": [
+      "execute_commands",
+      "access_libraries",
+      "create_payments",
+      "send_messages",
+      "notify_owner",
+      "manage_builds"
+    ]
+  },
+  "services": {
+    "twilio": {
+      "enabled": true,
+      "supports_whatsapp": true,
+      "supports_sms": true,
+      "supports_voice": true
+    },
+    "payment": {
+      "enabled": true,
+      "methods": [
+        "stripe",
+        "apple_pay",
+        "bank_transfer"
+      ],
+      "default_currency": "AED",
+      "supported_currencies": [
+        "AED",
+        "USD",
+        "EUR",
+        "GBP",
+        "SAR"
+      ]
+    },
+    "builder": {
+      "enabled": true,
+      "auto_build": true,
+      "supports_templates": true,
+      "supports_systems": true,
+      "supports_themes": true
+    }
+  },
+  "libraries": {
+    "templates_api": "https://api.zien-ai.app/api/libraries/templates",
+    "systems_api": "https://api.zien-ai.app/api/libraries/systems",
+    "themes_api": "https://api.zien-ai.app/api/libraries/themes",
+    "search_api": "https://api.zien-ai.app/api/libraries/search",
+    "structure": {
+      "templates": {
+        "fields": [
+          "id",
+          "name",
+          "nameEn",
+          "category",
+          "description",
+          "features",
+          "price"
+        ],
+        "categories": [
+          "e-commerce",
+          "social",
+          "business",
+          "education",
+          "healthcare",
+          "entertainment",
+          "finance",
+          "real-estate",
+          "food",
+          "travel"
+        ]
+      },
+      "systems": {
+        "fields": [
+          "id",
+          "name",
+          "nameEn",
+          "category",
+          "description",
+          "features",
+          "price"
+        ],
+        "categories": [
+          "crm",
+          "erp",
+          "inventory",
+          "accounting",
+          "hr",
+          "project-management",
+          "analytics",
+          "security"
+        ]
+      },
+      "themes": {
+        "fields": [
+          "id",
+          "name",
+          "nameEn",
+          "primary",
+          "secondary",
+          "description"
+        ]
+      }
+    }
+  },
+  "tools": {
+    "preview_library": {
+      "endpoint": "https://api.zien-ai.app/api/agent-tools/preview-library",
+      "description": "Preview available libraries (templates, systems, themes)"
+    },
+    "search_library": {
+      "endpoint": "https://api.zien-ai.app/api/agent-tools/search-library",
+      "description": "Search across all libraries"
+    },
+    "submit_to_builder": {
+      "endpoint": "https://api.zien-ai.app/api/agent-tools/submit-to-builder",
+      "description": "Submit build request to Auto Builder"
+    },
+    "create_payment": {
+      "endpoint": "https://api.zien-ai.app/api/agent-tools/create-payment",
+      "description": "Create payment session for client"
+    },
+    "send_twilio_message": {
+      "endpoint": "https://api.zien-ai.app/api/twilio/send",
+      "description": "Send message via Twilio (WhatsApp/SMS)"
+    },
+    "notify_owner": {
+      "endpoint": "https://api.zien-ai.app/api/agent-tools/notify-owner",
+      "description": "Notify owner (Nader) via Twilio"
+    },
+    "execute_owner_command": {
+      "endpoint": "https://api.zien-ai.app/api/agent-tools/execute-owner-command",
+      "description": "Execute command from owner (Nader)"
+    }
+  },
+  "features": {
+    "command_saving_enabled": true,
+    "personality_awareness": true,
+    "owner_commands_enabled": true,
+    "libraries_access": true,
+    "multilingual_support": true,
+    "dialect_detection": true,
+    "voice_recognition": true,
+    "error_handling": true,
+    "fallback_responses": true
+  },
+  "behavior": {
+    "owner_priority": "high",
+    "command_execution": "immediate_for_owner",
+    "language_detection": "automatic",
+    "dialect_awareness": true,
+    "context_preservation": true,
+    "error_recovery": true
+  }
+}
+
+  "webhook_url": "https://api.zien-ai.app/api/elevenlabs/webhook",
+  "api_url": "https://api.zien-ai.app",
+  "api_domain": "api.zien-ai.app",
+  "supported_languages": [
+    "ar",
+    "en",
+    "fr",
+    "es",
+    "de",
+    "it",
+    "pt",
+    "ru",
+    "zh",
+    "ja",
+    "ko",
+    "hi",
+    "tr",
+    "pl",
+    "nl"
+  ],
+  "supported_dialects": {
+    "ar": [
+      "eg",
+      "sa",
+      "ae",
+      "jo",
+      "lb",
+      "ma",
+      "tn",
+      "dz",
+      "iq",
+      "sy",
+      "ye",
+      "om",
+      "kw",
+      "qa",
+      "bh"
+    ],
+    "en": [
+      "us",
+      "uk",
+      "au",
+      "ca",
+      "nz",
+      "ie",
+      "za"
+    ],
+    "es": [
+      "es",
+      "mx",
+      "ar",
+      "co",
+      "cl",
+      "pe",
+      "ve"
+    ],
+    "fr": [
+      "fr",
+      "ca",
+      "be",
+      "ch"
+    ]
+  },
+  "owner": {
+    "voice_id": "6ZVgc4q9LWAloWbuwjuu",
+    "name": "Nader",
+    "phone": "+971529211077",
+    "email": "gm@zien-ai.app",
+    "role": "owner",
+    "permissions": [
+      "execute_commands",
+      "access_libraries",
+      "create_payments",
+      "send_messages",
+      "notify_owner",
+      "manage_builds"
+    ]
+  },
+  "services": {
+    "twilio": {
+      "enabled": true,
+      "supports_whatsapp": true,
+      "supports_sms": true,
+      "supports_voice": true
+    },
+    "payment": {
+      "enabled": true,
+      "methods": [
+        "stripe",
+        "apple_pay",
+        "bank_transfer"
+      ],
+      "default_currency": "AED",
+      "supported_currencies": [
+        "AED",
+        "USD",
+        "EUR",
+        "GBP",
+        "SAR"
+      ]
+    },
+    "builder": {
+      "enabled": true,
+      "auto_build": true,
+      "supports_templates": true,
+      "supports_systems": true,
+      "supports_themes": true
+    }
+  },
+  "libraries": {
+    "templates_api": "https://api.zien-ai.app/api/libraries/templates",
+    "systems_api": "https://api.zien-ai.app/api/libraries/systems",
+    "themes_api": "https://api.zien-ai.app/api/libraries/themes",
+    "search_api": "https://api.zien-ai.app/api/libraries/search",
+    "structure": {
+      "templates": {
+        "fields": [
+          "id",
+          "name",
+          "nameEn",
+          "category",
+          "description",
+          "features",
+          "price"
+        ],
+        "categories": [
+          "e-commerce",
+          "social",
+          "business",
+          "education",
+          "healthcare",
+          "entertainment",
+          "finance",
+          "real-estate",
+          "food",
+          "travel"
+        ]
+      },
+      "systems": {
+        "fields": [
+          "id",
+          "name",
+          "nameEn",
+          "category",
+          "description",
+          "features",
+          "price"
+        ],
+        "categories": [
+          "crm",
+          "erp",
+          "inventory",
+          "accounting",
+          "hr",
+          "project-management",
+          "analytics",
+          "security"
+        ]
+      },
+      "themes": {
+        "fields": [
+          "id",
+          "name",
+          "nameEn",
+          "primary",
+          "secondary",
+          "description"
+        ]
+      }
+    }
+  },
+  "tools": {
+    "preview_library": {
+      "endpoint": "https://api.zien-ai.app/api/agent-tools/preview-library",
+      "description": "Preview available libraries (templates, systems, themes)"
+    },
+    "search_library": {
+      "endpoint": "https://api.zien-ai.app/api/agent-tools/search-library",
+      "description": "Search across all libraries"
+    },
+    "submit_to_builder": {
+      "endpoint": "https://api.zien-ai.app/api/agent-tools/submit-to-builder",
+      "description": "Submit build request to Auto Builder"
+    },
+    "create_payment": {
+      "endpoint": "https://api.zien-ai.app/api/agent-tools/create-payment",
+      "description": "Create payment session for client"
+    },
+    "send_twilio_message": {
+      "endpoint": "https://api.zien-ai.app/api/twilio/send",
+      "description": "Send message via Twilio (WhatsApp/SMS)"
+    },
+    "notify_owner": {
+      "endpoint": "https://api.zien-ai.app/api/agent-tools/notify-owner",
+      "description": "Notify owner (Nader) via Twilio"
+    },
+    "execute_owner_command": {
+      "endpoint": "https://api.zien-ai.app/api/agent-tools/execute-owner-command",
+      "description": "Execute command from owner (Nader)"
+    }
+  },
+  "features": {
+    "command_saving_enabled": true,
+    "personality_awareness": true,
+    "owner_commands_enabled": true,
+    "libraries_access": true,
+    "multilingual_support": true,
+    "dialect_detection": true,
+    "voice_recognition": true,
+    "error_handling": true,
+    "fallback_responses": true
+  },
+  "behavior": {
+    "owner_priority": "high",
+    "command_execution": "immediate_for_owner",
+    "language_detection": "automatic",
+    "dialect_awareness": true,
+    "context_preservation": true,
+    "error_recovery": true
+  }
+}
+
+  "webhook_url": "https://api.zien-ai.app/api/elevenlabs/webhook",
+  "api_url": "https://api.zien-ai.app",
+  "api_domain": "api.zien-ai.app",
+  "supported_languages": [
+    "ar",
+    "en",
+    "fr",
+    "es",
+    "de",
+    "it",
+    "pt",
+    "ru",
+    "zh",
+    "ja",
+    "ko",
+    "hi",
+    "tr",
+    "pl",
+    "nl"
+  ],
+  "supported_dialects": {
+    "ar": [
+      "eg",
+      "sa",
+      "ae",
+      "jo",
+      "lb",
+      "ma",
+      "tn",
+      "dz",
+      "iq",
+      "sy",
+      "ye",
+      "om",
+      "kw",
+      "qa",
+      "bh"
+    ],
+    "en": [
+      "us",
+      "uk",
+      "au",
+      "ca",
+      "nz",
+      "ie",
+      "za"
+    ],
+    "es": [
+      "es",
+      "mx",
+      "ar",
+      "co",
+      "cl",
+      "pe",
+      "ve"
+    ],
+    "fr": [
+      "fr",
+      "ca",
+      "be",
+      "ch"
+    ]
+  },
+  "owner": {
+    "voice_id": "6ZVgc4q9LWAloWbuwjuu",
+    "name": "Nader",
+    "phone": "+971529211077",
+    "email": "gm@zien-ai.app",
+    "role": "owner",
+    "permissions": [
+      "execute_commands",
+      "access_libraries",
+      "create_payments",
+      "send_messages",
+      "notify_owner",
+      "manage_builds"
+    ]
+  },
+  "services": {
+    "twilio": {
+      "enabled": true,
+      "supports_whatsapp": true,
+      "supports_sms": true,
+      "supports_voice": true
+    },
+    "payment": {
+      "enabled": true,
+      "methods": [
+        "stripe",
+        "apple_pay",
+        "bank_transfer"
+      ],
+      "default_currency": "AED",
+      "supported_currencies": [
+        "AED",
+        "USD",
+        "EUR",
+        "GBP",
+        "SAR"
+      ]
+    },
+    "builder": {
+      "enabled": true,
+      "auto_build": true,
+      "supports_templates": true,
+      "supports_systems": true,
+      "supports_themes": true
+    }
+  },
+  "libraries": {
+    "templates_api": "https://api.zien-ai.app/api/libraries/templates",
+    "systems_api": "https://api.zien-ai.app/api/libraries/systems",
+    "themes_api": "https://api.zien-ai.app/api/libraries/themes",
+    "search_api": "https://api.zien-ai.app/api/libraries/search",
+    "structure": {
+      "templates": {
+        "fields": [
+          "id",
+          "name",
+          "nameEn",
+          "category",
+          "description",
+          "features",
+          "price"
+        ],
+        "categories": [
+          "e-commerce",
+          "social",
+          "business",
+          "education",
+          "healthcare",
+          "entertainment",
+          "finance",
+          "real-estate",
+          "food",
+          "travel"
+        ]
+      },
+      "systems": {
+        "fields": [
+          "id",
+          "name",
+          "nameEn",
+          "category",
+          "description",
+          "features",
+          "price"
+        ],
+        "categories": [
+          "crm",
+          "erp",
+          "inventory",
+          "accounting",
+          "hr",
+          "project-management",
+          "analytics",
+          "security"
+        ]
+      },
+      "themes": {
+        "fields": [
+          "id",
+          "name",
+          "nameEn",
+          "primary",
+          "secondary",
+          "description"
+        ]
+      }
+    }
+  },
+  "tools": {
+    "preview_library": {
+      "endpoint": "https://api.zien-ai.app/api/agent-tools/preview-library",
+      "description": "Preview available libraries (templates, systems, themes)"
+    },
+    "search_library": {
+      "endpoint": "https://api.zien-ai.app/api/agent-tools/search-library",
+      "description": "Search across all libraries"
+    },
+    "submit_to_builder": {
+      "endpoint": "https://api.zien-ai.app/api/agent-tools/submit-to-builder",
+      "description": "Submit build request to Auto Builder"
+    },
+    "create_payment": {
+      "endpoint": "https://api.zien-ai.app/api/agent-tools/create-payment",
+      "description": "Create payment session for client"
+    },
+    "send_twilio_message": {
+      "endpoint": "https://api.zien-ai.app/api/twilio/send",
+      "description": "Send message via Twilio (WhatsApp/SMS)"
+    },
+    "notify_owner": {
+      "endpoint": "https://api.zien-ai.app/api/agent-tools/notify-owner",
+      "description": "Notify owner (Nader) via Twilio"
+    },
+    "execute_owner_command": {
+      "endpoint": "https://api.zien-ai.app/api/agent-tools/execute-owner-command",
+      "description": "Execute command from owner (Nader)"
+    }
+  },
+  "features": {
+    "command_saving_enabled": true,
+    "personality_awareness": true,
+    "owner_commands_enabled": true,
+    "libraries_access": true,
+    "multilingual_support": true,
+    "dialect_detection": true,
+    "voice_recognition": true,
+    "error_handling": true,
+    "fallback_responses": true
+  },
+  "behavior": {
+    "owner_priority": "high",
+    "command_execution": "immediate_for_owner",
+    "language_detection": "automatic",
+    "dialect_awareness": true,
+    "context_preservation": true,
+    "error_recovery": true
+  }
+}
+

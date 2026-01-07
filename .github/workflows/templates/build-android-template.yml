@@ -1,0 +1,75 @@
+name: Build Android App (Template)
+
+# ✅ هذا template للاستخدام في بناءات العملاء المستقبلية
+# ✅ استبدل {{CLIENT_NAME}} و {{PROJECT_ID}} بالقيم الفعلية
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - 'apps/mobile/**'
+      - 'mobile/**'
+  workflow_dispatch:
+    inputs:
+      profile:
+        description: 'Build profile'
+        required: true
+        default: 'production'
+        type: choice
+        options:
+          - development
+          - preview
+          - production
+
+jobs:
+  build-android:
+    name: Build Android - {{CLIENT_NAME}}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Setup Expo
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: Install dependencies
+        working-directory: ./apps/mobile
+        run: npm ci
+
+      - name: Build Android
+        working-directory: ./apps/mobile
+        run: |
+          eas build --platform android \
+            --profile ${{ github.event.inputs.profile || 'production' }} \
+            --non-interactive \
+            --no-wait
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+          GOOGLE_PLAY_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_JSON }}
+          GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
+
+      - name: Notify build completion
+        if: always()
+        run: |
+          curl -X POST "${{ secrets.API_URL }}/api/auto-builder/build-complete" \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Bearer ${{ secrets.API_TOKEN }}" \
+            -d '{
+              "client": "{{CLIENT_NAME}}",
+              "project_id": "{{PROJECT_ID}}",
+              "platform": "android",
+              "profile": "${{ github.event.inputs.profile || 'production' }}",
+              "status": "${{ job.status }}",
+              "workflow": "${{ github.workflow }}",
+              "run_id": "${{ github.run_id }}"
+            }' || true
+

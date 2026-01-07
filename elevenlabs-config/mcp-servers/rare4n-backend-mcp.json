@@ -1,0 +1,1393 @@
+{
+  "name": "rare4n-backend",
+  "display_name": "RARE 4N Backend MCP",
+  "description": "MCP Server for RARE 4N Backend - Provides access to all backend APIs, libraries, payments, Twilio, and builder services",
+  "type": "mcp",
+  "version": "1.0.0",
+  "server_url": "https://api.zien-ai.app/mcp",
+  "authentication": {
+    "type": "bearer",
+    "token": "{{api_key}}"
+  },
+  "capabilities": {
+    "tools": true,
+    "resources": true,
+    "prompts": false,
+    "sampling": false
+  },
+  "tools": [
+    {
+      "name": "preview_library",
+      "description": "Preview available libraries (templates, systems, themes)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["templates", "systems", "themes"],
+            "description": "Library type"
+          },
+          "category": {
+            "type": "string",
+            "description": "Category filter (optional)"
+          },
+          "limit": {
+            "type": "number",
+            "default": 10,
+            "description": "Number of items"
+          }
+        },
+        "required": ["type"]
+      }
+    },
+    {
+      "name": "search_library",
+      "description": "Search across all libraries",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Search query"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["all", "templates", "systems", "themes"],
+            "default": "all"
+          }
+        },
+        "required": ["query"]
+      }
+    },
+    {
+      "name": "submit_to_builder",
+      "description": "Submit build request to Auto Builder",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "client_id": {
+            "type": "string",
+            "description": "Client ID"
+          },
+          "request_data": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["template", "system", "theme"]
+              },
+              "selectedItem": {
+                "type": "object"
+              },
+              "clientName": {
+                "type": "string"
+              },
+              "clientEmail": {
+                "type": "string",
+                "format": "email"
+              },
+              "clientPhone": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": ["type", "selectedItem", "clientName", "clientEmail"]
+          }
+        },
+        "required": ["client_id", "request_data"]
+      }
+    },
+    {
+      "name": "create_payment",
+      "description": "Create payment session for client",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number"
+          },
+          "currency": {
+            "type": "string",
+            "default": "AED"
+          },
+          "clientId": {
+            "type": "string"
+          },
+          "clientEmail": {
+            "type": "string",
+            "format": "email"
+          },
+          "paymentMethod": {
+            "type": "string",
+            "enum": ["stripe", "apple_pay", "bank_transfer"],
+            "default": "stripe"
+          }
+        },
+        "required": ["requestId", "amount", "clientId", "clientEmail"]
+      }
+    },
+    {
+      "name": "send_twilio_message",
+      "description": "Send message via Twilio (WhatsApp/SMS)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "phone": {
+            "type": "string",
+            "pattern": "^\\+[1-9]\\d{1,14}$"
+          },
+          "message": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["whatsapp", "sms"],
+            "default": "whatsapp"
+          }
+        },
+        "required": ["phone", "message"]
+      }
+    },
+    {
+      "name": "notify_owner",
+      "description": "Notify owner (Nader) via Twilio",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "reason": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "string",
+            "enum": ["low", "normal", "high", "emergency"],
+            "default": "normal"
+          }
+        },
+        "required": ["reason"]
+      }
+    },
+    {
+      "name": "execute_owner_command",
+      "description": "Execute command from owner (Nader)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "command": {
+            "type": "string"
+          },
+          "context": {
+            "type": "object"
+          }
+        },
+        "required": ["command"]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uri": "rare4n://libraries/templates",
+      "name": "App Templates Library",
+      "description": "Access to all app templates",
+      "mimeType": "application/json"
+    },
+    {
+      "uri": "rare4n://libraries/systems",
+      "name": "Systems Library",
+      "description": "Access to all systems",
+      "mimeType": "application/json"
+    },
+    {
+      "uri": "rare4n://libraries/themes",
+      "name": "Themes Library",
+      "description": "Access to all themes",
+      "mimeType": "application/json"
+    }
+  ],
+  "endpoints": {
+    "base_url": "https://api.zien-ai.app",
+    "libraries": "/api/libraries",
+    "templates": "/api/libraries/templates",
+    "systems": "/api/libraries/systems",
+    "themes": "/api/libraries/themes",
+    "search": "/api/libraries/search",
+    "agent_tools": "/api/agent-tools",
+    "payment": "/api/payment",
+    "twilio": "/api/twilio",
+    "builder": "/api/auto-builder"
+  },
+  "configuration": {
+    "owner_voice_id": "6ZVgc4q9LWAloWbuwjuu",
+    "owner_name": "Nader",
+    "owner_phone": "+971529211077",
+    "owner_email": "gm@zien-ai.app",
+    "supported_languages": ["ar", "en", "fr", "es", "de", "it", "pt", "ru", "zh", "ja", "ko"],
+    "default_currency": "AED",
+    "webhook_url": "https://api.zien-ai.app/api/elevenlabs/webhook"
+  }
+}
+
+  "name": "rare4n-backend",
+  "display_name": "RARE 4N Backend MCP",
+  "description": "MCP Server for RARE 4N Backend - Provides access to all backend APIs, libraries, payments, Twilio, and builder services",
+  "type": "mcp",
+  "version": "1.0.0",
+  "server_url": "https://api.zien-ai.app/mcp",
+  "authentication": {
+    "type": "bearer",
+    "token": "{{api_key}}"
+  },
+  "capabilities": {
+    "tools": true,
+    "resources": true,
+    "prompts": false,
+    "sampling": false
+  },
+  "tools": [
+    {
+      "name": "preview_library",
+      "description": "Preview available libraries (templates, systems, themes)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["templates", "systems", "themes"],
+            "description": "Library type"
+          },
+          "category": {
+            "type": "string",
+            "description": "Category filter (optional)"
+          },
+          "limit": {
+            "type": "number",
+            "default": 10,
+            "description": "Number of items"
+          }
+        },
+        "required": ["type"]
+      }
+    },
+    {
+      "name": "search_library",
+      "description": "Search across all libraries",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Search query"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["all", "templates", "systems", "themes"],
+            "default": "all"
+          }
+        },
+        "required": ["query"]
+      }
+    },
+    {
+      "name": "submit_to_builder",
+      "description": "Submit build request to Auto Builder",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "client_id": {
+            "type": "string",
+            "description": "Client ID"
+          },
+          "request_data": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["template", "system", "theme"]
+              },
+              "selectedItem": {
+                "type": "object"
+              },
+              "clientName": {
+                "type": "string"
+              },
+              "clientEmail": {
+                "type": "string",
+                "format": "email"
+              },
+              "clientPhone": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": ["type", "selectedItem", "clientName", "clientEmail"]
+          }
+        },
+        "required": ["client_id", "request_data"]
+      }
+    },
+    {
+      "name": "create_payment",
+      "description": "Create payment session for client",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number"
+          },
+          "currency": {
+            "type": "string",
+            "default": "AED"
+          },
+          "clientId": {
+            "type": "string"
+          },
+          "clientEmail": {
+            "type": "string",
+            "format": "email"
+          },
+          "paymentMethod": {
+            "type": "string",
+            "enum": ["stripe", "apple_pay", "bank_transfer"],
+            "default": "stripe"
+          }
+        },
+        "required": ["requestId", "amount", "clientId", "clientEmail"]
+      }
+    },
+    {
+      "name": "send_twilio_message",
+      "description": "Send message via Twilio (WhatsApp/SMS)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "phone": {
+            "type": "string",
+            "pattern": "^\\+[1-9]\\d{1,14}$"
+          },
+          "message": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["whatsapp", "sms"],
+            "default": "whatsapp"
+          }
+        },
+        "required": ["phone", "message"]
+      }
+    },
+    {
+      "name": "notify_owner",
+      "description": "Notify owner (Nader) via Twilio",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "reason": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "string",
+            "enum": ["low", "normal", "high", "emergency"],
+            "default": "normal"
+          }
+        },
+        "required": ["reason"]
+      }
+    },
+    {
+      "name": "execute_owner_command",
+      "description": "Execute command from owner (Nader)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "command": {
+            "type": "string"
+          },
+          "context": {
+            "type": "object"
+          }
+        },
+        "required": ["command"]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uri": "rare4n://libraries/templates",
+      "name": "App Templates Library",
+      "description": "Access to all app templates",
+      "mimeType": "application/json"
+    },
+    {
+      "uri": "rare4n://libraries/systems",
+      "name": "Systems Library",
+      "description": "Access to all systems",
+      "mimeType": "application/json"
+    },
+    {
+      "uri": "rare4n://libraries/themes",
+      "name": "Themes Library",
+      "description": "Access to all themes",
+      "mimeType": "application/json"
+    }
+  ],
+  "endpoints": {
+    "base_url": "https://api.zien-ai.app",
+    "libraries": "/api/libraries",
+    "templates": "/api/libraries/templates",
+    "systems": "/api/libraries/systems",
+    "themes": "/api/libraries/themes",
+    "search": "/api/libraries/search",
+    "agent_tools": "/api/agent-tools",
+    "payment": "/api/payment",
+    "twilio": "/api/twilio",
+    "builder": "/api/auto-builder"
+  },
+  "configuration": {
+    "owner_voice_id": "6ZVgc4q9LWAloWbuwjuu",
+    "owner_name": "Nader",
+    "owner_phone": "+971529211077",
+    "owner_email": "gm@zien-ai.app",
+    "supported_languages": ["ar", "en", "fr", "es", "de", "it", "pt", "ru", "zh", "ja", "ko"],
+    "default_currency": "AED",
+    "webhook_url": "https://api.zien-ai.app/api/elevenlabs/webhook"
+  }
+}
+
+  "name": "rare4n-backend",
+  "display_name": "RARE 4N Backend MCP",
+  "description": "MCP Server for RARE 4N Backend - Provides access to all backend APIs, libraries, payments, Twilio, and builder services",
+  "type": "mcp",
+  "version": "1.0.0",
+  "server_url": "https://api.zien-ai.app/mcp",
+  "authentication": {
+    "type": "bearer",
+    "token": "{{api_key}}"
+  },
+  "capabilities": {
+    "tools": true,
+    "resources": true,
+    "prompts": false,
+    "sampling": false
+  },
+  "tools": [
+    {
+      "name": "preview_library",
+      "description": "Preview available libraries (templates, systems, themes)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["templates", "systems", "themes"],
+            "description": "Library type"
+          },
+          "category": {
+            "type": "string",
+            "description": "Category filter (optional)"
+          },
+          "limit": {
+            "type": "number",
+            "default": 10,
+            "description": "Number of items"
+          }
+        },
+        "required": ["type"]
+      }
+    },
+    {
+      "name": "search_library",
+      "description": "Search across all libraries",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Search query"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["all", "templates", "systems", "themes"],
+            "default": "all"
+          }
+        },
+        "required": ["query"]
+      }
+    },
+    {
+      "name": "submit_to_builder",
+      "description": "Submit build request to Auto Builder",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "client_id": {
+            "type": "string",
+            "description": "Client ID"
+          },
+          "request_data": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["template", "system", "theme"]
+              },
+              "selectedItem": {
+                "type": "object"
+              },
+              "clientName": {
+                "type": "string"
+              },
+              "clientEmail": {
+                "type": "string",
+                "format": "email"
+              },
+              "clientPhone": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": ["type", "selectedItem", "clientName", "clientEmail"]
+          }
+        },
+        "required": ["client_id", "request_data"]
+      }
+    },
+    {
+      "name": "create_payment",
+      "description": "Create payment session for client",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number"
+          },
+          "currency": {
+            "type": "string",
+            "default": "AED"
+          },
+          "clientId": {
+            "type": "string"
+          },
+          "clientEmail": {
+            "type": "string",
+            "format": "email"
+          },
+          "paymentMethod": {
+            "type": "string",
+            "enum": ["stripe", "apple_pay", "bank_transfer"],
+            "default": "stripe"
+          }
+        },
+        "required": ["requestId", "amount", "clientId", "clientEmail"]
+      }
+    },
+    {
+      "name": "send_twilio_message",
+      "description": "Send message via Twilio (WhatsApp/SMS)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "phone": {
+            "type": "string",
+            "pattern": "^\\+[1-9]\\d{1,14}$"
+          },
+          "message": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["whatsapp", "sms"],
+            "default": "whatsapp"
+          }
+        },
+        "required": ["phone", "message"]
+      }
+    },
+    {
+      "name": "notify_owner",
+      "description": "Notify owner (Nader) via Twilio",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "reason": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "string",
+            "enum": ["low", "normal", "high", "emergency"],
+            "default": "normal"
+          }
+        },
+        "required": ["reason"]
+      }
+    },
+    {
+      "name": "execute_owner_command",
+      "description": "Execute command from owner (Nader)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "command": {
+            "type": "string"
+          },
+          "context": {
+            "type": "object"
+          }
+        },
+        "required": ["command"]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uri": "rare4n://libraries/templates",
+      "name": "App Templates Library",
+      "description": "Access to all app templates",
+      "mimeType": "application/json"
+    },
+    {
+      "uri": "rare4n://libraries/systems",
+      "name": "Systems Library",
+      "description": "Access to all systems",
+      "mimeType": "application/json"
+    },
+    {
+      "uri": "rare4n://libraries/themes",
+      "name": "Themes Library",
+      "description": "Access to all themes",
+      "mimeType": "application/json"
+    }
+  ],
+  "endpoints": {
+    "base_url": "https://api.zien-ai.app",
+    "libraries": "/api/libraries",
+    "templates": "/api/libraries/templates",
+    "systems": "/api/libraries/systems",
+    "themes": "/api/libraries/themes",
+    "search": "/api/libraries/search",
+    "agent_tools": "/api/agent-tools",
+    "payment": "/api/payment",
+    "twilio": "/api/twilio",
+    "builder": "/api/auto-builder"
+  },
+  "configuration": {
+    "owner_voice_id": "6ZVgc4q9LWAloWbuwjuu",
+    "owner_name": "Nader",
+    "owner_phone": "+971529211077",
+    "owner_email": "gm@zien-ai.app",
+    "supported_languages": ["ar", "en", "fr", "es", "de", "it", "pt", "ru", "zh", "ja", "ko"],
+    "default_currency": "AED",
+    "webhook_url": "https://api.zien-ai.app/api/elevenlabs/webhook"
+  }
+}
+
+  "name": "rare4n-backend",
+  "display_name": "RARE 4N Backend MCP",
+  "description": "MCP Server for RARE 4N Backend - Provides access to all backend APIs, libraries, payments, Twilio, and builder services",
+  "type": "mcp",
+  "version": "1.0.0",
+  "server_url": "https://api.zien-ai.app/mcp",
+  "authentication": {
+    "type": "bearer",
+    "token": "{{api_key}}"
+  },
+  "capabilities": {
+    "tools": true,
+    "resources": true,
+    "prompts": false,
+    "sampling": false
+  },
+  "tools": [
+    {
+      "name": "preview_library",
+      "description": "Preview available libraries (templates, systems, themes)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["templates", "systems", "themes"],
+            "description": "Library type"
+          },
+          "category": {
+            "type": "string",
+            "description": "Category filter (optional)"
+          },
+          "limit": {
+            "type": "number",
+            "default": 10,
+            "description": "Number of items"
+          }
+        },
+        "required": ["type"]
+      }
+    },
+    {
+      "name": "search_library",
+      "description": "Search across all libraries",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Search query"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["all", "templates", "systems", "themes"],
+            "default": "all"
+          }
+        },
+        "required": ["query"]
+      }
+    },
+    {
+      "name": "submit_to_builder",
+      "description": "Submit build request to Auto Builder",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "client_id": {
+            "type": "string",
+            "description": "Client ID"
+          },
+          "request_data": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["template", "system", "theme"]
+              },
+              "selectedItem": {
+                "type": "object"
+              },
+              "clientName": {
+                "type": "string"
+              },
+              "clientEmail": {
+                "type": "string",
+                "format": "email"
+              },
+              "clientPhone": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": ["type", "selectedItem", "clientName", "clientEmail"]
+          }
+        },
+        "required": ["client_id", "request_data"]
+      }
+    },
+    {
+      "name": "create_payment",
+      "description": "Create payment session for client",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number"
+          },
+          "currency": {
+            "type": "string",
+            "default": "AED"
+          },
+          "clientId": {
+            "type": "string"
+          },
+          "clientEmail": {
+            "type": "string",
+            "format": "email"
+          },
+          "paymentMethod": {
+            "type": "string",
+            "enum": ["stripe", "apple_pay", "bank_transfer"],
+            "default": "stripe"
+          }
+        },
+        "required": ["requestId", "amount", "clientId", "clientEmail"]
+      }
+    },
+    {
+      "name": "send_twilio_message",
+      "description": "Send message via Twilio (WhatsApp/SMS)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "phone": {
+            "type": "string",
+            "pattern": "^\\+[1-9]\\d{1,14}$"
+          },
+          "message": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["whatsapp", "sms"],
+            "default": "whatsapp"
+          }
+        },
+        "required": ["phone", "message"]
+      }
+    },
+    {
+      "name": "notify_owner",
+      "description": "Notify owner (Nader) via Twilio",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "reason": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "string",
+            "enum": ["low", "normal", "high", "emergency"],
+            "default": "normal"
+          }
+        },
+        "required": ["reason"]
+      }
+    },
+    {
+      "name": "execute_owner_command",
+      "description": "Execute command from owner (Nader)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "command": {
+            "type": "string"
+          },
+          "context": {
+            "type": "object"
+          }
+        },
+        "required": ["command"]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uri": "rare4n://libraries/templates",
+      "name": "App Templates Library",
+      "description": "Access to all app templates",
+      "mimeType": "application/json"
+    },
+    {
+      "uri": "rare4n://libraries/systems",
+      "name": "Systems Library",
+      "description": "Access to all systems",
+      "mimeType": "application/json"
+    },
+    {
+      "uri": "rare4n://libraries/themes",
+      "name": "Themes Library",
+      "description": "Access to all themes",
+      "mimeType": "application/json"
+    }
+  ],
+  "endpoints": {
+    "base_url": "https://api.zien-ai.app",
+    "libraries": "/api/libraries",
+    "templates": "/api/libraries/templates",
+    "systems": "/api/libraries/systems",
+    "themes": "/api/libraries/themes",
+    "search": "/api/libraries/search",
+    "agent_tools": "/api/agent-tools",
+    "payment": "/api/payment",
+    "twilio": "/api/twilio",
+    "builder": "/api/auto-builder"
+  },
+  "configuration": {
+    "owner_voice_id": "6ZVgc4q9LWAloWbuwjuu",
+    "owner_name": "Nader",
+    "owner_phone": "+971529211077",
+    "owner_email": "gm@zien-ai.app",
+    "supported_languages": ["ar", "en", "fr", "es", "de", "it", "pt", "ru", "zh", "ja", "ko"],
+    "default_currency": "AED",
+    "webhook_url": "https://api.zien-ai.app/api/elevenlabs/webhook"
+  }
+}
+
+  "name": "rare4n-backend",
+  "display_name": "RARE 4N Backend MCP",
+  "description": "MCP Server for RARE 4N Backend - Provides access to all backend APIs, libraries, payments, Twilio, and builder services",
+  "type": "mcp",
+  "version": "1.0.0",
+  "server_url": "https://api.zien-ai.app/mcp",
+  "authentication": {
+    "type": "bearer",
+    "token": "{{api_key}}"
+  },
+  "capabilities": {
+    "tools": true,
+    "resources": true,
+    "prompts": false,
+    "sampling": false
+  },
+  "tools": [
+    {
+      "name": "preview_library",
+      "description": "Preview available libraries (templates, systems, themes)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["templates", "systems", "themes"],
+            "description": "Library type"
+          },
+          "category": {
+            "type": "string",
+            "description": "Category filter (optional)"
+          },
+          "limit": {
+            "type": "number",
+            "default": 10,
+            "description": "Number of items"
+          }
+        },
+        "required": ["type"]
+      }
+    },
+    {
+      "name": "search_library",
+      "description": "Search across all libraries",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Search query"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["all", "templates", "systems", "themes"],
+            "default": "all"
+          }
+        },
+        "required": ["query"]
+      }
+    },
+    {
+      "name": "submit_to_builder",
+      "description": "Submit build request to Auto Builder",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "client_id": {
+            "type": "string",
+            "description": "Client ID"
+          },
+          "request_data": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["template", "system", "theme"]
+              },
+              "selectedItem": {
+                "type": "object"
+              },
+              "clientName": {
+                "type": "string"
+              },
+              "clientEmail": {
+                "type": "string",
+                "format": "email"
+              },
+              "clientPhone": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": ["type", "selectedItem", "clientName", "clientEmail"]
+          }
+        },
+        "required": ["client_id", "request_data"]
+      }
+    },
+    {
+      "name": "create_payment",
+      "description": "Create payment session for client",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number"
+          },
+          "currency": {
+            "type": "string",
+            "default": "AED"
+          },
+          "clientId": {
+            "type": "string"
+          },
+          "clientEmail": {
+            "type": "string",
+            "format": "email"
+          },
+          "paymentMethod": {
+            "type": "string",
+            "enum": ["stripe", "apple_pay", "bank_transfer"],
+            "default": "stripe"
+          }
+        },
+        "required": ["requestId", "amount", "clientId", "clientEmail"]
+      }
+    },
+    {
+      "name": "send_twilio_message",
+      "description": "Send message via Twilio (WhatsApp/SMS)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "phone": {
+            "type": "string",
+            "pattern": "^\\+[1-9]\\d{1,14}$"
+          },
+          "message": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["whatsapp", "sms"],
+            "default": "whatsapp"
+          }
+        },
+        "required": ["phone", "message"]
+      }
+    },
+    {
+      "name": "notify_owner",
+      "description": "Notify owner (Nader) via Twilio",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "reason": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "string",
+            "enum": ["low", "normal", "high", "emergency"],
+            "default": "normal"
+          }
+        },
+        "required": ["reason"]
+      }
+    },
+    {
+      "name": "execute_owner_command",
+      "description": "Execute command from owner (Nader)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "command": {
+            "type": "string"
+          },
+          "context": {
+            "type": "object"
+          }
+        },
+        "required": ["command"]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uri": "rare4n://libraries/templates",
+      "name": "App Templates Library",
+      "description": "Access to all app templates",
+      "mimeType": "application/json"
+    },
+    {
+      "uri": "rare4n://libraries/systems",
+      "name": "Systems Library",
+      "description": "Access to all systems",
+      "mimeType": "application/json"
+    },
+    {
+      "uri": "rare4n://libraries/themes",
+      "name": "Themes Library",
+      "description": "Access to all themes",
+      "mimeType": "application/json"
+    }
+  ],
+  "endpoints": {
+    "base_url": "https://api.zien-ai.app",
+    "libraries": "/api/libraries",
+    "templates": "/api/libraries/templates",
+    "systems": "/api/libraries/systems",
+    "themes": "/api/libraries/themes",
+    "search": "/api/libraries/search",
+    "agent_tools": "/api/agent-tools",
+    "payment": "/api/payment",
+    "twilio": "/api/twilio",
+    "builder": "/api/auto-builder"
+  },
+  "configuration": {
+    "owner_voice_id": "6ZVgc4q9LWAloWbuwjuu",
+    "owner_name": "Nader",
+    "owner_phone": "+971529211077",
+    "owner_email": "gm@zien-ai.app",
+    "supported_languages": ["ar", "en", "fr", "es", "de", "it", "pt", "ru", "zh", "ja", "ko"],
+    "default_currency": "AED",
+    "webhook_url": "https://api.zien-ai.app/api/elevenlabs/webhook"
+  }
+}
+
+  "name": "rare4n-backend",
+  "display_name": "RARE 4N Backend MCP",
+  "description": "MCP Server for RARE 4N Backend - Provides access to all backend APIs, libraries, payments, Twilio, and builder services",
+  "type": "mcp",
+  "version": "1.0.0",
+  "server_url": "https://api.zien-ai.app/mcp",
+  "authentication": {
+    "type": "bearer",
+    "token": "{{api_key}}"
+  },
+  "capabilities": {
+    "tools": true,
+    "resources": true,
+    "prompts": false,
+    "sampling": false
+  },
+  "tools": [
+    {
+      "name": "preview_library",
+      "description": "Preview available libraries (templates, systems, themes)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["templates", "systems", "themes"],
+            "description": "Library type"
+          },
+          "category": {
+            "type": "string",
+            "description": "Category filter (optional)"
+          },
+          "limit": {
+            "type": "number",
+            "default": 10,
+            "description": "Number of items"
+          }
+        },
+        "required": ["type"]
+      }
+    },
+    {
+      "name": "search_library",
+      "description": "Search across all libraries",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Search query"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["all", "templates", "systems", "themes"],
+            "default": "all"
+          }
+        },
+        "required": ["query"]
+      }
+    },
+    {
+      "name": "submit_to_builder",
+      "description": "Submit build request to Auto Builder",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "client_id": {
+            "type": "string",
+            "description": "Client ID"
+          },
+          "request_data": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["template", "system", "theme"]
+              },
+              "selectedItem": {
+                "type": "object"
+              },
+              "clientName": {
+                "type": "string"
+              },
+              "clientEmail": {
+                "type": "string",
+                "format": "email"
+              },
+              "clientPhone": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": ["type", "selectedItem", "clientName", "clientEmail"]
+          }
+        },
+        "required": ["client_id", "request_data"]
+      }
+    },
+    {
+      "name": "create_payment",
+      "description": "Create payment session for client",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number"
+          },
+          "currency": {
+            "type": "string",
+            "default": "AED"
+          },
+          "clientId": {
+            "type": "string"
+          },
+          "clientEmail": {
+            "type": "string",
+            "format": "email"
+          },
+          "paymentMethod": {
+            "type": "string",
+            "enum": ["stripe", "apple_pay", "bank_transfer"],
+            "default": "stripe"
+          }
+        },
+        "required": ["requestId", "amount", "clientId", "clientEmail"]
+      }
+    },
+    {
+      "name": "send_twilio_message",
+      "description": "Send message via Twilio (WhatsApp/SMS)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "phone": {
+            "type": "string",
+            "pattern": "^\\+[1-9]\\d{1,14}$"
+          },
+          "message": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["whatsapp", "sms"],
+            "default": "whatsapp"
+          }
+        },
+        "required": ["phone", "message"]
+      }
+    },
+    {
+      "name": "notify_owner",
+      "description": "Notify owner (Nader) via Twilio",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "reason": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "string",
+            "enum": ["low", "normal", "high", "emergency"],
+            "default": "normal"
+          }
+        },
+        "required": ["reason"]
+      }
+    },
+    {
+      "name": "execute_owner_command",
+      "description": "Execute command from owner (Nader)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "command": {
+            "type": "string"
+          },
+          "context": {
+            "type": "object"
+          }
+        },
+        "required": ["command"]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uri": "rare4n://libraries/templates",
+      "name": "App Templates Library",
+      "description": "Access to all app templates",
+      "mimeType": "application/json"
+    },
+    {
+      "uri": "rare4n://libraries/systems",
+      "name": "Systems Library",
+      "description": "Access to all systems",
+      "mimeType": "application/json"
+    },
+    {
+      "uri": "rare4n://libraries/themes",
+      "name": "Themes Library",
+      "description": "Access to all themes",
+      "mimeType": "application/json"
+    }
+  ],
+  "endpoints": {
+    "base_url": "https://api.zien-ai.app",
+    "libraries": "/api/libraries",
+    "templates": "/api/libraries/templates",
+    "systems": "/api/libraries/systems",
+    "themes": "/api/libraries/themes",
+    "search": "/api/libraries/search",
+    "agent_tools": "/api/agent-tools",
+    "payment": "/api/payment",
+    "twilio": "/api/twilio",
+    "builder": "/api/auto-builder"
+  },
+  "configuration": {
+    "owner_voice_id": "6ZVgc4q9LWAloWbuwjuu",
+    "owner_name": "Nader",
+    "owner_phone": "+971529211077",
+    "owner_email": "gm@zien-ai.app",
+    "supported_languages": ["ar", "en", "fr", "es", "de", "it", "pt", "ru", "zh", "ja", "ko"],
+    "default_currency": "AED",
+    "webhook_url": "https://api.zien-ai.app/api/elevenlabs/webhook"
+  }
+}
+

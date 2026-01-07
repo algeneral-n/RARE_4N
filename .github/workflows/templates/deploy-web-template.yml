@@ -1,0 +1,64 @@
+name: Deploy Web (Template)
+
+# ✅ هذا template للاستخدام في نشر Client Portal للعملاء المستقبلية
+# ✅ استبدل {{CLIENT_NAME}} و {{PROJECT_NAME}} بالقيم الفعلية
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - 'apps/client-portal/**'
+  workflow_dispatch:
+
+jobs:
+  deploy-web:
+    name: Deploy Web - {{CLIENT_NAME}}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        working-directory: ./apps/client-portal
+        run: npm ci || npm install
+
+      - name: Build (if needed)
+        working-directory: ./apps/client-portal
+        run: |
+          if [ -f "package.json" ] && grep -q '"build"' package.json; then
+            npm run build
+          else
+            echo "No build step required"
+          fi
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: {{PROJECT_NAME}}
+          directory: ./apps/client-portal
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Notify deployment completion
+        if: always()
+        run: |
+          curl -X POST "${{ secrets.API_URL }}/api/auto-builder/deploy-complete" \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Bearer ${{ secrets.API_TOKEN }}" \
+            -d '{
+              "client": "{{CLIENT_NAME}}",
+              "project_id": "{{PROJECT_ID}}",
+              "platform": "web",
+              "status": "${{ job.status }}",
+              "workflow": "${{ github.workflow }}",
+              "run_id": "${{ github.run_id }}",
+              "commit": "${{ github.sha }}"
+            }' || true
+

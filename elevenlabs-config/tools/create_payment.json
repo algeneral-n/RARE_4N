@@ -1,0 +1,805 @@
+{
+  "name": "create_payment",
+  "display_name": "Create Payment",
+  "description": "إنشاء عملية دفع للعميل. Supports Stripe and Apple Pay. Creates a payment session for the client to complete their purchase.",
+  "type": "function",
+  "category": "payment",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/agent-tools/create-payment",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "requestId": {
+        "type": "string",
+        "description": "معرف الطلب - Request ID from submit_to_builder",
+        "required": true
+      },
+      "amount": {
+        "type": "number",
+        "minimum": 1,
+        "description": "المبلغ - Payment amount (in currency units, e.g., 1000 for 1000 AED)",
+        "required": true
+      },
+      "currency": {
+        "type": "string",
+        "enum": ["AED", "USD", "EUR", "GBP", "SAR"],
+        "default": "AED",
+        "description": "العملة - Currency code",
+        "required": false
+      },
+      "clientId": {
+        "type": "string",
+        "description": "معرف العميل - Client unique identifier",
+        "required": true
+      },
+      "clientEmail": {
+        "type": "string",
+        "format": "email",
+        "description": "بريد العميل - Client email address",
+        "required": true
+      },
+      "paymentMethod": {
+        "type": "string",
+        "enum": ["stripe", "apple_pay", "bank_transfer"],
+        "default": "stripe",
+        "description": "طريقة الدفع - Payment method",
+        "required": false
+      }
+    },
+    "required": ["requestId", "amount", "clientId", "clientEmail"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "paymentMethod": {
+        "type": "string"
+      },
+      "paymentUrl": {
+        "type": "string",
+        "format": "uri"
+      },
+      "sessionId": {
+        "type": "string"
+      },
+      "bankDetails": {
+        "type": "object",
+        "description": "Bank transfer details (if paymentMethod is bank_transfer)"
+      },
+      "contactInfo": {
+        "type": "object",
+        "description": "Contact information for payment confirmation"
+      },
+      "message": {
+        "type": "string"
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "requestId": "req_1234567890",
+        "amount": 1000,
+        "currency": "AED",
+        "clientId": "client_123",
+        "clientEmail": "mohamed@example.com",
+        "paymentMethod": "stripe"
+      },
+      "output": {
+        "success": true,
+        "paymentMethod": "stripe",
+        "paymentUrl": "https://checkout.stripe.com/pay/cs_test_...",
+        "sessionId": "cs_test_1234567890",
+        "message": "تم إنشاء عملية الدفع بنجاح"
+      }
+    },
+    {
+      "input": {
+        "requestId": "req_1234567890",
+        "amount": 1000,
+        "currency": "AED",
+        "clientId": "client_123",
+        "clientEmail": "mohamed@example.com",
+        "paymentMethod": "bank_transfer"
+      },
+      "output": {
+        "success": true,
+        "paymentMethod": "bank_transfer",
+        "bankDetails": {
+          "bankName": "Example Bank",
+          "accountNumber": "1234567890",
+          "iban": "AE123456789012345678901",
+          "swift": "EXAMPLEAE"
+        },
+        "contactInfo": {
+          "phone": "+971529211077",
+          "email": "gm@zien-ai.app"
+        },
+        "message": "يرجى إتمام التحويل البنكي والتواصل معنا"
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في إنشاء عملية الدفع. يرجى المحاولة مرة أخرى أو التواصل مع الدعم."
+  }
+}
+
+  "name": "create_payment",
+  "display_name": "Create Payment",
+  "description": "إنشاء عملية دفع للعميل. Supports Stripe and Apple Pay. Creates a payment session for the client to complete their purchase.",
+  "type": "function",
+  "category": "payment",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/agent-tools/create-payment",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "requestId": {
+        "type": "string",
+        "description": "معرف الطلب - Request ID from submit_to_builder",
+        "required": true
+      },
+      "amount": {
+        "type": "number",
+        "minimum": 1,
+        "description": "المبلغ - Payment amount (in currency units, e.g., 1000 for 1000 AED)",
+        "required": true
+      },
+      "currency": {
+        "type": "string",
+        "enum": ["AED", "USD", "EUR", "GBP", "SAR"],
+        "default": "AED",
+        "description": "العملة - Currency code",
+        "required": false
+      },
+      "clientId": {
+        "type": "string",
+        "description": "معرف العميل - Client unique identifier",
+        "required": true
+      },
+      "clientEmail": {
+        "type": "string",
+        "format": "email",
+        "description": "بريد العميل - Client email address",
+        "required": true
+      },
+      "paymentMethod": {
+        "type": "string",
+        "enum": ["stripe", "apple_pay", "bank_transfer"],
+        "default": "stripe",
+        "description": "طريقة الدفع - Payment method",
+        "required": false
+      }
+    },
+    "required": ["requestId", "amount", "clientId", "clientEmail"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "paymentMethod": {
+        "type": "string"
+      },
+      "paymentUrl": {
+        "type": "string",
+        "format": "uri"
+      },
+      "sessionId": {
+        "type": "string"
+      },
+      "bankDetails": {
+        "type": "object",
+        "description": "Bank transfer details (if paymentMethod is bank_transfer)"
+      },
+      "contactInfo": {
+        "type": "object",
+        "description": "Contact information for payment confirmation"
+      },
+      "message": {
+        "type": "string"
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "requestId": "req_1234567890",
+        "amount": 1000,
+        "currency": "AED",
+        "clientId": "client_123",
+        "clientEmail": "mohamed@example.com",
+        "paymentMethod": "stripe"
+      },
+      "output": {
+        "success": true,
+        "paymentMethod": "stripe",
+        "paymentUrl": "https://checkout.stripe.com/pay/cs_test_...",
+        "sessionId": "cs_test_1234567890",
+        "message": "تم إنشاء عملية الدفع بنجاح"
+      }
+    },
+    {
+      "input": {
+        "requestId": "req_1234567890",
+        "amount": 1000,
+        "currency": "AED",
+        "clientId": "client_123",
+        "clientEmail": "mohamed@example.com",
+        "paymentMethod": "bank_transfer"
+      },
+      "output": {
+        "success": true,
+        "paymentMethod": "bank_transfer",
+        "bankDetails": {
+          "bankName": "Example Bank",
+          "accountNumber": "1234567890",
+          "iban": "AE123456789012345678901",
+          "swift": "EXAMPLEAE"
+        },
+        "contactInfo": {
+          "phone": "+971529211077",
+          "email": "gm@zien-ai.app"
+        },
+        "message": "يرجى إتمام التحويل البنكي والتواصل معنا"
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في إنشاء عملية الدفع. يرجى المحاولة مرة أخرى أو التواصل مع الدعم."
+  }
+}
+
+  "name": "create_payment",
+  "display_name": "Create Payment",
+  "description": "إنشاء عملية دفع للعميل. Supports Stripe and Apple Pay. Creates a payment session for the client to complete their purchase.",
+  "type": "function",
+  "category": "payment",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/agent-tools/create-payment",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "requestId": {
+        "type": "string",
+        "description": "معرف الطلب - Request ID from submit_to_builder",
+        "required": true
+      },
+      "amount": {
+        "type": "number",
+        "minimum": 1,
+        "description": "المبلغ - Payment amount (in currency units, e.g., 1000 for 1000 AED)",
+        "required": true
+      },
+      "currency": {
+        "type": "string",
+        "enum": ["AED", "USD", "EUR", "GBP", "SAR"],
+        "default": "AED",
+        "description": "العملة - Currency code",
+        "required": false
+      },
+      "clientId": {
+        "type": "string",
+        "description": "معرف العميل - Client unique identifier",
+        "required": true
+      },
+      "clientEmail": {
+        "type": "string",
+        "format": "email",
+        "description": "بريد العميل - Client email address",
+        "required": true
+      },
+      "paymentMethod": {
+        "type": "string",
+        "enum": ["stripe", "apple_pay", "bank_transfer"],
+        "default": "stripe",
+        "description": "طريقة الدفع - Payment method",
+        "required": false
+      }
+    },
+    "required": ["requestId", "amount", "clientId", "clientEmail"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "paymentMethod": {
+        "type": "string"
+      },
+      "paymentUrl": {
+        "type": "string",
+        "format": "uri"
+      },
+      "sessionId": {
+        "type": "string"
+      },
+      "bankDetails": {
+        "type": "object",
+        "description": "Bank transfer details (if paymentMethod is bank_transfer)"
+      },
+      "contactInfo": {
+        "type": "object",
+        "description": "Contact information for payment confirmation"
+      },
+      "message": {
+        "type": "string"
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "requestId": "req_1234567890",
+        "amount": 1000,
+        "currency": "AED",
+        "clientId": "client_123",
+        "clientEmail": "mohamed@example.com",
+        "paymentMethod": "stripe"
+      },
+      "output": {
+        "success": true,
+        "paymentMethod": "stripe",
+        "paymentUrl": "https://checkout.stripe.com/pay/cs_test_...",
+        "sessionId": "cs_test_1234567890",
+        "message": "تم إنشاء عملية الدفع بنجاح"
+      }
+    },
+    {
+      "input": {
+        "requestId": "req_1234567890",
+        "amount": 1000,
+        "currency": "AED",
+        "clientId": "client_123",
+        "clientEmail": "mohamed@example.com",
+        "paymentMethod": "bank_transfer"
+      },
+      "output": {
+        "success": true,
+        "paymentMethod": "bank_transfer",
+        "bankDetails": {
+          "bankName": "Example Bank",
+          "accountNumber": "1234567890",
+          "iban": "AE123456789012345678901",
+          "swift": "EXAMPLEAE"
+        },
+        "contactInfo": {
+          "phone": "+971529211077",
+          "email": "gm@zien-ai.app"
+        },
+        "message": "يرجى إتمام التحويل البنكي والتواصل معنا"
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في إنشاء عملية الدفع. يرجى المحاولة مرة أخرى أو التواصل مع الدعم."
+  }
+}
+
+  "name": "create_payment",
+  "display_name": "Create Payment",
+  "description": "إنشاء عملية دفع للعميل. Supports Stripe and Apple Pay. Creates a payment session for the client to complete their purchase.",
+  "type": "function",
+  "category": "payment",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/agent-tools/create-payment",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "requestId": {
+        "type": "string",
+        "description": "معرف الطلب - Request ID from submit_to_builder",
+        "required": true
+      },
+      "amount": {
+        "type": "number",
+        "minimum": 1,
+        "description": "المبلغ - Payment amount (in currency units, e.g., 1000 for 1000 AED)",
+        "required": true
+      },
+      "currency": {
+        "type": "string",
+        "enum": ["AED", "USD", "EUR", "GBP", "SAR"],
+        "default": "AED",
+        "description": "العملة - Currency code",
+        "required": false
+      },
+      "clientId": {
+        "type": "string",
+        "description": "معرف العميل - Client unique identifier",
+        "required": true
+      },
+      "clientEmail": {
+        "type": "string",
+        "format": "email",
+        "description": "بريد العميل - Client email address",
+        "required": true
+      },
+      "paymentMethod": {
+        "type": "string",
+        "enum": ["stripe", "apple_pay", "bank_transfer"],
+        "default": "stripe",
+        "description": "طريقة الدفع - Payment method",
+        "required": false
+      }
+    },
+    "required": ["requestId", "amount", "clientId", "clientEmail"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "paymentMethod": {
+        "type": "string"
+      },
+      "paymentUrl": {
+        "type": "string",
+        "format": "uri"
+      },
+      "sessionId": {
+        "type": "string"
+      },
+      "bankDetails": {
+        "type": "object",
+        "description": "Bank transfer details (if paymentMethod is bank_transfer)"
+      },
+      "contactInfo": {
+        "type": "object",
+        "description": "Contact information for payment confirmation"
+      },
+      "message": {
+        "type": "string"
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "requestId": "req_1234567890",
+        "amount": 1000,
+        "currency": "AED",
+        "clientId": "client_123",
+        "clientEmail": "mohamed@example.com",
+        "paymentMethod": "stripe"
+      },
+      "output": {
+        "success": true,
+        "paymentMethod": "stripe",
+        "paymentUrl": "https://checkout.stripe.com/pay/cs_test_...",
+        "sessionId": "cs_test_1234567890",
+        "message": "تم إنشاء عملية الدفع بنجاح"
+      }
+    },
+    {
+      "input": {
+        "requestId": "req_1234567890",
+        "amount": 1000,
+        "currency": "AED",
+        "clientId": "client_123",
+        "clientEmail": "mohamed@example.com",
+        "paymentMethod": "bank_transfer"
+      },
+      "output": {
+        "success": true,
+        "paymentMethod": "bank_transfer",
+        "bankDetails": {
+          "bankName": "Example Bank",
+          "accountNumber": "1234567890",
+          "iban": "AE123456789012345678901",
+          "swift": "EXAMPLEAE"
+        },
+        "contactInfo": {
+          "phone": "+971529211077",
+          "email": "gm@zien-ai.app"
+        },
+        "message": "يرجى إتمام التحويل البنكي والتواصل معنا"
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في إنشاء عملية الدفع. يرجى المحاولة مرة أخرى أو التواصل مع الدعم."
+  }
+}
+
+  "name": "create_payment",
+  "display_name": "Create Payment",
+  "description": "إنشاء عملية دفع للعميل. Supports Stripe and Apple Pay. Creates a payment session for the client to complete their purchase.",
+  "type": "function",
+  "category": "payment",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/agent-tools/create-payment",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "requestId": {
+        "type": "string",
+        "description": "معرف الطلب - Request ID from submit_to_builder",
+        "required": true
+      },
+      "amount": {
+        "type": "number",
+        "minimum": 1,
+        "description": "المبلغ - Payment amount (in currency units, e.g., 1000 for 1000 AED)",
+        "required": true
+      },
+      "currency": {
+        "type": "string",
+        "enum": ["AED", "USD", "EUR", "GBP", "SAR"],
+        "default": "AED",
+        "description": "العملة - Currency code",
+        "required": false
+      },
+      "clientId": {
+        "type": "string",
+        "description": "معرف العميل - Client unique identifier",
+        "required": true
+      },
+      "clientEmail": {
+        "type": "string",
+        "format": "email",
+        "description": "بريد العميل - Client email address",
+        "required": true
+      },
+      "paymentMethod": {
+        "type": "string",
+        "enum": ["stripe", "apple_pay", "bank_transfer"],
+        "default": "stripe",
+        "description": "طريقة الدفع - Payment method",
+        "required": false
+      }
+    },
+    "required": ["requestId", "amount", "clientId", "clientEmail"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "paymentMethod": {
+        "type": "string"
+      },
+      "paymentUrl": {
+        "type": "string",
+        "format": "uri"
+      },
+      "sessionId": {
+        "type": "string"
+      },
+      "bankDetails": {
+        "type": "object",
+        "description": "Bank transfer details (if paymentMethod is bank_transfer)"
+      },
+      "contactInfo": {
+        "type": "object",
+        "description": "Contact information for payment confirmation"
+      },
+      "message": {
+        "type": "string"
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "requestId": "req_1234567890",
+        "amount": 1000,
+        "currency": "AED",
+        "clientId": "client_123",
+        "clientEmail": "mohamed@example.com",
+        "paymentMethod": "stripe"
+      },
+      "output": {
+        "success": true,
+        "paymentMethod": "stripe",
+        "paymentUrl": "https://checkout.stripe.com/pay/cs_test_...",
+        "sessionId": "cs_test_1234567890",
+        "message": "تم إنشاء عملية الدفع بنجاح"
+      }
+    },
+    {
+      "input": {
+        "requestId": "req_1234567890",
+        "amount": 1000,
+        "currency": "AED",
+        "clientId": "client_123",
+        "clientEmail": "mohamed@example.com",
+        "paymentMethod": "bank_transfer"
+      },
+      "output": {
+        "success": true,
+        "paymentMethod": "bank_transfer",
+        "bankDetails": {
+          "bankName": "Example Bank",
+          "accountNumber": "1234567890",
+          "iban": "AE123456789012345678901",
+          "swift": "EXAMPLEAE"
+        },
+        "contactInfo": {
+          "phone": "+971529211077",
+          "email": "gm@zien-ai.app"
+        },
+        "message": "يرجى إتمام التحويل البنكي والتواصل معنا"
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في إنشاء عملية الدفع. يرجى المحاولة مرة أخرى أو التواصل مع الدعم."
+  }
+}
+
+  "name": "create_payment",
+  "display_name": "Create Payment",
+  "description": "إنشاء عملية دفع للعميل. Supports Stripe and Apple Pay. Creates a payment session for the client to complete their purchase.",
+  "type": "function",
+  "category": "payment",
+  "endpoint": {
+    "url": "https://api.zien-ai.app/api/agent-tools/create-payment",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {{api_key}}"
+    }
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "requestId": {
+        "type": "string",
+        "description": "معرف الطلب - Request ID from submit_to_builder",
+        "required": true
+      },
+      "amount": {
+        "type": "number",
+        "minimum": 1,
+        "description": "المبلغ - Payment amount (in currency units, e.g., 1000 for 1000 AED)",
+        "required": true
+      },
+      "currency": {
+        "type": "string",
+        "enum": ["AED", "USD", "EUR", "GBP", "SAR"],
+        "default": "AED",
+        "description": "العملة - Currency code",
+        "required": false
+      },
+      "clientId": {
+        "type": "string",
+        "description": "معرف العميل - Client unique identifier",
+        "required": true
+      },
+      "clientEmail": {
+        "type": "string",
+        "format": "email",
+        "description": "بريد العميل - Client email address",
+        "required": true
+      },
+      "paymentMethod": {
+        "type": "string",
+        "enum": ["stripe", "apple_pay", "bank_transfer"],
+        "default": "stripe",
+        "description": "طريقة الدفع - Payment method",
+        "required": false
+      }
+    },
+    "required": ["requestId", "amount", "clientId", "clientEmail"]
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "paymentMethod": {
+        "type": "string"
+      },
+      "paymentUrl": {
+        "type": "string",
+        "format": "uri"
+      },
+      "sessionId": {
+        "type": "string"
+      },
+      "bankDetails": {
+        "type": "object",
+        "description": "Bank transfer details (if paymentMethod is bank_transfer)"
+      },
+      "contactInfo": {
+        "type": "object",
+        "description": "Contact information for payment confirmation"
+      },
+      "message": {
+        "type": "string"
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "requestId": "req_1234567890",
+        "amount": 1000,
+        "currency": "AED",
+        "clientId": "client_123",
+        "clientEmail": "mohamed@example.com",
+        "paymentMethod": "stripe"
+      },
+      "output": {
+        "success": true,
+        "paymentMethod": "stripe",
+        "paymentUrl": "https://checkout.stripe.com/pay/cs_test_...",
+        "sessionId": "cs_test_1234567890",
+        "message": "تم إنشاء عملية الدفع بنجاح"
+      }
+    },
+    {
+      "input": {
+        "requestId": "req_1234567890",
+        "amount": 1000,
+        "currency": "AED",
+        "clientId": "client_123",
+        "clientEmail": "mohamed@example.com",
+        "paymentMethod": "bank_transfer"
+      },
+      "output": {
+        "success": true,
+        "paymentMethod": "bank_transfer",
+        "bankDetails": {
+          "bankName": "Example Bank",
+          "accountNumber": "1234567890",
+          "iban": "AE123456789012345678901",
+          "swift": "EXAMPLEAE"
+        },
+        "contactInfo": {
+          "phone": "+971529211077",
+          "email": "gm@zien-ai.app"
+        },
+        "message": "يرجى إتمام التحويل البنكي والتواصل معنا"
+      }
+    }
+  ],
+  "error_handling": {
+    "on_error": "return_error_message",
+    "fallback_message": "عذراً، حدث خطأ في إنشاء عملية الدفع. يرجى المحاولة مرة أخرى أو التواصل مع الدعم."
+  }
+}
+
