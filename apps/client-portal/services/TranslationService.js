@@ -5,6 +5,7 @@
  */
 
 import { CONFIG } from '../config.js';
+import { apiGet, apiPost, parseJsonResponse } from '../utils/apiClient.js';
 
 class TranslationService {
   constructor() {
@@ -31,21 +32,18 @@ class TranslationService {
         return this.translationCache.get(cacheKey);
       }
 
-      const response = await fetch(`${this.apiUrl}/api/translation/translate`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          text,
-          targetLanguage: target,
-          sourceLanguage: sourceLanguage || null,
-        }),
+      // ✅ Use apiClient to automatically add X-Portal-Key header
+      const response = await apiPost('/api/translation/translate', {
+        text,
+        targetLanguage: target,
+        sourceLanguage: sourceLanguage || null,
       });
 
       if (!response.ok) {
         throw new Error(`Translation API error: ${response.status}`);
       }
 
-      const data = await response.json();
+      const data = await parseJsonResponse(response);
 
       if (data.success && data.translatedText) {
         // Cache the translation
@@ -72,21 +70,18 @@ class TranslationService {
     try {
       const target = targetLanguage || this.currentLanguage;
 
-      const response = await fetch(`${this.apiUrl}/api/translation/translate-batch`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          texts,
-          targetLanguage: target,
-          sourceLanguage: sourceLanguage || null,
-        }),
+      // ✅ Use apiClient to automatically add X-Portal-Key header
+      const response = await apiPost('/api/translation/translate-batch', {
+        texts,
+        targetLanguage: target,
+        sourceLanguage: sourceLanguage || null,
       });
 
       if (!response.ok) {
         throw new Error(`Translation API error: ${response.status}`);
       }
 
-      const data = await response.json();
+      const data = await parseJsonResponse(response);
 
       if (data.success && data.translatedTexts) {
         // Cache translations
@@ -112,17 +107,14 @@ class TranslationService {
    */
   async detectLanguage(text) {
     try {
-      const response = await fetch(`${this.apiUrl}/api/translation/detect`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text }),
-      });
+      // ✅ Use apiClient to automatically add X-Portal-Key header
+      const response = await apiPost('/api/translation/detect', { text });
 
       if (!response.ok) {
         throw new Error(`Language detection API error: ${response.status}`);
       }
 
-      const data = await response.json();
+      const data = await parseJsonResponse(response);
 
       if (data.success && data.detectedLanguage) {
         return data.detectedLanguage;
@@ -142,13 +134,14 @@ class TranslationService {
    */
   async getSupportedLanguages(targetLanguage = 'en') {
     try {
-      const response = await fetch(`${this.apiUrl}/api/translation/languages?targetLanguage=${targetLanguage}`);
+      // ✅ Use apiClient to automatically add X-Portal-Key header
+      const response = await apiGet(`/api/translation/languages?targetLanguage=${targetLanguage}`);
 
       if (!response.ok) {
         throw new Error(`Languages API error: ${response.status}`);
       }
 
-      const data = await response.json();
+      const data = await parseJsonResponse(response);
 
       if (data.success && data.languages) {
         return data.languages;

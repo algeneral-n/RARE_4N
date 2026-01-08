@@ -29,11 +29,18 @@ const ELEVENLABS_AGENT_ID = window.ELEVENLABS_AGENT_ID ||
                             import.meta.env?.VITE_ELEVENLABS_AGENT_ID || 
                             'agent_0701kc4axybpf6fvak70xwfzpyka';
 
+// ✅ SECURITY: Backend API Key for Portal-to-Backend communication (X-Portal-Key)
+// يجب تعيينه من Base44 Environment Variables
+const BACKEND_API_KEY = window.BACKEND_API_KEY || 
+                       import.meta.env?.VITE_BACKEND_API_KEY || 
+                       'HEADRAREBACK1END0097100201141009563';
+
 // Export Configuration
 export const CONFIG = {
   api: {
     baseUrl: API_BASE_URL,
     socketUrl: SOCKET_URL,
+    apiKey: BACKEND_API_KEY, // ✅ مفتاح الأمان للتواصل مع Backend
   },
   stripe: {
     publishableKey: STRIPE_PUBLISHABLE_KEY,

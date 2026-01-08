@@ -32,62 +32,118 @@ router.options('/', (req, res) => {
  * SSE (Server-Sent Events) endpoint for MCP
  * ElevenLabs يتصل بهذا endpoint للـ SSE connection
  */
-router.get('/', (req, res) => {
-  console.log('📡 MCP SSE Connection request from:', req.headers.origin || req.headers.referer);
+router.get('/', async (req, res) => {
+  try {
+    console.log('📡 MCP SSE Connection request from:', req.headers.origin || req.headers.referer);
 
-  // Set headers for SSE with proper CORS
-  res.setHeader('Content-Type', 'text/event-stream');
-  res.setHeader('Cache-Control', 'no-cache, no-transform');
-  res.setHeader('Connection', 'keep-alive');
-  res.setHeader('X-Accel-Buffering', 'no'); // Disable nginx buffering
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Credentials', 'true');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, Cache-Control, Last-Event-ID');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    // Set headers for SSE with proper CORS
+    res.setHeader('Content-Type', 'text/event-stream');
+    res.setHeader('Cache-Control', 'no-cache, no-transform');
+    res.setHeader('Connection', 'keep-alive');
+    res.setHeader('X-Accel-Buffering', 'no'); // Disable nginx buffering
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, Cache-Control, Last-Event-ID');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
 
-  // Send initial connection message
-  res.write(`: connected\n\n`);
-  res.write(`data: ${JSON.stringify({
-    jsonrpc: '2.0',
-    method: 'initialize',
-    params: {
-      protocolVersion: '2024-11-05',
-      capabilities: {
-        tools: {},
-        resources: {}
-      },
-      serverInfo: {
-        name: 'rare4n-backend',
-        version: '1.0.0'
+    // Send initial connection message (comment line for SSE)
+    res.write(`: connected\n\n`);
+
+    // Send initialize response (not as method, but as response)
+    const initResponse = {
+      jsonrpc: '2.0',
+      id: null,
+      result: {
+        protocolVersion: '2024-11-05',
+        capabilities: {
+          tools: {},
+          resources: {}
+        },
+        serverInfo: {
+          name: 'rare4n-backend',
+          version: '1.0.0'
+        }
       }
+    };
+    res.write(`data: ${JSON.stringify(initResponse)}\n\n`);
+
+    // Get tools and resources lists
+    const toolsList = await handleToolsList();
+    const resourcesList = await handleResourcesList();
+
+    // Send tools/list response
+    const toolsResponse = {
+      jsonrpc: '2.0',
+      id: null,
+      result: toolsList
+    };
+    res.write(`data: ${JSON.stringify(toolsResponse)}\n\n`);
+
+    // Send resources/list response
+    const resourcesResponse = {
+      jsonrpc: '2.0',
+      id: null,
+      result: resourcesList
+    };
+    res.write(`data: ${JSON.stringify(resourcesResponse)}\n\n`);
+
+    // Keep connection alive
+    const keepAlive = setInterval(() => {
+      try {
+        if (!res.destroyed) {
+          res.write(`: keepalive\n\n`);
+        }
+      } catch (error) {
+        console.error('Keep-alive error:', error);
+        clearInterval(keepAlive);
+      }
+    }, 30000);
+
+    // Handle client disconnect
+    req.on('close', () => {
+      console.log('📡 MCP SSE Connection closed');
+      clearInterval(keepAlive);
+      if (!res.destroyed) {
+        res.end();
+      }
+    });
+
+    // Handle errors
+    req.on('error', (error) => {
+      console.error('📡 MCP SSE Connection error:', error);
+      clearInterval(keepAlive);
+      if (!res.destroyed) {
+        res.end();
+      }
+    });
+
+    res.on('error', (error) => {
+      console.error('📡 MCP SSE Response error:', error);
+      clearInterval(keepAlive);
+    });
+
+  } catch (error) {
+    console.error('❌ MCP SSE Setup error:', error);
+    if (!res.headersSent) {
+      res.status(500).json({
+        jsonrpc: '2.0',
+        id: null,
+        error: {
+          code: -32000,
+          message: error.message
+        }
+      });
+    } else {
+      res.write(`data: ${JSON.stringify({
+        jsonrpc: '2.0',
+        id: null,
+        error: {
+          code: -32000,
+          message: error.message
+        }
+      })}\n\n`);
     }
-  })}\n\n`);
-
-  // Send tools list
-  res.write(`data: ${JSON.stringify({
-    jsonrpc: '2.0',
-    method: 'tools/list',
-    params: {}
-  })}\n\n`);
-
-  // Send resources list
-  res.write(`data: ${JSON.stringify({
-    jsonrpc: '2.0',
-    method: 'resources/list',
-    params: {}
-  })}\n\n`);
-
-  // Keep connection alive
-  const keepAlive = setInterval(() => {
-    res.write(`: keepalive\n\n`);
-  }, 30000);
-
-  // Handle client disconnect
-  req.on('close', () => {
-    console.log('📡 MCP SSE Connection closed');
-    clearInterval(keepAlive);
-    res.end();
-  });
+  }
 });
 
 /**

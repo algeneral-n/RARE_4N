@@ -1155,5 +1155,178 @@ router.get('/download/:buildId/:filename', (req, res) => {
   }
 });
 
+/**
+ * POST /api/auto-builder/builds/:id/deliver
+ * Mark build as delivered and notify client
+ * ✅ Portal endpoint for build delivery
+ */
+router.post('/builds/:id/deliver', async (req, res) => {
+  try {
+    const { id: buildId } = req.params;
+    const { deliveryDate, deliveryTime, projectName, clientId, clientPhone } = req.body;
+
+    if (!buildId) {
+      return res.status(400).json({
+        success: false,
+        error: 'Build ID is required',
+      });
+    }
+
+    // Get build info
+    if (!global.buildHistory) {
+      return res.status(404).json({
+        success: false,
+        error: 'Build history not found',
+      });
+    }
+
+    const buildInfo = global.buildHistory.get(buildId);
+    if (!buildInfo) {
+      return res.status(404).json({
+        success: false,
+        error: 'Build not found',
+      });
+    }
+
+    // Update build status
+    buildInfo.status = 'delivered';
+    buildInfo.deliveredAt = Date.now();
+    buildInfo.deliveryDate = deliveryDate;
+    buildInfo.deliveryTime = deliveryTime;
+    buildInfo.projectName = projectName;
+
+    // Emit delivery event via Socket.IO
+    const io = req.app.get('io') || global.io;
+    if (io) {
+      io.of('/client-portal').emit('build:delivered', {
+        buildId,
+        status: 'delivered',
+        deliveryDate,
+        deliveryTime,
+        projectName,
+        clientId,
+      });
+
+      io.of('/auto-builder').emit('build:delivered', {
+        buildId,
+        status: 'delivered',
+        deliveryDate,
+        deliveryTime,
+        projectName,
+      });
+    }
+
+    // Send delivery notification via Twilio if phone provided
+    if (clientPhone && deliveryDate && deliveryTime && projectName) {
+      try {
+        const { sendDeliveryConfirmed } = await import('../services/twilioTemplatesService.js');
+        await sendDeliveryConfirmed(
+          clientPhone,
+          clientId || 'عميلنا العزيز',
+          projectName,
+          deliveryDate,
+          deliveryTime
+        );
+        console.log('✅ Delivery confirmed notification sent to:', clientPhone);
+      } catch (error) {
+        console.error('Failed to send delivery notification:', error);
+        // Don't fail the request if notification fails
+      }
+    }
+
+    res.json({
+      success: true,
+      buildId,
+      status: 'delivered',
+      deliveryDate,
+      deliveryTime,
+      projectName,
+      message: 'Build marked as delivered',
+    });
+  } catch (error) {
+    console.error('Deliver build error:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to deliver build',
+      message: error.message,
+    });
+  }
+});
+
+/**
+ * POST /api/auto-builder/builds/:id/rollback
+ * Rollback build to previous version
+ * ✅ Portal endpoint for build rollback
+ */
+router.post('/builds/:id/rollback', async (req, res) => {
+  try {
+    const { id: buildId } = req.params;
+    const { reason, rollbackToBuildId } = req.body;
+
+    if (!buildId) {
+      return res.status(400).json({
+        success: false,
+        error: 'Build ID is required',
+      });
+    }
+
+    // Get build info
+    if (!global.buildHistory) {
+      return res.status(404).json({
+        success: false,
+        error: 'Build history not found',
+      });
+    }
+
+    const buildInfo = global.buildHistory.get(buildId);
+    if (!buildInfo) {
+      return res.status(404).json({
+        success: false,
+        error: 'Build not found',
+      });
+    }
+
+    // Update build status
+    buildInfo.status = 'rolled_back';
+    buildInfo.rolledBackAt = Date.now();
+    buildInfo.rollbackReason = reason;
+    buildInfo.rollbackToBuildId = rollbackToBuildId;
+
+    // Emit rollback event via Socket.IO
+    const io = req.app.get('io') || global.io;
+    if (io) {
+      io.of('/client-portal').emit('build:rolled_back', {
+        buildId,
+        status: 'rolled_back',
+        reason,
+        rollbackToBuildId,
+      });
+
+      io.of('/auto-builder').emit('build:rolled_back', {
+        buildId,
+        status: 'rolled_back',
+        reason,
+        rollbackToBuildId,
+      });
+    }
+
+    res.json({
+      success: true,
+      buildId,
+      status: 'rolled_back',
+      reason,
+      rollbackToBuildId,
+      message: 'Build rolled back successfully',
+    });
+  } catch (error) {
+    console.error('Rollback build error:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to rollback build',
+      message: error.message,
+    });
+  }
+});
+
 export default router;
 

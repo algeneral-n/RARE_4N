@@ -49,8 +49,10 @@ const httpServer = createServer(app);
 
 // ✅ SECURITY: CORS Configuration - Whitelist only allowed origins
 const allowedOrigins = [
-  'https://api.zien-ai.app', // Portal is on same domain as API
-  'https://portal.zien-ai.app',
+  'https://api.zien-ai.app', // Backend API
+  'https://portal.zien-ai.app', // Portal subdomain
+  'https://zien-ai.app', // Portal main domain (Base44)
+  'https://www.zien-ai.app', // Portal www subdomain
   'https://elevenlabs.io', // ElevenLabs MCP Server
   'https://*.elevenlabs.io', // ElevenLabs subdomains
   process.env.CLIENT_PORTAL_URL || 'https://portal.zien-ai.app',
@@ -484,7 +486,12 @@ async function registerRoutes() {
   const routes = [
     'mcp', // MCP Server - Model Context Protocol for ElevenLabs Agent
     'elevenlabs-webhook', // ElevenLabs Agent Webhook - must be before 'elevenlabs'
-    'ai', 'auth', 'boot'
+    'ai', 'auth', 'boot',
+    'maps', // Maps & Location services
+    'twilio', // Twilio Communication services
+    'payments', // Payment services (Stripe & Apple Pay)
+    'files', // File management
+    'auto-builder', // Auto Builder & Build system
   ];
 
   for (const route of routes) {
@@ -516,6 +523,42 @@ async function registerRoutes() {
     }
   } catch (e) {
     console.warn('⚠️ Warning: Translation route skipped. (Module missing or error)');
+  }
+
+  // Builds API route (Portal-compatible)
+  try {
+    const buildsModule = await import('./routes/builds.js');
+    const buildsRouter = buildsModule.default;
+    if (buildsRouter) {
+      app.use('/api/builds', buildsRouter);
+      console.log('✅ Route loaded: /api/builds');
+    }
+  } catch (e) {
+    console.warn('⚠️ Warning: Builds route skipped. (Module missing or error)');
+  }
+
+  // Domains API route (Portal-compatible)
+  try {
+    const domainsModule = await import('./routes/domains.js');
+    const domainsRouter = domainsModule.default;
+    if (domainsRouter) {
+      app.use('/api/domains', domainsRouter);
+      console.log('✅ Route loaded: /api/domains');
+    }
+  } catch (e) {
+    console.warn('⚠️ Warning: Domains route skipped. (Module missing or error)');
+  }
+
+  // Vision API route (Portal-compatible alias)
+  try {
+    const visionModule = await import('./routes/vision.js');
+    const visionRouter = visionModule.default;
+    if (visionRouter) {
+      app.use('/api/vision', visionRouter);
+      console.log('✅ Route loaded: /api/vision');
+    }
+  } catch (e) {
+    console.warn('⚠️ Warning: Vision route skipped. (Module missing or error)');
   }
 
   try {

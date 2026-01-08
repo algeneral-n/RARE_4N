@@ -100,3 +100,30 @@ jobs:
               "run_id": "${{ github.run_id }}"
             }' || true
 
+
+            --no-wait
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+          GOOGLE_PLAY_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_JSON }}
+          GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
+
+      - name: Skip build - mobile app not found
+        if: steps.check_mobile.outputs.exists == 'false'
+        run: |
+          echo "⚠️ Mobile app directory not found. Skipping Android build."
+          exit 0
+
+      - name: Notify build completion
+        if: always() && steps.check_mobile.outputs.exists == 'true'
+        run: |
+          curl -X POST "${{ secrets.API_URL }}/api/auto-builder/build-complete" \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Bearer ${{ secrets.API_TOKEN }}" \
+            -d '{
+              "platform": "android",
+              "profile": "${{ github.event.inputs.profile || 'production' }}",
+              "status": "${{ job.status }}",
+              "workflow": "${{ github.workflow }}",
+              "run_id": "${{ github.run_id }}"
+            }' || true
+

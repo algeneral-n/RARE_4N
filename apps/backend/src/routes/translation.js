@@ -1,10 +1,10 @@
 /**
- * RARE 4N - Translation API Routes
- * Google Translation API endpoints for app and portal
+ * RARE 4N - Translation Routes
+ * Google Translation API Integration
  */
 
 import express from 'express';
-import translationService from '../services/translationService.js';
+import { translateText, translateBatch, detectLanguage } from '../services/translationService.js';
 
 const router = express.Router();
 
@@ -14,51 +14,55 @@ const router = express.Router();
  */
 router.post('/translate', async (req, res) => {
   try {
-    const { text, targetLanguage = 'ar', sourceLanguage = null } = req.body;
+    const { text, targetLanguage = 'ar', sourceLanguage = 'auto' } = req.body;
 
     if (!text) {
       return res.status(400).json({ error: 'Text is required' });
     }
 
-    const translatedText = await translationService.translateText(text, targetLanguage, sourceLanguage);
+    const translatedText = await translateText(text, targetLanguage, sourceLanguage === 'auto' ? null : sourceLanguage);
 
     res.json({
       success: true,
-      originalText: text,
       translatedText,
+      sourceLanguage: sourceLanguage === 'auto' ? 'auto-detected' : sourceLanguage,
       targetLanguage,
-      sourceLanguage: sourceLanguage || 'auto-detected',
     });
   } catch (error) {
-    console.error('[Translation] Translate error:', error);
-    res.status(500).json({ error: error.message || 'Translation failed' });
+    console.error('Translation error:', error);
+    res.status(500).json({
+      success: false,
+      error: error.message || 'Translation failed',
+    });
   }
 });
 
 /**
  * POST /api/translation/translate-batch
- * Translate multiple texts
+ * Translate multiple texts in batch
  */
 router.post('/translate-batch', async (req, res) => {
   try {
-    const { texts, targetLanguage = 'ar', sourceLanguage = null } = req.body;
+    const { texts, targetLanguage = 'ar', sourceLanguage = 'auto' } = req.body;
 
     if (!texts || !Array.isArray(texts)) {
       return res.status(400).json({ error: 'Texts array is required' });
     }
 
-    const translatedTexts = await translationService.translateBatch(texts, targetLanguage, sourceLanguage);
+    const translatedTexts = await translateBatch(texts, targetLanguage, sourceLanguage === 'auto' ? null : sourceLanguage);
 
     res.json({
       success: true,
-      originalTexts: texts,
       translatedTexts,
+      sourceLanguage: sourceLanguage === 'auto' ? 'auto-detected' : sourceLanguage,
       targetLanguage,
-      sourceLanguage: sourceLanguage || 'auto-detected',
     });
   } catch (error) {
-    console.error('[Translation] Batch translate error:', error);
-    res.status(500).json({ error: error.message || 'Batch translation failed' });
+    console.error('Batch translation error:', error);
+    res.status(500).json({
+      success: false,
+      error: error.message || 'Batch translation failed',
+    });
   }
 });
 
@@ -74,39 +78,19 @@ router.post('/detect', async (req, res) => {
       return res.status(400).json({ error: 'Text is required' });
     }
 
-    const detectedLanguage = await translationService.detectLanguage(text);
+    const detectedLanguage = await detectLanguage(text);
 
     res.json({
       success: true,
-      text,
-      detectedLanguage,
+      language: detectedLanguage,
     });
   } catch (error) {
-    console.error('[Translation] Detect error:', error);
-    res.status(500).json({ error: error.message || 'Language detection failed' });
-  }
-});
-
-/**
- * GET /api/translation/languages
- * Get supported languages
- */
-router.get('/languages', async (req, res) => {
-  try {
-    const { targetLanguage = 'en' } = req.query;
-
-    const languages = await translationService.getSupportedLanguages(targetLanguage);
-
-    res.json({
-      success: true,
-      languages,
-      targetLanguage,
+    console.error('Language detection error:', error);
+    res.status(500).json({
+      success: false,
+      error: error.message || 'Language detection failed',
     });
-  } catch (error) {
-    console.error('[Translation] Get languages error:', error);
-    res.status(500).json({ error: error.message || 'Failed to get languages' });
   }
 });
 
 export default router;
-

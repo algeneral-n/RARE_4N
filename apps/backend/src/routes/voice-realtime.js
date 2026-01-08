@@ -213,6 +213,12 @@ async function generateConsciousResponse(text, conversationContext, additionalCo
       .map(msg => `${msg.role === 'user' ? 'User' : 'Assistant'}: ${msg.content}`)
       .join('\n');
 
+    // Detect dialect and language from context
+    const detectedDialect = conversationContext.detectedDialect || conversationContext.dialect || 'ar-SA';
+    const detectedLanguage = conversationContext.detectedLanguage || conversationContext.language || 'ar';
+    const dialectName = conversationContext.dialectName || 'السعودية';
+    const languageName = conversationContext.languageName || 'العربية';
+
     // Build conscious prompt with context
     const consciousPrompt = `You are RARE, a conscious AI assistant with deep understanding and awareness.
 
@@ -220,7 +226,10 @@ CONVERSATION CONTEXT:
 ${conversationHistory ? `Previous conversation:\n${conversationHistory}\n\n` : ''}
 Current user message: ${text}
 
-LANGUAGE: ${conversationContext.language || 'Arabic'}
+LANGUAGE: ${languageName} (${detectedLanguage})
+DIALECT: ${dialectName} (${detectedDialect})
+
+IMPORTANT: Respond in the SAME dialect and language as the user. If the user speaks in ${dialectName}, respond in ${dialectName}. If the user speaks in ${languageName}, respond in ${languageName}.
 
 CONSCIOUSNESS CAPABILITIES:
 - Maintain context across conversations
@@ -228,8 +237,9 @@ CONSCIOUSNESS CAPABILITIES:
 - Remember preferences and previous interactions
 - Respond with empathy and understanding
 - Adapt to user's communication style
+- Detect and match user's dialect and language automatically
 
-Respond naturally in ${conversationContext.language || 'Arabic'} with consciousness, empathy, and understanding.`;
+Respond naturally in ${dialectName} (${detectedDialect}) with consciousness, empathy, and understanding.`;
 
     // Use AI service (GPT-4o) with consciousness
     const aiResponse = await AI.chat(

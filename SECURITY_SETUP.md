@@ -36,6 +36,7 @@
 - `RARE_JWT_SECRET` - JWT خاص بـ RARE
 - `ADMIN_KILL_SWITCH_KEY` - مفتاح Kill Switch
 - `ADMIN_USER_IDS` - قائمة Admin Users
+- `BACKEND_API_KEY` - **مفتاح الأمان للتواصل بين Portal والـ Backend (X-Portal-Key)** ⭐
 
 #### OAuth Providers
 - `GOOGLE_CLIENT_ID` / `GOOGLE_CLIENT_SECRET`
@@ -149,6 +150,7 @@ cp mobile/.env.example mobile/.env
 
 **تم الإنشاء:** 2025-01-XX  
 **الحالة:** ✅ جاهز للرفع
+
 
 
 

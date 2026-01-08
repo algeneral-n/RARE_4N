@@ -11,6 +11,65 @@ import { Weather } from '../services/apiService.js';
 const router = express.Router();
 
 /**
+ * Get directions (Portal alias for /route)
+ * POST /api/maps/directions
+ */
+router.post('/directions', async (req, res) => {
+  try {
+    const { from, to, provider = 'apple', includeWeather = true } = req.body;
+
+    if (!from || !to) {
+      return res.status(400).json({ error: 'From and to are required' });
+    }
+
+    const route = await Maps.getRoute(from, to, provider);
+
+    let weatherData = null;
+    if (includeWeather && route) {
+      try {
+        let destLat, destLng;
+        
+        if (typeof to === 'string') {
+          if (route.destination) {
+            destLat = route.destination.latitude;
+            destLng = route.destination.longitude;
+          } else if (route.waypoints && route.waypoints.length > 0) {
+            const lastWaypoint = route.waypoints[route.waypoints.length - 1];
+            destLat = lastWaypoint.latitude;
+            destLng = lastWaypoint.longitude;
+          }
+        } else if (typeof to === 'object' && to.latitude && to.longitude) {
+          destLat = to.latitude;
+          destLng = to.longitude;
+        }
+
+        if (destLat && destLng) {
+          weatherData = await Weather.getCurrentWeather(destLat, destLng);
+        }
+      } catch (weatherError) {
+        console.warn('Weather data unavailable:', weatherError.message);
+      }
+    }
+
+    res.json({
+      success: true,
+      route: {
+        ...route,
+        weather: weatherData,
+        distance: route.distance?.text || route.distance || 'N/A',
+        duration: route.duration?.text || route.duration || 'N/A',
+      },
+    });
+  } catch (error) {
+    console.error('Maps directions error:', error);
+    res.status(500).json({
+      error: 'Maps service error',
+      message: error.message,
+    });
+  }
+});
+
+/**
  * Get route
  * POST /api/maps/route
  */

@@ -15,8 +15,8 @@ Base44 يحتاج فقط إلى **Publishable/Public Keys** - لا تضع أي *
 # ============================================
 # Supabase (Publishable Keys Only)
 # ============================================
-SUPABASE_URL=https://fgvrilruqzajstprioqj.supabase.co
-SUPABASE_ANON_KEY=sb_publishable_BLkrtQ9q20tyaqCF5kWrvQ_YFElVTXy
+SUPABASE_URL=YOUR_SUPABASE_URL_HERE
+SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY_HERE
 
 # ============================================
 # Stripe (Publishable Key Only)
@@ -38,8 +38,8 @@ CLIENT_PORTAL_URL=https://portal.zien-ai.app
 # ============================================
 # ElevenLabs (Agent ID - Non-secret)
 # ============================================
-ELEVENLABS_AGENT_ID=agent_0701kc4axybpf6fvak70xwfzpyka
-ELEVENLABS_CONVAI_AGENT_ID=agent_0701kc4axybpf6fvak70xwfzpyka
+ELEVENLABS_AGENT_ID=YOUR_ELEVENLABS_AGENT_ID_HERE
+ELEVENLABS_CONVAI_AGENT_ID=YOUR_ELEVENLABS_CONVAI_AGENT_ID_HERE
 
 # ============================================
 # Monitoring (Optional)
@@ -114,8 +114,8 @@ EAS_PROJECT_ID=... (من app.json أو EAS Dashboard)
 # ============================================
 # Supabase (Publishable Keys Only)
 # ============================================
-EXPO_PUBLIC_SUPABASE_URL=https://fgvrilruqzajstprioqj.supabase.co
-EXPO_PUBLIC_SUPABASE_KEY=sb_publishable_BLkrtQ9q20tyaqCF5kWrvQ_YFElVTXy
+EXPO_PUBLIC_SUPABASE_URL=YOUR_EXPO_PUBLIC_SUPABASE_URL_HERE
+EXPO_PUBLIC_SUPABASE_KEY=YOUR_EXPO_PUBLIC_SUPABASE_KEY_HERE
 
 # ============================================
 # Stripe (Publishable Key Only)
@@ -130,7 +130,7 @@ EXPO_PUBLIC_API_URL=https://api.zien-ai.app
 # ============================================
 # ElevenLabs (Agent ID - Non-secret)
 # ============================================
-EXPO_PUBLIC_ELEVENLABS_AGENT_ID=agent_0701kc4axybpf6fvak70xwfzpyka
+EXPO_PUBLIC_ELEVENLABS_AGENT_ID=YOUR_EXPO_PUBLIC_ELEVENLABS_AGENT_ID_HERE
 
 # ============================================
 # Monitoring (Optional)
@@ -204,8 +204,8 @@ TWILIO_VERIFY_SERVICE_SID=... (Optional)
 # Databases
 # ============================================
 MONGODB_URI=mongodb+srv://... (Backend only!)
-SUPABASE_URL=https://fgvrilruqzajstprioqj.supabase.co
-SUPABASE_ANON_KEY=sb_publishable_BLkrtQ9q20tyaqCF5kWrvQ_YFElVTXy (Publishable)
+SUPABASE_URL=YOUR_SUPABASE_URL_HERE
+SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY_HERE (Publishable)
 SUPABASE_SERVICE_ROLE_KEY=... (Backend only!)
 
 # ============================================
@@ -215,7 +215,7 @@ OPENAI_API_KEY=sk-... (Backend only!)
 ANTHROPIC_API_KEY=sk-ant-... (Backend only!)
 GEMINI_API_KEY=AIza... (Backend only!)
 ELEVENLABS_API_KEY=... (Backend only!)
-ELEVENLABS_AGENT_ID=agent_0701kc4axybpf6fvak70xwfzpyka (Non-secret)
+ELEVENLABS_AGENT_ID=YOUR_ELEVENLABS_AGENT_ID_HERE (Non-secret)
 GOOGLE_MAPS_API_KEY=AIza... (Backend only!)
 
 # ============================================
@@ -313,6 +313,7 @@ SENTRY_ENVIRONMENT=production
 
 **تم الإنشاء:** 2025-01-XX  
 **الحالة:** ✅ جاهز للاستخدام
+
 
 
 

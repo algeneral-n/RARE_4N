@@ -1,0 +1,9 @@
+67661c0804db22e6a6d2187a1b6bf70b122d401f commit	refs/heads/clean-main
+d23a0fd44e1374560ca5c0e923ebb7f921b10e8a commit	refs/heads/main
+5cc70eb6a07991007664f6a2c500c44228a7df6a commit	refs/heads/replit-agent
+98cb2321c9988ceac5844a7341770b72e3b7a00d commit	refs/remotes/gitsafe-backup/main
+8d6131993fc5467accfd5fc026f27898d293434f commit	refs/remotes/origin/HEAD
+8d53a43f1a7a1d249c03d23ccc028209b42f4d6b commit	refs/remotes/origin/clean-main
+fa842eb8f3bdf9c3e2299d49905bf12b1648eda3 commit	refs/remotes/origin/copilot/feature-branch
+8d6131993fc5467accfd5fc026f27898d293434f commit	refs/remotes/origin/main
+5cc70eb6a07991007664f6a2c500c44228a7df6a commit	refs/replit/agent-ledger

@@ -35,7 +35,7 @@
 
 3. **أضف كل Secret:**
    - **Name:** اسم الـ Secret
-   - **Secret:** القيمة من `GITHUB_EXPO_SECRETS_COMPLETE.md`
+   - **Secret:** القيمة من `GITHUB_EXPO_SECRETS_COMPLETE.md` (استبدل `YOUR_*_HERE`)
 
 4. **كرر لكل Secret**
 
@@ -59,16 +59,16 @@ gh auth login
 #### 3. إضافة Secrets:
 ```bash
 # Expo
-gh secret set EXPO_TOKEN --body "s2qpGH-Hg-8MQNLFT-2nYxH0dhuTHaGBs-p4_sbn"
+gh secret set EXPO_TOKEN --body "YOUR_EXPO_TOKEN_HERE"
 
 # Apple
-gh secret set ASC_API_KEY_ID --body "6AR5VSRINSC3"
-gh secret set ASC_API_KEY_ISSUER_ID --body "BN4DXG557F"
-gh secret set ASC_API_KEY_P8 --body "-----BEGIN PRIVATE KEY-----\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgvo+3ieNujr8usWIx\n5173ukKtHO8svfese75jWplP+JihRANCAARY+gjvpXDrtXWTGtJhfGeXPSELfrH2\nn6aZcfLkaBWOCtH3ZzfWuBB2a5f9gKnqzVJ/h/bC0z3gSjzjhqHI6jp6\n-----END PRIVATE KEY-----"
-gh secret set APPLE_TEAM_ID --body "BN4DXG557F"
+gh secret set ASC_API_KEY_ID --body "YOUR_ASC_API_KEY_ID_HERE"
+gh secret set ASC_API_KEY_ISSUER_ID --body "YOUR_ASC_API_KEY_ISSUER_ID_HERE"
+gh secret set ASC_API_KEY_P8 --body "YOUR_APPLE_PRIVATE_KEY_HERE"
+gh secret set APPLE_TEAM_ID --body "YOUR_APPLE_TEAM_ID_HERE"
 
 # Cloudflare
-gh secret set CLOUDFLARE_ACCOUNT_ID --body "ccc1ed9ab170eaf1e72e9a10e46ef320"
+gh secret set CLOUDFLARE_ACCOUNT_ID --body "YOUR_CLOUDFLARE_ACCOUNT_ID_HERE"
 gh secret set CLOUDFLARE_PAGES_PROJECT_NAME --body "rare4n-client-portal"
 
 # API
@@ -134,7 +134,7 @@ gh secret list
 
 1. **Secrets محمية:** لا يمكن رؤية قيمها بعد الإضافة
 2. **يجب إضافة جميع Secrets المطلوبة** قبل تشغيل Workflows
-3. **بعض Secrets تحتاج قيماً من ملف `GITHUB_EXPO_SECRETS_COMPLETE.md`**
+3. **بعض Secrets تحتاج قيماً من `.env`** - استبدل `YOUR_*_HERE` بالقيم الحقيقية
 4. **GitHub CLI غير مثبت حالياً** - يجب تثبيته أولاً
 
 ---
@@ -142,7 +142,7 @@ gh secret list
 ## 🎯 الخطوات التالية
 
 1. ✅ **اختر طريقة الإضافة** (UI أو CLI)
-2. ✅ **أضف جميع Secrets المطلوبة**
+2. ✅ **أضف جميع Secrets المطلوبة** (من `.env` أو `GITHUB_EXPO_SECRETS_COMPLETE.md`)
 3. ✅ **تحقق من الإضافة** (`gh secret list` أو GitHub UI)
 4. ✅ **اختبر Workflow** (workflow_dispatch)
 
@@ -150,4 +150,3 @@ gh secret list
 
 **التاريخ:** 2026-01-06  
 **الحالة:** ⚠️ يحتاج إضافة يدوية
-

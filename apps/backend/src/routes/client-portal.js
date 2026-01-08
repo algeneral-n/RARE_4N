@@ -4,8 +4,12 @@
  */
 import express from 'express';
 import portalService from '../services/clientPortalService.js';
+import { requirePortalKey } from '../middleware/portalAuth.js';
 
 const router = express.Router();
+
+// ✅ SECURITY: Apply Portal API Key authentication to all Portal API routes
+router.use(requirePortalKey);
 
 /**
  * تسجيل عميل جديد (من خلال API)
