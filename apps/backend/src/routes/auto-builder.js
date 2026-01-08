@@ -1328,5 +1328,116 @@ router.post('/builds/:id/rollback', async (req, res) => {
   }
 });
 
+/**
+ * POST /api/auto-builder/build-complete
+ * GitHub Actions notification endpoint
+ * Called by GitHub Actions workflows after build completion
+ */
+router.post('/build-complete', async (req, res) => {
+  try {
+    const { platform, profile, status, workflow, run_id } = req.body;
+
+    console.log(`[GitHub Actions] Build completed:`, {
+      platform,
+      profile,
+      status,
+      workflow,
+      run_id,
+      timestamp: new Date().toISOString(),
+    });
+
+    // Emit Socket.IO event
+    const io = req.app.get('io') || global.io;
+    if (io) {
+      io.of('/auto-builder').emit('github:build-complete', {
+        platform,
+        profile,
+        status,
+        workflow,
+        run_id,
+        timestamp: Date.now(),
+      });
+
+      io.of('/client-portal').emit('github:build-complete', {
+        platform,
+        profile,
+        status,
+        workflow,
+        run_id,
+        timestamp: Date.now(),
+      });
+    }
+
+    res.json({
+      success: true,
+      message: 'Build completion notification received',
+      platform,
+      profile,
+      status,
+    });
+  } catch (error) {
+    console.error('Build completion notification error:', error);
+    res.status(500).json({
+      success: false,
+      error: error.message || 'Failed to process build completion notification',
+    });
+  }
+});
+
+/**
+ * POST /api/auto-builder/deploy-complete
+ * GitHub Actions notification endpoint
+ * Called by GitHub Actions workflows after deployment completion
+ */
+router.post('/deploy-complete', async (req, res) => {
+  try {
+    const { platform, status, workflow, run_id, commit } = req.body;
+
+    console.log(`[GitHub Actions] Deployment completed:`, {
+      platform,
+      status,
+      workflow,
+      run_id,
+      commit,
+      timestamp: new Date().toISOString(),
+    });
+
+    // Emit Socket.IO event
+    const io = req.app.get('io') || global.io;
+    if (io) {
+      io.of('/auto-builder').emit('github:deploy-complete', {
+        platform,
+        status,
+        workflow,
+        run_id,
+        commit,
+        timestamp: Date.now(),
+      });
+
+      io.of('/client-portal').emit('github:deploy-complete', {
+        platform,
+        status,
+        workflow,
+        run_id,
+        commit,
+        timestamp: Date.now(),
+      });
+    }
+
+    res.json({
+      success: true,
+      message: 'Deployment completion notification received',
+      platform,
+      status,
+    });
+  } catch (error) {
+    console.error('Deployment completion notification error:', error);
+    res.status(500).json({
+      success: false,
+      error: error.message || 'Failed to process deployment completion notification',
+    });
+  }
+});
+
 export default router;
 

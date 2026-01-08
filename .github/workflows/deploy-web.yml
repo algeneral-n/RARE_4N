@@ -90,31 +90,3 @@ jobs:
               "commit": "${{ github.sha }}"
             }' || true
 
-
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: ${{ secrets.CLOUDFLARE_PAGES_PROJECT_NAME || 'rare4n-client-portal' }}
-          directory: ./${{ steps.check_portal.outputs.path }}
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Skip deployment - client-portal not found
-        if: steps.check_portal.outputs.exists == 'false'
-        run: |
-          echo "⚠️ Client Portal directory not found. Skipping deployment."
-          exit 0
-
-      - name: Notify deployment completion
-        if: always()
-        run: |
-          curl -X POST "${{ secrets.API_URL }}/api/auto-builder/deploy-complete" \
-            -H "Content-Type: application/json" \
-            -H "Authorization: Bearer ${{ secrets.API_TOKEN }}" \
-            -d '{
-              "platform": "web",
-              "status": "${{ job.status }}",
-              "workflow": "${{ github.workflow }}",
-              "run_id": "${{ github.run_id }}",
-              "commit": "${{ github.sha }}"
-            }' || true
-
