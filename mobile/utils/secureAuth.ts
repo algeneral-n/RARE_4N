@@ -1,7 +1,7 @@
 /**
  * RARE 4N - Secure Authentication Utility
- * ✅ Secure password hashing and verification
- * ✅ Uses expo-crypto for secure hashing
+ * Secure password hashing and verification
+ * Uses expo-crypto for secure hashing
  */
 
 import * as Crypto from 'expo-crypto';

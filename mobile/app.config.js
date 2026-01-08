@@ -1,8 +1,8 @@
 /**
  * RARE 4N - Expo App Configuration
  * iOS Only - Enlisted Distribution
- * ✅ لا توجد مفاتيح حساسة هنا - فقط publishable keys
- * ✅ جميع المفاتيح الحساسة في Backend فقط
+ * لا توجد مفاتيح حساسة هنا - فقط publishable keys
+ * جميع المفاتيح الحساسة في Backend فقط
  */
 
 export default {

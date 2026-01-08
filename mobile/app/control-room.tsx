@@ -310,7 +310,7 @@ export default function ControlRoom() {
     }
   };
 
-  // ✅ إرسال أمر للـ Agent
+  // إرسال أمر للـ Agent
   const handleSendAgentCommand = async () => {
     try {
       if (!agentCommand.trim()) {
@@ -769,7 +769,7 @@ const styles = StyleSheet.create({
     }
   };
 
-  // ✅ إرسال أمر للـ Agent
+  // إرسال أمر للـ Agent
   const handleSendAgentCommand = async () => {
     try {
       if (!agentCommand.trim()) {

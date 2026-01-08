@@ -1,6 +1,6 @@
 /**
  * RARE 4N - Command Validator
- * ✅ SECURITY: Validates terminal commands before execution
+ * SECURITY: Validates terminal commands before execution
  */
 
 export interface ValidationResult {

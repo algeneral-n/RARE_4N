@@ -45,7 +45,7 @@ export default function CarPlayScreen() {
       data: { text: 'open carplay', type: 'navigation', screen: 'carplay' }
     });
 
-    // ✅ تفعيل Real-time Voice إذا كان مفعّل في Home
+    // تفعيل Real-time Voice إذا كان مفعّل في Home
     if (isVoiceEnabled) {
       kernel.emit({
         type: 'voice:screen:active',
@@ -54,7 +54,7 @@ export default function CarPlayScreen() {
     }
   }, [isVoiceEnabled]);
 
-  // ✅ تفعيل النظام فقط عند تفعيل المستخدم
+  // تفعيل النظام فقط عند تفعيل المستخدم
   const activateSystem = async () => {
     setLoading(true);
     

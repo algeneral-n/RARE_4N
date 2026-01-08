@@ -78,7 +78,7 @@ export default function CodeGenerator() {
       data: { text: 'open code generator', type: 'navigation', screen: 'code-generator' }
     });
 
-    // ✅ تفعيل Real-time Voice إذا كان مفعّل في Home
+    // تفعيل Real-time Voice إذا كان مفعّل في Home
     if (isVoiceEnabled) {
       kernel.emit({
         type: 'voice:screen:active',

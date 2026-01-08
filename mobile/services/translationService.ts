@@ -1,7 +1,7 @@
 /**
  * RARE 4N - Neural Translation Service
  * Neural Machine Translation and UI Localization System
- * ✅ Integrated with Google Translation API via Backend
+ * Integrated with Google Translation API via Backend
  */
 
 import AsyncStorage from '@react-native-async-storage/async-storage';

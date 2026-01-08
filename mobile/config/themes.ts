@@ -27,7 +27,7 @@ export interface Theme {
 
 export const DEFAULT_FONT_SIZE = { xs: 10, sm: 12, base: 14, md: 16, lg: 18, xl: 20, '2xl': 24, '3xl': 32 };
 
-// ✅ DEFAULT_THEME - الثيم الافتراضي المستخدم كـ fallback
+// DEFAULT_THEME - الثيم الافتراضي المستخدم كـ fallback
 export const DEFAULT_THEME: Theme = {
   id: 'rare-cyan',
   name: 'RARE Cyan',

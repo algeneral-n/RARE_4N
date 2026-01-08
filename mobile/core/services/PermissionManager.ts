@@ -76,11 +76,11 @@ export class PermissionManager {
 
   /**
    * requestPermission: طلب الإذن من المستخدم
-   * ✅ CRITICAL: لا يتم استدعاؤه تلقائياً - فقط بعد تفعيل المستخدم يدوياً
-   * ✅ يجب أن يتم استدعاؤه من UI button أو explicit user action
+   * CRITICAL: لا يتم استدعاؤه تلقائياً - فقط بعد تفعيل المستخدم يدوياً
+   * يجب أن يتم استدعاؤه من UI button أو explicit user action
    */
   async requestPermission(type: PermissionType, userInitiated: boolean = false): Promise<PermissionStatus> {
-    // ✅ SECURITY: منع الطلب التلقائي
+    // SECURITY: منع الطلب التلقائي
     if (!userInitiated) {
       console.warn(`[PermissionManager] Permission request for ${type} blocked - not user-initiated`);
       return {

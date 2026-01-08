@@ -1,7 +1,7 @@
 /**
  * RARE 4N - Google Translation Service (Mobile App)
  * Uses Google Translation API for dynamic translation
- * ✅ Replaces i18n for better multilingual support
+ * Replaces i18n for better multilingual support
  */
 
 import { API_URL } from './config';

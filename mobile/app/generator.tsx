@@ -77,7 +77,7 @@ export default function Generator() {
     });
   }, [mode]);
 
-  // ✅ طلب الصلاحيات فقط عند تفعيل المستخدم
+  // طلب الصلاحيات فقط عند تفعيل المستخدم
   const handlePickImage = async () => {
     // فحص الصلاحية أولاً
     const permissionStatus = await permissionManager.checkPermission('camera');
@@ -112,7 +112,7 @@ export default function Generator() {
     }
   };
 
-  // ✅ اختيار فيديو للتحليل
+  // اختيار فيديو للتحليل
   const handlePickVideo = async () => {
     const permissionStatus = await permissionManager.checkPermission('camera');
     
@@ -144,7 +144,7 @@ export default function Generator() {
     }
   };
 
-  // ✅ تحميل النتيجة
+  // تحميل النتيجة
   const handleDownloadResult = async (result: any) => {
     try {
       // #region agent log
@@ -177,7 +177,7 @@ export default function Generator() {
     }
   };
 
-  // ✅ مشاركة النتيجة
+  // مشاركة النتيجة
   const handleShareResult = async (result: any) => {
     try {
       const { Share } = await import('react-native');
@@ -201,7 +201,7 @@ export default function Generator() {
     }
   };
 
-  // ✅ إرسال النتيجة إلى Vault
+  // إرسال النتيجة إلى Vault
   const handleSendToVault = async (result: any) => {
     try {
       // #region agent log
@@ -283,7 +283,7 @@ export default function Generator() {
           };
           break;
         case 'video':
-          // ✅ Generate video (not analyze)
+          // Generate video (not analyze)
           endpoint = '/api/file-generator/video';
           payload = { prompt, duration: 5, resolution: '1024x1024', vaultSave: true };
           break;

@@ -23,7 +23,7 @@ const { width } = Dimensions.get('window');
 export default function Home() {
   const [isReady, setIsReady] = useState(false);
   
-  // ✅ استخدام hooks بشكل صحيح (خارج try-catch)
+  // استخدام hooks بشكل صحيح (خارج try-catch)
   const { colors = { primary: '#00EAFF', text: '#fff' } } = useTheme();
   const { t = (key: string) => key } = useTranslation();
   const { t: tLang = (key: string) => key } = useLanguage();
@@ -70,7 +70,7 @@ export default function Home() {
     
     const init = async () => {
       try {
-        // ✅ Initialize Voice Consciousness System
+        // Initialize Voice Consciousness System
         try {
           await voiceConsciousness.init();
           voiceConsciousness.updateScreenContext('home');

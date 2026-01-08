@@ -29,7 +29,7 @@ export default function SOS() {
   const permissionManager = PermissionManager.getInstance();
   const pulseAnim = useRef(new Animated.Value(1)).current;
 
-  // ✅ تفعيل الوعي (Consciousness) عند دخول الشاشة
+  // تفعيل الوعي (Consciousness) عند دخول الشاشة
   useEffect(() => {
     // ربط Cognitive Loop
     cognitiveLoop.init(kernel).catch(console.error);
@@ -61,7 +61,7 @@ export default function SOS() {
     return () => unsubscribe();
   }, []);
 
-  // 🚨 تفعيل بروتوكول الطوارئ (التصرف عند المخاطر) - فقط عند تفعيل المستخدم
+  // تفعيل بروتوكول الطوارئ (التصرف عند المخاطر) - فقط عند تفعيل المستخدم
   const handleActivateSOS = async () => {
     try {
       // فحص الصلاحية أولاً

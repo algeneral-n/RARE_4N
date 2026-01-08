@@ -137,7 +137,7 @@ export default function Council() {
     }
   };
 
-  // 🎤 تفعيل الربط العصبي الصوتي (ElevenLabs) - فقط عند تفعيل المستخدم
+  // تفعيل الربط العصبي الصوتي (ElevenLabs) - فقط عند تفعيل المستخدم
   const toggleNeuralLink = async () => {
     if (isListening) {
       setIsListening(false);
@@ -211,7 +211,7 @@ export default function Council() {
             </View>
           </View>
 
-          {/* 📊 منطقة الأنظمة الجانبية (Side Systems) */}
+          {/* منطقة الأنظمة الجانبية (Side Systems) */}
           <View style={styles.systemGrid}>
             {['VOICE', 'GPT', 'COUNCIL'].map((sys: any) => (
               <Pressable 

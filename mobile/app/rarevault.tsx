@@ -57,7 +57,7 @@ export default function RAREVault() {
       data: { text: 'open vault', type: 'navigation', screen: 'rarevault' }
     });
 
-    // ✅ تفعيل Real-time Voice إذا كان مفعّل في Home
+    // تفعيل Real-time Voice إذا كان مفعّل في Home
     if (isVoiceEnabled) {
       kernel.emit({
         type: 'voice:screen:active',
@@ -65,7 +65,7 @@ export default function RAREVault() {
       });
     }
     
-    // ✅ التحقق من كلمة المرور
+    // التحقق من كلمة المرور
     checkPassword();
     loadFiles();
     loadCategories();
@@ -115,7 +115,7 @@ export default function RAREVault() {
     }
   };
 
-  // ✅ تحميل الملفات
+  // تحميل الملفات
   const loadFiles = async () => {
     setIsLoading(true);
     try {
@@ -131,7 +131,7 @@ export default function RAREVault() {
     }
   };
 
-  // ✅ تحميل الحافظات المخصصة
+  // تحميل الحافظات المخصصة
   const loadCategories = async () => {
     try {
       const response = await fetch(`${API_URL}/api/vault/categories`);
@@ -145,7 +145,7 @@ export default function RAREVault() {
   };
 
 
-  // ✅ فتح الملف ببصمة الوجه/الأصبع إذا كان مشفراً
+  // فتح الملف ببصمة الوجه/الأصبع إذا كان مشفراً
   const handleOpenFile = async (file: any) => {
     if (!isAuthenticated) {
       await checkPassword();
@@ -162,7 +162,7 @@ export default function RAREVault() {
     setShowPreview(true);
   };
 
-  // ✅ إرسال ملف من Vault إلى Generator
+  // إرسال ملف من Vault إلى Generator
   const handleSendToGenerator = async (file: any) => {
     try {
       const response = await fetch(`${API_URL}/api/vault/${file.id}/send-to-generator`, {
@@ -178,7 +178,7 @@ export default function RAREVault() {
     }
   };
 
-  // ✅ تحويل الملف
+  // تحويل الملف
   const handleConvertFile = async (file: any, toType: string) => {
     try {
       // #region agent log
@@ -219,7 +219,7 @@ export default function RAREVault() {
     }
   };
 
-  // ✅ تحميل الملف
+  // تحميل الملف
   const handleDownloadFile = async (file: any) => {
     try {
       const response = await fetch(`${API_URL}/api/vault/${file.id}/download`);
@@ -233,7 +233,7 @@ export default function RAREVault() {
     }
   };
 
-  // ✅ رفع ملف
+  // رفع ملف
   const handleUploadFile = async () => {
     try {
       const result = await DocumentPicker.getDocumentAsync({ type: '*' });
@@ -266,7 +266,7 @@ export default function RAREVault() {
     }
   };
 
-  // ✅ نظام الـ OCR المتقدم (استخراج نصوص وتحويلها لملف جديد)
+  // نظام الـ OCR المتقدم (استخراج نصوص وتحويلها لملف جديد)
   const handleAdvancedOCR = async (file: any) => {
     setIsLoading(true);
     try {
@@ -328,7 +328,7 @@ export default function RAREVault() {
           </View>
         </View>
 
-        {/* ✅ الحافظات المخصصة */}
+        {/* الحافظات المخصصة */}
         {Object.keys(categories).length > 0 && (
           <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.categoriesContainer}>
             {Object.keys(categories).map(category => (
@@ -414,7 +414,7 @@ export default function RAREVault() {
         </View>
       </Modal>
 
-      {/* ✅ مودال كلمة المرور */}
+      {/* مودال كلمة المرور */}
       <Modal visible={showPasswordModal} animationType="slide" transparent>
         <View style={styles.passwordModalContainer}>
           <BlurView intensity={100} tint="dark" style={StyleSheet.absoluteFill} />
@@ -454,7 +454,7 @@ export default function RAREVault() {
         </View>
       </Modal>
 
-      {/* ✅ مودال التحويل */}
+      {/* مودال التحويل */}
       <Modal visible={showConvertModal} animationType="slide" transparent>
         <View style={styles.passwordModalContainer}>
           <BlurView intensity={100} tint="dark" style={StyleSheet.absoluteFill} />

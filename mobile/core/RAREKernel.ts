@@ -214,7 +214,7 @@ export class RAREKernel {
         // #region agent log
         fetch('http://127.0.0.1:7244/ingest/4c242350-3788-46f7-ada6-4565774061b0',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'RAREKernel.ts:188',message:'Error initializing AbsoluteLoyaltyProtocol',data:{error:loyaltyError instanceof Error?loyaltyError.message:'Unknown',stack:loyaltyError instanceof Error?loyaltyError.stack?.substring(0,200):undefined},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
         // #endregion
-        console.error('❌ Absolute Loyalty Protocol init error:', loyaltyError);
+        console.error('[ERROR] Absolute Loyalty Protocol init error:', loyaltyError);
       }
       
       // 4. Initialize Guardian Protocol
@@ -246,7 +246,7 @@ export class RAREKernel {
         // #region agent log
         fetch('http://127.0.0.1:7244/ingest/4c242350-3788-46f7-ada6-4565774061b0',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'RAREKernel.ts:220',message:'Error initializing GuardianProtocol',data:{error:guardianError instanceof Error?guardianError.message:'Unknown',stack:guardianError instanceof Error?guardianError.stack?.substring(0,200):undefined},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
         // #endregion
-        console.error('❌ Guardian Protocol init error:', guardianError);
+        console.error('[ERROR] Guardian Protocol init error:', guardianError);
       }
       
       // 5. Register Agents
@@ -260,7 +260,7 @@ export class RAREKernel {
         const { analytics } = await import('../../utils/analytics');
         analytics.setKernelGetter(() => this);
       } catch (analyticsError) {
-        console.warn('⚠️ Could not setup analytics kernel getter:', analyticsError);
+        console.warn('[WARNING] Could not setup analytics kernel getter:', analyticsError);
       }
       
       this.initialized = true;
@@ -270,12 +270,12 @@ export class RAREKernel {
       fetch('http://127.0.0.1:7244/ingest/4c242350-3788-46f7-ada6-4565774061b0',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'RAREKernel.ts:120',message:'Kernel init completed',data:{initialized:this.initialized},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
       // #endregion
       
-      console.log('✅ RAREKernel initialized successfully');
+      console.log('[INIT] RAREKernel initialized successfully');
     } catch (error) {
       // #region agent log
       fetch('http://127.0.0.1:7244/ingest/4c242350-3788-46f7-ada6-4565774061b0',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'RAREKernel.ts:103',message:'Kernel init error',data:{error:error instanceof Error?error.message:'Unknown'},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
       // #endregion
-      console.error('❌ Kernel init error:', error);
+      console.error('[ERROR] Kernel init error:', error);
       throw error;
     }
   }
@@ -318,7 +318,7 @@ export class RAREKernel {
           // #region agent log
           fetch('http://127.0.0.1:7244/ingest/4c242350-3788-46f7-ada6-4565774061b0',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'RAREKernel.ts:164',message:'Agent init error',data:{agentId:agent.id,error:agentError instanceof Error?agentError.message:'Unknown',stack:agentError instanceof Error?agentError.stack:undefined},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
           // #endregion
-          console.error(`❌ Agent ${agent.id} init error:`, agentError);
+          console.error(`[ERROR] Agent ${agent.id} init error:`, agentError);
           // Continue with other agents even if one fails
         }
       }
@@ -327,12 +327,12 @@ export class RAREKernel {
       fetch('http://127.0.0.1:7244/ingest/4c242350-3788-46f7-ada6-4565774061b0',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'RAREKernel.ts:171',message:'Agents registered',data:{count:this.agents.size,agentIds:Array.from(this.agents.keys())},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
       // #endregion
       
-      console.log(`✅ Registered ${agents.length} agents`);
+      console.log(`[SUCCESS] Registered ${agents.length} agents`);
     } catch (error) {
       // #region agent log
       fetch('http://127.0.0.1:7244/ingest/4c242350-3788-46f7-ada6-4565774061b0',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'RAREKernel.ts:177',message:'Agent registration error',data:{error:error instanceof Error?error.message:'Unknown',stack:error instanceof Error?error.stack:undefined},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
       // #endregion
-      console.error('❌ Agent registration error:', error);
+      console.error('[ERROR] Agent registration error:', error);
     }
   }
 

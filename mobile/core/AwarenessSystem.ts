@@ -20,7 +20,7 @@ export class AwarenessSystem {
   async init(kernel: RAREKernel) {
     this.kernel = kernel;
     
-    // ✅ لا نطلب الصلاحية تلقائياً - فقط نفحص
+    // لا نطلب الصلاحية تلقائياً - فقط نفحص
     const { status } = await Location.getForegroundPermissionsAsync();
     if (status === 'granted') {
       this.updateLocation();

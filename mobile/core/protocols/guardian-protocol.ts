@@ -239,12 +239,12 @@ export class GuardianProtocol {
       fetch('http://127.0.0.1:7244/ingest/4c242350-3788-46f7-ada6-4565774061b0',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'guardian-protocol.ts:148',message:'GuardianProtocol initialize completed',data:{eventCount:this.emergencyEvents.length},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
       // #endregion
 
-      console.log('✅ Guardian Protocol Active');
+      console.log('[ACTIVE] Guardian Protocol Active');
     } catch (error) {
       // #region agent log
       fetch('http://127.0.0.1:7244/ingest/4c242350-3788-46f7-ada6-4565774061b0',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'guardian-protocol.ts:153',message:'GuardianProtocol initialize error',data:{error:error instanceof Error?error.message:'Unknown'},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
       // #endregion
-      console.error('❌ Guardian Protocol Init Error:', error);
+      console.error('[ERROR] Guardian Protocol Init Error:', error);
     }
   }
 
@@ -253,7 +253,7 @@ export class GuardianProtocol {
   // =====================================================
 
   async activateSOS(reason: string = 'Manual SOS Button'): Promise<SOSResponse> {
-    console.log('🚨🚨🚨 SOS ACTIVATED 🚨🚨🚨');
+    console.log('[SOS] SOS ACTIVATED');
     console.log(`Reason: ${reason}`);
 
     const response: SOSResponse = {
@@ -324,12 +324,12 @@ export class GuardianProtocol {
       trackEvent('sos_activated', { reason, location });
 
       response.success = true;
-      console.log('✅ SOS Protocol Completed Successfully');
+      console.log('[SUCCESS] SOS Protocol Completed Successfully');
 
       return response;
 
     } catch (error) {
-      console.error('❌ SOS Activation Error:', error);
+      console.error('[ERROR] SOS Activation Error:', error);
       throw error;
     }
   }
@@ -344,7 +344,7 @@ export class GuardianProtocol {
 
       const { status } = await Location.getForegroundPermissionsAsync();
       if (status !== 'granted') {
-        console.warn('⚠️ Location permission not granted');
+        console.warn('[WARNING] Location permission not granted');
         return undefined;
       }
 
@@ -375,11 +375,11 @@ export class GuardianProtocol {
         address
       };
 
-      console.log('✅ Location captured:', locationData);
+      console.log('[SUCCESS] Location captured:', locationData);
       return locationData;
 
     } catch (error) {
-      console.error('❌ Location capture failed:', error);
+      console.error('[ERROR] Location capture failed:', error);
       return undefined;
     }
   }
@@ -405,7 +405,7 @@ export class GuardianProtocol {
       await this.currentRecording.startAsync();
       this.isRecording = true;
 
-      console.log('✅ Silent recording started');
+      console.log('[RECORD] Silent recording started');
 
       // إيقاف تلقائي بعد المدة المحددة
       setTimeout(() => {
@@ -413,7 +413,7 @@ export class GuardianProtocol {
       }, GUARDIAN_CONFIG.SILENT_RECORDING.maxDuration);
 
     } catch (error) {
-      console.error('❌ Failed to start recording:', error);
+      console.error('[ERROR] Failed to start recording:', error);
     }
   }
 
@@ -437,12 +437,12 @@ export class GuardianProtocol {
         const newPath = `${FileSystem.documentDirectory}emergency_${timestamp}.m4a`;
         await FileSystem.moveAsync({ from: uri, to: newPath });
 
-        console.log('✅ Recording saved:', newPath);
+        console.log('[SUCCESS] Recording saved:', newPath);
         return newPath;
       }
 
     } catch (error) {
-      console.error('❌ Failed to stop recording:', error);
+      console.error('[ERROR] Failed to stop recording:', error);
     }
 
     return undefined;
@@ -453,7 +453,7 @@ export class GuardianProtocol {
   // =====================================================
 
   private async lockdownVault() {
-    console.log('🔒 Locking down vault...');
+    console.log('[SECURITY] Locking down vault...');
 
     try {
       // تشفير جميع البيانات الحساسة
@@ -468,9 +468,9 @@ export class GuardianProtocol {
         });
       }
 
-      console.log('✅ Vault locked down');
+      console.log('[SUCCESS] Vault locked down');
     } catch (error) {
-      console.error('❌ Vault lockdown failed:', error);
+      console.error('[ERROR] Vault lockdown failed:', error);
     }
   }
 
@@ -503,9 +503,9 @@ export class GuardianProtocol {
         });
       }
 
-      console.log('✅ Backup completed');
+      console.log('[SUCCESS] Backup completed');
     } catch (error) {
-      console.error('❌ Cloud backup failed:', error);
+      console.error('[ERROR] Cloud backup failed:', error);
     }
   }
 
@@ -666,12 +666,12 @@ export class GuardianProtocol {
       });
 
     } catch (error) {
-      console.error('❌ Duress mode activation error:', error);
+      console.error('[ERROR] Duress mode activation error:', error);
     }
   }
 
   private async showDecoyInterface() {
-    console.log('🎭 Showing decoy interface...');
+    console.log('[SECURITY] Showing decoy interface...');
     await storage.set('show_decoy_mode', true);
   }
 
@@ -690,7 +690,7 @@ export class GuardianProtocol {
   }
 
   async deactivateDuressMode() {
-    console.log('✅ Deactivating duress mode');
+    console.log('[DEACTIVE] Deactivating duress mode');
     
     this.duressMode = false;
     await storage.set('show_decoy_mode', false);

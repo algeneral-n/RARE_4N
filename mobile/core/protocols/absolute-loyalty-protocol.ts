@@ -201,12 +201,12 @@ export class AbsoluteLoyaltyProtocol {
       fetch('http://127.0.0.1:7244/ingest/4c242350-3788-46f7-ada6-4565774061b0',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'absolute-loyalty-protocol.ts:127',message:'AbsoluteLoyaltyProtocol initialize completed',data:{threatLogCount:this.threatLog.length},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
       // #endregion
       
-      console.log('✅ Absolute Loyalty Protocol Active');
+      console.log('[ACTIVE] Absolute Loyalty Protocol Active');
     } catch (error) {
       // #region agent log
       fetch('http://127.0.0.1:7244/ingest/4c242350-3788-46f7-ada6-4565774061b0',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'absolute-loyalty-protocol.ts:132',message:'AbsoluteLoyaltyProtocol initialize error',data:{error:error instanceof Error?error.message:'Unknown'},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
       // #endregion
-      console.error('❌ Absolute Loyalty Protocol Init Error:', error);
+      console.error('[ERROR] Absolute Loyalty Protocol Init Error:', error);
     }
   }
 
@@ -215,7 +215,7 @@ export class AbsoluteLoyaltyProtocol {
   // =====================================================
 
   async authenticateMaster(): Promise<MasterSession> {
-    console.log('🔐 Authenticating Master...');
+    console.log('[AUTH] Authenticating Master...');
 
     try {
       // 1. المصادقة البيومترية (بصمة/وجه)
@@ -246,13 +246,13 @@ export class AbsoluteLoyaltyProtocol {
       this.currentSession = session;
       await storage.set('current_session', session);
 
-      console.log('✅ Master Authenticated Successfully');
+      console.log('[SUCCESS] Master Authenticated Successfully');
       trackEvent('master_authenticated', { trustScore: 100 });
 
       return session;
 
     } catch (error) {
-      console.error('❌ Authentication Error:', error);
+      console.error('[ERROR] Authentication Error:', error);
       throw error;
     }
   }
@@ -337,7 +337,7 @@ export class AbsoluteLoyaltyProtocol {
 
           return {
             allowed: false,
-            reason: '⚠️ BEHAVIORAL ANOMALY DETECTED: Command blocked for security',
+            reason: '[WARNING] BEHAVIORAL ANOMALY DETECTED: Command blocked for security',
             threatLevel: 'high',
             suggestedAction: 'reverify_identity'
           };
@@ -353,7 +353,7 @@ export class AbsoluteLoyaltyProtocol {
         return {
           allowed: false,
           requiresConfirmation: true,
-          reason: `🔒 SENSITIVE OPERATION: "${sensitivityCheck.category}"\n\nThis command requires explicit confirmation.\n\nCommand: ${command}\nRisk: ${sensitivityCheck.risk}`,
+          reason: `[SECURITY] SENSITIVE OPERATION: "${sensitivityCheck.category}"\n\nThis command requires explicit confirmation.\n\nCommand: ${command}\nRisk: ${sensitivityCheck.risk}`,
           threatLevel: sensitivityCheck.threatLevel,
           suggestedAction: 'request_confirmation'
         };
@@ -484,7 +484,7 @@ export class AbsoluteLoyaltyProtocol {
         blocked: threat.blocked
       });
 
-      console.warn(`⚠️ THREAT LOGGED: ${threat.type} - ${threat.severity}`);
+      console.warn(`[WARNING] THREAT LOGGED: ${threat.type} - ${threat.severity}`);
     } catch (error) {
       console.error('Threat logging error:', error);
     }

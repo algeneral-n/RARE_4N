@@ -51,7 +51,7 @@ export class VoiceAgent extends BaseAgent {
   }
 
   private async startRecording() {
-    // ✅ فحص الصلاحية فقط - لا نطلب تلقائياً
+    // فحص الصلاحية فقط - لا نطلب تلقائياً
     const { status } = await Audio.getPermissionsAsync();
     if (status !== 'granted') {
       throw new Error('Audio permission not granted - user must enable manually from Settings');

@@ -119,7 +119,7 @@ export default function AppBuilder() {
     });
 
     socketRef.current.on('connect', () => {
-      setTerminalOutput(prev => [...prev, '✅ Connected to RARE Terminal']);
+      setTerminalOutput(prev => [...prev, '[CONNECTED] RARE Terminal']);
       kernel.emit({
         type: 'user:input',
         data: { text: 'terminal connected', type: 'app-builder', connected: true }
@@ -127,15 +127,15 @@ export default function AppBuilder() {
     });
 
     socketRef.current.on('disconnect', () => {
-      setTerminalOutput(prev => [...prev, '⚠️ Disconnected from RARE Terminal']);
+      setTerminalOutput(prev => [...prev, '[DISCONNECTED] RARE Terminal']);
     });
 
     socketRef.current.on('error', (error: any) => {
-      setTerminalOutput(prev => [...prev, `❌ Socket error: ${error.message || 'Unknown error'}`]);
+      setTerminalOutput(prev => [...prev, `[ERROR] Socket error: ${error.message || 'Unknown error'}`]);
       setCommandError(error.message || 'Connection error');
     });
 
-    // ✅ Listen for service status updates
+    // Listen for service status updates
     socketRef.current.on('services:status', (data: any) => {
       if (data && typeof data === 'object') {
         setServicesStatus(data);
@@ -151,11 +151,11 @@ export default function AppBuilder() {
       }
     });
 
-    // ✅ Fetch services status on mount and setup auto-refresh
+    // Fetch services status on mount and setup auto-refresh
     fetchServicesStatus();
     const statusInterval = setInterval(fetchServicesStatus, 5000);
     
-    // ✅ Load build history
+    // Load build history
     const loadBuildHistory = () => {
       const history = buildHistoryManager.getHistory(20);
       setBuildHistory(history);
@@ -175,10 +175,10 @@ export default function AppBuilder() {
     });
 
     socketRef.current.on('build:progress', (data: any) => {
-      setTerminalOutput(prev => [...prev, `📦 Build Progress: ${data.progress}%`]);
+      setTerminalOutput(prev => [...prev, `[BUILD] Build Progress: ${data.progress}%`]);
       setIsBuilding(data.progress < 100);
       
-      // ✅ Update build history if buildId exists
+      // Update build history if buildId exists
       if (data.buildId) {
         buildHistoryManager.updateBuild(data.buildId, {
           status: data.progress < 100 ? 'building' : 'completed',
@@ -188,10 +188,10 @@ export default function AppBuilder() {
     });
 
     socketRef.current.on('build:completed', (data: any) => {
-      setTerminalOutput(prev => [...prev, `✅ Build Completed: ${data.projectName}`]);
+      setTerminalOutput(prev => [...prev, `[SUCCESS] Build Completed: ${data.projectName}`]);
       if (data.builds && data.builds.length > 0) {
         data.builds.forEach((build: any) => {
-          setTerminalOutput(prev => [...prev, `📦 ${build.platform}: ${build.filename} (${formatSize(build.size)})`]);
+          setTerminalOutput(prev => [...prev, `[BUILD] ${build.platform}: ${build.filename} (${formatSize(build.size)})`]);
           if (build.downloadUrl) {
             setTerminalOutput(prev => [...prev, `🔗 Download: ${build.downloadUrl}`]);
           }
@@ -225,7 +225,7 @@ export default function AppBuilder() {
 
     socketRef.current.on('build:files', (data: any) => {
       if (data.files && data.files.length > 0) {
-        setTerminalOutput(prev => [...prev, `📦 Build Files Available:`]);
+        setTerminalOutput(prev => [...prev, `[BUILD] Build Files Available:`]);
         data.files.forEach((file: any) => {
           setTerminalOutput(prev => [...prev, `  - ${file.filename} (${formatSize(file.size)})`]);
           if (file.downloadUrl) {
@@ -235,7 +235,7 @@ export default function AppBuilder() {
       }
     });
 
-    // ✅ استقبال طلبات العملاء من Agent
+    // استقبال طلبات العملاء من Agent
     socketRef.current.on('client:request', (request: ClientRequest) => {
       try {
         setTerminalOutput(prev => [...prev, `📨 New client request: ${request.clientName} - ${request.type}`]);
@@ -258,7 +258,7 @@ export default function AppBuilder() {
       }
     });
 
-    // ✅ استقبال ملفات العملاء
+    // استقبال ملفات العملاء
     socketRef.current.on('client:files-uploaded', (data: any) => {
       try {
         setTerminalOutput(prev => [...prev, `📎 Files uploaded by client: ${data.clientName}`]);
@@ -272,7 +272,7 @@ export default function AppBuilder() {
       }
     });
 
-    // ✅ استقبال إشعار اكتمال الدفع
+    // استقبال إشعار اكتمال الدفع
     socketRef.current.on('payment:completed', (data: any) => {
       try {
         setTerminalOutput(prev => [...prev, `💳 Payment completed for request: ${data.requestId}`]);
@@ -305,11 +305,11 @@ export default function AppBuilder() {
     
     const command = terminalInput.trim();
     
-    // ✅ SECURITY: Validate command before execution
+    // SECURITY: Validate command before execution
     const validation = validateCommand(command, false);
     if (!validation.valid) {
       setCommandError(validation.error || 'Invalid command');
-      setTerminalOutput(prev => [...prev, `❌ ${validation.error}`]);
+      setTerminalOutput(prev => [...prev, `[ERROR] ${validation.error}`]);
       setTerminalInput('');
       return;
     }
@@ -372,11 +372,11 @@ export default function AppBuilder() {
   // معالجة أمر التحليل
   const handleAnalyzeCommand = async (description?: string) => {
     if (!description) {
-      setTerminalOutput(prev => [...prev, '❌ يرجى إدخال وصف المشروع: analyze "وصف المشروع"']);
+      setTerminalOutput(prev => [...prev, '[ERROR] يرجى إدخال وصف المشروع: analyze "وصف المشروع"']);
       return;
     }
 
-    setTerminalOutput(prev => [...prev, '🔍 جاري تحليل الوصف...']);
+      setTerminalOutput(prev => [...prev, '[ANALYZE] جاري تحليل الوصف...']);
 
     try {
       const response = await fetch(`${API_URL}/api/auto-builder/analyze`, {
@@ -392,24 +392,24 @@ export default function AppBuilder() {
       const data = await response.json();
 
       if (data.success) {
-        setTerminalOutput(prev => [...prev, `✅ تم التحليل بنجاح!`]);
-        setTerminalOutput(prev => [...prev, `📋 نوع النظام: ${data.analysis.systemType}`]);
-        setTerminalOutput(prev => [...prev, `🧩 المكونات: ${data.analysis.components.map((c: any) => c.name).join(', ')}`]);
-        setTerminalOutput(prev => [...prev, `📦 اسم المشروع: ${data.project.projectName}`]);
-        setTerminalOutput(prev => [...prev, `📁 المسار: ${data.project.projectPath}`]);
-        setTerminalOutput(prev => [...prev, '💡 استخدم: eas build --platform all لبناء المشروع']);
+        setTerminalOutput(prev => [...prev, `[SUCCESS] تم التحليل بنجاح!`]);
+        setTerminalOutput(prev => [...prev, `[INFO] نوع النظام: ${data.analysis.systemType}`]);
+        setTerminalOutput(prev => [...prev, `[INFO] المكونات: ${data.analysis.components.map((c: any) => c.name).join(', ')}`]);
+        setTerminalOutput(prev => [...prev, `[INFO] اسم المشروع: ${data.project.projectName}`]);
+        setTerminalOutput(prev => [...prev, `[INFO] المسار: ${data.project.projectPath}`]);
+        setTerminalOutput(prev => [...prev, '[TIP] استخدم: eas build --platform all لبناء المشروع']);
       } else {
-        setTerminalOutput(prev => [...prev, `❌ فشل التحليل: ${data.error}`]);
+        setTerminalOutput(prev => [...prev, `[ERROR] فشل التحليل: ${data.error}`]);
       }
     } catch (error: any) {
-      setTerminalOutput(prev => [...prev, `❌ خطأ: ${error.message}`]);
+      setTerminalOutput(prev => [...prev, `[ERROR] خطأ: ${error.message}`]);
     }
   };
 
   // معالجة أوامر البناء
   const handleBuildCommand = async (command: string) => {
     setIsBuilding(true);
-    setTerminalOutput(prev => [...prev, '🚀 Starting build process...']);
+    setTerminalOutput(prev => [...prev, '[BUILD] Starting build process...']);
     
     try {
       // استخراج المعاملات من الأمر
@@ -421,7 +421,7 @@ export default function AppBuilder() {
       const profile = profileMatch ? profileMatch[1] : 'production';
       const projectName = projectMatch ? projectMatch[1] : 'default-project';
       
-      setTerminalOutput(prev => [...prev, `📦 Platform: ${platform}, Profile: ${profile}, Project: ${projectName}`]);
+      setTerminalOutput(prev => [...prev, `[BUILD] Platform: ${platform}, Profile: ${profile}, Project: ${projectName}`]);
       
       // إرسال طلب البناء للباك إند
       const response = await fetch(`${API_URL}/api/auto-builder/expo/build`, {
@@ -437,7 +437,7 @@ export default function AppBuilder() {
       const data = await response.json();
       
       if (data.success) {
-        setTerminalOutput(prev => [...prev, `✅ Build started successfully`]);
+        setTerminalOutput(prev => [...prev, `[SUCCESS] Build started successfully`]);
         if (data.builds) {
           data.builds.forEach((build: any) => {
             setTerminalOutput(prev => [...prev, `  - ${build.platform}: Build ID ${build.buildId}`]);
@@ -448,7 +448,7 @@ export default function AppBuilder() {
         }
         setTerminalOutput(prev => [...prev, '📧 Build files will be sent to email when completed']);
         
-        // ✅ Add to build history
+        // Add to build history
         const buildItem: BuildHistoryItem = {
           buildId: data.buildId || `build_${Date.now()}`,
           projectName,
@@ -460,10 +460,10 @@ export default function AppBuilder() {
         buildHistoryManager.addBuild(buildItem);
         setBuildHistory(buildHistoryManager.getHistory(20));
       } else {
-        setTerminalOutput(prev => [...prev, `❌ Build failed: ${data.error || 'Unknown error'}`]);
+        setTerminalOutput(prev => [...prev, `[ERROR] Build failed: ${data.error || 'Unknown error'}`]);
         setIsBuilding(false);
         
-        // ✅ Add failed build to history
+        // Add failed build to history
         const buildItem: BuildHistoryItem = {
           buildId: `build_${Date.now()}`,
           projectName,
@@ -477,7 +477,7 @@ export default function AppBuilder() {
         setBuildHistory(buildHistoryManager.getHistory(20));
       }
     } catch (error: any) {
-      setTerminalOutput(prev => [...prev, `❌ Build error: ${error.message}`]);
+      setTerminalOutput(prev => [...prev, `[ERROR] Build error: ${error.message}`]);
       setIsBuilding(false);
     }
   };
@@ -502,16 +502,16 @@ export default function AppBuilder() {
           
           const data = await response.json();
           if (data.success) {
-            setTerminalOutput(prev => [...prev, `✅ Repository created: ${data.repoUrl}`]);
+            setTerminalOutput(prev => [...prev, `[SUCCESS] Repository created: ${data.repoUrl}`]);
           } else {
-            setTerminalOutput(prev => [...prev, `❌ Failed: ${data.error}`]);
+            setTerminalOutput(prev => [...prev, `[ERROR] Failed: ${data.error}`]);
           }
         }
       } else if (command.includes('trigger')) {
         const repoMatch = command.match(/trigger\s+(\w+)/);
         if (repoMatch) {
           const repoName = repoMatch[1];
-          setTerminalOutput(prev => [...prev, `🚀 Triggering GitHub Actions for: ${repoName}...`]);
+          setTerminalOutput(prev => [...prev, `[GITHUB] Triggering GitHub Actions for: ${repoName}...`]);
           
           const response = await fetch(`${API_URL}/api/auto-builder/github/trigger`, {
             method: 'POST',
@@ -528,14 +528,14 @@ export default function AppBuilder() {
           
           const data = await response.json();
           if (data.success) {
-            setTerminalOutput(prev => [...prev, `✅ Workflow triggered successfully`]);
+            setTerminalOutput(prev => [...prev, `[SUCCESS] Workflow triggered successfully`]);
           } else {
-            setTerminalOutput(prev => [...prev, `❌ Failed: ${data.error}`]);
+            setTerminalOutput(prev => [...prev, `[ERROR] Failed: ${data.error}`]);
           }
         }
       }
     } catch (error: any) {
-      setTerminalOutput(prev => [...prev, `❌ GitHub command error: ${error.message}`]);
+      setTerminalOutput(prev => [...prev, `[ERROR] GitHub command error: ${error.message}`]);
     }
   };
 
@@ -547,7 +547,7 @@ export default function AppBuilder() {
     return `${(bytes / Math.pow(1024, i)).toFixed(2)} ${sizes[i]}`;
   };
 
-  // ✅ معالجة طلبات العملاء
+  // معالجة طلبات العملاء
   const handleViewRequest = (request: ClientRequest) => {
     try {
       setSelectedRequest(request);
@@ -560,7 +560,7 @@ export default function AppBuilder() {
 
   const handleApproveRequest = async (request: ClientRequest) => {
     try {
-      setTerminalOutput(prev => [...prev, `✅ Approving request: ${request.id}`]);
+      setTerminalOutput(prev => [...prev, `[SUCCESS] Approving request: ${request.id}`]);
       setClientRequests(prev => prev.map(req => 
         req.id === request.id ? { ...req, status: 'approved' } : req
       ));
@@ -583,7 +583,7 @@ export default function AppBuilder() {
 
   const handleModifyRequest = async (request: ClientRequest, modifications: any) => {
     try {
-      setTerminalOutput(prev => [...prev, `🔧 Modifying request: ${request.id}`]);
+      setTerminalOutput(prev => [...prev, `[MODIFY] Modifying request: ${request.id}`]);
       setClientRequests(prev => prev.map(req => 
         req.id === request.id ? { ...req, status: 'modified', ...modifications } : req
       ));
@@ -636,7 +636,7 @@ export default function AppBuilder() {
 
   const handleApproveBuildPlan = async (request: ClientRequest) => {
     try {
-      setTerminalOutput(prev => [...prev, `✅ Approving build plan for: ${request.id}`]);
+      setTerminalOutput(prev => [...prev, `[SUCCESS] Approving build plan for: ${request.id}`]);
       setClientRequests(prev => prev.map(req => 
         req.id === request.id ? { ...req, status: 'building' } : req
       ));
@@ -658,7 +658,7 @@ export default function AppBuilder() {
       
       const data = await response.json();
       if (data.success) {
-        setTerminalOutput(prev => [...prev, `🚀 Build started: ${data.buildId}`]);
+        setTerminalOutput(prev => [...prev, `[BUILD] Build started: ${data.buildId}`]);
         setIsBuilding(true);
         setShowBuildPlanModal(false);
       } else {
@@ -670,8 +670,8 @@ export default function AppBuilder() {
     }
   };
 
-  // ✅ التحكم في الخدمات
-  // ✅ Fetch services status from API
+  // التحكم في الخدمات
+  // Fetch services status from API
   const fetchServicesStatus = async () => {
     try {
       const res = await fetch(`${API_URL}/api/service-control/status`);
@@ -684,7 +684,7 @@ export default function AppBuilder() {
     }
   };
 
-  // ✅ Handle service control action
+  // Handle service control action
   const handleServiceControl = async (service: 'backend' | 'cloudflare', action: 'start' | 'stop' | 'restart') => {
     setIsLoadingService(`${service}-${action}`);
     setCommandError(null);
@@ -705,7 +705,7 @@ export default function AppBuilder() {
       if (data.success) {
         // Refresh status after action
         await fetchServicesStatus();
-        setTerminalOutput(prev => [...prev, `✅ ${service} ${action}ed successfully`]);
+        setTerminalOutput(prev => [...prev, `[SUCCESS] ${service} ${action}ed successfully`]);
         
         // Emit to kernel
         kernel.emit({
@@ -715,24 +715,24 @@ export default function AppBuilder() {
       } else {
         const errorMsg = data.message || data.error || `فشل ${action} ${service}`;
         setCommandError(errorMsg);
-        setTerminalOutput(prev => [...prev, `❌ Failed: ${errorMsg}`]);
+        setTerminalOutput(prev => [...prev, `[ERROR] Failed: ${errorMsg}`]);
         Alert.alert('خطأ', errorMsg);
       }
     } catch (error: any) {
       console.error(`Error ${action}ing ${service}:`, error);
       const errorMsg = error.message || `فشل ${action} ${service}`;
       setCommandError(errorMsg);
-      setTerminalOutput(prev => [...prev, `❌ Error: ${errorMsg}`]);
+      setTerminalOutput(prev => [...prev, `[ERROR] Error: ${errorMsg}`]);
       Alert.alert('خطأ', errorMsg);
     } finally {
       setIsLoadingService(null);
     }
   };
 
-  // ✅ الأوامر الصوتية للـ Builder
+  // الأوامر الصوتية للـ Builder
   const handleVoiceCommand = async (command: string) => {
     try {
-      setTerminalOutput(prev => [...prev, `🎤 Voice command: ${command}`]);
+      setTerminalOutput(prev => [...prev, `[VOICE] Voice command: ${command}`]);
       
       // استخدام GPT API لتحليل الأمر الصوتي
       const response = await fetch(`${API_URL}/api/ai/chat`, {
@@ -756,7 +756,7 @@ export default function AppBuilder() {
     }
   };
 
-  // ✅ طلب الصلاحيات فقط عند تفعيل المستخدم
+  // طلب الصلاحيات فقط عند تفعيل المستخدم
   const handleFileUpload = async (type: 'image' | 'file') => {
     // فحص الصلاحية أولاً
     if (type === 'image') {
@@ -869,7 +869,7 @@ export default function AppBuilder() {
             <Text style={[styles.panelTitle, { color: getSafeColor(colors, 'primary') }]}>RARE Terminal</Text>
             {isBuilding && <ActivityIndicator size="small" color={getSafeColor(colors, 'primary')} />}
           </View>
-          {/* ✅ Error Display */}
+          {/* Error Display */}
           {commandError && (
             <View style={[styles.errorBanner, { backgroundColor: '#FF3B3020', borderColor: '#FF3B30' }]}>
               <Icon name="error" size={16} color="#FF3B30" />
@@ -894,15 +894,15 @@ export default function AppBuilder() {
               terminalOutput.map((line, i) => {
                 // Color coding for different output types
                 let textStyle = styles.terminalText;
-                if (line.includes('❌') || line.includes('Error') || line.includes('Failed')) {
+                if (line.includes('[ERROR]') || line.includes('Error') || line.includes('Failed')) {
                   textStyle = [styles.terminalText, { color: '#FF3B30' }];
-                } else if (line.includes('✅') || line.includes('Success')) {
+                } else if (line.includes('[SUCCESS]') || line.includes('Success')) {
                   textStyle = [styles.terminalText, { color: '#10A37F' }];
-                } else if (line.includes('⚠️') || line.includes('Warning')) {
+                } else if (line.includes('[WARNING]') || line.includes('Warning')) {
                   textStyle = [styles.terminalText, { color: '#FFCC00' }];
                 } else if (line.startsWith('>')) {
                   textStyle = [styles.terminalText, { color: getSafeColor(colors, 'primary'), fontWeight: 'bold' }];
-                } else if (line.includes('📦') || line.includes('Build')) {
+                } else if (line.includes('[BUILD]') || line.includes('Build')) {
                   textStyle = [styles.terminalText, { color: '#00EAFF' }];
                 }
                 
