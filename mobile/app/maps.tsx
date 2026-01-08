@@ -47,7 +47,7 @@ export default function MapsScreen() {
     // فحص الصلاحية فقط (لا نطلب تلقائياً)
     checkLocationPermission();
 
-    // ✅ تفعيل Real-time Voice إذا كان مفعّل في Home
+    // تفعيل Real-time Voice إذا كان مفعّل في Home
     if (isVoiceEnabled) {
       kernel.emit({
         type: 'voice:screen:active',
@@ -56,7 +56,7 @@ export default function MapsScreen() {
     }
   }, [isVoiceEnabled]);
 
-  // ✅ فحص الصلاحية فقط - لا نطلب تلقائياً
+  // فحص الصلاحية فقط - لا نطلب تلقائياً
   const checkLocationPermission = async () => {
     const status = await permissionManager.checkPermission('location');
     if (status.granted) {
@@ -67,7 +67,7 @@ export default function MapsScreen() {
     }
   };
 
-  // ✅ تفعيل الموقع فقط عند تفعيل المستخدم
+  // تفعيل الموقع فقط عند تفعيل المستخدم
   const handleEnableLocation = async () => {
     const status = await permissionManager.checkPermission('location');
     if (status.granted) {
@@ -225,7 +225,7 @@ export default function MapsScreen() {
         showsBuildings={true} // عرض المباني ثلاثية الأبعاد
         showsCompass={true} // البوصلة
         mapType={mapType}
-        provider={PROVIDER_DEFAULT} // ✅ استخدام Apple Maps (MapKit)
+                provider={PROVIDER_DEFAULT} // استخدام Apple Maps (MapKit)
       >
         <Marker coordinate={region} pinColor="#00EAFF">
           <Callout>
@@ -278,7 +278,7 @@ export default function MapsScreen() {
               <View style={styles.resultInfo}>
                 <Text style={styles.resultName}>{result.name}</Text>
                 <Text style={styles.resultAddress}>{result.address}</Text>
-                {result.rating && <Text style={styles.resultRating}>⭐ {result.rating}</Text>}
+                {result.rating && <Text style={styles.resultRating}>[RATING] {result.rating}</Text>}
               </View>
             </TouchableOpacity>
           ))}

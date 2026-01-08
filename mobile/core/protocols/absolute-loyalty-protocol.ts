@@ -312,7 +312,7 @@ export class AbsoluteLoyaltyProtocol {
       if (!this.currentSession || !this.currentSession.authenticated) {
         return {
           allowed: false,
-          reason: '🔐 AUTHENTICATION REQUIRED: Please authenticate first',
+          reason: '[AUTH] AUTHENTICATION REQUIRED: Please authenticate first',
           threatLevel: 'medium',
           suggestedAction: 'authenticate'
         };

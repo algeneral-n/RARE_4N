@@ -239,7 +239,7 @@ export default function Home() {
           </View>
         </View>
 
-        {/* ✅ زر التفعيل الصوتي الذكي (Real-time Consciousness) - في المنتصف */}
+        {/* زر التفعيل الصوتي الذكي (Real-time Consciousness) - في المنتصف */}
         <View style={styles.voiceActivationContainer}>
           <Pressable 
             style={[
@@ -556,7 +556,7 @@ const styles = StyleSheet.create({
           </View>
         </View>
 
-        {/* ✅ زر التفعيل الصوتي الذكي (Real-time Consciousness) - في المنتصف */}
+        {/* زر التفعيل الصوتي الذكي (Real-time Consciousness) - في المنتصف */}
         <View style={styles.voiceActivationContainer}>
           <Pressable 
             style={[

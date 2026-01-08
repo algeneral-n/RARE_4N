@@ -26,7 +26,7 @@ export interface FileCategory {
   color: string;
 }
 
-// ✅ تم تصحيح الأسماء العربية لتظهر بشكل سليم في الواجهة
+// تم تصحيح الأسماء العربية لتظهر بشكل سليم في الواجهة
 export const FILE_CATEGORIES: FileCategory[] = [
   { id: 'all', name: 'All Files', nameAr: 'جميع الملفات', icon: 'folder', color: '#00eaff' },
   { id: 'code', name: 'Code', nameAr: 'برمجة', icon: 'code', color: '#00ff41' },

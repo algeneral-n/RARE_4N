@@ -103,7 +103,7 @@ export default function CarPlayScreen() {
         const data = await res.json();
         
         if (data.success && data.weather) {
-          // ✅ استخدام WeatherKit data structure
+          // استخدام WeatherKit data structure
           setWeather({
             temperature: data.weather.temperature,
             condition: data.weather.condition || data.weather.weatherCode,
@@ -218,22 +218,22 @@ const darkMapStyle = [
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#000' },
   bootContainer: { flex: 1, justifyContent: 'center', alignItems: 'center', gap: 30 },
-  bootTitle: { fontSize: 20, fontWeight: '900', letterSpacing: 5 },
+  bootTitle: { fontSize: 18, fontWeight: '700', letterSpacing: 3 },
   bootBtn: { paddingVertical: 15, paddingHorizontal: 40, borderWidth: 1, borderRadius: 50 },
-  bootBtnText: { fontWeight: 'bold', letterSpacing: 2 },
+  bootBtnText: { fontWeight: '600', letterSpacing: 1 },
   
   dashboard: { flex: 1, flexDirection: 'row', padding: 10, paddingTop: 50 },
   leftPanel: { flex: 1.5, borderRadius: 30, overflow: 'hidden', borderWidth: 1, borderColor: '#222' },
   miniMap: { flex: 1 },
   mapOverlay: { position: 'absolute', bottom: 10, left: 10, backgroundColor: 'rgba(0,0,0,0.7)', padding: 5, borderRadius: 5 },
-  mapLabel: { color: '#00EAFF', fontSize: 8, fontWeight: 'bold' },
+  mapLabel: { color: '#00EAFF', fontSize: 7, fontWeight: '600' },
 
   rightPanel: { flex: 1, paddingLeft: 15, justifyContent: 'space-between' },
   weatherWidget: { flex: 1, backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: 25, padding: 20, justifyContent: 'center', borderWidth: 1, borderColor: 'rgba(255,255,255,0.05)' },
-  tempText: { color: '#fff', fontSize: 60, fontWeight: '900' },
-  weatherDesc: { color: '#888', fontSize: 12, fontWeight: 'bold', letterSpacing: 2 },
+  tempText: { color: '#fff', fontSize: 52, fontWeight: '700' },
+  weatherDesc: { color: '#888', fontSize: 10, fontWeight: '600', letterSpacing: 1 },
   windRow: { flexDirection: 'row', alignItems: 'center', gap: 5, marginTop: 10 },
-  windText: { color: '#00EAFF', fontSize: 12 },
+  windText: { color: '#00EAFF', fontSize: 10 },
 
   quickActions: { flexDirection: 'row', gap: 10, height: 80 },
   actionBtn: { flex: 1, backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: 20, justifyContent: 'center', alignItems: 'center', borderWidth: 1, borderColor: '#222' }

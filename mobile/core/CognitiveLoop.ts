@@ -130,7 +130,7 @@ export class CognitiveLoop {
       
       // الاستماع لأحداث الأمان
       this.kernel.on('security:threat', async (event) => {
-        console.warn('🚨 Security threat detected:', event.data);
+        console.warn('[SECURITY] Security threat detected:', event.data);
       });
       
     } catch (error) {

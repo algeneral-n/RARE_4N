@@ -71,7 +71,7 @@ export default function RAREVault() {
     loadCategories();
   }, [isVoiceEnabled]);
 
-  // ✅ التحقق من كلمة المرور
+  // التحقق من كلمة المرور
   const checkPassword = async () => {
     try {
       // Try Face ID first
@@ -92,7 +92,7 @@ export default function RAREVault() {
     setShowPasswordModal(true);
   };
 
-  // ✅ التحقق من كلمة المرور
+  // التحقق من كلمة المرور
   const handlePasswordSubmit = async () => {
     try {
       const response = await fetch(`${API_URL}/api/vault/verify-password`, {
@@ -491,7 +491,7 @@ const styles = StyleSheet.create({
   container: { flex: 1 },
   header: { flexDirection: 'row', paddingTop: 60, paddingHorizontal: 20, alignItems: 'center', gap: 15, marginBottom: 20 },
   searchBar: { flex: 1, height: 45, backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: 12, flexDirection: 'row', alignItems: 'center', paddingHorizontal: 15, borderWidth: 1, borderColor: '#222' },
-  searchInput: { flex: 1, marginLeft: 10, color: '#fff', fontSize: 14 },
+  searchInput: { flex: 1, marginLeft: 10, color: '#fff', fontSize: 12 },
   addBtn: { width: 45, height: 45, borderRadius: 12, backgroundColor: 'rgba(255,255,255,0.05)', alignItems: 'center', justifyContent: 'center' },
   scroll: { paddingBottom: 100 },
   statsRow: { flexDirection: 'row', justifyContent: 'space-around', marginVertical: 10, paddingHorizontal: 20, gap: 10 },
@@ -504,38 +504,38 @@ const styles = StyleSheet.create({
     borderColor: '#222',
     minWidth: 70,
   },
-  statValue: { fontSize: 20, fontWeight: '900', marginTop: 4 },
-  statLabel: { color: '#555', fontSize: 9, fontWeight: 'bold', marginTop: 4 },
+  statValue: { fontSize: 18, fontWeight: '700', marginTop: 4 },
+  statLabel: { color: '#555', fontSize: 8, fontWeight: '600', marginTop: 4 },
   grid: { flexDirection: 'row', flexWrap: 'wrap', gap: 15, padding: 20 },
   fileCard: { width: (width - 55) / 2, borderRadius: 20, padding: 15, alignItems: 'center', borderWidth: 1, borderColor: '#222' },
   fileIcon: { width: 70, height: 70, borderRadius: 15, backgroundColor: 'rgba(0,0,0,0.3)', alignItems: 'center', justifyContent: 'center', marginBottom: 10 },
   secureBadge: { position: 'absolute', top: 5, right: 5, width: 8, height: 8, borderRadius: 4, backgroundColor: '#FF3B30' },
-  fileName: { color: '#fff', fontSize: 12, fontWeight: 'bold', marginBottom: 12 },
+  fileName: { color: '#fff', fontSize: 10, fontWeight: '600', marginBottom: 10 },
   cardActions: { flexDirection: 'row', gap: 10, borderTopWidth: 1, borderTopColor: '#222', paddingTop: 10, width: '100%', justifyContent: 'center' },
   miniAction: { padding: 5 },
   previewContainer: { flex: 1, backgroundColor: '#000' },
   previewHeader: { flexDirection: 'row', justifyContent: 'space-between', padding: 20, paddingTop: 60, alignItems: 'center' },
-  previewTitle: { color: '#fff', fontSize: 14, fontWeight: 'bold' },
+  previewTitle: { color: '#fff', fontSize: 12, fontWeight: '600' },
   previewBody: { flex: 1, justifyContent: 'center', alignItems: 'center' },
   fullPreview: { width: width, height: height * 0.6 },
   codePreview: { padding: 20, backgroundColor: '#050505', borderRadius: 15, width: '90%', height: '70%' },
   codeText: { color: '#00FF00', fontFamily: 'monospace' },
   bottomToolBar: { flexDirection: 'row', justifyContent: 'space-around', paddingBottom: 40, paddingTop: 20, borderTopWidth: 1, borderTopColor: '#222' },
   toolBtn: { alignItems: 'center', gap: 5 },
-  toolText: { color: '#fff', fontSize: 10 },
+  toolText: { color: '#fff', fontSize: 9 },
   loadingOverlay: { ...StyleSheet.absoluteFillObject, backgroundColor: 'rgba(0,0,0,0.8)', justifyContent: 'center', alignItems: 'center' },
   categoriesContainer: { paddingHorizontal: 20, marginBottom: 20 },
   categoryChip: { paddingHorizontal: 15, paddingVertical: 8, borderRadius: 20, backgroundColor: 'rgba(255,255,255,0.05)', marginRight: 10, borderWidth: 1, borderColor: '#222' },
-  categoryText: { fontSize: 11, fontWeight: '600' },
+  categoryText: { fontSize: 10, fontWeight: '500' },
   passwordModalContainer: { flex: 1, justifyContent: 'center', alignItems: 'center' },
   passwordModal: { width: width * 0.8, backgroundColor: 'rgba(0,0,0,0.9)', borderRadius: 20, padding: 30, borderWidth: 1, borderColor: '#222' },
-  passwordTitle: { color: '#fff', fontSize: 20, fontWeight: 'bold', marginBottom: 20, textAlign: 'center' },
-  passwordSubtitle: { color: '#888', fontSize: 12, marginBottom: 15, textAlign: 'center' },
+  passwordTitle: { color: '#fff', fontSize: 18, fontWeight: '600', marginBottom: 16, textAlign: 'center' },
+  passwordSubtitle: { color: '#888', fontSize: 10, marginBottom: 12, textAlign: 'center' },
   passwordInput: { backgroundColor: 'rgba(255,255,255,0.1)', borderRadius: 12, padding: 15, color: '#fff', marginBottom: 20, borderWidth: 1, borderColor: '#222' },
   passwordActions: { flexDirection: 'row', gap: 10 },
   passwordBtn: { flex: 1, backgroundColor: '#00EAFF', borderRadius: 12, padding: 15, alignItems: 'center' },
-  passwordBtnText: { color: '#000', fontWeight: 'bold' },
+  passwordBtnText: { color: '#000', fontWeight: '600' },
   convertOptions: { flexDirection: 'row', flexWrap: 'wrap', gap: 10, marginBottom: 20 },
   convertOption: { paddingHorizontal: 15, paddingVertical: 10, borderRadius: 12, backgroundColor: 'rgba(255,255,255,0.1)', borderWidth: 1, borderColor: '#222' },
-  convertOptionText: { color: '#fff', fontSize: 12, fontWeight: '600' }
+  convertOptionText: { color: '#fff', fontSize: 10, fontWeight: '500' }
 });

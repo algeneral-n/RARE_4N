@@ -193,17 +193,17 @@ export default function AppBuilder() {
         data.builds.forEach((build: any) => {
           setTerminalOutput(prev => [...prev, `[BUILD] ${build.platform}: ${build.filename} (${formatSize(build.size)})`]);
           if (build.downloadUrl) {
-            setTerminalOutput(prev => [...prev, `🔗 Download: ${build.downloadUrl}`]);
+            setTerminalOutput(prev => [...prev, `[DOWNLOAD] Download: ${build.downloadUrl}`]);
           }
         });
       }
-      setTerminalOutput(prev => [...prev, `📧 Build files sent to email: ${data.ownerEmail || 'GM@ZIEN-AI.APP'}`]);
+      setTerminalOutput(prev => [...prev, `[EMAIL] Build files sent to email: ${data.ownerEmail || 'GM@ZIEN-AI.APP'}`]);
       if (data.clientEmail) {
-        setTerminalOutput(prev => [...prev, `📧 Client email: ${data.clientEmail}`]);
+        setTerminalOutput(prev => [...prev, `[EMAIL] Client email: ${data.clientEmail}`]);
       }
       setIsBuilding(false);
       
-      // ✅ Add to build history
+      // Add to build history
       const buildItem: BuildHistoryItem = {
         buildId: data.buildId || `build_${Date.now()}`,
         projectName: data.projectName || 'Unknown',
@@ -607,7 +607,7 @@ export default function AppBuilder() {
 
   const handleShowBuildPlan = async (request: ClientRequest) => {
     try {
-      setTerminalOutput(prev => [...prev, `📋 Generating build plan for: ${request.id}`]);
+      setTerminalOutput(prev => [...prev, `[PLAN] Generating build plan for: ${request.id}`]);
       
       // جلب خطة البناء من Backend
       const response = await fetch(`${API_URL}/api/auto-builder/build-plan`, {
@@ -827,7 +827,7 @@ export default function AppBuilder() {
             ))}
             
             <View style={styles.divider} />
-            <Text style={[styles.panelTitle, { color: getSafeColor(colors, 'primary'), fontSize: 12, marginTop: 10 }]}>
+            <Text style={[styles.panelTitle, { color: getSafeColor(colors, 'primary'), fontSize: 10, marginTop: 8 }]}>
               {tLang('quickCommands') || 'أوامر سريعة'}
             </Text>
             {QUICK_COMMANDS.map(cmd => (
@@ -915,7 +915,7 @@ export default function AppBuilder() {
             )}
           </ScrollView>
           <View style={styles.inputArea}>
-            <Text style={{ color: getSafeColor(colors, 'primary'), fontSize: 14 }}>$ </Text>
+            <Text style={{ color: getSafeColor(colors, 'primary'), fontSize: 11 }}>$ </Text>
             <TextInput
               style={[styles.input, commandError && { borderColor: '#FF3B30' }]}
               value={terminalInput}
@@ -1122,19 +1122,19 @@ const styles = StyleSheet.create({
   mainLayout: { flexDirection: 'row', height: '100%', paddingTop: 50 },
   panel: { flex: 1, padding: 10, backgroundColor: 'rgba(0,0,0,0.2)' },
   terminalPanel: { flex: 2, backgroundColor: '#000' },
-  panelTitle: { fontSize: 12, fontWeight: 'bold', marginBottom: 15, textAlign: 'center', letterSpacing: 1 },
+  panelTitle: { fontSize: 10, fontWeight: '600', marginBottom: 12, textAlign: 'center', letterSpacing: 0.5 },
   
   // Services Styles
   serviceItem: { alignItems: 'center', marginBottom: 20, padding: 10, borderRadius: 10 },
-  serviceText: { fontSize: 9, marginTop: 5, fontWeight: 'bold' },
+  serviceText: { fontSize: 8, marginTop: 4, fontWeight: '600' },
   uploadBox: { marginTop: 30, alignItems: 'center', borderTopWidth: 1, borderColor: '#222', paddingTop: 10 },
-  subTitle: { color: '#555', fontSize: 10, marginBottom: 10 },
+  subTitle: { color: '#555', fontSize: 9, marginBottom: 8 },
   uploadBtn: { width: 40, height: 40, borderRadius: 20, backgroundColor: '#111', alignItems: 'center', justifyContent: 'center', marginBottom: 10 },
 
   // Terminal Styles
   terminalScroll: { flex: 1, backgroundColor: '#000' },
   terminalContent: { padding: 10, paddingBottom: 20 },
-  terminalText: { color: '#00FF00', fontFamily: 'monospace', fontSize: 11, marginBottom: 2, lineHeight: 16 },
+  terminalText: { color: '#00FF00', fontFamily: 'monospace', fontSize: 10, marginBottom: 2, lineHeight: 14 },
   inputArea: { 
     flexDirection: 'row', 
     alignItems: 'center', 
@@ -1156,30 +1156,30 @@ const styles = StyleSheet.create({
   },
   errorText: {
     flex: 1,
-    fontSize: 12,
+    fontSize: 10,
     fontWeight: '500',
   },
-  input: { flex: 1, color: '#fff', fontSize: 12, fontFamily: 'monospace' },
+  input: { flex: 1, color: '#fff', fontSize: 10, fontFamily: 'monospace' },
   panelHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
 
   // Lib & Req Styles
-  groupLabel: { fontSize: 10, color: '#777', marginBottom: 10, textTransform: 'uppercase' },
+  groupLabel: { fontSize: 9, color: '#777', marginBottom: 8, textTransform: 'uppercase' },
   libCard: { backgroundColor: '#111', padding: 10, borderRadius: 8, marginBottom: 8, borderWidth: 1, borderColor: '#222' },
-  libName: { color: '#fff', fontSize: 10, fontWeight: 'bold' },
+  libName: { color: '#fff', fontSize: 9, fontWeight: '600' },
   libType: { color: '#555', fontSize: 8 },
   reqCard: { backgroundColor: '#0a0a0a', padding: 10, borderRadius: 8, marginBottom: 10 },
-  reqClient: { color: '#00EAFF', fontSize: 10, marginBottom: 5 },
+  reqClient: { color: '#00EAFF', fontSize: 9, marginBottom: 4 },
   progressBg: { height: 4, backgroundColor: '#222', borderRadius: 2, marginBottom: 5 },
   progressFill: { height: '100%', borderRadius: 2 },
   reqStatus: { color: '#777', fontSize: 8, textAlign: 'right' },
-  emptyText: { color: '#555', fontSize: 10, textAlign: 'center', marginTop: 20 },
+  emptyText: { color: '#555', fontSize: 9, textAlign: 'center', marginTop: 16 },
   reqType: { color: '#888', fontSize: 8, marginTop: 2 },
   reqActions: { flexDirection: 'row', gap: 5, marginTop: 5 },
   actionBtn: { paddingHorizontal: 8, paddingVertical: 4, borderRadius: 4 },
   actionBtnText: { color: '#fff', fontSize: 8, fontWeight: 'bold' },
   serviceControlCard: { backgroundColor: '#111', padding: 12, borderRadius: 8, marginBottom: 10 },
   serviceHeader: { flexDirection: 'row', alignItems: 'center', marginBottom: 8, gap: 8 },
-  serviceName: { color: '#fff', fontSize: 11, fontWeight: 'bold', flex: 1 },
+  serviceName: { color: '#fff', fontSize: 10, fontWeight: '600', flex: 1 },
   servicePid: { fontSize: 9, fontFamily: 'monospace', marginBottom: 8, opacity: 0.7 },
   serviceControlActions: { flexDirection: 'row', gap: 8 },
   controlBtn: { 
@@ -1203,7 +1203,7 @@ const styles = StyleSheet.create({
     height: 6,
     borderRadius: 3,
   },
-  serviceStatus: { fontSize: 9, fontWeight: '600' },
+  serviceStatus: { fontSize: 8, fontWeight: '500' },
   divider: { height: 1, backgroundColor: '#222', marginVertical: 15 },
   quickCommandBtn: {
     padding: 8,
@@ -1216,8 +1216,8 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   quickCommandText: {
-    fontSize: 10,
-    fontWeight: '600',
+    fontSize: 9,
+    fontWeight: '500',
   },
   modalOverlay: {
     position: 'absolute',
@@ -1263,8 +1263,8 @@ const styles = StyleSheet.create({
   },
   modalBtnText: {
     color: '#fff',
-    fontSize: 12,
-    fontWeight: 'bold',
+    fontSize: 10,
+    fontWeight: '600',
   },
   buildPlanScroll: {
     maxHeight: height * 0.4,

@@ -293,7 +293,7 @@ export class GuardianProtocol {
 
       // 6. إرسال إشعار فوري
       try {
-        await this.sendCriticalNotification('🚨 SOS Activated', 
+        await this.sendCriticalNotification('[SOS] SOS Activated', 
           'Emergency protocol engaged. Help is on the way.');
       } catch (notifError) {
         console.error('Notification error:', notifError);
@@ -532,7 +532,7 @@ export class GuardianProtocol {
     
     for (const keyword of GUARDIAN_CONFIG.DISTRESS_KEYWORDS) {
       if (lowerText.includes(keyword.toLowerCase())) {
-        console.log(`🚨 DISTRESS KEYWORD DETECTED: "${keyword}"`);
+        console.log(`[SOS] DISTRESS KEYWORD DETECTED: "${keyword}"`);
         return true;
       }
     }
@@ -550,7 +550,7 @@ export class GuardianProtocol {
     behaviorData?: any
   ): Promise<DuressIndicators> {
     
-    console.log('🔍 Analyzing for duress indicators...');
+    console.log('[ANALYZE] Analyzing for duress indicators...');
 
     // تحليل الصوت
     const voiceStress = voiceData ? this.analyzeVoiceStress(voiceData) : 0;
@@ -625,7 +625,7 @@ export class GuardianProtocol {
   private async activateDuressMode(indicators: DuressIndicators) {
     if (this.duressMode) return; // مفعّل مسبقاً
 
-    console.log('🚨🚨🚨 DURESS MODE ACTIVATED 🚨🚨🚨');
+    console.log('[SOS] DURESS MODE ACTIVATED');
     console.log('Indicators:', indicators);
 
     this.duressMode = true;

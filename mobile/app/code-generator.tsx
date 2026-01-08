@@ -410,8 +410,8 @@ const styles = StyleSheet.create({
   },
   generateButtonText: {
     color: '#000',
-    fontSize: 16,
-    fontWeight: 'bold',
+    fontSize: 14,
+    fontWeight: '600',
   },
   codeHeader: {
     flexDirection: 'row',
@@ -445,8 +445,8 @@ const styles = StyleSheet.create({
   },
   codeText: {
     fontFamily: 'monospace',
-    fontSize: 13,
-    lineHeight: 22,
+    fontSize: 11,
+    lineHeight: 20,
   },
   codeStats: {
     marginTop: 8,
@@ -455,7 +455,7 @@ const styles = StyleSheet.create({
     borderTopColor: 'rgba(255,255,255,0.1)',
   },
   statText: {
-    fontSize: 10,
+    fontSize: 9,
     textAlign: 'right',
   },
   carplayToggle: {

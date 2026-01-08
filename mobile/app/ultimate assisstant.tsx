@@ -235,7 +235,7 @@ export default function UltimateAssistant() {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#000' },
   glassHeader: { marginTop: 60, alignItems: 'center', flexDirection: 'row', justifyContent: 'center', gap: 10 },
-  headerText: { fontSize: 14, fontWeight: 'bold', letterSpacing: 3 },
+  headerText: { fontSize: 12, fontWeight: '600', letterSpacing: 2 },
   pulseDot: { width: 8, height: 8, borderRadius: 4, backgroundColor: '#00FFCC' },
   
   reactor: { height: height * 0.45, justifyContent: 'center', alignItems: 'center', marginTop: 20 },
@@ -245,13 +245,13 @@ const styles = StyleSheet.create({
   console: { flex: 1, paddingHorizontal: 25 },
   controlBox: { backgroundColor: 'rgba(255,255,255,0.03)', padding: 25, borderRadius: 30, borderWidth: 1, borderColor: 'rgba(255,255,255,0.05)' },
   row: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
-  label: { color: '#fff', fontSize: 16, fontWeight: 'bold' },
-  subLabel: { color: '#555', fontSize: 10, marginTop: 2 },
+  label: { color: '#fff', fontSize: 14, fontWeight: '600' },
+  subLabel: { color: '#555', fontSize: 9, marginTop: 2 },
   
   integrationRow: { flexDirection: 'row', justifyContent: 'space-between', marginTop: 30 },
   integCircle: { width: (width - 80) / 3, height: 100, backgroundColor: 'rgba(255,255,255,0.02)', borderRadius: 20, justifyContent: 'center', alignItems: 'center', gap: 10, borderWidth: 1, borderColor: '#111' },
-  integText: { color: '#888', fontSize: 9, fontWeight: 'bold' },
+  integText: { color: '#888', fontSize: 8, fontWeight: '600' },
   
   bottomBar: { position: 'absolute', bottom: 40, width: '100%', alignItems: 'center', borderTopWidth: 1, paddingTop: 20 },
-  statusText: { color: '#444', fontSize: 9, letterSpacing: 1.5 }
+  statusText: { color: '#444', fontSize: 8, letterSpacing: 1 }
 });

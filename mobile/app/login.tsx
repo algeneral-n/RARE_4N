@@ -74,7 +74,7 @@ export default function Login() {
 
   return (
     <View style={styles.container}>
-      {/* 🌌 خلفية نفق الأسماء المتحركة */}
+      {/* خلفية نفق الأسماء المتحركة */}
       <View style={StyleSheet.absoluteFill}>
         <NamesTunnel />
         <LinearGradient 
@@ -87,7 +87,7 @@ export default function Login() {
         <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
           
           <Animated.View style={[styles.main, { opacity: fadeAnim, transform: [{ translateY: slideAnim }] }]}>
-            {/* 👤 الكراكتر المركزي */}
+            {/* الكراكتر المركزي */}
             <View style={styles.characterBox}>
               <RARECharacter size={220} animation="idle" />
               <View style={[styles.glowRing, { borderColor: getSafeColor(colors, 'primary') + '50' }]} />
@@ -100,7 +100,7 @@ export default function Login() {
               <Text style={styles.chatText}>نظام رير 4N بانتظار المصادقة...</Text>
             </View>
 
-            {/* 🔒 مدخل كلمة المرور */}
+            {/* مدخل كلمة المرور */}
             <View style={[styles.inputWrapper, { borderColor: getSafeColor(colors, 'primary') + '30' }]}>
               <TextInput
                 style={[styles.input, { color: colors.text }]}

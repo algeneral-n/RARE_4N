@@ -65,7 +65,7 @@ export default function Council() {
     outputRange: ['0deg', '360deg']
   });
 
-  // 📤 إرسال رسالة نصية
+  // إرسال رسالة نصية
   const handleSendMessage = async () => {
     if (!inputText.trim()) return;
     
@@ -286,7 +286,7 @@ const styles = StyleSheet.create({
   header: { paddingTop: 60, paddingHorizontal: 25, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
   exitBtn: { width: 40, height: 40, borderRadius: 20, backgroundColor: 'rgba(255,255,255,0.05)', alignItems: 'center', justifyContent: 'center' },
   protocolBadge: { paddingHorizontal: 15, paddingVertical: 5, borderRadius: 5, borderWidth: 1, borderColor: 'rgba(255,255,255,0.1)' },
-  protocolText: { fontSize: 10, fontWeight: 'bold', letterSpacing: 2 },
+  protocolText: { fontSize: 9, fontWeight: '600', letterSpacing: 1 },
   
   chamberScroll: { paddingBottom: 150 },
   reactorContainer: { height: height * 0.5, justifyContent: 'center', alignItems: 'center' },
@@ -295,11 +295,11 @@ const styles = StyleSheet.create({
   
   statusBox: { flexDirection: 'row', alignItems: 'center', marginTop: 30, paddingHorizontal: 20, paddingVertical: 10, borderRadius: 50, borderWidth: 1 },
   pulseDot: { width: 8, height: 8, borderRadius: 4, marginRight: 10 },
-  statusLabel: { fontSize: 11, fontWeight: '900', letterSpacing: 2 },
+  statusLabel: { fontSize: 10, fontWeight: '700', letterSpacing: 1 },
 
   systemGrid: { flexDirection: 'row', gap: 10, paddingHorizontal: 20, marginBottom: 30 },
   sysCard: { flex: 1, height: 60, borderRadius: 15, borderWidth: 1, borderColor: '#222', alignItems: 'center', justifyContent: 'center', gap: 5 },
-  sysText: { fontSize: 10, fontWeight: 'bold' },
+  sysText: { fontSize: 9, fontWeight: '600' },
 
   logContainer: { paddingHorizontal: 25, minHeight: 200 },
   logEntry: { 
@@ -320,9 +320,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 8,
   },
-  logRole: { fontSize: 11, fontWeight: 'bold', fontFamily: 'monospace', letterSpacing: 1 },
-  logTime: { fontSize: 9, color: '#444', fontFamily: 'monospace' },
-  logContent: { flex: 1, color: '#aaa', fontSize: 13, lineHeight: 20, textAlign: 'right' },
+  logRole: { fontSize: 10, fontWeight: '600', fontFamily: 'monospace', letterSpacing: 0.5 },
+  logTime: { fontSize: 8, color: '#444', fontFamily: 'monospace' },
+  logContent: { flex: 1, color: '#aaa', fontSize: 11, lineHeight: 18, textAlign: 'right' },
   emptyState: {
     alignItems: 'center',
     justifyContent: 'center',
@@ -330,13 +330,13 @@ const styles = StyleSheet.create({
   },
   emptyText: {
     color: '#555',
-    fontSize: 14,
+    fontSize: 12,
     fontWeight: '600',
     marginTop: 15,
   },
   emptySubtext: {
     color: '#333',
-    fontSize: 11,
+    fontSize: 10,
     marginTop: 5,
   },
 
@@ -345,6 +345,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0,0,0,0.95)', borderTopWidth: 2, borderTopColor: '#111', flexDirection: 'row', alignItems: 'center', gap: 15 
   },
   mediaBtn: { width: 50, height: 50, borderRadius: 25, alignItems: 'center', justifyContent: 'center' },
-  consoleInput: { flex: 1, height: 50, fontSize: 16, fontFamily: 'monospace' },
+  consoleInput: { flex: 1, height: 50, fontSize: 12, fontFamily: 'monospace' },
   launchBtn: { width: 55, height: 55, borderRadius: 20, alignItems: 'center', justifyContent: 'center', shadowColor: '#00EAFF', shadowOpacity: 0.5, shadowRadius: 15 }
 });

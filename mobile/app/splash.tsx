@@ -1,8 +1,8 @@
 /**
  * RARE 4N - Secure Splash Screen
- * ✅ Secure first entry point
- * ✅ Authentication check
- * ✅ Smooth transition
+ * Secure first entry point
+ * Authentication check
+ * Smooth transition
  */
 
 import { useEffect, useState, useRef } from 'react';
@@ -167,14 +167,14 @@ const styles = StyleSheet.create({
     borderStyle: 'dashed',
   },
   title: {
-    fontSize: 32,
+    fontSize: 28,
     fontWeight: '900',
     color: '#00eaff',
     marginTop: 30,
     letterSpacing: 4,
   },
   subtitle: {
-    fontSize: 12,
+    fontSize: 10,
     color: '#888',
     marginTop: 8,
     letterSpacing: 2,
@@ -187,7 +187,7 @@ const styles = StyleSheet.create({
   },
   loadingText: {
     color: '#00eaff',
-    fontSize: 12,
+    fontSize: 10,
   },
   securityBadge: {
     position: 'absolute',

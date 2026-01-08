@@ -177,7 +177,7 @@ export default function SOS() {
       </View>
 
       <View style={styles.content}>
-        {/* 👤 رير بوضعية "الحارس" (Conscious Agent) */}
+        {/* رير بوضعية "الحارس" (Conscious Agent) */}
         <View style={styles.agentContainer}>
           <Animated.View style={{ transform: [{ scale: pulseAnim }] }}>
             <RARECharacter size={isActive ? 220 : 180} animation={isActive ? "speaking" : "idle"} />
@@ -189,7 +189,7 @@ export default function SOS() {
           )}
         </View>
 
-        {/* 🔘 زر الطوارئ المركزي */}
+        {/* زر الطوارئ المركزي */}
         <View style={styles.actionArea}>
           {!isActive ? (
             <Pressable style={styles.sosCircle} onPress={handleActivateSOS}>
@@ -224,21 +224,21 @@ export default function SOS() {
 const styles = StyleSheet.create({
   container: { flex: 1 },
   header: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingTop: 60, paddingHorizontal: 25 },
-  headerTitle: { fontSize: 16, fontWeight: '900', letterSpacing: 3 },
+  headerTitle: { fontSize: 14, fontWeight: '700', letterSpacing: 2 },
   pulseContainer: { width: 40, alignItems: 'center' },
   statusDot: { width: 10, height: 10, borderRadius: 5, shadowOpacity: 0.5, shadowRadius: 5 },
   content: { flex: 1, alignItems: 'center', justifyContent: 'space-around', paddingBottom: 50 },
   agentContainer: { alignItems: 'center' },
   threatBadge: { marginTop: 20, backgroundColor: 'rgba(255,0,0,0.1)', paddingHorizontal: 15, paddingVertical: 5, borderRadius: 20, borderWidth: 1, borderColor: '#ff4444' },
-  threatText: { color: '#ff4444', fontSize: 10, fontWeight: 'bold' },
+  threatText: { color: '#ff4444', fontSize: 9, fontWeight: '600' },
   actionArea: { height: 250, justifyContent: 'center' },
   sosCircle: { width: 180, height: 180, borderRadius: 90, elevation: 20, shadowColor: '#ff0000', shadowOpacity: 0.8, shadowRadius: 20 },
   sosGradient: { flex: 1, borderRadius: 90, alignItems: 'center', justifyContent: 'center', gap: 5 },
-  sosMainText: { color: '#fff', fontSize: 24, fontWeight: '900' },
+  sosMainText: { color: '#fff', fontSize: 20, fontWeight: '700' },
   deactivateBtn: { paddingVertical: 15, paddingHorizontal: 40, borderRadius: 30, borderWidth: 2, borderColor: '#ff4444' },
   deactivateText: { color: '#ff4444', fontWeight: 'bold' },
   infoCard: { width: '85%', padding: 20, borderRadius: 20, borderWidth: 1, backgroundColor: 'rgba(255,255,255,0.02)' },
-  infoTitle: { fontSize: 14, fontWeight: 'bold', marginBottom: 10, textAlign: 'right' },
-  infoText: { fontSize: 12, lineHeight: 18, textAlign: 'right', opacity: 0.8 },
+  infoTitle: { fontSize: 12, fontWeight: '600', marginBottom: 8, textAlign: 'right' },
+  infoText: { fontSize: 10, lineHeight: 16, textAlign: 'right', opacity: 0.8 },
   backBtn: { padding: 10 }
 });

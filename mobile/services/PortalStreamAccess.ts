@@ -36,11 +36,11 @@ class PortalStreamAccess {
     });
 
     this.socket.on('connect', () => {
-      console.log('✅ Portal Stream Connected');
+      console.log('[CONNECTED] Portal Stream Connected');
     });
 
     this.socket.on('disconnect', () => {
-      console.log('❌ Portal Stream Disconnected');
+      console.log('[DISCONNECTED] Portal Stream Disconnected');
     });
 
     // Listen for all events
@@ -169,11 +169,11 @@ class PortalStreamAccess {
     });
 
     this.socket.on('connect', () => {
-      console.log('✅ Portal Stream Connected');
+      console.log('[CONNECTED] Portal Stream Connected');
     });
 
     this.socket.on('disconnect', () => {
-      console.log('❌ Portal Stream Disconnected');
+      console.log('[DISCONNECTED] Portal Stream Disconnected');
     });
 
     // Listen for all events

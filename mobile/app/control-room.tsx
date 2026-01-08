@@ -31,7 +31,7 @@ export default function ControlRoom() {
   const { t } = useTranslation();
   const { t: tLang } = useLanguage();
   
-  // ⚡ حالات الأنظمة المتقدمة
+  // حالات الأنظمة المتقدمة
   const [uiMode, setUiMode] = useState('CYBER');
   const [tunnelSpeed, setTunnelSpeed] = useState(1.0);
   const [isConscious, setIsConscious] = useState(true);
@@ -353,7 +353,7 @@ export default function ControlRoom() {
     <View style={styles.container}>
       <LinearGradient colors={['#000', '#001a2c', '#000']} style={StyleSheet.absoluteFill} />
       
-      {/* 📡 خط المسح اللي بيتحرك فوق الشاشة (Cyber Effect) */}
+      {/* خط المسح اللي بيتحرك فوق الشاشة (Cyber Effect) */}
       <Animated.View style={[styles.scanLine, { transform: [{ translateY: scanLineTranslate }], backgroundColor: getSafeColor(colors, 'primary') + '20' }]} />
 
       <View style={styles.header}>
@@ -812,7 +812,7 @@ const styles = StyleSheet.create({
     <View style={styles.container}>
       <LinearGradient colors={['#000', '#001a2c', '#000']} style={StyleSheet.absoluteFill} />
       
-      {/* 📡 خط المسح اللي بيتحرك فوق الشاشة (Cyber Effect) */}
+      {/* خط المسح اللي بيتحرك فوق الشاشة (Cyber Effect) */}
       <Animated.View style={[styles.scanLine, { transform: [{ translateY: scanLineTranslate }], backgroundColor: getSafeColor(colors, 'primary') + '20' }]} />
 
       <View style={styles.header}>
