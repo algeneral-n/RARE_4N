@@ -141,7 +141,7 @@ export default function Splash() {
       
       {/* Security Badge */}
       <View style={styles.securityBadge}>
-        <Text style={styles.securityText}>🔒 Secure Entry</Text>
+        <Text style={styles.securityText}>Secure Entry</Text>
       </View>
     </View>
   );
