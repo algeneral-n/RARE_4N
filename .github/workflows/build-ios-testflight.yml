@@ -1,0 +1,189 @@
+name: Build iOS & Submit to TestFlight
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - 'mobile/**'
+      - '.github/workflows/build-ios-testflight.yml'
+  workflow_dispatch:
+    inputs:
+      profile:
+        description: 'Build profile'
+        required: true
+        default: 'production'
+        type: choice
+        options:
+          - production
+          - preview
+      auto_submit:
+        description: 'Automatically submit to TestFlight'
+        required: false
+        default: 'true'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+
+jobs:
+  build-and-submit-ios:
+    name: Build iOS & Submit to TestFlight
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Setup Expo
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: Check if mobile app exists
+        id: check_mobile
+        run: |
+          if [ -d "mobile" ]; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+            echo "path=mobile" >> $GITHUB_OUTPUT
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+            echo "path=" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Install dependencies
+        if: steps.check_mobile.outputs.exists == 'true'
+        working-directory: ./${{ steps.check_mobile.outputs.path }}
+        run: |
+          if [ -f "package.json" ]; then
+            npm ci || npm install
+          else
+            echo "No package.json found, skipping dependencies"
+          fi
+
+      - name: Configure EAS
+        if: steps.check_mobile.outputs.exists == 'true'
+        working-directory: ./${{ steps.check_mobile.outputs.path }}
+        run: |
+          echo "Configuring EAS for iOS build..."
+          eas build:configure --platform ios --non-interactive || true
+
+      - name: Build iOS for TestFlight
+        if: steps.check_mobile.outputs.exists == 'true'
+        working-directory: ./${{ steps.check_mobile.outputs.path }}
+        id: build
+        run: |
+          PROFILE="${{ github.event.inputs.profile || 'production' }}"
+          echo "Building iOS app with profile: $PROFILE"
+          
+          eas build --platform ios \
+            --profile $PROFILE \
+            --non-interactive \
+            --no-wait \
+            --json > build-output.json || true
+          
+          if [ -f "build-output.json" ]; then
+            BUILD_ID=$(cat build-output.json | grep -o '"id":"[^"]*"' | head -1 | cut -d'"' -f4 || echo "")
+            if [ -n "$BUILD_ID" ]; then
+              echo "build_id=$BUILD_ID" >> $GITHUB_OUTPUT
+              echo "Build started with ID: $BUILD_ID"
+            fi
+          fi
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+          ASC_API_KEY_ID: ${{ secrets.ASC_API_KEY_ID }}
+          ASC_API_KEY_ISSUER_ID: ${{ secrets.ASC_API_KEY_ISSUER_ID }}
+          ASC_API_KEY_P8: ${{ secrets.ASC_API_KEY_P8 }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          APPLE_SERVICE_ID: ${{ secrets.APPLE_SERVICE_ID }}
+
+      - name: Wait for build to complete
+        if: steps.check_mobile.outputs.exists == 'true' && steps.build.outputs.build_id != ''
+        working-directory: ./${{ steps.check_mobile.outputs.path }}
+        run: |
+          BUILD_ID="${{ steps.build.outputs.build_id }}"
+          if [ -z "$BUILD_ID" ]; then
+            echo "No build ID found, skipping wait"
+            exit 0
+          fi
+          
+          echo "Waiting for build $BUILD_ID to complete..."
+          MAX_WAIT=3600
+          ELAPSED=0
+          INTERVAL=30
+          
+          while [ $ELAPSED -lt $MAX_WAIT ]; do
+            STATUS=$(eas build:view $BUILD_ID --json 2>/dev/null | grep -o '"status":"[^"]*"' | cut -d'"' -f4 || echo "unknown")
+            
+            if [ "$STATUS" = "finished" ]; then
+              echo "Build completed successfully!"
+              echo "build_status=finished" >> $GITHUB_OUTPUT
+              exit 0
+            elif [ "$STATUS" = "errored" ] || [ "$STATUS" = "canceled" ]; then
+              echo "Build failed with status: $STATUS"
+              echo "build_status=$STATUS" >> $GITHUB_OUTPUT
+              exit 1
+            fi
+            
+            echo "Build status: $STATUS (waiting...)"
+            sleep $INTERVAL
+            ELAPSED=$((ELAPSED + INTERVAL))
+          done
+          
+          echo "Build timeout after $MAX_WAIT seconds"
+          echo "build_status=timeout" >> $GITHUB_OUTPUT
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+
+      - name: Submit to TestFlight
+        if: |
+          steps.check_mobile.outputs.exists == 'true' && 
+          steps.build.outputs.build_id != '' && 
+          (steps.build.outputs.build_status == 'finished' || steps.build.outputs.build_status == '') &&
+          (github.event.inputs.auto_submit == 'true' || github.event.inputs.auto_submit == '')
+        working-directory: ./${{ steps.check_mobile.outputs.path }}
+        run: |
+          BUILD_ID="${{ steps.build.outputs.build_id }}"
+          PROFILE="${{ github.event.inputs.profile || 'production' }}"
+          
+          echo "Submitting build $BUILD_ID to TestFlight..."
+          
+          eas submit --platform ios \
+            --profile $PROFILE \
+            --non-interactive \
+            --latest || echo "Submit failed or already submitted"
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+          ASC_API_KEY_ID: ${{ secrets.ASC_API_KEY_ID }}
+          ASC_API_KEY_ISSUER_ID: ${{ secrets.ASC_API_KEY_ISSUER_ID }}
+          ASC_API_KEY_P8: ${{ secrets.ASC_API_KEY_P8 }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          APPLE_SERVICE_ID: ${{ secrets.APPLE_SERVICE_ID }}
+
+      - name: Notify build completion
+        if: always() && steps.check_mobile.outputs.exists == 'true'
+        run: |
+          curl -X POST "${{ secrets.API_URL }}/api/auto-builder/build-complete" \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Bearer ${{ secrets.API_TOKEN }}" \
+            -d '{
+              "platform": "ios",
+              "profile": "${{ github.event.inputs.profile || 'production' }}",
+              "status": "${{ job.status }}",
+              "workflow": "${{ github.workflow }}",
+              "run_id": "${{ github.run_id }}",
+              "build_id": "${{ steps.build.outputs.build_id }}",
+              "submitted_to_testflight": "${{ steps.build.outputs.build_status == 'finished' && (github.event.inputs.auto_submit == 'true' || github.event.inputs.auto_submit == '') }}"
+            }' || true
+
+      - name: Skip build - mobile app not found
+        if: steps.check_mobile.outputs.exists == 'false'
+        run: |
+          echo "[WARNING] Mobile app directory not found. Skipping iOS build."
+          exit 0
+

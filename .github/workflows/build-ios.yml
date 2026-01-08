@@ -70,11 +70,24 @@ jobs:
       - name: Build iOS
         if: steps.check_mobile.outputs.exists == 'true'
         working-directory: ./${{ steps.check_mobile.outputs.path }}
+        id: build
         run: |
+          PROFILE="${{ github.event.inputs.profile || 'production' }}"
+          echo "Building iOS app with profile: $PROFILE"
+          
           eas build --platform ios \
-            --profile ${{ github.event.inputs.profile || 'production' }} \
+            --profile $PROFILE \
             --non-interactive \
-            --no-wait
+            --no-wait \
+            --json > build-output.json 2>&1 || true
+          
+          if [ -f "build-output.json" ]; then
+            BUILD_ID=$(cat build-output.json | grep -o '"id":"[^"]*"' | head -1 | cut -d'"' -f4 || echo "")
+            if [ -n "$BUILD_ID" ]; then
+              echo "build_id=$BUILD_ID" >> $GITHUB_OUTPUT
+              echo "Build started with ID: $BUILD_ID"
+            fi
+          fi
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
           ASC_API_KEY_ID: ${{ secrets.ASC_API_KEY_ID }}
